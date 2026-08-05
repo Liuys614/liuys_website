@@ -1,6 +1,6 @@
 # Louis Liu — Apps & Projects Showcase
 
-An ultra-modern, Dribbble-inspired personal showcase website designed for **GitHub Pages** (`liuys614.github.io`). It features full-viewport dynamic background color morphing, 3D device mockup UI previews, smooth transitions, and multi-device responsive layouts.
+An ultra-modern personal showcase website designed for **GitHub Pages** (`liuys614.github.io`). It features full-viewport dynamic background color morphing, 3D device mockup UI previews, smooth transitions, and multi-device responsive layouts.
 
 ## Featured Apps
 
@@ -28,7 +28,7 @@ Then open `http://localhost:8000` in your web browser.
 1. Commit and push your changes to GitHub:
    ```bash
    git add .
-   git commit -m "Build Dribbble-inspired app showcase website"
+   git commit -m "Build app showcase website"
    git push origin main
    ```
 
