@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Louis Liu — Apps & Projects Showcase</title>
+  <meta name="description" content="Personal showcase of iOS and web apps built by Louis Liu, with dynamic color morphing themes per app vibe." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container" id="appContainer">
+    <!-- Dynamic Ambient Glow Background -->
+    <div class="ambient-glow" id="ambientGlow"></div>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+      <div class="brand">
+        <div class="avatar">LL</div>
+        <div class="brand-text">
+          <h1>Louis Liu</h1>
+          <p>iOS & Web Software Engineer</p>
+        </div>
+      </div>
+
+      <!-- App Tabs Bar -->
+      <nav class="app-tabs" id="appTabsNav" aria-label="App showcase navigation">
+        <!-- Rendered dynamically by app.js -->
+      </nav>
+    </header>
+
+    <!-- Main Showcase Stage -->
+    <main class="showcase-stage">
+      <!-- Left Info Pane -->
+      <section class="info-pane" id="infoPane">
+        <div class="meta-badges">
+          <span class="category-pill" id="appCategory">Category</span>
+          <span class="status-badge" id="appStatus">Status • Year</span>
+        </div>
+
+        <h2 class="app-title" id="appTitle">App Title</h2>
+        <p class="app-tagline" id="appTagline">App Tagline</p>
+        <p class="app-description" id="appDescription">App Description goes here...</p>
+
+        <!-- Features List -->
+        <div class="features-list" id="featuresList">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="cta-group" id="ctaGroup">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
+      <!-- Right 3D Device Stage -->
+      <section class="device-stage">
+        <div class="iphone-frame" id="iphoneFrame">
+          <div class="dynamic-island"></div>
+          <div class="screen-content" id="screenContent">
+            <div class="screen-header">
+              <div class="screen-icon" id="screenIcon">📱</div>
+              <span class="screen-badge" id="screenBadge">Featured</span>
+            </div>
+            <div class="screen-title" id="screenHeaderTitle">App Screentitle</div>
+            <div class="screen-stats" id="screenStats">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Controls -->
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <button class="nav-arrow-btn" id="prevBtn" title="Previous App (←)" aria-label="Previous App">←</button>
+        <div class="progress-counter" id="progressCounter">
+          <span id="currentIndex">01</span> / <span id="totalIndex">04</span>
+        </div>
+        <button class="nav-arrow-btn" id="nextBtn" title="Next App (→)" aria-label="Next App">→</button>
+      </div>
+
+      <div class="keyboard-hint">
+        Use <span class="key-badge">←</span> <span class="key-badge">→</span> or <span class="key-badge">Scroll</span> to switch vibe
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
