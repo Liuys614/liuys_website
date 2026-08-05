@@ -90,6 +90,55 @@ html, body {
   max-width: 520px;
 }
 
+/* App Store Action Buttons */
+.cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.btn-appstore {
+  background: var(--text-dark);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.75rem 1.4rem;
+  border-radius: 99px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s var(--ease-out);
+}
+
+.btn-appstore:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--accent-soft);
+}
+
+.btn-web {
+  background: #f1f5f9;
+  color: var(--text-dark);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.75rem 1.3rem;
+  border-radius: 99px;
+  text-decoration: none;
+  border: 1px solid #cbd5e1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s var(--ease-out);
+}
+
+.btn-web:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
 /* App Selector Interactive List */
 .app-selector-list {
   display: flex;

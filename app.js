@@ -9,6 +9,7 @@ class AppShowcase {
     this.eyebrowTag = document.getElementById('eyebrowTag');
     this.mainHeading = document.getElementById('mainHeading');
     this.conciseDesc = document.getElementById('conciseDesc');
+    this.ctaActions = document.getElementById('ctaActions');
     this.appSelectorList = document.getElementById('appSelectorList');
     this.stepCardsGrid = document.getElementById('stepCardsGrid');
     this.skyStage = document.getElementById('skyStage');
@@ -63,6 +64,13 @@ class AppShowcase {
     this.eyebrowTag.textContent = app.eyebrow;
     this.mainHeading.textContent = app.heading;
     this.conciseDesc.textContent = app.description;
+
+    // Render CTAs
+    this.ctaActions.innerHTML = app.links.map(link => `
+      <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="${link.type === 'appstore' ? 'btn-appstore' : 'btn-web'}">
+        ${link.type === 'appstore' ? ' Download on App Store' : '🌐 Visit Website'}
+      </a>
+    `).join('');
 
     // 2. Update Theme Colors
     document.documentElement.style.setProperty('--accent-color', app.theme.accent);

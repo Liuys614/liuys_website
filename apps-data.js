@@ -24,7 +24,7 @@ export const APPS = [
       { step: "04", title: "PRIVACY FIRST", desc: "100% private data stored on your device." }
     ],
     links: [
-      { label: "App Store", url: "#", type: "appstore" }
+      { label: "App Store", url: "https://apps.apple.com/app/id6794415548", type: "appstore" }
     ]
   },
   {
@@ -52,7 +52,7 @@ export const APPS = [
       { step: "04", title: "INFLATION TRACKER", desc: "Monitors historical grocery price trends." }
     ],
     links: [
-      { label: "App Store", url: "#", type: "appstore" }
+      { label: "App Store", url: "https://apps.apple.com/app/id6773533304", type: "appstore" }
     ]
   },
   {
@@ -81,7 +81,7 @@ export const APPS = [
     ],
     links: [
       { label: "Visit Website", url: "https://liuys614.github.io/AlcoholFreeTracker-Website", type: "web" },
-      { label: "App Store", url: "#", type: "appstore" }
+      { label: "App Store", url: "https://apps.apple.com/app/id6791035303", type: "appstore" }
     ]
   },
   {
@@ -110,7 +110,7 @@ export const APPS = [
     ],
     links: [
       { label: "Visit Website", url: "https://agricolascorer.io", type: "web" },
-      { label: "App Store", url: "#", type: "appstore" }
+      { label: "App Store", url: "https://apps.apple.com/app/id6741305872", type: "appstore" }
     ]
   }
 ];
