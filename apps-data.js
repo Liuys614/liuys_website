@@ -65,8 +65,7 @@ export const APPS = [
       "Historical Price Tracker"
     ],
     links: [
-      { label: "App Store", url: "#", type: "appstore" },
-      { label: "View Source", url: "https://github.com/Liuys614/GroceryPrice", type: "github" }
+      { label: "App Store", url: "#", type: "appstore" }
     ],
     mockup: {
       icon: "🛒",
@@ -106,8 +105,7 @@ export const APPS = [
       "Private On-Device Storage"
     ],
     links: [
-      { label: "App Store", url: "#", type: "appstore" },
-      { label: "View Code", url: "https://github.com/Liuys614/Pill-Reminder", type: "github" }
+      { label: "App Store", url: "#", type: "appstore" }
     ],
     mockup: {
       icon: "💊",

@@ -123,7 +123,7 @@ class AppShowcase {
     // Render CTAs
     this.ctaGroupEl.innerHTML = app.links.map(link => `
       <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="${link.type === 'appstore' ? 'btn-primary' : 'btn-secondary'}">
-        ${link.type === 'appstore' ? ' App Store' : link.type === 'web' ? '🌐 Launch Website' : '💻 GitHub Repo'}
+        ${link.type === 'appstore' ? ' App Store' : '🌐 Launch Website'}
       </a>
     `).join('');
 
