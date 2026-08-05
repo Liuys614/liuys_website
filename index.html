@@ -4,86 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Louis Liu — Apps & Projects Showcase</title>
-  <meta name="description" content="Personal showcase of iOS and web apps built by Louis Liu, with dynamic color morphing themes per app vibe." />
+  <meta name="description" content="Personal showcase of iOS and web apps built by Louis Liu." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="app-container" id="appContainer">
-    <!-- Dynamic Ambient Glow Background -->
-    <div class="ambient-glow" id="ambientGlow"></div>
+  <div class="layout-stage">
+    <!-- Left Content Column -->
+    <main class="content-col">
+      <div class="top-section">
+        <!-- Eyebrow Category -->
+        <div class="eyebrow" id="eyebrowTag">• HEALTH & MEDICAL</div>
 
-    <!-- Header Navigation -->
-    <header class="site-header">
-      <div class="brand">
-        <div class="avatar">LL</div>
-        <div class="brand-text">
-          <h1>Louis Liu</h1>
-          <p>iOS & Web Software Engineer</p>
-        </div>
+        <!-- Big Display Heading -->
+        <h1 class="main-heading" id="mainHeading">Everything Your Health Regimen Needs</h1>
+
+        <!-- Concise 1-Sentence Description -->
+        <p class="concise-desc" id="conciseDesc">Stay on top of your daily health regimen with reliable schedule notifications, dosage tracking, and automated refill alerts.</p>
+
+        <!-- Interactive App Accordion / Selector List -->
+        <nav class="app-selector-list" id="appSelectorList" aria-label="Apps list">
+          <!-- Rendered dynamically by app.js -->
+        </nav>
       </div>
 
-      <!-- App Tabs Bar -->
-      <nav class="app-tabs" id="appTabsNav" aria-label="App showcase navigation">
-        <!-- Rendered dynamically by app.js -->
-      </nav>
-    </header>
-
-    <!-- Main Showcase Stage -->
-    <main class="showcase-stage">
-      <!-- Left Info Pane -->
-      <section class="info-pane" id="infoPane">
-        <div class="meta-badges">
-          <span class="category-pill" id="appCategory">Category</span>
-          <span class="status-badge" id="appStatus">Status • Year</span>
-        </div>
-
-        <h2 class="app-title" id="appTitle">App Title</h2>
-        <p class="app-tagline" id="appTagline">App Tagline</p>
-        <p class="app-description" id="appDescription">App Description goes here...</p>
-
-        <!-- Features List -->
-        <div class="features-list" id="featuresList">
-          <!-- Rendered dynamically -->
-        </div>
-
-        <!-- Action CTAs -->
-        <div class="cta-group" id="ctaGroup">
-          <!-- Rendered dynamically -->
-        </div>
-      </section>
-
-      <!-- Right 3D Device Stage -->
-      <section class="device-stage">
-        <div class="iphone-frame" id="iphoneFrame">
-          <div class="dynamic-island"></div>
-          <div class="screen-content" id="screenContent">
-            <div class="screen-header">
-              <div class="screen-icon" id="screenIcon">📱</div>
-              <span class="screen-badge" id="screenBadge">Featured</span>
-            </div>
-            <div class="screen-title" id="screenHeaderTitle">App Screentitle</div>
-            <div class="screen-stats" id="screenStats">
-              <!-- Rendered dynamically -->
-            </div>
-          </div>
+      <!-- Bottom Feature Step Cards Section -->
+      <section class="features-section">
+        <div class="section-label">• HOW IT WORKS</div>
+        <div class="step-cards-grid" id="stepCardsGrid">
+          <!-- Rendered dynamically by app.js -->
         </div>
       </section>
     </main>
 
-    <!-- Footer Controls -->
-    <footer class="site-footer">
-      <div class="footer-nav">
-        <button class="nav-arrow-btn" id="prevBtn" title="Previous App (←)" aria-label="Previous App">←</button>
-        <div class="progress-counter" id="progressCounter">
-          <span id="currentIndex">01</span> / <span id="totalIndex">04</span>
-        </div>
-        <button class="nav-arrow-btn" id="nextBtn" title="Next App (→)" aria-label="Next App">→</button>
+    <!-- Right Sky Stage with Real Screenshots & Real App Icon -->
+    <aside class="sky-stage" id="skyStage">
+      <div class="cloud-backdrop"></div>
+
+      <!-- Top Right Logo Badge -->
+      <div class="brand-logo" title="Louis Liu">
+        <div class="logo-symbol">LL</div>
       </div>
 
-      <div class="keyboard-hint">
-        Use <span class="key-badge">←</span> <span class="key-badge">→</span> or <span class="key-badge">Scroll</span> to switch vibe
+      <!-- Realistic Floating iPhone Frame -->
+      <div class="device-wrapper">
+        <div class="iphone-bezel">
+          <div class="dynamic-notch"></div>
+          <img src="images/pill.webp" alt="App Screenshot" class="screen-img" id="screenImg" />
+        </div>
+
+        <!-- Overlaid Real App Icon -->
+        <div class="app-icon-badge">
+          <img src="images/icons/pill.png" alt="App Icon" id="appIconImg" />
+        </div>
       </div>
-    </footer>
+    </aside>
   </div>
 
   <script type="module" src="app.js"></script>
