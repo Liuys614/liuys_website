@@ -10,7 +10,7 @@ export const APPS = [
     year: "2026",
     status: "Published",
     icon: "images/icons/pill.png",
-    screenshot: "images/pill.webp",
+    screenshot: "images/pill.png",
     theme: {
       accent: "#3b82f6",
       accentSoft: "rgba(59, 130, 246, 0.12)",
@@ -66,7 +66,7 @@ export const APPS = [
     year: "2026",
     status: "Published",
     icon: "images/icons/alcohol.png",
-    screenshot: "images/alcohol.webp",
+    screenshot: "images/alcohol.png",
     theme: {
       accent: "#10b981",
       accentSoft: "rgba(16, 185, 129, 0.12)",
