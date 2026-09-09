@@ -1,116 +1,495 @@
+// Portfolio Data for Louis Liu
+export const PROFILE = {
+  "name": "Louis Liu",
+  "role": "iOS Software Engineer",
+  "location": "United States",
+  "email": "liuys614@gmail.com",
+  "github": "https://github.com/liuys614",
+  "linkedin": "https://www.linkedin.com/in/louisliu-ios",
+  "avatar": "images/profile.jpg",
+  "headline": "iOS Software Engineer",
+  "bio": "I am an iOS software engineer and indie app maker passionate about crafting high-performance Apple platform experiences that not only perform at enterprise scale for millions of users, but also delight people with seamless everyday functionality.",
+  "status": "Available for iOS Opportunities",
+  "timeline": [
+    {
+      "id": "exp-indie",
+      "type": "work",
+      "period": "2024 – Present",
+      "role": "Founder & Lead iOS Developer",
+      "organization": "Independent App Studio",
+      "location": "United States",
+      "highlights": [
+        "Architected, designed, and shipped 5 native iOS apps live on the App Store: Inkstone, Pill Reminder, Grocery Price Scanner, Alcohol Free Tracker, and Agricola Scorer.",
+        "Engineered on-device camera OCR scanning, PDFKit digital signing pipelines, and offline-first local data synchronization.",
+        "Automated CI/CD deployment pipelines, StoreKit 2 monetization, and App Store Connect localization across 40+ storefronts."
+      ]
+    },
+    {
+      "id": "exp-charter",
+      "type": "work",
+      "period": "2023 – 2026",
+      "role": "iOS Software Engineer (Contract)",
+      "organization": "Charter Communications — Spectrum TV",
+      "location": "Remote, US",
+      "highlights": [
+        "Architected and delivered the complete VOD/cDVR player overlay from scratch in SwiftUI & UIKit, including custom scrubber, PiP, AirPlay, and Chromecast integration.",
+        "Built the Seamless Entertainment swimlane end-to-end using Server-Driven UI (UINode), deep link routing, and full VoiceOver accessibility.",
+        "Engineered a generic actor-based AsyncTaskDeduplicator utility, resolving production DRM playback crashes caused by concurrent async task races.",
+        "Fixed 10+ critical production crashes and resolved complex iPad multitasking layout bugs using registerForTraitChanges and safe area APIs."
+      ]
+    },
+    {
+      "id": "exp-synopsys",
+      "type": "work",
+      "period": "Aug 2021 – Oct 2022",
+      "role": "Software Senior Engineer",
+      "organization": "Synopsys Inc",
+      "location": "Hsinchu, Taiwan",
+      "highlights": [
+        "Optimized a SW/HW co-simulation acceleration platform inside VCS for ZEBU hardware emulators.",
+        "Achieved a 20x performance speedup while actively supporting Tier-1 semiconductor IC design partners."
+      ]
+    },
+    {
+      "id": "exp-mindflow",
+      "type": "work",
+      "period": "Aug 2020 – May 2021",
+      "role": "Founder & Tech Lead",
+      "organization": "Mindflow Education Studio",
+      "location": "Taiwan",
+      "highlights": [
+        "Founded an educational technology startup studio managing digital platforms and curriculum delivery.",
+        "Taught computer science and coding principles to young students, fostering algorithmic thinking."
+      ]
+    },
+    {
+      "id": "exp-phison",
+      "type": "work",
+      "period": "Jun 2018 – Aug 2020",
+      "role": "Firmware Engineer",
+      "organization": "Phison Electronics",
+      "location": "Taiwan",
+      "highlights": [
+        "Developed NVMe 1.3 protocol logic and implemented low-power mode (LPM) hibernation architecture.",
+        "Reduced power consumption by 80% while strictly preserving high data integrity under heavy I/O loads."
+      ]
+    },
+    {
+      "id": "exp-syntec",
+      "type": "work",
+      "period": "Nov 2014 – Feb 2018",
+      "role": "Software Engineer",
+      "organization": "Syntec Technology",
+      "location": "Taiwan",
+      "highlights": [
+        "Architected and deployed cloud telemetry infrastructure on Microsoft Azure for industrial IoT and smart factory automation.",
+        "Refactored concurrent networking layers in CNC controller systems using OOP and MVC, reducing packet loss and connection failures by 20%."
+      ]
+    },
+    {
+      "id": "edu-ms",
+      "type": "education",
+      "period": "2012 – 2014",
+      "role": "Master of Science in Computer Science",
+      "organization": "National Chiao-Tung University (NCTU)",
+      "location": "Hsinchu, Taiwan",
+      "highlights": [
+        "Focused on computer systems, software architecture, algorithm design, and distributed systems."
+      ]
+    },
+    {
+      "id": "edu-bs",
+      "type": "education",
+      "period": "2008 – 2012",
+      "role": "Bachelor of Science in Computer Science",
+      "organization": "National Chiao-Tung University (NCTU)",
+      "location": "Hsinchu, Taiwan",
+      "highlights": [
+        "Core computer science curriculum: Data Structures, Algorithms, Operating Systems, Computer Networks, and Object-Oriented Programming."
+      ]
+    }
+  ],
+  "techStack": [
+    "Swift",
+    "SwiftUI",
+    "UIKit",
+    "Swift Concurrency (Actors, async/await)",
+    "Combine",
+    "AVFoundation & Streaming",
+    "PDFKit & Digital Signatures",
+    "Server-Driven UI",
+    "Core Data / SwiftData",
+    "StoreKit 2",
+    "Accessibility (VoiceOver)",
+    "Vision Pro & tvOS",
+    "CI/CD & App Store Connect"
+  ]
+};
+
 export const APPS = [
   {
-    id: "pill-reminder",
-    title: "Pill Reminder",
-    eyebrow: "• HEALTH & MEDICAL",
-    heading: "Everything Your Health Regimen Needs",
-    tagline: "Reliable Medicine & Supplement Tracker",
-    description: "Stay on top of your daily health regimen with reliable schedule notifications, dosage tracking, and automated refill alerts.",
-    category: "Health & Medical",
-    year: "2026",
-    status: "Published",
-    icon: "images/icons/pill.png",
-    screenshot: "images/pill.png",
-    theme: {
-      accent: "#3b82f6",
-      accentSoft: "rgba(59, 130, 246, 0.12)",
-      bgGradient: "linear-gradient(135deg, #4f8cf0 0%, #7db3f5 50%, #a8d2f8 100%)",
-      skyGlow: "rgba(79, 140, 240, 0.3)"
-    },
-    features: [
-      { step: "01", title: "SMART SCHEDULES", desc: "Custom daily & weekly medicine reminders." },
-      { step: "02", title: "REFILL ALERTS", desc: "Timely notifications before supply runs low." },
-      { step: "03", title: "HEALTH LOGS", desc: "Exportable history formatted for your doctor." },
-      { step: "04", title: "PRIVACY FIRST", desc: "100% private data stored on your device." }
+    "id": "inkstone",
+    "trackId": "6801701847",
+    "title": "Inkstone: Sign PDF & Docs",
+    "category": "Business & Productivity",
+    "year": "2026",
+    "tagline": "eSign Contracts & Share Encrypted Signing Links",
+    "description": "Prepare documents in seconds and share a secure signing link. Recipients sign directly in their mobile or desktop browser with zero app download or account creation required.",
+    "icon": "images/icons/inkstone.png",
+    "accent": "#6366f1",
+    "features": [
+      "Instant PDF & paper document import with camera scanning",
+      "Intuitive signature, initial, date, and text field placement",
+      "Encrypted browser signing links with zero recipient friction",
+      "Tamper-evident SHA-256 digital certificate & audit trail"
     ],
-    links: [
-      { label: "App Store", url: "https://apps.apple.com/app/id6794415548", type: "appstore" }
+    "links": [
+      {
+        "label": "Visit Website",
+        "url": "https://inkstone-app-prod.web.app",
+        "type": "web"
+      },
+      {
+        "label": "App Store",
+        "url": "https://apps.apple.com/app/id6801701847",
+        "type": "appstore"
+      }
+    ],
+    "appStoreRating": null,
+    "appStoreReviews": 0,
+    "screenshots": [
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5f/4a/85/5f4a85ba-998d-76f4-a7d1-2de6c0ff47db/01.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5f/4a/85/5f4a85ba-998d-76f4-a7d1-2de6c0ff47db/01.png/1280x0w.webp",
+        "alt": "Inkstone: Sign PDF & Docs Screenshot 1"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/82/14/338214dc-9025-6f22-9ee4-3b4d935c3bf2/02.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/82/14/338214dc-9025-6f22-9ee4-3b4d935c3bf2/02.png/1280x0w.webp",
+        "alt": "Inkstone: Sign PDF & Docs Screenshot 2"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a8/eb/ae/a8ebae6e-93d7-0823-7fa3-74502bed83f6/03.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a8/eb/ae/a8ebae6e-93d7-0823-7fa3-74502bed83f6/03.png/1280x0w.webp",
+        "alt": "Inkstone: Sign PDF & Docs Screenshot 3"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7d/fd/df/7dfddf85-498a-2aca-dcda-460a6fba66d1/04.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7d/fd/df/7dfddf85-498a-2aca-dcda-460a6fba66d1/04.png/1280x0w.webp",
+        "alt": "Inkstone: Sign PDF & Docs Screenshot 4"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e4/17/95/e41795f4-1bb1-a029-110a-16a8917e1504/05.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e4/17/95/e41795f4-1bb1-a029-110a-16a8917e1504/05.png/1280x0w.webp",
+        "alt": "Inkstone: Sign PDF & Docs Screenshot 5"
+      }
     ]
   },
   {
-    id: "grocery-price-scanner",
-    title: "Grocery Price Scanner",
-    eyebrow: "• SMART SHOPPING & FINANCE",
-    heading: "Smart Grocery Deals In Seconds",
-    tagline: "Unit Price Comparator & Budget Tracker",
-    description: "Compare true unit costs, scan store price tags, and instantly evaluate supermarket deals to stretch your grocery budget.",
-    category: "Shopping & Finance",
-    year: "2026",
-    status: "Published",
-    icon: "images/icons/grocery.png",
-    screenshot: "images/grocery.png",
-    theme: {
-      accent: "#f59e0b",
-      accentSoft: "rgba(245, 158, 11, 0.12)",
-      bgGradient: "linear-gradient(135deg, #e69d38 0%, #f7b767 50%, #fcd9a5 100%)",
-      skyGlow: "rgba(245, 158, 11, 0.3)"
-    },
-    features: [
-      { step: "01", title: "PRICE SCANNER", desc: "Camera tag scanner for instant unit costs." },
-      { step: "02", title: "UNIT COMPARATOR", desc: "Normalizes prices across $/oz, $/kg, and count." },
-      { step: "03", title: "DEAL EVALUATOR", desc: "Highlights the best value product on shelf." },
-      { step: "04", title: "INFLATION TRACKER", desc: "Monitors historical grocery price trends." }
+    "id": "pill-reminder",
+    "trackId": "6794415548",
+    "title": "Supplement & Pill Reminder",
+    "category": "Health & Medical",
+    "year": "2026",
+    "tagline": "Reliable Medicine & Supplement Tracker",
+    "description": "Stay on top of your daily health regimen with reliable schedule notifications, dosage tracking, automated refill alerts, and exportable doctor logs.",
+    "icon": "images/icons/pill.png",
+    "accent": "#3b82f6",
+    "features": [
+      "Smart recurring medication & vitamin schedules",
+      "Low-supply alerts before medicine runs out",
+      "Doctor-ready PDF & CSV health export",
+      "100% on-device data storage with zero tracking"
     ],
-    links: [
-      { label: "App Store", url: "https://apps.apple.com/app/id6773533304", type: "appstore" }
+    "links": [
+      {
+        "label": "App Store",
+        "url": "https://apps.apple.com/app/id6794415548",
+        "type": "appstore"
+      }
+    ],
+    "appStoreRating": "5.0",
+    "appStoreReviews": 2,
+    "screenshots": [
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/10/75/a01075c7-f77f-d55b-7b2c-9e12b47448f6/01_0_APP_IPHONE_67_0.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/10/75/a01075c7-f77f-d55b-7b2c-9e12b47448f6/01_0_APP_IPHONE_67_0.png/1280x0w.webp",
+        "alt": "Supplement & Pill Reminder Screenshot 1"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/00/38/56/003856f2-c9ad-f45c-4085-a386b44e84b0/02_1_APP_IPHONE_67_1.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/00/38/56/003856f2-c9ad-f45c-4085-a386b44e84b0/02_1_APP_IPHONE_67_1.png/1280x0w.webp",
+        "alt": "Supplement & Pill Reminder Screenshot 2"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/31/82/8331821d-06fc-d637-7d31-c74cc23eea37/03_2_APP_IPHONE_67_2.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/31/82/8331821d-06fc-d637-7d31-c74cc23eea37/03_2_APP_IPHONE_67_2.png/1280x0w.webp",
+        "alt": "Supplement & Pill Reminder Screenshot 3"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/18/e9/4c/18e94c8b-b12d-322e-6f54-ebd3c3a96f2f/04_3_APP_IPHONE_67_3.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/18/e9/4c/18e94c8b-b12d-322e-6f54-ebd3c3a96f2f/04_3_APP_IPHONE_67_3.png/1280x0w.webp",
+        "alt": "Supplement & Pill Reminder Screenshot 4"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/37/f8/82/37f88206-c78d-d36b-ebf7-9be0624c8dcf/05_4_APP_IPHONE_67_4.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/37/f8/82/37f88206-c78d-d36b-ebf7-9be0624c8dcf/05_4_APP_IPHONE_67_4.png/1280x0w.webp",
+        "alt": "Supplement & Pill Reminder Screenshot 5"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/89/06/d6/8906d622-4781-10bb-bae2-e67209d0f90c/06_5_APP_IPHONE_67_5.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/89/06/d6/8906d622-4781-10bb-bae2-e67209d0f90c/06_5_APP_IPHONE_67_5.png/1280x0w.webp",
+        "alt": "Supplement & Pill Reminder Screenshot 6"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/da/d8/c5/dad8c57f-528b-3a3c-8333-d1d691e23d2c/07_6_APP_IPHONE_67_6.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/da/d8/c5/dad8c57f-528b-3a3c-8333-d1d691e23d2c/07_6_APP_IPHONE_67_6.png/1280x0w.webp",
+        "alt": "Supplement & Pill Reminder Screenshot 7"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a6/c7/2d/a6c72d17-54cb-fd8d-2793-c07300999878/08_7_APP_IPHONE_67_7.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a6/c7/2d/a6c72d17-54cb-fd8d-2793-c07300999878/08_7_APP_IPHONE_67_7.png/1280x0w.webp",
+        "alt": "Supplement & Pill Reminder Screenshot 8"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/54/a1/9a/54a19ab7-6075-657f-b5fb-a88f7e8af26a/09_8_APP_IPHONE_67_8.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/54/a1/9a/54a19ab7-6075-657f-b5fb-a88f7e8af26a/09_8_APP_IPHONE_67_8.png/1280x0w.webp",
+        "alt": "Supplement & Pill Reminder Screenshot 9"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2d/e7/56/2de75670-c710-5d93-169a-f7c3ba64b352/10_9_APP_IPHONE_67_9.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2d/e7/56/2de75670-c710-5d93-169a-f7c3ba64b352/10_9_APP_IPHONE_67_9.png/1280x0w.webp",
+        "alt": "Supplement & Pill Reminder Screenshot 10"
+      }
     ]
   },
   {
-    id: "alcohol-free-tracker",
-    title: "Alcohol Free Tracker",
-    eyebrow: "• LIFESTYLE & MINDFULNESS",
-    heading: "Mindful Sobriety Every Step of the Way",
-    tagline: "Sobriety Streak & Milestone Companion",
-    description: "Track your sobriety streak, celebrate milestone achievements, and monitor health improvements in a serene, private journal.",
-    category: "Lifestyle & Wellness",
-    year: "2026",
-    status: "Published",
-    icon: "images/icons/alcohol.png",
-    screenshot: "images/alcohol.png",
-    theme: {
-      accent: "#10b981",
-      accentSoft: "rgba(16, 185, 129, 0.12)",
-      bgGradient: "linear-gradient(135deg, #3aa882 0%, #6ecfae 50%, #b2e8d5 100%)",
-      skyGlow: "rgba(16, 185, 129, 0.3)"
-    },
-    features: [
-      { step: "01", title: "STREAK COUNTER", desc: "Live day, hour, and milestone tracking." },
-      { step: "02", title: "SAVINGS CALCULATOR", desc: "Calculates money and calories saved." },
-      { step: "03", title: "MINDFUL JOURNAL", desc: "Reflect on cravings and daily progress." },
-      { step: "04", title: "BADGES & STATS", desc: "Unlock motivation milestones along your journey." }
+    "id": "grocery-price-scanner",
+    "trackId": "6773533304",
+    "title": "Grocery Price Scanner",
+    "category": "Shopping & Finance",
+    "year": "2026",
+    "tagline": "Unit Price Comparator & Budget Tracker",
+    "description": "Instantly scan supermarket price tags, normalize unit prices across ounces, grams, and count, and discover the true best deal before checkout.",
+    "icon": "images/icons/grocery.png",
+    "accent": "#f59e0b",
+    "features": [
+      "Instant camera tag scanning & OCR price recognition",
+      "Automatic unit cost normalization ($/oz, $/lb, $/kg)",
+      "Multi-store price comparison & historical inflation log",
+      "Offline-first speed designed for quick supermarket aisles"
     ],
-    links: [
-      { label: "Visit Website", url: "https://liuys614.github.io/AlcoholFreeTracker-Website", type: "web" },
-      { label: "App Store", url: "https://apps.apple.com/app/id6791035303", type: "appstore" }
+    "links": [
+      {
+        "label": "Visit Website",
+        "url": "https://groceryprice.app/",
+        "type": "web"
+      },
+      {
+        "label": "App Store",
+        "url": "https://apps.apple.com/app/id6773533304",
+        "type": "appstore"
+      }
+    ],
+    "appStoreRating": "5.0",
+    "appStoreReviews": 3,
+    "screenshots": [
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/21/25/9c/21259cd0-85fc-f860-7230-2e6903edc86a/screen_1_6.7.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/21/25/9c/21259cd0-85fc-f860-7230-2e6903edc86a/screen_1_6.7.png/1280x0w.webp",
+        "alt": "Grocery Price Scanner Screenshot 1"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bf/b4/70/bfb47097-20fb-18f2-c719-9c9e7fa44667/screen_2_6.7.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bf/b4/70/bfb47097-20fb-18f2-c719-9c9e7fa44667/screen_2_6.7.png/1280x0w.webp",
+        "alt": "Grocery Price Scanner Screenshot 2"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bb/29/89/bb298941-6ed3-eab1-fb1d-aac9d83cda94/screen_3_6.7.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bb/29/89/bb298941-6ed3-eab1-fb1d-aac9d83cda94/screen_3_6.7.png/1280x0w.webp",
+        "alt": "Grocery Price Scanner Screenshot 3"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f7/35/51/f73551ca-f05a-f7db-2b8d-26e90c6da90f/screen_4_6.7.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f7/35/51/f73551ca-f05a-f7db-2b8d-26e90c6da90f/screen_4_6.7.png/1280x0w.webp",
+        "alt": "Grocery Price Scanner Screenshot 4"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/67/d0/27/67d0272a-d320-967c-c2b0-6cb0a841bc1e/screen_5_6.7.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/67/d0/27/67d0272a-d320-967c-c2b0-6cb0a841bc1e/screen_5_6.7.png/1280x0w.webp",
+        "alt": "Grocery Price Scanner Screenshot 5"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/77/e1/2b/77e12b3e-5ef4-3b0c-ab82-3ac72bb5fe19/screen_6_6.7.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/77/e1/2b/77e12b3e-5ef4-3b0c-ab82-3ac72bb5fe19/screen_6_6.7.png/1280x0w.webp",
+        "alt": "Grocery Price Scanner Screenshot 6"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3f/af/ac/3fafaccd-caf3-e7f6-19e1-9ebda1720f0d/screen_7_6.7.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3f/af/ac/3fafaccd-caf3-e7f6-19e1-9ebda1720f0d/screen_7_6.7.png/1280x0w.webp",
+        "alt": "Grocery Price Scanner Screenshot 7"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/e4/0a/cbe40a69-ce6c-5426-2e9d-a4404bdd0a41/screen_8_6.7.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/e4/0a/cbe40a69-ce6c-5426-2e9d-a4404bdd0a41/screen_8_6.7.png/1280x0w.webp",
+        "alt": "Grocery Price Scanner Screenshot 8"
+      }
     ]
   },
   {
-    id: "agricola-scorer",
-    title: "Agricola Scorer",
-    eyebrow: "• BOARD GAMES & STRATEGY",
-    heading: "Effortless Board Game Scorekeeping",
-    tagline: "Agricola Score Calculator Companion",
-    description: "Effortlessly score your Agricola board game sessions with automatic points calculation for fields, pastures, livestock, and card bonuses.",
-    category: "Board Games",
-    year: "2026",
-    status: "Published",
-    icon: "images/icons/agricola.png",
-    screenshot: "images/agricola.png",
-    theme: {
-      accent: "#15803d",
-      accentSoft: "rgba(21, 128, 61, 0.12)",
-      bgGradient: "linear-gradient(135deg, #3d8b57 0%, #6cb885 50%, #abdfbc 100%)",
-      skyGlow: "rgba(21, 128, 61, 0.3)"
-    },
-    features: [
-      { step: "01", title: "AUTO SCOREPAD", desc: "Calculates fields, grain, and livestock." },
-      { step: "02", title: "EXPANSIONS", desc: "Full support for Farmers of the Moor." },
-      { step: "03", title: "STATS HISTORY", desc: "Saves previous game logs and high scores." },
-      { step: "04", title: "OFFLINE READY", desc: "Works completely offline with fast input." }
+    "id": "alcohol-free-tracker",
+    "trackId": "6791035303",
+    "title": "Alcohol Free Tracker",
+    "category": "Lifestyle & Wellness",
+    "year": "2026",
+    "tagline": "Mindful Sobriety & Habit Milestone Companion",
+    "description": "Track your sobriety streak in real-time, celebrate health and financial milestones, and reflect in a private, distraction-free journal.",
+    "icon": "images/icons/alcohol.png",
+    "accent": "#10b981",
+    "features": [
+      "Live counter for days, hours, and sobriety streaks",
+      "Calculators for money and calories saved over time",
+      "Private journal for daily reflection & trigger tracking",
+      "Beautiful milestone badges and inspirational widgets"
     ],
-    links: [
-      { label: "Visit Website", url: "https://agricolascorer.io", type: "web" },
-      { label: "App Store", url: "https://apps.apple.com/app/id6741305872", type: "appstore" }
+    "links": [
+      {
+        "label": "Visit Website",
+        "url": "https://liuys614.github.io/AlcoholFreeTracker-Website",
+        "type": "web"
+      },
+      {
+        "label": "App Store",
+        "url": "https://apps.apple.com/app/id6791035303",
+        "type": "appstore"
+      }
+    ],
+    "appStoreRating": "5.0",
+    "appStoreReviews": 1,
+    "screenshots": [
+      {
+        "thumb": "images/screenshots/alcohol/0_APP_IPHONE_69_0_thumb.jpg",
+        "full": "images/screenshots/alcohol/0_APP_IPHONE_69_0.jpg",
+        "alt": "Alcohol Free Tracker Screenshot 1"
+      },
+      {
+        "thumb": "images/screenshots/alcohol/1_APP_IPHONE_69_1_thumb.jpg",
+        "full": "images/screenshots/alcohol/1_APP_IPHONE_69_1.jpg",
+        "alt": "Alcohol Free Tracker Screenshot 2"
+      },
+      {
+        "thumb": "images/screenshots/alcohol/2_APP_IPHONE_69_2_thumb.jpg",
+        "full": "images/screenshots/alcohol/2_APP_IPHONE_69_2.jpg",
+        "alt": "Alcohol Free Tracker Screenshot 3"
+      },
+      {
+        "thumb": "images/screenshots/alcohol/3_APP_IPHONE_69_3_thumb.jpg",
+        "full": "images/screenshots/alcohol/3_APP_IPHONE_69_3.jpg",
+        "alt": "Alcohol Free Tracker Screenshot 4"
+      },
+      {
+        "thumb": "images/screenshots/alcohol/4_APP_IPHONE_69_4_thumb.jpg",
+        "full": "images/screenshots/alcohol/4_APP_IPHONE_69_4.jpg",
+        "alt": "Alcohol Free Tracker Screenshot 5"
+      },
+      {
+        "thumb": "images/screenshots/alcohol/5_APP_IPHONE_69_5_thumb.jpg",
+        "full": "images/screenshots/alcohol/5_APP_IPHONE_69_5.jpg",
+        "alt": "Alcohol Free Tracker Screenshot 6"
+      },
+      {
+        "thumb": "images/screenshots/alcohol/6_APP_IPHONE_69_6_thumb.jpg",
+        "full": "images/screenshots/alcohol/6_APP_IPHONE_69_6.jpg",
+        "alt": "Alcohol Free Tracker Screenshot 7"
+      },
+      {
+        "thumb": "images/screenshots/alcohol/7_APP_IPHONE_69_7_thumb.jpg",
+        "full": "images/screenshots/alcohol/7_APP_IPHONE_69_7.jpg",
+        "alt": "Alcohol Free Tracker Screenshot 8"
+      },
+      {
+        "thumb": "images/screenshots/alcohol/8_APP_IPHONE_69_8_thumb.jpg",
+        "full": "images/screenshots/alcohol/8_APP_IPHONE_69_8.jpg",
+        "alt": "Alcohol Free Tracker Screenshot 9"
+      },
+      {
+        "thumb": "images/screenshots/alcohol/9_APP_IPHONE_69_9_thumb.jpg",
+        "full": "images/screenshots/alcohol/9_APP_IPHONE_69_9.jpg",
+        "alt": "Alcohol Free Tracker Screenshot 10"
+      }
+    ]
+  },
+  {
+    "id": "agricola-scorer",
+    "trackId": "6741305872",
+    "title": "Agricola Score Sheet",
+    "category": "Board Games & Strategy",
+    "year": "2026",
+    "tagline": "Effortless Board Game Scorekeeping",
+    "description": "Effortlessly score your Agricola board game sessions with automated scoring for pastures, grain, livestock, and Farmers of the Moor expansions.",
+    "icon": "images/icons/agricola.png",
+    "accent": "#16a34a",
+    "features": [
+      "Intuitive digital scorepad replacing paper score sheets",
+      "Full support for Farmers of the Moor & base game expansions",
+      "Game history, player leaderboard, and high-score records",
+      "Fast, touch-optimized input with zero internet required"
+    ],
+    "links": [
+      {
+        "label": "Visit Website",
+        "url": "https://agricolascorer.io",
+        "type": "web"
+      },
+      {
+        "label": "App Store",
+        "url": "https://apps.apple.com/app/id6741305872",
+        "type": "appstore"
+      }
+    ],
+    "appStoreRating": "5.0",
+    "appStoreReviews": 2,
+    "screenshots": [
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a2/27/09/a22709fa-fe89-3bb4-d601-aa01ec97b1b2/01.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a2/27/09/a22709fa-fe89-3bb4-d601-aa01ec97b1b2/01.png/1280x0w.webp",
+        "alt": "Agricola Score Sheet Screenshot 1"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/44/e7/b2/44e7b2ef-fda9-4680-a318-7ee3f2faf460/02.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/44/e7/b2/44e7b2ef-fda9-4680-a318-7ee3f2faf460/02.png/1280x0w.webp",
+        "alt": "Agricola Score Sheet Screenshot 2"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/0d/6c/8e0d6c0f-7e9c-3f8d-3fa4-acbfce576cdc/03.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/0d/6c/8e0d6c0f-7e9c-3f8d-3fa4-acbfce576cdc/03.png/1280x0w.webp",
+        "alt": "Agricola Score Sheet Screenshot 3"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e3/90/94/e3909427-07fa-8763-3b85-9c8f7c547b88/04.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e3/90/94/e3909427-07fa-8763-3b85-9c8f7c547b88/04.png/1280x0w.webp",
+        "alt": "Agricola Score Sheet Screenshot 4"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7b/2c/cb/7b2ccb75-a83a-bc95-870a-a905e332b552/05.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7b/2c/cb/7b2ccb75-a83a-bc95-870a-a905e332b552/05.png/1280x0w.webp",
+        "alt": "Agricola Score Sheet Screenshot 5"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6b/cd/7a/6bcd7a3f-d956-66cb-427c-76368b7ea104/06.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6b/cd/7a/6bcd7a3f-d956-66cb-427c-76368b7ea104/06.png/1280x0w.webp",
+        "alt": "Agricola Score Sheet Screenshot 6"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/56/42/9f564256-2eb0-c6f2-d120-7c94714c4663/07.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/56/42/9f564256-2eb0-c6f2-d120-7c94714c4663/07.png/1280x0w.webp",
+        "alt": "Agricola Score Sheet Screenshot 7"
+      },
+      {
+        "thumb": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ae/91/a7/ae91a70c-383a-c7c7-26c4-89d8a40ab0a4/08.png/640x0w.webp",
+        "full": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ae/91/a7/ae91a70c-383a-c7c7-26c4-89d8a40ab0a4/08.png/1280x0w.webp",
+        "alt": "Agricola Score Sheet Screenshot 8"
+      }
     ]
   }
 ];
