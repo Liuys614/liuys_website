@@ -865,41 +865,7 @@ a {
   display: flex;
   flex-direction: column;
   min-width: 0;
-}
-
-.gallery-header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-bottom: 0.85rem;
-}
-
-.gallery-controls {
-  display: flex;
-  gap: 0.45rem;
-}
-
-.gallery-nav-btn {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1.5px solid var(--color-black);
-  background: #ffffff;
-  color: var(--color-black);
-  display: flex;
-  align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
-}
-
-.gallery-nav-btn:hover {
-  background: var(--color-black);
-  color: #ffffff;
-}
-
-.gallery-nav-btn svg {
-  width: 16px;
-  height: 16px;
 }
 
 /* Scrollable Screenshot Track */

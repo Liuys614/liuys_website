@@ -139,17 +139,6 @@ function renderProjects() {
 
         <!-- Right Gallery Column -->
         <div class="project-right">
-          <div class="gallery-header">
-            <div class="gallery-controls">
-              <button type="button" class="gallery-nav-btn btn-track-left" data-target="track-${app.id}" aria-label="Scroll left">
-                ${ICONS.arrowLeft}
-              </button>
-              <button type="button" class="gallery-nav-btn btn-track-right" data-target="track-${app.id}" aria-label="Scroll right">
-                ${ICONS.arrowRight}
-              </button>
-            </div>
-          </div>
-
           <div class="project-screenshots-track" id="track-${app.id}">
             ${app.screenshots.map((s, sIdx) => `
               <div class="screenshot-tile" data-app-index="${appIdx}" data-screenshot-index="${sIdx}">
@@ -181,23 +170,6 @@ function renderProjects() {
  * Attach Event Handlers for Carousel Tracks, Mouse Scrolling & Lightbox
  */
 function attachGalleryControls() {
-  // Arrow Button Navigation
-  document.querySelectorAll(".btn-track-left").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const trackId = btn.getAttribute("data-target");
-      const track = document.getElementById(trackId);
-      if (track) track.scrollBy({ left: -360, behavior: "smooth" });
-    });
-  });
-
-  document.querySelectorAll(".btn-track-right").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const trackId = btn.getAttribute("data-target");
-      const track = document.getElementById(trackId);
-      if (track) track.scrollBy({ left: 360, behavior: "smooth" });
-    });
-  });
-
   // Track Drag Scrolling (Horizontal wheel is handled natively by the browser)
   document.querySelectorAll(".project-screenshots-track").forEach(track => {
     // Mouse Click & Drag Scrolling
