@@ -198,17 +198,9 @@ function attachGalleryControls() {
     });
   });
 
-  // Track Mouse Wheel & Drag Scrolling
+  // Track Drag Scrolling (Horizontal wheel is handled natively by the browser)
   document.querySelectorAll(".project-screenshots-track").forEach(track => {
-    // 1. Mouse Wheel Scrolling (Vertical wheel scrolls horizontally)
-    track.addEventListener("wheel", (e) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        track.scrollBy({ left: e.deltaY * 1.6, behavior: "auto" });
-      }
-    }, { passive: false });
-
-    // 2. Mouse Click & Drag Scrolling
+    // Mouse Click & Drag Scrolling
     let isDown = false;
     let startX = 0;
     let scrollLeft = 0;
