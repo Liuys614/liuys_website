@@ -489,7 +489,7 @@ a {
   align-items: center;
   white-space: nowrap;
   gap: 2rem;
-  animation: scroll-marquee 28s linear infinite;
+  animation: scroll-marquee 38s linear infinite;
 }
 
 @keyframes scroll-marquee {
