@@ -28,7 +28,7 @@ export const PROFILE = {
       "id": "exp-charter",
       "type": "work",
       "period": "2023 – 2026",
-      "role": "iOS Software Engineer (Contract)",
+      "role": "iOS Software Engineer",
       "organization": "Charter Communications — Spectrum TV",
       "location": "Denver, CO",
       "highlights": [
