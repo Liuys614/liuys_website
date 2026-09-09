@@ -1,15 +1,15 @@
 // Portfolio Data for Louis Liu
 export const PROFILE = {
   "name": "Louis Liu",
-  "role": "iOS Software Engineer",
+  "role": "Mobile Software Engineer",
   "location": "United States",
   "email": "liuys614@gmail.com",
   "github": "https://github.com/liuys614",
   "linkedin": "https://www.linkedin.com/in/louisliu-ios",
   "avatar": "images/profile.jpg",
-  "headline": "iOS Software Engineer",
-  "bio": "I am an iOS software engineer and indie app maker passionate about crafting Apple platform experiences that scale effortlessly to millions of users. Obsessed with UX details, accessibility, and thoughtful visual cues, I dedicate my craft to eliminating user friction, minimizing steps, and engineering interfaces that feel remarkably smooth and intuitive.",
-  "status": "Available for iOS Opportunities",
+  "headline": "Mobile Software Engineer",
+  "bio": "I am a mobile software engineer and indie app maker passionate about crafting high-performance iOS and Android experiences that scale effortlessly to millions of users. Obsessed with UX details, accessibility, and thoughtful visual cues, I dedicate my craft to eliminating user friction, minimizing steps, and engineering interfaces that feel remarkably smooth and intuitive.",
+  "status": "Available for Mobile Opportunities",
   "timeline": [
     {
       "id": "exp-indie",

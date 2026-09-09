@@ -1,9 +1,9 @@
-# Louis Liu — Senior iOS Software Engineer & App Maker
+# Louis Liu — Senior Mobile Software Engineer & App Maker
 
 Personal portfolio and mobile app showcase website for **Louis Liu**, deployed on **GitHub Pages** (`liuys614.github.io`).
 
 Designed with a modern, minimal Apple/Linear aesthetic highlighting:
-- **Hero & Profile**: Personal photo, background, and core focus on native Apple platforms (iOS, tvOS, visionOS).
+- **Hero & Profile**: Personal photo, background, and core focus on mobile engineering across iOS and Android platforms.
 - **Engineering Track Record**: Highlighting enterprise-scale streaming engineering (Charter Communications / Spectrum TV serving millions of subscribers) alongside independent App Store creations.
 - **Production iOS App Rows**: Dedicated showcase rows for 5 published apps, featuring live App Store metadata, key feature breakdowns, App Store download links, and smooth horizontal screenshot carousels.
 - **Interactive Lightbox**: Fullscreen, keyboard-navigable (`←` `→` `ESC`) screenshot inspection.
