@@ -8,7 +8,7 @@ export const PROFILE = {
   "linkedin": "https://www.linkedin.com/in/louisliu-ios",
   "avatar": "images/profile.jpg",
   "headline": "iOS Software Engineer",
-  "bio": "I am an iOS software engineer and indie app maker passionate about crafting high-performance Apple platform experiences that not only perform at enterprise scale for millions of users, but also delight people with seamless everyday functionality.",
+  "bio": "I am an iOS software engineer and indie app maker passionate about crafting Apple platform experiences that scale effortlessly to millions of users. Obsessed with UX details, accessibility, and thoughtful visual cues, I dedicate my craft to eliminating user friction, minimizing steps, and engineering interfaces that feel remarkably smooth and intuitive.",
   "status": "Available for iOS Opportunities",
   "timeline": [
     {
