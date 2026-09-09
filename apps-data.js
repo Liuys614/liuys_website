@@ -78,12 +78,14 @@ export const PROFILE = {
       "id": "exp-syntec",
       "type": "work",
       "period": "Nov 2014 – Feb 2018",
-      "role": "Software Engineer",
-      "organization": "Syntec Technology",
+      "role": "Embedded Software Engineer",
+      "organization": "Syntec Technology (CNC Controllers & Industrial IoT)",
       "location": "Taiwan",
       "highlights": [
-        "Architected and deployed cloud telemetry infrastructure on Microsoft Azure for industrial IoT and smart factory automation.",
-        "Refactored concurrent networking layers in CNC controller systems using OOP and MVC, reducing packet loss and connection failures by 20%."
+        "Migrated CNC motion controllers from Windows CE to Embedded Linux, porting real-time control software in C/C++ and re-hosting device daemons as Linux system services.",
+        "Architected an Industrial IoT telemetry platform streaming CNC machine data via MQTT to cloud backends, designing compact serialization schemas for bandwidth-constrained links.",
+        "Engineered low-level device communication drivers and concurrent socket networking, diagnosing shop-floor connectivity faults with Wireshark to reduce packet loss by 20%.",
+        "Founded and led the Smart Factory engineering team across firmware, cloud, and web, successfully securing and delivering the company's first commercial deployment."
       ]
     },
     {
