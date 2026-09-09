@@ -30,7 +30,7 @@ export const PROFILE = {
       "period": "2023 – 2026",
       "role": "iOS Software Engineer (Contract)",
       "organization": "Charter Communications — Spectrum TV",
-      "location": "Remote, US",
+      "location": "Denver, CO",
       "highlights": [
         "Architected and delivered the complete VOD/cDVR player overlay from scratch in SwiftUI & UIKit, including custom scrubber, PiP, AirPlay, and Chromecast integration.",
         "Built the Seamless Entertainment swimlane end-to-end using Server-Driven UI (UINode), deep link routing, and full VoiceOver accessibility.",
