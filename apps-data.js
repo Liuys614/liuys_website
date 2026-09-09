@@ -42,12 +42,14 @@ export const PROFILE = {
       "id": "exp-synopsys",
       "type": "work",
       "period": "Aug 2021 – Oct 2022",
-      "role": "Software Senior Engineer",
-      "organization": "Synopsys Inc",
+      "role": "Compiler Senior Software Engineer",
+      "organization": "Synopsys Inc (Verilog Compiler & Emulation)",
       "location": "Hsinchu, Taiwan",
       "highlights": [
-        "Optimized a SW/HW co-simulation acceleration platform inside VCS for ZEBU hardware emulators.",
-        "Achieved a 20x performance speedup while actively supporting Tier-1 semiconductor IC design partners."
+        "Developed and optimized C/C++ compiler and runtime software inside VCS (Verilog Compiler Simulator) for ZeBu FPGA-based HW/SW co-simulation platforms.",
+        "Achieved a 20x simulation performance acceleration for Tier-1 semiconductor design partners by engineering memory-efficient APIs and low-latency IPC bridges.",
+        "Engineered Linux-based simulation infrastructure, debugging complex HW/SW integration and timing issues across compiler, simulator, and emulator verification flows.",
+        "Authored automated diagnostic suites and test pipelines in Python and Bash to validate hardware models, compile configurations, and simulator integrity."
       ]
     },
     {
