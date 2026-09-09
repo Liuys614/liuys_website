@@ -94,7 +94,7 @@ export const PROFILE = {
       "organization": "National Chiao-Tung University (NCTU)",
       "location": "Hsinchu, Taiwan",
       "highlights": [
-        "Focused on computer systems, software architecture, algorithm design, and distributed systems."
+        "Published IEEE research: <a href=\"https://ieeexplore.ieee.org/document/7051495\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"timeline-link\">\"Foveation-Based Image Quality Assessment\"</a> at IEEE VCIP (Visual Communications and Image Processing Conference)."
       ]
     },
     {
@@ -105,7 +105,7 @@ export const PROFILE = {
       "organization": "National Chiao-Tung University (NCTU)",
       "location": "Hsinchu, Taiwan",
       "highlights": [
-        "Core computer science curriculum: Data Structures, Algorithms, Operating Systems, Computer Networks, and Object-Oriented Programming."
+        "Core computer science foundation: Data Structures, Algorithms, Operating Systems, Computer Architecture, and Object-Oriented Software Design."
       ]
     }
   ],
