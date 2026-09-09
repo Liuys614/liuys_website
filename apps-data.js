@@ -56,12 +56,13 @@ export const PROFILE = {
       "id": "exp-mindflow",
       "type": "work",
       "period": "Aug 2020 – May 2021",
-      "role": "Founder & Tech Lead",
+      "role": "Founder & Instructor",
       "organization": "Mindflow Education Studio",
       "location": "Taiwan",
       "highlights": [
-        "Founded an educational technology startup studio managing digital platforms and curriculum delivery.",
-        "Taught computer science and coding principles to young students, fostering algorithmic thinking."
+        "Established and scaled an independent education startup studio, overseeing product roadmap, digital presence, student acquisition, and financial budgeting.",
+        "Engineered digital learning portals and content management workflows to streamline course delivery and interactive student assignments.",
+        "Designed and instructed hands-on computer science, computational logic, and coding curricula for K-12 students, mentoring over 100+ learners in algorithmic problem-solving."
       ]
     },
     {
