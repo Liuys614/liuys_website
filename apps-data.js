@@ -138,10 +138,10 @@ export const APPS = [
     "icon": "images/icons/inkstone.png",
     "accent": "#6366f1",
     "features": [
-      "Instant PDF & paper document import with camera scanning",
-      "Intuitive signature, initial, date, and text field placement",
-      "Encrypted browser signing links with zero recipient friction",
-      "Tamper-evident SHA-256 digital certificate & audit trail"
+      "Instant PDF import & camera document scanning",
+      "Signatures, initials, dates, and form fields",
+      "Encrypted browser signing links with zero friction",
+      "SHA-256 digital certificate & audit trail"
     ],
     "links": [
       {
@@ -199,7 +199,7 @@ export const APPS = [
       "Smart recurring medication & vitamin schedules",
       "Low-supply alerts before medicine runs out",
       "Doctor-ready PDF & CSV health export",
-      "100% on-device data storage with zero tracking"
+      "100% on-device privacy with zero tracking"
     ],
     "links": [
       {
@@ -274,10 +274,10 @@ export const APPS = [
     "icon": "images/icons/grocery.png",
     "accent": "#f59e0b",
     "features": [
-      "Instant camera tag scanning & OCR price recognition",
+      "Camera tag scanning & OCR price recognition",
       "Automatic unit cost normalization ($/oz, $/lb, $/kg)",
-      "Multi-store price comparison & historical inflation log",
-      "Offline-first speed designed for quick supermarket aisles"
+      "Multi-store price comparison & inflation log",
+      "Offline-first speed for quick supermarket aisles"
     ],
     "links": [
       {
@@ -347,10 +347,10 @@ export const APPS = [
     "icon": "images/icons/alcohol.png",
     "accent": "#10b981",
     "features": [
-      "Live counter for days, hours, and sobriety streaks",
-      "Calculators for money and calories saved over time",
-      "Private journal for daily reflection & trigger tracking",
-      "Beautiful milestone badges and inspirational widgets"
+      "Real-time streak counter for days & hours",
+      "Calculators for money and calories saved",
+      "Private reflection journal & trigger tracker",
+      "Milestone badges and customizable widgets"
     ],
     "links": [
       {
@@ -430,10 +430,10 @@ export const APPS = [
     "icon": "images/icons/agricola.png",
     "accent": "#16a34a",
     "features": [
-      "Intuitive digital scorepad replacing paper score sheets",
-      "Full support for Farmers of the Moor & base game expansions",
-      "Game history, player leaderboard, and high-score records",
-      "Fast, touch-optimized input with zero internet required"
+      "Digital scorepad replacing paper score sheets",
+      "Full expansion & Farmers of the Moor support",
+      "Game history, leaderboard, and high scores",
+      "Fast, touch-first input with zero offline friction"
     ],
     "links": [
       {
