@@ -66,12 +66,14 @@ export const PROFILE = {
       "id": "exp-phison",
       "type": "work",
       "period": "Jun 2018 – Aug 2020",
-      "role": "Firmware Engineer",
-      "organization": "Phison Electronics",
+      "role": "Senior Firmware Engineer",
+      "organization": "Phison Electronics (NVMe & SSD Controllers)",
       "location": "Taiwan",
       "highlights": [
-        "Developed NVMe 1.3 protocol logic and implemented low-power mode (LPM) hibernation architecture.",
-        "Reduced power consumption by 80% while strictly preserving high data integrity under heavy I/O loads."
+        "Designed and programmed SSD controller firmware in C/C++ implementing NVMe 1.3 protocol and PCIe initialization sequences for SD 7.0 (SD Express).",
+        "Engineered Flash Translation Layer (FTL) modules—optimizing garbage collection, wear leveling, and bad block management—and implemented RTD3 low-power mode (LPM) hibernation, slashing power consumption by 80%.",
+        "Built a C++ SSD simulation framework to model NVMe submission/completion queues (SQ/CQ) with NAND flash memory fetching and data pipeline processing.",
+        "Automated hardware-in-the-loop (HIL) diagnostic testing and firmware deployment with custom Python and PowerShell pipelines."
       ]
     },
     {
