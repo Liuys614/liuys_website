@@ -503,5 +503,35 @@ export const APPS = [
         "alt": "Agricola Score Sheet Screenshot 8"
       }
     ]
+  },
+  {
+    "id": "quit-weed",
+    "trackId": "6825549617",
+    "title": "T-Break & Quit Weed: Unfog",
+    "category": "Health & Fitness",
+    "year": "2026",
+    "tagline": "THC Detox Tracker & Craving SOS",
+    "description": "Track cannabis-free days, calm withdrawal anxiety with 4-7-8 vagus nerve breathing, monitor CB1 receptor recovery, and calculate dispensary savings—100% private and offline.",
+    "icon": "/images/icons/weed.png",
+    "accent": "#0d9488",
+    "features": [
+      "Craving SOS 4-7-8 vagus nerve breathing tool",
+      "CB1 receptor & clinical dopamine recovery timelines",
+      "Dual mode: 30-Day T-Break or permanent cessation",
+      "Real-time dispensary spending and savings counter"
+    ],
+    "links": [
+      {
+        "label": "Visit Website",
+        "url": "/quit-weed/",
+        "type": "web"
+      },
+      {
+        "label": "App Store",
+        "url": "https://apps.apple.com/app/id6825549617",
+        "type": "appstore"
+      }
+    ],
+    "screenshots": []
   }
 ];
