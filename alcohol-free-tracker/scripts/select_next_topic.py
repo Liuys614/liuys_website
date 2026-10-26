@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """
 Hybrid Keyword Discovery Selector for Alcohol Free Tracker Programmatic SEO.
-1. Checks Google Search Console (via REST API / gcloud ADC / gum) for Strike Zone queries:
+1. Checks Google Search Console (via REST API / gcloud ADC) for Strike Zone queries:
    Position 15..55, sorted by Impressions DESC, excluding already-published topics.
-   Tries primary gsc_property first, then sc-domain:ysliustudio.com, then legacy property.
+   Filters by page prefix (`site_url`) when querying a domain property (`sc-domain:ysliustudio.com`).
 2. Falls back to the next pending high-intent topic in `guides/topic_queue.json` during cold start.
 """
 import json
 import os
-import shutil
 import subprocess
 from datetime import datetime, timedelta
 
@@ -26,18 +25,27 @@ def load_json(path, default):
         return json.load(f)
 
 
-def query_gsc_property(site_prop: str, start_date: str, end_date: str, token: str, published_keywords: set):
+def query_gsc_property(site_prop: str, page_prefix: str, start_date: str, end_date: str, token: str, published_keywords: set):
     import urllib.request
     import urllib.parse
     import urllib.error
     encoded_site = urllib.parse.quote(site_prop, safe="")
     url = f"https://searchconsole.googleapis.com/webmasters/v3/sites/{encoded_site}/searchAnalytics/query"
-    payload = json.dumps({
+    body = {
         "startDate": start_date,
         "endDate": end_date,
         "dimensions": ["query"],
         "rowLimit": 100
-    }).encode("utf-8")
+    }
+    if site_prop.startswith("sc-domain:") and page_prefix:
+        body["dimensionFilterGroups"] = [{
+            "filters": [{
+                "dimension": "page",
+                "operator": "includingRegex",
+                "expression": page_prefix
+            }]
+        }]
+    payload = json.dumps(body).encode("utf-8")
     req = urllib.request.Request(url, data=payload, headers={
         "Authorization": f"Bearer {token}",
         "Content-Type": "application/json",
@@ -87,9 +95,10 @@ def query_gsc_property(site_prop: str, start_date: str, end_date: str, token: st
 def try_gsc_strike_zone(cfg: dict, published_keywords: set):
     end_date = (datetime.now() - timedelta(days=2)).strftime("%Y-%m-%d")
     start_date = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
-    primary_prop = cfg.get("gsc_property", "https://ysliustudio.com/alcohol-free-tracker/")
+    primary_prop = cfg.get("gsc_property", "sc-domain:ysliustudio.com")
+    page_prefix = cfg.get("site_url", "https://ysliustudio.com/alcohol-free-tracker")
     properties_to_try = []
-    for p in [primary_prop, "https://ysliustudio.com/", "sc-domain:ysliustudio.com", "https://liuys614.github.io/AlcoholFreeTracker-Website/"]:
+    for p in [primary_prop, "sc-domain:ysliustudio.com", "https://liuys614.github.io/AlcoholFreeTracker-Website/"]:
         if p and p not in properties_to_try:
             properties_to_try.append(p)
 
@@ -102,7 +111,7 @@ def try_gsc_strike_zone(cfg: dict, published_keywords: set):
         if token_proc.returncode == 0 and token_proc.stdout.strip():
             token = token_proc.stdout.strip().splitlines()[-1]
             for prop in properties_to_try:
-                topic, reason = query_gsc_property(prop, start_date, end_date, token, published_keywords)
+                topic, reason = query_gsc_property(prop, page_prefix, start_date, end_date, token, published_keywords)
                 if topic:
                     return topic, None
                 if reason:
