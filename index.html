@@ -3,38 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Louis Liu — Mobile Software Engineer & App Maker</title>
-  <meta name="description" content="Personal portfolio of Louis Liu. Senior Mobile Software Engineer & Independent Creator crafting iOS & Android apps serving millions of users." />
+  <title>YS Liu Studio — Independent Mobile App Studio</title>
+  <meta name="description" content="YS Liu Studio crafts fast, intuitive, and privacy-first iOS & Android applications for productivity, health, finance, and everyday utility." />
+  <link rel="canonical" href="https://ysliustudio.com/" />
+  <meta property="og:title" content="YS Liu Studio — Independent Mobile App Studio" />
+  <meta property="og:description" content="Crafting fast, intuitive, and privacy-first native mobile apps for everyday utility." />
+  <meta property="og:url" content="https://ysliustudio.com/" />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "YS Liu Studio",
+    "url": "https://ysliustudio.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Louis Liu",
+      "jobTitle": "Mobile Software Engineer & Founder",
+      "url": "https://ysliustudio.com/developer/"
+    },
+    "sameAs": [
+      "https://apps.apple.com/us/developer/yi-shih-liu/id1793695638",
+      "https://github.com/liuys614",
+      "https://www.linkedin.com/in/louisliu-ios"
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- Top Navigation Bar -->
   <header class="navbar">
     <div class="nav-container">
-      <a href="#home" class="nav-brand">
+      <a href="#top" class="nav-brand">
         <span class="brand-logo-icon">
           <svg viewBox="0 0 24 24" fill="none">
             <rect width="24" height="24" rx="6" fill="#00dc82" />
             <path d="M8 6.8V17.2H16.2" stroke="#0a0b0e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>
-        <span class="brand-name">Louis</span>
+        <span class="brand-name">YS Liu Studio</span>
       </a>
 
       <nav class="nav-links">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#timeline" class="nav-link">Timeline</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#apps" class="nav-link active">Apps</a>
+        <a href="#philosophy" class="nav-link">Philosophy</a>
+        <a href="/developer/" class="nav-link">Developer</a>
+        <a href="#contact" class="nav-link">Support</a>
       </nav>
 
       <div class="nav-cta-wrap">
-        <a href="#contact" class="btn btn-nav">
-          <span>Get In Touch</span>
+        <a href="/developer/" class="btn btn-nav">
+          <span>Meet the Developer</span>
           <svg viewBox="0 0 20 20" fill="currentColor" class="nav-btn-arrow">
             <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
           </svg>
@@ -43,196 +67,144 @@
     </div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-      <div class="section-container hero-grid">
-        <!-- Hero Text Column -->
-        <div class="hero-left">
-          <!-- Figma Bounding Box Tag -->
+  <main id="top">
+    <!-- Studio Hero Section -->
+    <section class="hero-section studio-hero">
+      <div class="section-container studio-hero-container">
+        <div class="studio-hero-content">
           <div class="figma-node-pill">
             <span class="node-square node-tl"></span>
             <span class="node-square node-tr"></span>
             <span class="node-square node-bl"></span>
             <span class="node-square node-br"></span>
-            <span class="pill-text">Hi everyone 👋, I'm Louis Liu</span>
+            <span class="pill-text">Independent App Studio · Est. 2024</span>
           </div>
 
-          <h1 class="hero-title">
-            Mobile Software Engineer
+          <h1 class="hero-title studio-display-title">
+            Thoughtful Mobile Apps Crafted for Everyday Clarity.
           </h1>
 
-          <p class="hero-description">
-            I'm a mobile software engineer and indie app maker passionate about crafting high-performance iOS and Android experiences that scale effortlessly to millions of users. Obsessed with UX details, accessibility, and thoughtful visual cues, I dedicate my craft to eliminating user friction, minimizing steps, and engineering interfaces that feel remarkably smooth and intuitive.
+          <p class="hero-description studio-lead">
+            <strong>YS Liu Studio</strong> builds native, privacy-first applications designed to solve real everyday problems without the bloat. Every app is engineered with obsessive attention to tactile UX details, zero-friction workflows, and instant offline reliability.
           </p>
 
           <div class="hero-actions-row">
-            <a href="#contact" class="btn btn-dark">
-              <span>Get In Touch</span>
-              <svg viewBox="0 0 20 20" fill="currentColor" class="btn-arrow">
-                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
-              </svg>
-            </a>
-
-            <a href="#projects" class="btn btn-secondary-clean">
-              <span>Explore My Apps</span>
+            <a href="#apps" class="btn btn-dark">
+              <span>Explore Our Apps</span>
               <svg viewBox="0 0 20 20" fill="currentColor" class="btn-icon-down">
                 <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v10.586l3.293-3.293a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L9 14.586V4a1 1 0 011-1z" clip-rule="evenodd" />
               </svg>
             </a>
-          </div>
 
-          <div class="hero-socials-row">
-            <span class="socials-label">Find me on:</span>
-            <div class="social-circles">
-              <a href="https://github.com/liuys614" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub Profile">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-              <a href="https://www.linkedin.com/in/louisliu-ios" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn Profile">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              </a>
-              <a href="mailto:liuys614@gmail.com" class="social-circle" aria-label="Email">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              </a>
-              <a href="https://apps.apple.com/us/developer/yi-shih-liu/id1793695638" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="App Store">
-                <span class="apple-char"></span>
-              </a>
-            </div>
+            <a href="/developer/" class="btn btn-secondary-clean">
+              <span>About Louis Liu (Founder)</span>
+              <svg viewBox="0 0 20 20" fill="currentColor" class="btn-arrow-dark">
+                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+              </svg>
+            </a>
           </div>
         </div>
 
-        <!-- Hero Photo Column with Green Art & Rotating Badge -->
-        <div class="hero-right">
-          <!-- Circular Rotating Badge -->
-          <div class="rotating-stamp-wrapper">
-            <svg class="rotating-stamp-svg" viewBox="0 0 160 160">
-              <path id="stampCirclePath" d="M 80, 80 m -62, 0 a 62,62 0 1,1 124,0 a 62,62 0 1,1 -124,0" fill="none" />
-              <text class="stamp-text">
-                <textPath href="#stampCirclePath" startOffset="0%">
-                  • EXPLORE MY APPS • SCROLL DOWN •
-                </textPath>
-              </text>
-            </svg>
-            <div class="stamp-arrow-center">
-              <svg viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v10.586l3.293-3.293a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L9 14.586V4a1 1 0 011-1z" clip-rule="evenodd"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- Photo Canvas with Mint Geometry -->
-          <div class="hero-canvas-art">
-            <!-- Green decorative shapes in the background -->
-            <div class="art-shape art-pill-top"></div>
-            <div class="art-shape art-pill-bottom"></div>
-            <svg class="art-squiggle" viewBox="0 0 100 60" fill="none">
-              <path d="M10 35 L30 15 L50 40 L70 15 L90 35" stroke="#000000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-
-            <!-- Black Framed Portrait -->
-            <div class="portrait-card">
-              <img src="images/profile.jpg" alt="Louis Liu - Mobile Software Engineer" class="portrait-photo" />
+        <!-- Studio App Dock Showcase -->
+        <div class="studio-dock-preview">
+          <div class="dock-card">
+            <div class="dock-card-label">5 Production Apps Live on the App Store</div>
+            <div class="dock-icons-grid">
+              <a href="#project-inkstone" class="dock-app-item" title="Inkstone: Sign PDF & Docs">
+                <img src="/images/icons/inkstone.png" alt="Inkstone Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Inkstone</span>
+              </a>
+              <a href="#project-pill-reminder" class="dock-app-item" title="Supplement & Pill Reminder">
+                <img src="/images/icons/pill.png" alt="Pill Reminder Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Pill Reminder</span>
+              </a>
+              <a href="#project-grocery-price-scanner" class="dock-app-item" title="Grocery Price Scanner">
+                <img src="/images/icons/grocery.png" alt="Grocery Price Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Grocery Price</span>
+              </a>
+              <a href="#project-alcohol-free-tracker" class="dock-app-item" title="Alcohol Free Tracker">
+                <img src="/images/icons/alcohol.png" alt="Alcohol Free Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Sobriety</span>
+              </a>
+              <a href="#project-agricola-scorer" class="dock-app-item" title="Agricola Score Sheet">
+                <img src="/images/icons/agricola.png" alt="Agricola Scorer Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Agricola</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Marquee Ticker Strip -->
+    <!-- Studio Marquee Strip -->
     <section class="marquee-strip" aria-hidden="true">
       <div class="marquee-green-accent"></div>
       <div class="marquee-inner">
         <div class="marquee-track">
-          <span class="marquee-item">Swift & SwiftUI</span>
+          <span class="marquee-item">100% Native Performance</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">Android & Kotlin</span>
+          <span class="marquee-item">Privacy-First Architecture</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">UIKit</span>
+          <span class="marquee-item">Zero-Friction UX</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">Swift 6 Concurrency</span>
+          <span class="marquee-item">On-Device Intelligence</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">AVPlayer & FairPlay DRM</span>
+          <span class="marquee-item">Accessible by Design</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">Server-Driven UI</span>
+          <span class="marquee-item">40+ Global Storefronts</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">C / C++</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">Volleyball 🏐</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">Embedded Linux</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">NVMe & SSD Firmware</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">VCS Compiler & ZeBu Emulation</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">Industrial IoT & MQTT</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">PDFKit & Digital Signatures</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">Snowboarding 🏂</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">StoreKit 2 & In-App Purchases</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">Python & Tooling</span>
+          <span class="marquee-item">Offline-First Reliability</span>
           <span class="marquee-star">✦</span>
           <!-- Duplicate for seamless infinite loop -->
-          <span class="marquee-item">Swift & SwiftUI</span>
+          <span class="marquee-item">100% Native Performance</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">Android & Kotlin</span>
+          <span class="marquee-item">Privacy-First Architecture</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">UIKit</span>
+          <span class="marquee-item">Zero-Friction UX</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">Swift 6 Concurrency</span>
+          <span class="marquee-item">On-Device Intelligence</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">AVPlayer & FairPlay DRM</span>
+          <span class="marquee-item">Accessible by Design</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">Server-Driven UI</span>
+          <span class="marquee-item">40+ Global Storefronts</span>
           <span class="marquee-star">✦</span>
-          <span class="marquee-item">C / C++</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">Volleyball 🏐</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">Embedded Linux</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">NVMe & SSD Firmware</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">VCS Compiler & ZeBu Emulation</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">Industrial IoT & MQTT</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">PDFKit & Digital Signatures</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">Snowboarding 🏂</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">StoreKit 2 & In-App Purchases</span>
-          <span class="marquee-star">✦</span>
-          <span class="marquee-item">Python & Tooling</span>
+          <span class="marquee-item">Offline-First Reliability</span>
           <span class="marquee-star">✦</span>
         </div>
       </div>
     </section>
 
-    <!-- Chronological Timeline Section -->
-    <section id="timeline" class="section-container timeline-section">
-      <div class="timeline-header">
-        <div class="figma-node-pill">
-          <span class="node-square node-tl"></span>
-          <span class="node-square node-tr"></span>
-          <span class="node-square node-bl"></span>
-          <span class="node-square node-br"></span>
-          <span class="pill-text">Timeline</span>
+    <!-- Studio Philosophy / Pillars -->
+    <section id="philosophy" class="section-container studio-pillars-section">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-number">01</div>
+          <h3 class="pillar-title">Minimum Steps, Maximum Flow</h3>
+          <p class="pillar-desc">
+            Every tap counts. We obsess over visual hierarchy, haptics, and accessibility cues to eliminate unnecessary modals and help you finish tasks in seconds.
+          </p>
         </div>
-        <h2 class="timeline-headline">Experience & Education</h2>
-      </div>
 
-      <!-- Chronological Timeline Cards -->
-      <div class="timeline-stream" id="timelineStream">
-        <!-- Rendered dynamically by app.js -->
+        <div class="pillar-card">
+          <div class="pillar-number">02</div>
+          <h3 class="pillar-title">Privacy & On-Device First</h3>
+          <p class="pillar-desc">
+            Your health logs, contracts, and personal habits belong to you. We leverage on-device OCR, local databases, and end-to-end encryption without ad trackers.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-number">03</div>
+          <h3 class="pillar-title">Enterprise-Grade Craftsmanship</h3>
+          <p class="pillar-desc">
+            Built with the same architectural rigor used in apps serving millions—combining modern Swift concurrency, rock-solid stability, and native platform polish.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- My Latest Projects Section (5 Apps Showcase) -->
-    <section id="projects" class="section-container projects-section">
+    <!-- Studio Apps Suite Showcase -->
+    <section id="apps" class="section-container projects-section">
       <div class="projects-header-row">
         <div>
           <div class="figma-node-pill">
@@ -240,16 +212,16 @@
             <span class="node-square node-tr"></span>
             <span class="node-square node-bl"></span>
             <span class="node-square node-br"></span>
-            <span class="pill-text">Projects</span>
+            <span class="pill-text">Product Suite</span>
           </div>
-          <h2 class="projects-headline">My Latest Projects</h2>
+          <h2 class="projects-headline">Apps by YS Liu Studio</h2>
           <p class="projects-sub">
-            5 native iOS applications live on the App Store. Click any screenshot for high-resolution inspection.
+            Explore our lineup of native applications. Click any screenshot to inspect the interface in full resolution.
           </p>
         </div>
 
-        <a href="#contact" class="btn btn-dark btn-header-contact">
-          <span>Contact Me</span>
+        <a href="https://apps.apple.com/us/developer/yi-shih-liu/id1793695638" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-header-contact">
+          <span>View on App Store</span>
           <svg viewBox="0 0 20 20" fill="currentColor" class="btn-arrow">
             <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
           </svg>
@@ -262,16 +234,38 @@
       </div>
     </section>
 
-    <!-- Dark CTA & Contact Section (Matching reference bottom right) -->
+    <!-- Meet the Founder Banner -->
+    <section class="section-container founder-banner-section">
+      <div class="founder-banner-card">
+        <div class="founder-banner-left">
+          <img src="/images/profile.jpg" alt="Louis Liu" class="founder-avatar" />
+          <div>
+            <span class="founder-eyebrow">Behind the Studio</span>
+            <h3 class="founder-heading">Engineered by Louis Liu</h3>
+            <p class="founder-bio-short">
+              Senior Mobile Software Engineer with a background in streaming media at scale, compiler acceleration, and embedded systems.
+            </p>
+          </div>
+        </div>
+        <a href="/developer/" class="btn btn-dark">
+          <span>View Engineer Profile & Resume</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" class="btn-arrow">
+            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Dark CTA & Support Section -->
     <section id="contact" class="cta-dark-section">
       <div class="cta-dark-container">
         <div class="cta-left">
           <h2 class="cta-big-heading">
-            Have a Project or<br />
-            Opportunity in Mind?
+            App Support &<br />
+            Studio Inquiries
           </h2>
           <p class="cta-lead-text">
-            I'm always open to discussing new iOS projects, enterprise engineering opportunities, or app collaborations.
+            Have feedback on one of our apps, need customer support, or want to collaborate? Reach out directly anytime.
           </p>
         </div>
 
@@ -291,7 +285,7 @@
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
-              <span>Send Direct Email</span>
+              <span>Email Support</span>
             </a>
 
             <button type="button" class="btn btn-outline-light" id="btnCopyEmail">
@@ -306,13 +300,19 @@
       </div>
 
       <div class="cta-footer-bottom">
-        <span>Copyright © 2026 Louis Liu. All Rights Reserved.</span>
-        <a href="#home" class="cta-back-top">
-          <span>Back to Top</span>
-          <svg viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 17a1 1 0 01-1-1V5.414l-3.293 3.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L11 5.414V16a1 1 0 01-1 1z" clip-rule="evenodd" />
-          </svg>
-        </a>
+        <span>Copyright © 2026 YS Liu Studio. All Rights Reserved.</span>
+        <div class="footer-links-inline">
+          <a href="/developer/" class="cta-back-top">Developer Profile</a>
+          <span>·</span>
+          <a href="https://apps.apple.com/us/developer/yi-shih-liu/id1793695638" target="_blank" rel="noopener noreferrer" class="cta-back-top">App Store</a>
+          <span>·</span>
+          <a href="#top" class="cta-back-top">
+            <span>Back to Top</span>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 17a1 1 0 01-1-1V5.414l-3.293 3.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L11 5.414V16a1 1 0 01-1 1z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -366,6 +366,6 @@
     <span id="toastMessage">Email copied to clipboard!</span>
   </div>
 
-  <script type="module" src="app.js"></script>
+  <script type="module" src="/app.js"></script>
 </body>
 </html>

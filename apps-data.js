@@ -6,7 +6,7 @@ export const PROFILE = {
   "email": "liuys614@gmail.com",
   "github": "https://github.com/liuys614",
   "linkedin": "https://www.linkedin.com/in/louisliu-ios",
-  "avatar": "images/profile.jpg",
+  "avatar": "/images/profile.jpg",
   "headline": "Mobile Software Engineer",
   "bio": "I am a mobile software engineer and indie app maker passionate about crafting high-performance iOS and Android experiences that scale effortlessly to millions of users. Obsessed with UX details, accessibility, and thoughtful visual cues, I dedicate my craft to eliminating user friction, minimizing steps, and engineering interfaces that feel remarkably smooth and intuitive.",
   "status": "Available for Mobile Opportunities",
@@ -142,7 +142,7 @@ export const APPS = [
     "year": "2026",
     "tagline": "eSign Contracts & Share Encrypted Signing Links",
     "description": "Prepare documents in seconds and share a secure signing link. Recipients sign directly in their mobile or desktop browser with zero app download or account creation required.",
-    "icon": "images/icons/inkstone.png",
+    "icon": "/images/icons/inkstone.png",
     "accent": "#6366f1",
     "features": [
       "Instant PDF import & camera document scanning",
@@ -200,7 +200,7 @@ export const APPS = [
     "year": "2026",
     "tagline": "Reliable Medicine & Supplement Tracker",
     "description": "Stay on top of your daily health regimen with reliable schedule notifications, dosage tracking, automated refill alerts, and exportable doctor logs.",
-    "icon": "images/icons/pill.png",
+    "icon": "/images/icons/pill.png",
     "accent": "#3b82f6",
     "features": [
       "Smart recurring medication & vitamin schedules",
@@ -278,7 +278,7 @@ export const APPS = [
     "year": "2026",
     "tagline": "Unit Price Comparator & Budget Tracker",
     "description": "Instantly scan supermarket price tags, normalize unit prices across ounces, grams, and count, and discover the true best deal before checkout.",
-    "icon": "images/icons/grocery.png",
+    "icon": "/images/icons/grocery.png",
     "accent": "#f59e0b",
     "features": [
       "Camera tag scanning & OCR price recognition",
@@ -351,7 +351,7 @@ export const APPS = [
     "year": "2026",
     "tagline": "Mindful Sobriety & Habit Milestone Companion",
     "description": "Track your sobriety streak in real-time, celebrate health and financial milestones, and reflect in a private, distraction-free journal.",
-    "icon": "images/icons/alcohol.png",
+    "icon": "/images/icons/alcohol.png",
     "accent": "#10b981",
     "features": [
       "Real-time streak counter for days & hours",
@@ -375,53 +375,53 @@ export const APPS = [
     "appStoreReviews": 1,
     "screenshots": [
       {
-        "thumb": "images/screenshots/alcohol/0_APP_IPHONE_69_0_thumb.jpg",
-        "full": "images/screenshots/alcohol/0_APP_IPHONE_69_0.jpg",
+        "thumb": "/images/screenshots/alcohol/0_APP_IPHONE_69_0_thumb.jpg",
+        "full": "/images/screenshots/alcohol/0_APP_IPHONE_69_0.jpg",
         "alt": "Alcohol Free Tracker Screenshot 1"
       },
       {
-        "thumb": "images/screenshots/alcohol/1_APP_IPHONE_69_1_thumb.jpg",
-        "full": "images/screenshots/alcohol/1_APP_IPHONE_69_1.jpg",
+        "thumb": "/images/screenshots/alcohol/1_APP_IPHONE_69_1_thumb.jpg",
+        "full": "/images/screenshots/alcohol/1_APP_IPHONE_69_1.jpg",
         "alt": "Alcohol Free Tracker Screenshot 2"
       },
       {
-        "thumb": "images/screenshots/alcohol/2_APP_IPHONE_69_2_thumb.jpg",
-        "full": "images/screenshots/alcohol/2_APP_IPHONE_69_2.jpg",
+        "thumb": "/images/screenshots/alcohol/2_APP_IPHONE_69_2_thumb.jpg",
+        "full": "/images/screenshots/alcohol/2_APP_IPHONE_69_2.jpg",
         "alt": "Alcohol Free Tracker Screenshot 3"
       },
       {
-        "thumb": "images/screenshots/alcohol/3_APP_IPHONE_69_3_thumb.jpg",
-        "full": "images/screenshots/alcohol/3_APP_IPHONE_69_3.jpg",
+        "thumb": "/images/screenshots/alcohol/3_APP_IPHONE_69_3_thumb.jpg",
+        "full": "/images/screenshots/alcohol/3_APP_IPHONE_69_3.jpg",
         "alt": "Alcohol Free Tracker Screenshot 4"
       },
       {
-        "thumb": "images/screenshots/alcohol/4_APP_IPHONE_69_4_thumb.jpg",
-        "full": "images/screenshots/alcohol/4_APP_IPHONE_69_4.jpg",
+        "thumb": "/images/screenshots/alcohol/4_APP_IPHONE_69_4_thumb.jpg",
+        "full": "/images/screenshots/alcohol/4_APP_IPHONE_69_4.jpg",
         "alt": "Alcohol Free Tracker Screenshot 5"
       },
       {
-        "thumb": "images/screenshots/alcohol/5_APP_IPHONE_69_5_thumb.jpg",
-        "full": "images/screenshots/alcohol/5_APP_IPHONE_69_5.jpg",
+        "thumb": "/images/screenshots/alcohol/5_APP_IPHONE_69_5_thumb.jpg",
+        "full": "/images/screenshots/alcohol/5_APP_IPHONE_69_5.jpg",
         "alt": "Alcohol Free Tracker Screenshot 6"
       },
       {
-        "thumb": "images/screenshots/alcohol/6_APP_IPHONE_69_6_thumb.jpg",
-        "full": "images/screenshots/alcohol/6_APP_IPHONE_69_6.jpg",
+        "thumb": "/images/screenshots/alcohol/6_APP_IPHONE_69_6_thumb.jpg",
+        "full": "/images/screenshots/alcohol/6_APP_IPHONE_69_6.jpg",
         "alt": "Alcohol Free Tracker Screenshot 7"
       },
       {
-        "thumb": "images/screenshots/alcohol/7_APP_IPHONE_69_7_thumb.jpg",
-        "full": "images/screenshots/alcohol/7_APP_IPHONE_69_7.jpg",
+        "thumb": "/images/screenshots/alcohol/7_APP_IPHONE_69_7_thumb.jpg",
+        "full": "/images/screenshots/alcohol/7_APP_IPHONE_69_7.jpg",
         "alt": "Alcohol Free Tracker Screenshot 8"
       },
       {
-        "thumb": "images/screenshots/alcohol/8_APP_IPHONE_69_8_thumb.jpg",
-        "full": "images/screenshots/alcohol/8_APP_IPHONE_69_8.jpg",
+        "thumb": "/images/screenshots/alcohol/8_APP_IPHONE_69_8_thumb.jpg",
+        "full": "/images/screenshots/alcohol/8_APP_IPHONE_69_8.jpg",
         "alt": "Alcohol Free Tracker Screenshot 9"
       },
       {
-        "thumb": "images/screenshots/alcohol/9_APP_IPHONE_69_9_thumb.jpg",
-        "full": "images/screenshots/alcohol/9_APP_IPHONE_69_9.jpg",
+        "thumb": "/images/screenshots/alcohol/9_APP_IPHONE_69_9_thumb.jpg",
+        "full": "/images/screenshots/alcohol/9_APP_IPHONE_69_9.jpg",
         "alt": "Alcohol Free Tracker Screenshot 10"
       }
     ]
@@ -434,7 +434,7 @@ export const APPS = [
     "year": "2026",
     "tagline": "Effortless Board Game Scorekeeping",
     "description": "Effortlessly score your Agricola board game sessions with automated scoring for pastures, grain, livestock, and Farmers of the Moor expansions.",
-    "icon": "images/icons/agricola.png",
+    "icon": "/images/icons/agricola.png",
     "accent": "#16a34a",
     "features": [
       "Digital scorepad replacing paper score sheets",
