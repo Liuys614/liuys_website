@@ -210,6 +210,11 @@ export const APPS = [
     ],
     "links": [
       {
+        "label": "Visit Website",
+        "url": "/pill-reminder/",
+        "type": "web"
+      },
+      {
         "label": "App Store",
         "url": "https://apps.apple.com/app/id6794415548",
         "type": "appstore"
@@ -362,7 +367,7 @@ export const APPS = [
     "links": [
       {
         "label": "Visit Website",
-        "url": "https://liuys614.github.io/AlcoholFreeTracker-Website",
+        "url": "/alcohol-free-tracker/",
         "type": "web"
       },
       {
