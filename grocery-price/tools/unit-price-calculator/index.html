@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Unit Price Calculator</title>
+    <meta name="description" content="Free grocery unit price calculator to compare grocery prices by ounce, pound, gram, kilogram, or count and see which item is cheaper per unit.">
+    <link rel="canonical" href="https://ysliustudio.com/grocery-price/tools/unit-price-calculator/">
+    <meta property="og:title" content="Grocery Unit Price Calculator">
+    <meta property="og:description" content="Compare grocery prices per unit and find the cheaper option before you buy.">
+    <meta property="og:url" content="https://ysliustudio.com/grocery-price/tools/unit-price-calculator/">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdfbf7;
+            --card-bg: #ffffff;
+            --card-border: #e8e5db;
+            --ink: #1a201c;
+            --muted: #5b665e;
+            --accent: #216d44;
+            --accent-dark: #154e30;
+            --accent-light: #e9f5ee;
+            --warm: #f5b642;
+            --danger: #b54708;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(10px);
+            z-index: 20;
+            border-bottom: 1px solid var(--card-border);
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+        }
+
+        .logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 8px 10px;
+            border-radius: 7px;
+        }
+
+        .nav-link:hover, .nav-link:focus-visible { color: var(--accent); background: var(--accent-light); outline: none; }
+
+        .app-link {
+            background: var(--accent);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 9px 13px;
+            border-radius: 7px;
+            text-decoration: none;
+        }
+
+        .app-link:hover, .app-link:focus-visible { background: var(--accent-dark); outline: 3px solid rgba(33, 109, 68, 0.2); outline-offset: 2px; }
+
+        .page { max-width: 940px; margin: 0 auto; padding: 64px 20px 56px; }
+        .hero { display: grid; gap: 28px; }
+        .intro { max-width: 620px; }
+        .eyebrow { color: var(--accent); font-weight: 800; font-size: 0.8rem; margin: 0 0 10px; }
+        h1 { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.08; letter-spacing: 0; margin: 0; }
+        .lead { color: var(--muted); font-size: 1.04rem; line-height: 1.55; margin: 10px 0 0; }
+
+        .calculator {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 18px 46px rgba(25, 32, 28, 0.06);
+        }
+
+        .calculator-head {
+            padding: 22px 24px 18px;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 16px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .calculator h2 { margin: 0; font-size: 1.2rem; letter-spacing: 0; }
+        .helper { color: var(--muted); font-size: 0.9rem; margin: 0; }
+
+        .item-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+        .item-card { padding: 22px 24px 10px; background: var(--card-bg); }
+        .item-card + .item-card { border-left: 1px solid var(--card-border); }
+        .item-card h3 { margin: 0 0 16px; font-size: 1.05rem; }
+
+        label {
+            display: block;
+            color: var(--muted);
+            font-size: 0.83rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            border: 1px solid #d8d4c8;
+            border-radius: 8px;
+            padding: 13px 12px;
+            color: var(--ink);
+            background: white;
+            font: inherit;
+            font-size: 1rem;
+        }
+
+        input:focus,
+        select:focus {
+            outline: 3px solid rgba(33, 109, 68, 0.14);
+            border-color: var(--accent);
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 0.85fr;
+            gap: 10px;
+        }
+
+        .field {
+            margin-bottom: 12px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin: 0;
+            padding: 18px 24px 0;
+            border-top: 1px solid var(--card-border);
+        }
+
+        button {
+            appearance: none;
+            border: 0;
+            border-radius: 8px;
+            padding: 13px 18px;
+            background: var(--accent);
+            color: white;
+            font: inherit;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        button:hover { background: var(--accent-dark); }
+
+        .secondary-action {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .result {
+            margin: 18px 24px 0;
+            border-radius: 7px;
+            border: 1px solid #cfe4d7;
+            background: var(--accent-light);
+            padding: 18px;
+            min-height: 104px;
+        }
+
+        .result.empty {
+            background: #fffefa;
+            color: var(--muted);
+        }
+
+        .result.error {
+            background: #fff7ed;
+            color: var(--danger);
+            border-color: #fed7aa;
+        }
+
+        .winner {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin: 0 0 10px;
+        }
+
+        .result-lines {
+            display: grid;
+            gap: 6px;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .result-lines strong { color: var(--ink); }
+
+        .cta-panel {
+            margin: 18px 24px 24px;
+            border-top: 1px solid var(--card-border);
+            background: transparent;
+            border-radius: 0;
+            padding: 18px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .cta-panel p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.45;
+        }
+
+        .cta-panel strong { color: var(--ink); }
+
+        .cta-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: auto;
+            border-radius: 0;
+            padding: 0;
+            background: transparent;
+            color: var(--accent);
+            font-weight: 800;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .cta-link:hover, .cta-link:focus-visible { color: var(--accent-dark); outline: none; text-decoration: underline; }
+        .how-it-works { color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+        .how-it-works summary { color: var(--ink); cursor: pointer; font-weight: 700; }
+        .how-it-works p { margin: 10px 0 0; max-width: 680px; }
+
+        .footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .footer-links {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        @media (max-width: 640px) {
+            .page { padding: 36px 16px 40px; }
+            .nav-container { padding: 0 16px; }
+
+            .item-grid,
+            .field-row {
+                grid-template-columns: 1fr;
+            }
+            .item-card { padding: 20px 18px 4px; }
+            .item-card + .item-card { border-left: 0; border-top: 1px solid var(--card-border); }
+            .calculator-head { align-items: flex-start; flex-direction: column; padding: 18px; gap: 5px; }
+            .actions { align-items: stretch; flex-direction: column; padding: 16px 18px 0; }
+            .result { margin: 16px 18px 0; }
+            .cta-panel { align-items: flex-start; flex-direction: column; margin: 16px 18px 18px; }
+            button { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="../../" class="logo" aria-label="GroceryPrice home">
+                <img src="../../assets/app-icon.png" alt="GroceryPrice icon"> GroceryPrice
+            </a>
+            <nav class="nav-actions" aria-label="Primary navigation">
+                <a href="../../" class="nav-link">Home</a>
+                <a href="https://apps.apple.com/app/apple-store/id6773533304?pt=127596623&ct=unitpricecalculator&mt=8" class="app-link" data-track="unit_price_calculator_app_store_click">Get the app</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="hero">
+            <div class="intro">
+                <p class="eyebrow">GroceryPrice tools</p>
+                <h1>Grocery Unit Price Calculator</h1>
+                <p class="lead">Enter two packages. We will show the better value.</p>
+            </div>
+
+            <section class="calculator" aria-labelledby="calculator-title">
+                <div class="calculator-head">
+                    <h2 id="calculator-title">Compare packages</h2>
+                    <p class="helper">Use weight with weight, or count with count.</p>
+                </div>
+
+                <div class="item-grid">
+                    <div class="item-card">
+                        <h3>Item A</h3>
+                        <div class="field">
+                            <label for="priceA">Price</label>
+                            <input id="priceA" inputmode="decimal" type="number" min="0" step="0.01" value="4.99" aria-describedby="calculator-title">
+                        </div>
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="quantityA">Quantity / weight</label>
+                                <input id="quantityA" inputmode="decimal" type="number" min="0" step="0.01" value="16">
+                            </div>
+                            <div class="field">
+                                <label for="unitA">Unit</label>
+                                <select id="unitA">
+                                    <option value="oz">oz</option>
+                                    <option value="lb">lb</option>
+                                    <option value="g">g</option>
+                                    <option value="kg">kg</option>
+                                    <option value="count">count</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <h3>Item B</h3>
+                        <div class="field">
+                            <label for="priceB">Price</label>
+                            <input id="priceB" inputmode="decimal" type="number" min="0" step="0.01" value="7.49">
+                        </div>
+                        <div class="field-row">
+                            <div class="field">
+                                <label for="quantityB">Quantity / weight</label>
+                                <input id="quantityB" inputmode="decimal" type="number" min="0" step="0.01" value="2">
+                            </div>
+                            <div class="field">
+                                <label for="unitB">Unit</label>
+                                <select id="unitB">
+                                    <option value="oz">oz</option>
+                                    <option value="lb" selected>lb</option>
+                                    <option value="g">g</option>
+                                    <option value="kg">kg</option>
+                                    <option value="count">count</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="calculateButton" type="button">Calculate unit price</button>
+                    <span class="secondary-action">Result updates as you edit.</span>
+                </div>
+
+                <div id="result" class="result empty" aria-live="polite">
+                    Enter two prices and package sizes to compare unit prices.
+                </div>
+
+                <div class="cta-panel">
+                    <p>Want price history too?</p>
+                    <a class="cta-link" href="https://apps.apple.com/app/apple-store/id6773533304?pt=127596623&ct=unitpricecalculator_cta&mt=8" data-track="unit_price_calculator_app_cta_click">Get GroceryPrice</a>
+                </div>
+            </section>
+        </section>
+
+        <details class="how-it-works">
+            <summary>How unit price works</summary>
+            <p>Unit price is package price divided by quantity. Compare package sizes using the same type of unit to find the lower grocery price per unit.</p>
+        </details>
+    </main>
+
+    <footer class="footer">
+        <p style="color: var(--muted); font-size: 0.9rem;">&copy; 2026 Louis Liu. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="../../privacy.html">Privacy Policy</a>
+            <a href="../../terms.html">Terms of Use</a>
+            <a href="mailto:groceryprice.app@gmail.com">Support</a>
+        </div>
+    </footer>
+
+    <script>
+        const appStoreLinks = document.querySelectorAll('[data-track]');
+        const resultEl = document.getElementById('result');
+        const calculateButton = document.getElementById('calculateButton');
+        const inputs = ['priceA', 'quantityA', 'unitA', 'priceB', 'quantityB', 'unitB'].map((id) => document.getElementById(id));
+        const unitConfig = {
+            oz: { dimension: 'weight', toBase: 28.349523125, label: 'oz' },
+            lb: { dimension: 'weight', toBase: 453.59237, label: 'lb' },
+            g: { dimension: 'weight', toBase: 1, label: 'g' },
+            kg: { dimension: 'weight', toBase: 1000, label: 'kg' },
+            count: { dimension: 'count', toBase: 1, label: 'item' }
+        };
+
+        function trackToolEvent(name, properties = {}) {
+            if (window.dataLayer && Array.isArray(window.dataLayer)) {
+                window.dataLayer.push({ event: name, ...properties });
+            }
+            if (window.gtag) {
+                window.gtag('event', name, properties);
+            }
+        }
+
+        function readItem(prefix) {
+            const price = Number(document.getElementById(`price${prefix}`).value);
+            const quantity = Number(document.getElementById(`quantity${prefix}`).value);
+            const unit = document.getElementById(`unit${prefix}`).value;
+            const config = unitConfig[unit];
+
+            if (!Number.isFinite(price) || price <= 0 || !Number.isFinite(quantity) || quantity <= 0) {
+                return { error: `Item ${prefix} needs a price and quantity greater than zero.` };
+            }
+
+            const baseQuantity = quantity * config.toBase;
+            return {
+                price,
+                quantity,
+                unit,
+                dimension: config.dimension,
+                baseUnitPrice: price / baseQuantity
+            };
+        }
+
+        function displayUnit(dimension, unitA, unitB) {
+            if (dimension === 'count') {
+                return { label: 'item', multiplier: 1 };
+            }
+            if (unitA === 'kg' || unitB === 'kg') {
+                return { label: 'kg', multiplier: 1000 };
+            }
+            if (unitA === 'g' || unitB === 'g') {
+                return { label: '100 g', multiplier: 100 };
+            }
+            if (unitA === 'lb' || unitB === 'lb') {
+                return { label: 'lb', multiplier: 453.59237 };
+            }
+            return { label: 'oz', multiplier: 28.349523125 };
+        }
+
+        function money(value) {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 4 }).format(value);
+        }
+
+        function calculateUnitPrice(source = 'auto') {
+            const itemA = readItem('A');
+            const itemB = readItem('B');
+
+            if (itemA.error || itemB.error) {
+                resultEl.className = 'result error';
+                resultEl.textContent = itemA.error || itemB.error;
+                return;
+            }
+
+            trackToolEvent('unit_price_calculator_calculate', { source });
+
+            if (itemA.dimension !== itemB.dimension) {
+                resultEl.className = 'result error';
+                resultEl.textContent = 'Use comparable units for both items. Weight units can compare with weight units; count compares with count.';
+                return;
+            }
+
+            const display = displayUnit(itemA.dimension, itemA.unit, itemB.unit);
+            const unitPriceA = itemA.baseUnitPrice * display.multiplier;
+            const unitPriceB = itemB.baseUnitPrice * display.multiplier;
+            const difference = Math.abs(unitPriceA - unitPriceB);
+            const winner = unitPriceA === unitPriceB ? 'Tie' : unitPriceA < unitPriceB ? 'Item A is cheaper' : 'Item B is cheaper';
+            const savings = unitPriceA === unitPriceB ? 'Both items have the same unit price.' : `Difference: ${money(difference)} per ${display.label}.`;
+
+            trackToolEvent('unit_price_calculator_compare_two_items', {
+                winner,
+                unit: display.label,
+                item_a_unit_price: Number(unitPriceA.toFixed(6)),
+                item_b_unit_price: Number(unitPriceB.toFixed(6))
+            });
+
+            resultEl.className = 'result';
+            resultEl.innerHTML = `
+                <p class="winner">${winner}</p>
+                <div class="result-lines">
+                    <div><strong>Item A:</strong> ${money(unitPriceA)} per ${display.label}</div>
+                    <div><strong>Item B:</strong> ${money(unitPriceB)} per ${display.label}</div>
+                    <div>${savings}</div>
+                </div>
+            `;
+        }
+
+        calculateButton.addEventListener('click', () => calculateUnitPrice('button'));
+        inputs.forEach((input) => input.addEventListener('input', () => calculateUnitPrice('input')));
+        appStoreLinks.forEach((link) => {
+            link.addEventListener('click', () => trackToolEvent(link.dataset.track, { href: link.href }));
+        });
+
+        trackToolEvent('unit_price_calculator_view', { path: window.location.pathname });
+        calculateUnitPrice('initial');
+    </script>
+</body>
+</html>

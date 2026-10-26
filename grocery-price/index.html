@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroceryPrice - Compare Grocery Prices Smarter</title>
+    <meta name="description" content="Track grocery price history, scan shelf labels, and use free calculators to compare unit prices and spot shrinkflation.">
+    <link rel="canonical" href="https://ysliustudio.com/grocery-price/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdfbf7;
+            --card-bg: #ffffff;
+            --card-border: #e8e5db;
+            --ink: #1a201c;
+            --muted: #5b665e;
+            --accent: #216d44;
+            --accent-dark: #154e30;
+            --accent-light: #e9f5ee;
+            --warm: #f5b642;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(253, 251, 247, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--card-border);
+            padding: 15px 0;
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto; padding: 0 20px;
+            display: flex; justify-content: space-between; align-items: center; gap: 24px;
+        }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo img { width: 32px; border-radius: 8px; }
+        .site-nav { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+        .site-nav a { color: var(--muted); font-size: 0.92rem; font-weight: 700; text-decoration: none; padding: 9px 12px; border-radius: 7px; }
+        .site-nav a:hover, .site-nav a:focus-visible { color: var(--accent); background: var(--accent-light); outline: none; }
+        .site-nav a.tool-link { color: var(--accent); background: var(--accent-light); }
+        .app-link { font-size: 0.95rem; background: var(--accent); color: white; padding: 9px 16px; border-radius: 7px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+        .app-link:hover, .app-link:focus-visible { background: var(--accent-dark); outline: 3px solid rgba(33, 109, 68, 0.2); outline-offset: 2px; }
+        @media (max-width: 560px) {
+            .header { padding: 10px 0; }
+            .nav-container { gap: 10px; padding: 0 14px; }
+            .logo { font-size: 1.15rem; gap: 7px; }
+            .logo img { width: 28px; }
+            .site-nav a { padding: 8px 9px; font-size: 0.84rem; }
+            .app-link { padding: 8px 10px; font-size: 0.84rem; }
+        }
+
+        /* Hero */
+        .hero {
+            padding: 150px 20px 80px;
+            max-width: 1100px; margin: 0 auto;
+            text-align: center;
+        }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1.5px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 1.25rem; color: var(--muted); max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+
+        /* Tools */
+        .tools-strip { max-width: 1100px; margin: 0 auto; padding: 0 20px 70px; }
+        .tools-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 28px; align-items: center; padding: 30px; background: var(--accent-light); border: 1px solid #d2e7da; border-radius: 8px; }
+        .tools-copy .eyebrow { margin: 0 0 9px; color: var(--accent); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+        .tools-copy h2 { margin: 0; font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.12; letter-spacing: -0.5px; }
+        .tools-copy p { margin: 12px 0 0; color: var(--muted); line-height: 1.55; }
+        .tools-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+        .tool-card { display: flex; min-height: 132px; flex-direction: column; justify-content: space-between; padding: 19px; color: var(--ink); background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 8px; text-decoration: none; transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+        .tool-card:hover, .tool-card:focus-visible { border-color: #9fc8ae; box-shadow: 0 10px 24px rgba(25, 60, 38, 0.08); transform: translateY(-2px); outline: none; }
+        .tool-card strong { display: block; font-size: 1.05rem; }
+        .tool-card span { color: var(--accent); font-size: 0.9rem; font-weight: 800; }
+        .tool-icon { display: grid; width: 36px; height: 36px; margin-bottom: 12px; place-items: center; color: var(--accent); background: var(--accent-light); border-radius: 7px; }
+        .tool-icon.warm { color: #9a5a0c; background: #fff1d6; }
+        .tool-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
+        .all-tools-link { display: inline-block; margin-top: 18px; color: var(--accent); font-size: 0.94rem; font-weight: 800; text-decoration: none; }
+        .all-tools-link:hover { text-decoration: underline; }
+        @media (max-width: 760px) { .tools-panel { grid-template-columns: 1fr; } }
+        @media (max-width: 480px) { .tools-panel { padding: 22px; } .tools-list { grid-template-columns: 1fr; } }
+
+        .badges { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 60px; align-items: center; }
+        .store-badge { height: 48px; border-radius: 8px; transition: transform 0.2s; display: block;}
+        .store-badge:hover { transform: translateY(-3px); }
+
+        /* Mockup */
+        .phone-mockup {
+            border: 12px solid #111;
+            border-radius: 40px;
+            width: 300px;
+            height: 620px;
+            margin: 0 auto;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            background: #000;
+            position: relative;
+        }
+        .phone-mockup video {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        /* Features Bento */
+        .features { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+        .features-header { text-align: center; margin-bottom: 60px; }
+        .features-header h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .bento-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease;
+        }
+        .bento-item:hover { transform: translateY(-5px); }
+
+        .bento-large { grid-column: span 12; flex-direction: row; align-items: center; gap: 40px; }
+        @media (max-width: 800px) { .bento-large { flex-direction: column; } }
+        .bento-medium { grid-column: span 6; }
+        @media (max-width: 800px) { .bento-medium { grid-column: span 12; } }
+
+        .bento-content { flex: 1; z-index: 2; }
+        .bento-content h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .bento-content p { font-size: 1.1rem; color: var(--muted); line-height: 1.6; }
+
+        .bento-image { flex: 1; display: flex; justify-content: center; align-items: center; margin-top: 20px;}
+        .bento-image img { width: 100%; max-width: 300px; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .bento-large .bento-image img { max-width: 250px; }
+
+        /* Footer */
+        .footer { padding: 60px 20px; text-align: center; border-top: 1px solid var(--card-border); margin-top: 80px; }
+        .ph-badge { height: 48px; margin-bottom: 20px; display: inline-block; transition: transform 0.2s; }
+        .ph-badge:hover { transform: translateY(-2px); }
+        .footer-links { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
+        .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--accent); }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo" aria-label="GroceryPrice home">
+                <img src="assets/app-icon.png" alt="Icon"> GroceryPrice
+            </a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="/">Home</a>
+                <a class="tool-link" href="tools/">Tools</a>
+            </nav>
+            <a href="https://apps.apple.com/app/apple-store/id6773533304?pt=127596623&ct=officialwebsite&mt=8" class="app-link">Get the app</a>
+        </div>
+    </header>
+
+    <section class="hero fade-in-up">
+        <h1>Scan and know the <span>price context</span></h1>
+        <p>Instantly compare current grocery prices with historical trends, save favorites, and track your shopping with our new widgets and dark mode support.</p>
+
+        <div class="badges">
+            <a href="https://apps.apple.com/app/apple-store/id6773533304?pt=127596623&ct=officialwebsite&mt=8" target="_blank">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1719705600" alt="Download on the App Store" class="store-badge">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.louisliu.groceryprice&pcampaignid=web_share" target="_blank">
+                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="store-badge" style="height: 72px;">
+            </a>
+        </div>
+
+        <div class="phone-mockup">
+            <video autoplay loop muted playsinline>
+                <source src="assets/screenshots/scanner_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <section class="tools-strip fade-in-up" aria-labelledby="tools-heading">
+        <div class="tools-panel">
+            <div class="tools-copy">
+                <p class="eyebrow">Free grocery tools</p>
+                <h2 id="tools-heading">Make the shelf label clearer.</h2>
+                <p>Quick calculators for deciding which package is actually the better deal.</p>
+                <a class="all-tools-link" href="tools/">Browse all tools →</a>
+            </div>
+            <div class="tools-list">
+                <a class="tool-card" href="tools/unit-price-calculator/">
+                    <div class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h2c2 0 5-1 7-4 2 3 5 4 7 4h2"/><path d="M12 3v18"/><path d="M7 21h10"/><path d="m2 16 3-8 3 8c-1.5 2-4.5 2-6 0Z"/><path d="m16 16 3-8 3 8c-1.5 2-4.5 2-6 0Z"/></svg></div>
+                    <strong>Unit Price Calculator</strong>
+                    <span>Compare packages →</span>
+                </a>
+                <a class="tool-card" href="tools/shrinkflation-calculator/">
+                    <div class="tool-icon warm" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/><path d="M16 18h6"/></svg></div>
+                    <strong>Shrinkflation Calculator</strong>
+                    <span>Check the change →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-header fade-in-up">
+            <h2>Everything you need for smart shopping</h2>
+        </div>
+
+        <div class="bento-grid">
+            <!-- Large Item -->
+            <div class="bento-item bento-large fade-in-up">
+                <div class="bento-content">
+                    <h3>AI-Powered Scanner</h3>
+                    <p>Simply point your camera at any price tag. Our AI instantly reads the text, identifies the product, and compares it against historical USDA market data to tell you if it's a good deal.</p>
+                </div>
+                <div class="bento-image">
+                    <img src="assets/screenshots/scanner_ui.png" alt="Scanner UI">
+                </div>
+            </div>
+
+            <!-- Medium Item 1 -->
+            <div class="bento-item bento-medium fade-in-up">
+                <div class="bento-content">
+                    <h3>Deep Market Insights</h3>
+                    <p>Get actionable AI insights on seasonality and pricing trends. Know exactly when to stock up and when to wait.</p>
+                </div>
+                <div class="bento-image">
+                    <img src="assets/screenshots/market_insights.png" alt="Insights">
+                </div>
+            </div>
+
+            <!-- Medium Item 2 -->
+            <div class="bento-item bento-medium fade-in-up">
+                <div class="bento-content">
+                    <h3>Historical Trends</h3>
+                    <p>View yearly averages and month-by-month seasonality charts to understand exactly how much you should be paying.</p>
+                </div>
+                <div class="bento-image">
+                    <img src="assets/screenshots/trends.png" alt="Trends">
+                </div>
+            </div>
+
+            <!-- Dark Mode & Widget (Large) -->
+            <div class="bento-item bento-large fade-in-up" style="background: var(--ink); color: white; border: none;">
+                <div class="bento-content">
+                    <h3 style="color: white;">Dark Mode & Widgets</h3>
+                    <p style="color: #a0aab2;">Beautifully designed for dark mode with home screen widgets that keep your favorite items and latest insights just a glance away.</p>
+                </div>
+                <div class="bento-image">
+                    <img src="assets/screenshots/dark_mode.png" alt="Dark Mode Preview" style="border: 4px solid #333; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <a href="https://www.producthunt.com/products/groceryprice?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-groceryprice" target="_blank" rel="noopener noreferrer">
+            <img alt="GroceryPrice - Smart grocery price context &amp; historical USDA trends | Product Hunt" class="ph-badge" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1169696&amp;theme=neutral&amp;t=1781221741042">
+        </a>
+        <p style="color: var(--muted); font-size: 0.9rem;">&copy; 2026 Louis Liu. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="mailto:groceryprice.app@gmail.com">Support</a>
+        </div>
+    </footer>
+
+</body>
+</html>

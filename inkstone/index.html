@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inkstone: Sign PDF & Docs — eSign & Encrypted Signing Links</title>
+<meta name="description" content="Prepare documents in seconds, sign locally for free, or share an encrypted signing link that recipients can sign directly in their browser with zero app download.">
+<link rel="canonical" href="https://ysliustudio.com/inkstone/">
+<style>
+  :root {
+    --stone:#EFF1ED; --paper:#FFFFFF; --ink:#12181B; --slate:#4A5C63;
+    --mist:#8A979C; --seal:#A8342B; --line:#D8DCD5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --stone:#0E1214; --paper:#171D20; --ink:#E9ECE8; --slate:#9AA8AD;
+            --mist:#6B7A7F; --seal:#E0685C; --line:#262E32; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--stone);color:var(--ink);line-height:1.7;
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:48rem;margin:0 auto;padding:3.5rem 1.5rem 6rem}
+  header{border-bottom:2px solid var(--ink);padding-bottom:2rem;margin-bottom:2.5rem;display:flex;align-items:center;gap:1.5rem}
+  .app-icon{width:76px;height:76px;border-radius:18px;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+  .brand{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--seal);
+         margin:0 0 .35rem;font-weight:700}
+  h1{font-size:clamp(1.85rem,4.5vw,2.4rem);line-height:1.15;margin:0 0 .5rem;letter-spacing:-.02em}
+  .lede{font-size:1.05rem;margin:0;color:var(--slate)}
+  .cta-bar{margin:2rem 0 2.5rem;display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-primary{background:var(--ink);color:var(--paper);text-decoration:none;padding:.8rem 1.4rem;border-radius:10px;font-weight:700;font-size:.95rem}
+  .btn-secondary{background:var(--paper);color:var(--ink);border:1px solid var(--line);text-decoration:none;padding:.8rem 1.4rem;border-radius:10px;font-weight:600;font-size:.95rem}
+  h2{font-size:1.25rem;margin:2.5rem 0 .8rem;padding-top:1.25rem;border-top:1px solid var(--line)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1.25rem 1.4rem}
+  .card h3{margin:0 0 .4rem;font-size:1.02rem}
+  .card p{margin:0;color:var(--slate);font-size:.92rem}
+  footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--line);
+         color:var(--mist);font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+  footer a{color:var(--seal);text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="/images/icons/inkstone.png" alt="Inkstone Icon" class="app-icon">
+    <div>
+      <p class="brand">YS Liu Studio · Business & Productivity</p>
+      <h1>Inkstone: Sign PDF &amp; Docs</h1>
+      <p class="lede">eSign contracts locally for free, or share encrypted browser signing links with zero recipient friction.</p>
+    </div>
+  </header>
+
+  <div class="cta-bar">
+    <a href="https://apps.apple.com/app/id6801701847" class="btn-primary"> Download on the App Store</a>
+    <a href="support.html" class="btn-secondary">FAQ &amp; Support</a>
+    <a href="/" class="btn-secondary">← Back to YS Liu Studio</a>
+  </div>
+
+  <h2>Core Features</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Free Self-Signing Forever</h3>
+      <p>Sign your own PDFs and scanned paper documents with zero watermarks, no account required, and unlimited local exports.</p>
+    </div>
+    <div class="card">
+      <h3>Browser Signing Links</h3>
+      <p>Send a secure signing link to clients or tenants. Recipients sign directly in Safari or Chrome without installing an app.</p>
+    </div>
+    <div class="card">
+      <h3>SHA-256 Audit Trail</h3>
+      <p>Every signed envelope includes a tamper-evident SHA-256 cryptographic digest, timestamp, and verification certificate.</p>
+    </div>
+    <div class="card">
+      <h3>90-Day Auto-Purge Privacy</h3>
+      <p>Cloud envelopes automatically purge after 90 days so sensitive IDs and contracts never sit on servers indefinitely.</p>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 YS Liu Studio · Inkstone</span>
+    <div>
+      <a href="support.html">Support</a> ·
+      <a href="privacy.html">Privacy Policy</a> ·
+      <a href="terms.html">Terms of Use</a> ·
+      <a href="/">YS Liu Studio</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

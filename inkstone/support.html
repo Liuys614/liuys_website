@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Inkstone</title>
+<style>
+  :root {
+    --stone:#EFF1ED; --paper:#FFFFFF; --ink:#12181B; --slate:#4A5C63;
+    --mist:#8A979C; --seal:#A8342B; --line:#D8DCD5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --stone:#0E1214; --paper:#171D20; --ink:#E9ECE8; --slate:#9AA8AD;
+            --mist:#6B7A7F; --seal:#E0685C; --line:#262E32; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--stone);color:var(--ink);line-height:1.7;
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:44rem;margin:0 auto;padding:3.5rem 1.5rem 6rem}
+  header{border-bottom:2px solid var(--ink);padding-bottom:1.75rem;margin-bottom:2.5rem}
+  .brand{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--seal);
+         margin:0 0 .9rem;font-weight:600}
+  h1{font-size:clamp(1.9rem,5vw,2.5rem);line-height:1.2;margin:0 0 .6rem;letter-spacing:-.01em}
+  .lede{font-size:1.05rem;margin:0}
+  h2{font-size:1.2rem;margin:2.5rem 0 .6rem;padding-top:1.25rem;border-top:1px solid var(--line)}
+  h3{font-size:1rem;margin:1.6rem 0 .35rem}
+  p,li{color:var(--slate)}
+  p{margin:0 0 1rem}
+  ul{padding-left:1.15rem;margin:0 0 1rem}
+  li{margin-bottom:.5rem}
+  strong{color:var(--ink)}
+  a{color:var(--seal)}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:10px;
+        padding:1.25rem 1.4rem;margin:1.5rem 0}
+  .card p:last-child{margin-bottom:0}
+  footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--line);
+         color:var(--mist);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="brand">Inkstone</p>
+    <h1>Support</h1>
+    <p class="lede">Email <a href="mailto:liuys614@gmail.com">liuys614@gmail.com</a> and you will
+    get a reply from a person, usually within two working days.</p>
+  </header>
+
+  <div class="card">
+    <p><strong>When you write in, it helps to include:</strong> your iOS version, whether the
+    document was signed on your own device or sent to someone else, and — if a signing link is
+    involved — the document title. Please do not email us the document itself.</p>
+  </div>
+
+  <h2>Common questions</h2>
+
+  <h3>Is signing really free?</h3>
+  <p>Signing your own documents is free, unlimited, and permanent. There is no trial, no watermark,
+  and no account required. Inkstone Pro is only for sending documents to other people; the free
+  tier includes three sends a month.</p>
+
+  <h3>Does the person I send to need the app?</h3>
+  <p>No. They open the link in whatever browser is already on their phone and sign there. They do
+  not install anything and do not create an account.</p>
+
+  <h3>Why did my document disappear?</h3>
+  <p>Documents stored on our servers are deleted 90 days after signing — for everyone, Pro
+  included. The app shows the remaining days on each document and we email a reminder on day 75.
+  Leave "save a copy to Files" switched on and you will always keep your own copy, which we cannot
+  delete.</p>
+
+  <h3>Can I get a deleted document back?</h3>
+  <p>No. After the 90-day purge the file is gone from our systems and we have no way to recover
+  it. This is the same policy that keeps other people's passport and ID numbers from sitting on a
+  server indefinitely.</p>
+
+  <h3>A signing link I copied does not work</h3>
+  <p>Signing links expire 14 days after they are created. A link also only exists on the device
+  that created it — if you reinstalled the app or switched devices, open the document and choose
+  <strong>Generate Signing Link</strong> to issue a new one.</p>
+
+  <h3>Is a signature made in this app legally binding?</h3>
+  <p>Inkstone records what electronic signature law asks for: your explicit consent to sign
+  electronically, a timestamp, and a SHA-256 digest of the document before and after signing.
+  Documents you send additionally record a server timestamp, the recipient's IP address, and when
+  the link was first opened.</p>
+  <p>We label the two clearly and differently — <strong>Self-Signed</strong> versus
+  <strong>Verified Remote Signature</strong> — because they do not carry the same evidentiary
+  weight. Whether any given signature is binding depends on your jurisdiction and the type of
+  document. We are not lawyers and this is not legal advice.</p>
+
+  <h3>Are the built-in templates legal contracts?</h3>
+  <p>No. They are blank formatting scaffolds — where the fields go, nothing more. They contain no
+  statutory contract text and are not a substitute for advice from a qualified lawyer.</p>
+
+  <h3>How do I delete my account?</h3>
+  <p>Settings → Delete Account &amp; All Data. It removes your account, every envelope, every
+  stored file, and the audit records, immediately and irreversibly. Copies already saved to your
+  Files app or iCloud Drive are yours and are untouched.</p>
+
+  <h3>How do I cancel Inkstone Pro?</h3>
+  <p>Subscriptions are billed by Apple. Cancel in the iOS Settings app under your Apple Account →
+  Subscriptions. Cancelling stops future renewals; refunds are handled by Apple, not by us.</p>
+
+  <h2>Reporting a problem</h2>
+  <p>If you have found a bug, a wrong translation, or something that reads as misleading, please
+  tell us — particularly anything about the audit trail or the free/paid boundary. Those two we
+  treat as urgent.</p>
+
+  <footer>Inkstone · <a href="index.html">Overview</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="/">YS Liu Studio</a></footer>
+</div>
+</body>
+</html>

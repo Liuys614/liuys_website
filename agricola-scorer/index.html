@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricola Scorer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        h1, h2 {
+            color: #336633;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-button {
+            background-color: #f1f1f1;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 20px;
+            margin-right: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        
+        .tab-button.active {
+            background-color: #336633;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+            animation: fadeEffect 1s;
+        }
+        
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        .category {
+            margin-bottom: 15px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .app-features {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .download-button {
+            display: block;
+            background-color: #336633;
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 30px auto;
+            max-width: 200px;
+        }
+        
+        .download-button:hover {
+            background-color: #264d26;
+        }
+    </style>
+</head>
+<body>
+    <h1>Agricola Scorer</h1>
+    
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'AppDescription')">App Description</button>
+        <button class="tab-button" onclick="openTab(event, 'PrivacyPolicy')">Privacy Policy</button>
+    </div>
+    
+    <!-- App Description Tab -->
+    <div id="AppDescription" class="tab-content" style="display: block;">
+        <h2>The Ultimate Scoring Tool for Agricola Board Game</h2>
+        
+        <p>Agricola Scorer is a simple yet powerful tool designed specifically for Agricola board game enthusiasts. Say goodbye to manual calculations and score sheet errors!</p>
+        
+        <div class="app-features">
+            <h3>Key Features:</h3>
+            <ul>
+                <li>Easy and intuitive scoring for all Agricola game categories</li>
+                <li>Support for both Family Game and Standard Game scoring</li>
+                <li>Save and track your game history</li>
+                <li>Compare scores with friends</li>
+                <li>Statistics to track your improvement over time</li>
+                <li>Clean, user-friendly interface</li>
+            </ul>
+        </div>
+        
+        <p>Whether you're a casual player or a serious Agricola competitor, this app will enhance your gaming experience by making the scoring process quick, accurate, and hassle-free.</p>
+        
+        <p>Available for iPhone and iPad.</p>
+        
+        <a href="https://apps.apple.com/app/id6741305872" class="download-button">Download on the App Store</a>
+    </div>
+    
+    <!-- Privacy Policy Tab -->
+    <div id="PrivacyPolicy" class="tab-content">
+        <h2>Privacy Policy</h2>
+        <p><strong>Effective Date:</strong> March 1, 2024</p>
+
+        <h3>1. Introduction</h3>
+        <p>This Privacy Policy describes how YI-SHIH LIU ("we," "us," or "our") collects, uses, and shares information when you use the Agricola Scorer mobile application (the "App"). We are committed to protecting your privacy.</p>
+
+        <h3>2. Information We Collect</h3>
+        <ul>
+          <li><strong>User-Entered Data:</strong>
+            <p>We collect the Agricola game scores and related information you enter into the App, including category scores and game logs.</p>
+          </li>
+          <li><strong>Usage Data:</strong>
+            <p>We may collect information about how you use the App, such as the features you use and the frequency of use.</p>
+          </li>
+          <li><strong>Device Information:</strong>
+            <p>We may collect information about the device information, such as device type, operating system, etc.</p>
+          </li>
+        </ul>
+
+        <h3>3. How We Use Your Information</h3>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide and maintain the App's functionality, including score calculation and history tracking.</li>
+          <li>Improve the App's features and user experience.</li>
+        </ul>
+
+        <h3>4. Data Storage and Security</h3>
+        <p>We store your game score data on our server side.</p>
+        <p>We take reasonable measures to protect your data from unauthorized access, use, or disclosure.</p>
+        <p>We retain your score data indefinitely. This allows you to track your progress and achievements over time without limitation. However, you may request deletion of your score data at any time by contacting us through app feedback form. Upon receiving your request, we will promptly delete all of your score data from our systems.</p>
+
+        <h3>5. User Rights and Choices</h3>
+        <p>You can access, review, and edit your game score data within the App's history log.</p>
+        <p>You can delete individual game logs or clear your entire game history within the App.</p>
+
+        <h3>6. Children's Privacy</h3>
+        <p>Our App is not intended for children under 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete it.</p>
+
+        <h3>7. Third-Party Services</h3>
+        <p>We use Google Firebase for our app's infrastructure. Firebase collects and processes the following data:</p>
+        <ul>
+          <li>User authentication information (if you use our login features)</li>
+          <li>App performance data including crash reports</li>
+          <li>User score data and app usage analytics</li>
+          <li>Device information (such as device model, operating system version, and unique device identifiers)</li>
+        </ul>
+        <p>This data helps us improve our app, fix technical issues, and enhance your experience. Firebase's data collection and processing are governed by Google's Privacy Policy, which you can review at <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>, and the Firebase Terms of Service available at <a href="https://firebase.google.com/terms">https://firebase.google.com/terms</a>.</p>
+            
+        <h3>8. Changes to This Privacy Policy</h3>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+        <p>You are advised to review this Privacy Policy periodically for any changes.</p>
+
+        <h3>9. Contact Us</h3>
+        <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+        <p><a href="mailto:liuys614@gmail.com">liuys614@gmail.com</a></p>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            
+            // Hide all tab content
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            
+            // Remove "active" class from all tab buttons
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            
+            // Show the current tab and add "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>

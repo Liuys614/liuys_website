@@ -153,7 +153,7 @@ export const APPS = [
     "links": [
       {
         "label": "Visit Website",
-        "url": "https://inkstone-app-prod.web.app",
+        "url": "/inkstone/",
         "type": "web"
       },
       {
@@ -294,7 +294,7 @@ export const APPS = [
     "links": [
       {
         "label": "Visit Website",
-        "url": "https://groceryprice.app/",
+        "url": "/grocery-price/",
         "type": "web"
       },
       {
@@ -450,7 +450,7 @@ export const APPS = [
     "links": [
       {
         "label": "Visit Website",
-        "url": "https://agricolascorer.io",
+        "url": "/agricola-scorer/",
         "type": "web"
       },
       {

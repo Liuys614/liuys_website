@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Inkstone</title>
+<style>
+  :root {
+    --stone:#EFF1ED; --paper:#FFFFFF; --ink:#12181B; --slate:#4A5C63;
+    --mist:#8A979C; --seal:#A8342B; --line:#D8DCD5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --stone:#0E1214; --paper:#171D20; --ink:#E9ECE8; --slate:#9AA8AD;
+            --mist:#6B7A7F; --seal:#E0685C; --line:#262E32; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--stone);color:var(--ink);line-height:1.7;
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:44rem;margin:0 auto;padding:3.5rem 1.5rem 6rem}
+  header{border-bottom:2px solid var(--ink);padding-bottom:1.75rem;margin-bottom:2.5rem}
+  .brand{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--seal);
+         margin:0 0 .9rem;font-weight:600}
+  h1{font-size:clamp(1.9rem,5vw,2.5rem);line-height:1.2;margin:0 0 .6rem;letter-spacing:-.01em}
+  .updated{color:var(--mist);font-size:.86rem;margin:0}
+  h2{font-size:1.2rem;margin:2.5rem 0 .6rem;padding-top:1.25rem;border-top:1px solid var(--line)}
+  p,li{color:var(--slate)}
+  p{margin:0 0 1rem}
+  ul{padding-left:1.15rem;margin:0 0 1rem}
+  li{margin-bottom:.5rem}
+  strong{color:var(--ink)}
+  a{color:var(--seal)}
+  .lede{font-size:1.05rem;color:var(--ink)}
+  table{border-collapse:collapse;width:100%;font-size:.9rem;margin:1.25rem 0}
+  th{text-align:left;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+     color:var(--mist);border-bottom:1px solid var(--ink);padding:0 .8rem .5rem 0}
+  td{padding:.65rem .8rem .65rem 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--slate)}
+  footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--line);
+         color:var(--mist);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="brand">Inkstone</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated 1 September 2026</p>
+  </header>
+
+  <p class="lede">Inkstone is an electronic signature app for sending documents out to be signed.
+  This page explains exactly what leaves your phone, when, and for how long we keep it.</p>
+
+  <h2>Preparing a document sends us nothing</h2>
+  <p>Importing a PDF, scanning a page, placing signature fields, and building templates all happen
+  entirely on your device. Nothing is uploaded while you prepare a document, and drafts and
+  templates you never send are never transmitted to us.</p>
+  <p>Documents live in your app's storage and, if you leave the default on, are also saved to your
+  Files app and iCloud Drive — which is Apple's service, governed by Apple's privacy policy, not
+  ours.</p>
+
+  <h2>Sending a document to someone else</h2>
+  <p>If you ask Inkstone to create a signing link, the document is uploaded to our servers so the
+  recipient can open it in a browser. At that point we hold:</p>
+  <table>
+    <thead><tr><th>What</th><th>Why</th><th>Kept for</th></tr></thead>
+    <tbody>
+      <tr><td>The PDF, before and after signing</td><td>So the recipient can open and sign it</td><td>90 days after signing</td></tr>
+      <tr><td>Recipient name and email address</td><td>To address the invitation and the audit page</td><td>90 days after signing</td></tr>
+      <tr><td>SHA-256 digests of the file</td><td>Tamper evidence on the audit page</td><td>90 days after signing</td></tr>
+      <tr><td>Server timestamps, IP address, browser user agent</td><td>The audit trail that makes a remote signature verifiable</td><td>90 days after signing</td></tr>
+      <tr><td>Your account identifier</td><td>To show you your own documents</td><td>Until you delete your account</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Ninety days, for everyone</h2>
+  <p><strong>Every stored document is deleted 90 days after it is signed</strong> — on the free
+  tier and on Inkstone Pro alike. This is deliberate. Signed documents routinely contain other
+  people's passport numbers and national identity numbers, and we would rather not hold that
+  indefinitely.</p>
+  <p>The app shows the remaining days on each document so you can save your own copy before it
+  goes. Turn on the automatic copy to Files and iCloud Drive and this takes care of itself.
+  After deletion we cannot recover the file for you.</p>
+
+  <h2>Accounts</h2>
+  <p><strong>Inkstone requires no sign-in.</strong> There is no registration screen, and we never
+  ask for your name, your email address, or a password. The app creates an anonymous identifier on
+  your device so our servers can tell your documents apart from someone else's, and that identifier
+  is all we hold about you.</p>
+  <p>Against that anonymous identifier we store only the envelopes you created and your
+  subscription status. Because we never collect a password, there is nothing for us to leak.</p>
+
+  <h2>Deleting your account</h2>
+  <p>Settings → Delete Account &amp; All Data removes your account, every envelope you created,
+  every stored file, and the audit records attached to them, from our servers. It is immediate and
+  irreversible. Documents already saved to your own Files or iCloud Drive are yours and are not
+  touched.</p>
+
+  <h2>What we do not do</h2>
+  <ul>
+    <li>We do not sell or rent your data to anyone.</li>
+    <li>We do not use your documents to train machine learning models.</li>
+    <li>We do not show advertising, and we carry no advertising or analytics SDKs.</li>
+    <li>We do not track you across other apps or websites, and we do not ask for the App Tracking
+        Transparency permission because we have nothing to track you with.</li>
+  </ul>
+
+  <h2>Who else touches the data</h2>
+  <p>Only the services needed to run the product:</p>
+  <ul>
+    <li><strong>Google Firebase</strong> — hosting, database, file storage, and authentication.</li>
+    <li><strong>Resend</strong> — sends the signing invitation email. It receives the recipient's
+        name, email address, document title, and the signing link.</li>
+    <li><strong>Apple</strong> — processes subscription purchases. We never see your payment
+        details.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>Inkstone is not directed at children under 13, and we do not knowingly collect their personal
+  information. If you believe a child has provided us information, contact us and we will delete it.</p>
+
+  <h2>Your rights</h2>
+  <p>Depending on where you live you may have the right to access, correct, export, or delete your
+  personal data, and to object to processing. Account deletion is built into the app; for anything
+  else, email us and we will respond within 30 days.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes materially we will update the date above and, where the change affects
+  how we handle documents you have already signed, notify you in the app.</p>
+
+  <h2>Contact</h2>
+  <p>Questions, requests, or complaints: <a href="mailto:liuys614@gmail.com">liuys614@gmail.com</a></p>
+
+  <footer>Inkstone · <a href="index.html">Overview</a> · <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a> · <a href="/">YS Liu Studio</a></footer>
+</div>
+</body>
+</html>
