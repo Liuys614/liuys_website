@@ -56,19 +56,26 @@ def query_gsc_property(site_prop: str, page_prefix: str, start_date: str, end_da
             data = json.loads(resp.read().decode("utf-8"))
             rows = data.get("rows", [])
             candidates = []
+            emerging_candidates = []
             for r in rows:
                 q = r.get("keys", [""])[0].strip().lower()
                 pos = float(r.get("position", 0))
                 impr = int(r.get("impressions", 0))
                 clicks = int(r.get("clicks", 0))
-                if 15.0 <= pos <= 55.0 and impr >= 10 and q not in published_keywords:
+                if q in published_keywords:
+                    continue
+                if 15.0 <= pos <= 55.0 and impr >= 10:
                     candidates.append((impr, pos, clicks, q))
-            if candidates:
-                candidates.sort(key=lambda x: x[0], reverse=True)
-                best = candidates[0]
+                elif 10.0 <= pos <= 60.0 and impr >= 2:
+                    emerging_candidates.append((impr, pos, clicks, q))
+            if candidates or emerging_candidates:
+                pool = candidates if candidates else emerging_candidates
+                pool.sort(key=lambda x: x[0], reverse=True)
+                best = pool[0]
                 slug = best[3].replace(" ", "-")[:55]
+                src = "gsc_strike_zone" if candidates else "gsc_emerging_strike_zone"
                 return {
-                    "source": "gsc_strike_zone",
+                    "source": src,
                     "gsc_property_used": site_prop,
                     "slug": slug,
                     "target_keyword": best[3],
@@ -81,7 +88,7 @@ def query_gsc_property(site_prop: str, page_prefix: str, start_date: str, end_da
                     "pitch_headline": "Track your CB1 receptor recovery & T-Break privately on iPhone",
                     "pitch_body": "100% on-device tracking for cannabis-free days, CB1 upregulation, 4-7-8 vagus breathing, and dispensary savings."
                 }, None
-            return None, f"GSC ({site_prop}) returned {len(rows)} queries, 0 matched Strike Zone (pos 15..55, impr >= 10)."
+            return None, f"GSC ({site_prop}) returned {len(rows)} queries, 0 matched Strike Zone (pos 15..55, impr >= 10) or Emerging (pos 10..60, impr >= 2)."
     except urllib.error.HTTPError as e:
         err_body = e.read().decode("utf-8", errors="replace")
         try:
