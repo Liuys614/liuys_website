@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
       cb1: 20,
       rem: 15,
       clarity: 25,
-      blurPx: 7,
-      fogOpacity: 0.78,
+      blurPx: 1.1,
+      fogOpacity: 0.32,
       img: 'assets/recovery/24h.webp',
       quote: '"First 24h: Blood oxygen normalizes while residual THC begins clearing."'
     },
@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
       cb1: 45,
       rem: 30,
       clarity: 42,
-      blurPx: 4,
-      fogOpacity: 0.5,
+      blurPx: 0.6,
+      fogOpacity: 0.2,
       img: 'assets/recovery/48h.webp',
       quote: '"48 hours THC-free: PET scans show CB1 cannabinoid receptors begin rebuilding."'
     },
@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
       cb1: 72,
       rem: 85,
       clarity: 68,
-      blurPx: 1.8,
-      fogOpacity: 0.25,
+      blurPx: 0.2,
+      fogOpacity: 0.1,
       img: 'assets/recovery/7d.webp',
       quote: '"Day 7: Deep REM sleep rebounds strongly—vivid dreams and overnight memory return."'
     },
@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
       cb1: 88,
       rem: 94,
       clarity: 86,
-      blurPx: 0.5,
-      fogOpacity: 0.08,
+      blurPx: 0,
+      fogOpacity: 0.03,
       img: 'assets/recovery/14d.webp',
       quote: '"Day 14: Verbal recall, focus, and morning energy stabilize near baseline."'
     },
@@ -127,8 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (unfogBrainImg) {
       unfogBrainImg.src = stage.img;
-      unfogBrainImg.style.filter = `blur(${stage.blurPx}px) saturate(${0.7 + (stage.cb1 / 100) * 0.4})`;
-      unfogBrainImg.style.transform = `scale(${0.92 + (stage.cb1 / 100) * 0.1})`;
+      unfogBrainImg.style.filter = `blur(${stage.blurPx}px) saturate(${0.75 + (stage.cb1 / 100) * 0.35}) contrast(${0.92 + (stage.cb1 / 100) * 0.12})`;
+      unfogBrainImg.style.transform = `scale(${0.93 + (stage.cb1 / 100) * 0.09})`;
     }
 
     if (fogCloudOverlay) {

@@ -757,20 +757,20 @@ body {
 }
 
 .unfog-brain-img {
-  width: 124px;
-  height: 124px;
+  width: 126px;
+  height: 126px;
   object-fit: contain;
-  filter: blur(4px) saturate(0.75);
+  filter: blur(0px) saturate(0.85);
   transform: scale(0.96);
-  transition: filter 0.55s ease, transform 0.55s ease;
+  transition: filter 0.45s ease, transform 0.45s ease, opacity 0.35s ease;
 }
 
 .fog-cloud-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle, rgba(234, 230, 223, 0.55) 0%, rgba(255,255,255,0.75) 100%);
-  opacity: 0.55;
-  transition: opacity 0.55s ease;
+  background: radial-gradient(circle, rgba(246, 244, 238, 0.05) 35%, rgba(215, 224, 219, 0.45) 100%);
+  opacity: 0.35;
+  transition: opacity 0.45s ease;
   pointer-events: none;
 }
 
