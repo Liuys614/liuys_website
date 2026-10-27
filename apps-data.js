@@ -19,7 +19,7 @@ export const PROFILE = {
       "organization": "Independent App Studio",
       "location": "United States",
       "highlights": [
-        "Architected, designed, and shipped 5 native iOS apps live on the App Store: Inkstone, Pill Reminder, Grocery Price Scanner, Alcohol Free Tracker, and Agricola Scorer.",
+        "Architected, designed, and shipped 6 native iOS apps live on the App Store: Inkstone, Pill Reminder, Grocery Price Scanner, Alcohol Free Tracker, Unfog (Quit Weed), and Agricola Scorer.",
         "Engineered on-device camera OCR scanning, PDFKit digital signing pipelines, and offline-first local data synchronization.",
         "Automated CI/CD deployment pipelines, StoreKit 2 monetization, and App Store Connect localization across 40+ storefronts."
       ]
@@ -532,6 +532,59 @@ export const APPS = [
         "type": "appstore"
       }
     ],
-    "screenshots": []
+    "appStoreRating": "5.0",
+    "appStoreReviews": 1,
+    "screenshots": [
+      {
+        "thumb": "/images/screenshots/weed/0_APP_IPHONE_69_0_thumb.webp",
+        "full": "/images/screenshots/weed/0_APP_IPHONE_69_0.webp",
+        "alt": "T-Break & Quit Weed: Unfog Screenshot 1 — Calm THC Progress"
+      },
+      {
+        "thumb": "/images/screenshots/weed/1_APP_IPHONE_69_1_thumb.webp",
+        "full": "/images/screenshots/weed/1_APP_IPHONE_69_1.webp",
+        "alt": "T-Break & Quit Weed: Unfog Screenshot 2 — CB1 & REM Sleep Recovery"
+      },
+      {
+        "thumb": "/images/screenshots/weed/2_APP_IPHONE_69_2_thumb.webp",
+        "full": "/images/screenshots/weed/2_APP_IPHONE_69_2.webp",
+        "alt": "T-Break & Quit Weed: Unfog Screenshot 3 — 4-7-8 Urge Surfing SOS"
+      },
+      {
+        "thumb": "/images/screenshots/weed/3_APP_IPHONE_69_3_thumb.webp",
+        "full": "/images/screenshots/weed/3_APP_IPHONE_69_3.webp",
+        "alt": "T-Break & Quit Weed: Unfog Screenshot 4 — Dispensary Savings Tracker"
+      },
+      {
+        "thumb": "/images/screenshots/weed/4_APP_IPHONE_69_4_thumb.webp",
+        "full": "/images/screenshots/weed/4_APP_IPHONE_69_4.webp",
+        "alt": "T-Break & Quit Weed: Unfog Screenshot 5 — Trigger & Craving Calendar"
+      },
+      {
+        "thumb": "/images/screenshots/weed/5_APP_IPHONE_69_5_thumb.webp",
+        "full": "/images/screenshots/weed/5_APP_IPHONE_69_5.webp",
+        "alt": "T-Break & Quit Weed: Unfog Screenshot 6 — Milestone Achievements"
+      },
+      {
+        "thumb": "/images/screenshots/weed/6_APP_IPHONE_69_6_thumb.webp",
+        "full": "/images/screenshots/weed/6_APP_IPHONE_69_6.webp",
+        "alt": "T-Break & Quit Weed: Unfog Screenshot 7 — Daily Check-In Without Shame"
+      },
+      {
+        "thumb": "/images/screenshots/weed/7_APP_IPHONE_69_7_thumb.webp",
+        "full": "/images/screenshots/weed/7_APP_IPHONE_69_7.webp",
+        "alt": "T-Break & Quit Weed: Unfog Screenshot 8 — 100% On-Device Privacy"
+      },
+      {
+        "thumb": "/images/screenshots/weed/8_APP_IPHONE_69_8_thumb.webp",
+        "full": "/images/screenshots/weed/8_APP_IPHONE_69_8.webp",
+        "alt": "T-Break & Quit Weed: Unfog Screenshot 9 — Soothing Night Mode"
+      },
+      {
+        "thumb": "/images/screenshots/weed/9_APP_IPHONE_69_9_thumb.webp",
+        "full": "/images/screenshots/weed/9_APP_IPHONE_69_9.webp",
+        "alt": "T-Break & Quit Weed: Unfog Screenshot 10 — Shareable Streak Cards"
+      }
+    ]
   }
 ];

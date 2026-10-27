@@ -1,181 +1,793 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="referrer" content="origin-when-cross-origin">
-    <meta name="apple-itunes-app" content="app-id=6825549617, affiliate-data=pt=1793695638&ct=web_smart_banner, app-argument=https://ysliustudio.com/quit-weed/">
-    <meta name="description" content="T-Break & Quit Weed: Unfog is a 100% private, local-first iPhone and iPad app for tracking cannabis-free days, THC detox, CB1 receptor recovery, and dispensary savings.">
-    <meta name="theme-color" content="#F7F4EE">
-    <link rel="canonical" href="https://ysliustudio.com/quit-weed/">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ysliustudio.com/quit-weed/">
-    <meta property="og:title" content="T-Break &amp; Quit Weed: Unfog — THC Detox, Craving SOS &amp; Sober Milestones">
-    <meta property="og:description" content="Track weed-free days, calm withdrawal anxiety with 4-7-8 vagus nerve breathing, monitor CB1 receptor recovery, and calculate dispensary savings—100% private and offline.">
-    <meta property="og:image" content="https://ysliustudio.com/quit-weed/assets/app-icon.png">
-    <title>T-Break &amp; Quit Weed: Unfog — THC Detox, Craving SOS &amp; Sober Milestones</title>
-    <link rel="icon" href="assets/app-icon.png">
-    <link rel="apple-touch-icon" href="assets/app-icon.png">
-    <link rel="stylesheet" href="styles.css">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "SoftwareApplication",
-          "name": "T-Break & Quit Weed: Unfog",
-          "operatingSystem": "iOS, iPadOS",
-          "applicationCategory": "HealthApplication",
-          "url": "https://apps.apple.com/app/apple-store/id6825549617?pt=1793695638&ct=web_schema_org&mt=8",
-          "downloadUrl": "https://apps.apple.com/app/apple-store/id6825549617?pt=1793695638&ct=web_schema_org&mt=8",
-          "description": "100% private, local-first iOS tracker for weed-free days, THC detox timelines, 4-7-8 vagus nerve breathing, and dispensary money saved.",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T-Break & Quit Weed: Unfog — THC Detox, CB1 Recovery & Craving SOS</title>
+  <meta name="description" content="Clear the THC fog without the guilt. Track CB1 receptor upregulation, calm weed cravings in 180 seconds with 4-7-8 vagus nerve breathing, and calculate dispensary savings. 100% private & on-device." />
+  <link rel="canonical" href="https://ysliustudio.com/quit-weed/" />
+
+  <!-- Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=6825549617" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="T-Break & Quit Weed: Unfog — THC Detox & CB1 Recovery" />
+  <meta property="og:description" content="Whether taking a 30-day tolerance break or quitting cannabis for good: track CB1 receptor upregulation, REM sleep rebound, and dispensary savings." />
+  <meta property="og:url" content="https://ysliustudio.com/quit-weed/" />
+  <meta property="og:image" content="https://ysliustudio.com/quit-weed/assets/appstore/01-calm-progress.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="T-Break & Quit Weed: Unfog" />
+  <meta name="twitter:description" content="Clear the THC fog with neuroscience-backed CB1 recovery timelines and 4-7-8 vagus nerve craving SOS." />
+  <meta name="twitter:image" content="https://ysliustudio.com/quit-weed/assets/appstore/01-calm-progress.webp" />
+
+  <link rel="icon" type="image/png" href="assets/app-icon.png" />
+  <link rel="apple-touch-icon" href="assets/app-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured Data: SoftwareApplication + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "T-Break & Quit Weed: Unfog",
+        "operatingSystem": "iOS",
+        "applicationCategory": "HealthApplication",
+        "url": "https://ysliustudio.com/quit-weed/",
+        "downloadUrl": "https://apps.apple.com/us/app/id6825549617?pt=1793695638&ct=web_schema&mt=8",
+        "description": "Cannabis tolerance break (T-Break) and quit weed tracker featuring CB1 receptor upregulation timelines, REM sleep rebound tracking, 4-7-8 vagus nerve breathing SOS, and dispensary savings calculator.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
         },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Where is my weed tracker data stored?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Your logs, check-ins, and savings data are stored 100% locally on your iOS device. Unfog requires no account and never uploads your personal data to remote servers."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can I use Unfog for a 30-day Tolerance Break?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. Unfog provides a dedicated 30-Day T-Break mode designed to track CB1 receptor sensitivity reset stages alongside permanent cessation mode."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How does the Craving SOS tool work?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our 4-7-8 rhythmic breathing tool stimulates the vagus nerve, rapidly lowering heart rate and soothing the acute autonomic anxiety common during cannabis withdrawal."
-              }
-            }
-          ]
+        "author": {
+          "@type": "Organization",
+          "name": "YS Liu Studio",
+          "url": "https://ysliustudio.com/"
         }
-      ]
-    }
-    </script>
-  </head>
-  <body class="home-page">
-    <header class="site-header">
-      <nav class="nav container" aria-label="Primary navigation">
-        <a class="brand" href="index.html" aria-label="Unfog home">
-          <img src="assets/app-icon.png" alt="">
-          <span>Unfog</span>
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does it take for CB1 receptors to reset during a weed tolerance break?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Positron Emission Tomography (PET) neuroimaging studies show CB1 cannabinoid receptor upregulation begins within 48 hours of THC abstinence and returns to normal baseline density across most brain regions within 21 to 28 days."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use Unfog for a 30-day T-Break instead of quitting permanently?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Unfog lets you choose between a structured Tolerance Break (such as 7, 14, 21, or 30 days) or permanent cannabis cessation, adapting your daily check-in and milestones without guilt or shame."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Unfog require an account or upload my cannabis logs to the cloud?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Unfog is 100% private and on-device. There are no accounts, no cloud databases, and zero advertising trackers."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Ambient Botanical Mist Background -->
+  <div class="ambient-canvas" aria-hidden="true">
+    <div class="mist-orb mist-orb-1"></div>
+    <div class="mist-orb mist-orb-2"></div>
+    <div class="mist-orb mist-orb-3"></div>
+  </div>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="brand-cluster">
+        <a href="https://ysliustudio.com/" class="studio-crumb" title="YS Liu Studio Home">← YS Liu Studio</a>
+        <span class="crumb-sep">/</span>
+        <a href="#top" class="brand-logo">
+          <img src="assets/app-icon.png" alt="Unfog App Icon" class="brand-icon" width="36" height="36" />
+          <span class="brand-title">Unfog</span>
+          <span class="brand-tag">THC &amp; T-Break</span>
         </a>
-        <div class="nav-links">
-          <a href="#features">Features</a>
-          <a href="#science">Science</a>
-          <a href="#support">FAQ</a>
-          <a class="nav-download" data-campaign="web_home_nav" href="https://apps.apple.com/app/apple-store/id6825549617?pt=1793695638&amp;ct=web_home_nav&amp;mt=8" target="_blank" rel="noopener">Download Free</a>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-grid container">
-          <div class="hero-copy">
-            <p class="eyebrow">Evidence-based cannabis cessation &amp; T-breaks</p>
-            <h1>Clear the haze.<br>Reclaim your clarity.</h1>
-            <p class="hero-lede">No accounts. No streak-shaming. Just a science-backed daily check-in, real-time CB1 receptor recovery, 4-7-8 vagus nerve breathing, and dispensary savings—100% private on your device.</p>
-            <div class="hero-actions">
-              <a class="button button-primary app-store-button" data-campaign="web_home_hero" href="https://apps.apple.com/app/apple-store/id6825549617?pt=1793695638&amp;ct=web_home_hero&amp;mt=8" target="_blank" rel="noopener" aria-label="Download T-Break &amp; Quit Weed: Unfog on the App Store">
-                <span class="store-kicker">Download on the</span>
-                <span class="store-name">App Store</span>
-              </a>
-              <a class="button button-secondary" href="#features">Explore Features</a>
-            </div>
-            <p class="hero-trust">iOS 17+ • 100% Local &amp; Private • Optional iCloud Sync</p>
-          </div>
-          <div class="hero-media">
-            <div class="device-frame" style="text-align: center; padding: 2rem;">
-              <img src="assets/app-icon.png" alt="Unfog App Icon" style="width: 180px; height: 180px; border-radius: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.12);">
-              <h3 style="margin-top: 1.5rem; font-size: 1.4rem; color: #1e293b;">T-Break &amp; Quit Weed: Unfog</h3>
-              <p style="color: #64748b; font-size: 0.95rem; margin-top: 0.5rem;">Your private companion for lifting the brain fog.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="features">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Key Features</p>
-            <h2>Built specifically for THC detox, not generic habits</h2>
-          </div>
-          <div class="feature-grid">
-            <article class="feature-card">
-              <div class="feature-icon">🫁</div>
-              <h3>Craving SOS (Vagus Nerve Breathing)</h3>
-              <p>Cannabis withdrawal often triggers acute anxiety and insomnia. Our visual 4-7-8 breathing tool directly stimulates your vagus nerve, rapidly lowering heart rate to help you sleep and beat intense cravings.</p>
-            </article>
-            <article class="feature-card">
-              <div class="feature-icon">🧠</div>
-              <h3>Clinical Brain Recovery Milestones</h3>
-              <p>Watch your body heal step by step. Track clinical timelines for THC clearance, CB1 receptor resensitization, REM sleep rebound, and dopamine stabilization.</p>
-            </article>
-            <article class="feature-card">
-              <div class="feature-icon">💵</div>
-              <h3>Dispensary Savings Counter</h3>
-              <p>Enter your typical dispensary or flower expense. Watch your dynamic savings grow daily and see when a single bag not bought pays for your entire year.</p>
-            </article>
-            <article class="feature-card">
-              <div class="feature-icon">🔒</div>
-              <h3>100% Private &amp; Offline</h3>
-              <p>Zero accounts. Zero developer tracking servers. Face ID biometric protection. Your personal recovery logs belong exclusively to you.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="support">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">FAQ</p>
-            <h2>Frequently Asked Questions</h2>
-          </div>
-          <div class="faq-list" style="max-width: 760px; margin: 0 auto;">
-            <details style="padding: 1rem 0; border-bottom: 1px solid #e2e8f0;">
-              <summary style="font-weight: 600; cursor: pointer; color: #1e293b;">Where is my data stored?</summary>
-              <p style="margin-top: 0.5rem; color: #475569;">All data is kept locally on your iPhone or iPad in sandboxed storage. Unfog has no external backend collecting your private logs.</p>
-            </details>
-            <details style="padding: 1rem 0; border-bottom: 1px solid #e2e8f0;">
-              <summary style="font-weight: 600; cursor: pointer; color: #1e293b;">Can I switch between 30-Day T-Break and Quitting Permanently?</summary>
-              <p style="margin-top: 0.5rem; color: #475569;">Yes! You can seamlessly switch between the 30-Day T-Break mode and permanent cessation anytime in Settings.</p>
-            </details>
-            <details style="padding: 1rem 0; border-bottom: 1px solid #e2e8f0;">
-              <summary style="font-weight: 600; cursor: pointer; color: #1e293b;">How do I contact support or request a feature?</summary>
-              <p style="margin-top: 0.5rem; color: #475569;">You can email the developer directly at <a href="mailto:liuys614@gmail.com">liuys614@gmail.com</a>.</p>
-            </details>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="support.html">Support</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="terms.html">Terms of Use (EULA)</a>
-        </div>
-        <p class="copyright">© <span data-year>2026</span> T-Break &amp; Quit Weed: Unfog. All rights reserved. Not medical advice.</p>
       </div>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#science">Interactive Lab</a>
+        <a href="#organs">Body Reset</a>
+        <a href="#features">Features</a>
+        <a href="#gallery">Screens</a>
+        <a href="guides/">Science Guides</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://apps.apple.com/us/app/id6825549617?pt=1793695638&ct=web_nav&mt=8" class="btn-pill btn-forest" target="_blank" rel="noopener">
+          <svg class="apple-logo" viewBox="0 0 170 170" fill="currentColor" aria-hidden="true">
+            <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.82-11.77-14.37-5.93-9.28-10.72-19.99-14.38-32.12-3.66-12.13-5.49-23.4-5.49-33.81 0-12.95 3.22-23.51 9.67-31.69 6.45-8.18 14.54-12.44 24.28-12.78 4.8 0 10.17 1.46 16.1 4.36 5.92 2.91 9.73 4.42 11.41 4.53 1.34 0 5.64-1.76 12.91-5.28 7.27-3.52 13.42-5.01 18.45-4.47 13.64 1.1 23.89 6.49 30.75 16.18-12.19 7.39-18.17 17.68-17.95 30.86.22 10.29 4.28 18.84 12.16 25.66 5.42 4.71 11.88 7.46 19.37 8.25-1.55 4.82-3.43 9.83-5.63 15.04zM119.22 31.01c0 8.06-2.94 15.61-8.82 22.65-7.09 8.3-15.68 13.1-25.02 12.35-.19-.97-.29-2.01-.29-3.12 0-7.74 3.25-15.96 9.09-22.71 2.91-3.38 6.6-6.19 11.09-8.43 4.48-2.23 8.73-3.47 12.75-3.71.13 1.04.2 2.03.2 2.97z"/>
+          </svg>
+          <span>Get App</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ==================== 1. VISUAL HERO SECTION ==================== -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+
+        <!-- Left Column: Ultra-Concise Visual Copy + Dual Mode Pill -->
+        <div class="hero-copy">
+          <!-- Interactive Mode Switcher -->
+          <div class="mode-switcher" role="tablist" aria-label="Select your goal">
+            <button type="button" class="mode-pill active" data-mode="tbreak" role="tab" aria-selected="true">
+              <span class="mode-dot"></span>
+              <span>🌱 30-Day T-Break</span>
+            </button>
+            <button type="button" class="mode-pill" data-mode="quit" role="tab" aria-selected="false">
+              <span class="mode-dot"></span>
+              <span>✨ Quit for Good</span>
+            </button>
+          </div>
+
+          <h1 class="hero-headline">
+            Clear the Fog.<br />
+            <span class="serif-italic" id="heroDynamicSub">Reset Your CB1.</span>
+          </h1>
+
+          <p class="hero-sublead" id="heroDynamicDesc">
+            Watch your brain receptors upregulate, surf 3-minute cravings, and reclaim deep REM dreams—100% private.
+          </p>
+
+          <!-- 3 Visual Micro-Badges Instead of Text Paragraphs -->
+          <div class="hero-micro-badges">
+            <div class="micro-badge">
+              <span class="micro-icon">🧠</span>
+              <div>
+                <strong>28-Day CB1</strong>
+                <span>Receptor Map</span>
+              </div>
+            </div>
+            <div class="micro-badge">
+              <span class="micro-icon">🌸</span>
+              <div>
+                <strong>4-7-8 Lotus</strong>
+                <span>180s Vagus SOS</span>
+              </div>
+            </div>
+            <div class="micro-badge">
+              <span class="micro-icon">🔒</span>
+              <div>
+                <strong>Zero Cloud</strong>
+                <span>100% On-Device</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="https://apps.apple.com/us/app/id6825549617?pt=1793695638&ct=web_hero&mt=8" class="btn-store-primary" target="_blank" rel="noopener">
+              <svg class="apple-logo-lg" viewBox="0 0 170 170" fill="currentColor" aria-hidden="true">
+                <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.82-11.77-14.37-5.93-9.28-10.72-19.99-14.38-32.12-3.66-12.13-5.49-23.4-5.49-33.81 0-12.95 3.22-23.51 9.67-31.69 6.45-8.18 14.54-12.44 24.28-12.78 4.8 0 10.17 1.46 16.1 4.36 5.92 2.91 9.73 4.42 11.41 4.53 1.34 0 5.64-1.76 12.91-5.28 7.27-3.52 13.42-5.01 18.45-4.47 13.64 1.1 23.89 6.49 30.75 16.18-12.19 7.39-18.17 17.68-17.95 30.86.22 10.29 4.28 18.84 12.16 25.66 5.42 4.71 11.88 7.46 19.37 8.25-1.55 4.82-3.43 9.83-5.63 15.04zM119.22 31.01c0 8.06-2.94 15.61-8.82 22.65-7.09 8.3-15.68 13.1-25.02 12.35-.19-.97-.29-2.01-.29-3.12 0-7.74 3.25-15.96 9.09-22.71 2.91-3.38 6.6-6.19 11.09-8.43 4.48-2.23 8.73-3.47 12.75-3.71.13 1.04.2 2.03.2 2.97z"/>
+              </svg>
+              <div class="store-btn-text">
+                <span class="store-small">Download on the</span>
+                <span class="store-big">App Store</span>
+              </div>
+            </a>
+
+            <a href="#science" class="btn-secondary-glass">
+              <span>Try Live 4-7-8 Lotus</span>
+              <span class="arrow-down">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Animated Device Showcase + Floating Kinetic Badges -->
+        <div class="hero-visual-stage">
+          <div class="hero-glow-ring" aria-hidden="true"></div>
+
+          <!-- Floating Badge 1: CB1 Receptor -->
+          <div class="floating-chip chip-top-left">
+            <img src="assets/recovery/30d.webp" alt="Origami Brain" class="chip-thumb" width="44" height="44" />
+            <div class="chip-info">
+              <span class="chip-label">CB1 Receptor Density</span>
+              <div class="chip-bar-wrap">
+                <div class="chip-bar-fill"></div>
+              </div>
+              <span class="chip-val">+84% Upregulated</span>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2: 4-7-8 Breathing -->
+          <div class="floating-chip chip-mid-right">
+            <div class="mini-lotus-pulse" aria-hidden="true"></div>
+            <div class="chip-info">
+              <span class="chip-label">Vagus Nerve SOS</span>
+              <span class="chip-val">4s · 7s · 8s Calm</span>
+            </div>
+          </div>
+
+          <!-- Floating Badge 3: Dispensary Saved -->
+          <div class="floating-chip chip-bottom-left">
+            <span class="chip-emoji">💸</span>
+            <div class="chip-info">
+              <span class="chip-label">Dispensary Saved</span>
+              <span class="chip-val mono-num">$689.14</span>
+            </div>
+          </div>
+
+          <!-- Main Framed Screen -->
+          <div class="phone-showcase-frame">
+            <img src="assets/screens/hero-today-recovery.webp" alt="T-Break & Quit Weed Unfog App Dashboard" class="phone-screen-img" width="340" height="736" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 2. ANIMATED CLINICAL STATS STRIP ==================== -->
+    <section class="stats-strip" aria-label="Neuroscience Benchmarks">
+      <div class="container stats-grid">
+        <div class="stat-pill-card">
+          <div class="stat-num-row">
+            <span class="stat-counter" data-target="48">48</span>
+            <span class="stat-unit">hrs</span>
+          </div>
+          <p class="stat-caption">CB1 receptor upregulation begins</p>
+        </div>
+
+        <div class="stat-pill-card">
+          <div class="stat-num-row">
+            <span class="stat-counter" data-target="180">180</span>
+            <span class="stat-unit">sec</span>
+          </div>
+          <p class="stat-caption">Average craving wave peak to pass</p>
+        </div>
+
+        <div class="stat-pill-card">
+          <div class="stat-num-row">
+            <span class="stat-counter" data-target="28">28</span>
+            <span class="stat-unit">days</span>
+          </div>
+          <p class="stat-caption">Full CB1 density baseline reset</p>
+        </div>
+
+        <div class="stat-pill-card">
+          <div class="stat-num-row">
+            <span class="stat-prefix">$</span>
+            <span class="stat-counter" data-target="240">240</span>
+            <span class="stat-unit">/mo</span>
+          </div>
+          <p class="stat-caption">Average dispensary spend saved</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. INTERACTIVE SCIENCE STUDIO (3 KINETIC DEMOS) ==================== -->
+    <section id="science" class="science-studio-section">
+      <div class="container">
+        <div class="section-header-compact">
+          <span class="eyebrow-pill">⚡ Interactive Neuroscience Studio</span>
+          <h2 class="section-title">Feel the Reset Before You Download.</h2>
+          <p class="section-sub">Tap, slide, and breathe—experience how Unfog guides your brain out of THC saturation.</p>
+        </div>
+
+        <div class="interactive-lab-grid">
+
+          <!-- LAB 1: Interactive CB1 Receptor & Brain Fog Unfogger -->
+          <div class="lab-card lab-unfogger">
+            <div class="lab-card-top">
+              <span class="lab-step-badge">01 · Interactive Brain Unfogger</span>
+              <span class="lab-live-tag" id="unfogDayBadge">Day 2 · Upregulation Starts</span>
+            </div>
+
+            <h3 class="lab-title">Slide Through Your 28-Day CB1 Reset</h3>
+
+            <!-- Visual Brain Stage with Dynamic Fog Filter + Progress Ring -->
+            <div class="unfog-visual-stage">
+              <div class="unfog-ring-container">
+                <svg class="unfog-ring-svg" viewBox="0 0 220 220">
+                  <circle class="unfog-ring-bg" cx="110" cy="110" r="96" />
+                  <circle class="unfog-ring-progress" id="unfogRingCircle" cx="110" cy="110" r="96" />
+                </svg>
+
+                <!-- Origami Brain Image that Unblurs as Slider Moves -->
+                <div class="unfog-brain-wrap" id="unfogBrainWrap">
+                  <img src="assets/recovery/30d.webp" alt="3D Origami Brain Sculpture" class="unfog-brain-img" id="unfogBrainImg" />
+                  <div class="fog-cloud-overlay" id="fogCloudOverlay"></div>
+                </div>
+
+                <div class="unfog-percent-pill">
+                  <span id="unfogPercentVal">45%</span>
+                  <small>CB1 Active</small>
+                </div>
+              </div>
+
+              <!-- Dynamic Metric Bars -->
+              <div class="unfog-metrics-col">
+                <div class="metric-mini">
+                  <div class="metric-mini-head">
+                    <span>🧠 CB1 Receptor Density</span>
+                    <strong id="metricCb1Text">45%</strong>
+                  </div>
+                  <div class="metric-track"><div class="metric-fill fill-emerald" id="metricCb1Bar" style="width: 45%"></div></div>
+                </div>
+
+                <div class="metric-mini">
+                  <div class="metric-mini-head">
+                    <span>🌙 REM Dream Rebound</span>
+                    <strong id="metricRemText">30%</strong>
+                  </div>
+                  <div class="metric-track"><div class="metric-fill fill-gold" id="metricRemBar" style="width: 30%"></div></div>
+                </div>
+
+                <div class="metric-mini">
+                  <div class="metric-mini-head">
+                    <span>⚡ Mental Clarity</span>
+                    <strong id="metricClarityText">40%</strong>
+                  </div>
+                  <div class="metric-track"><div class="metric-fill fill-cyan" id="metricClarityBar" style="width: 40%"></div></div>
+                </div>
+
+                <p class="unfog-status-quote" id="unfogStatusQuote">
+                  "48 hours THC-free: Your brain begins building fresh CB1 receptors."
+                </p>
+              </div>
+            </div>
+
+            <!-- Interactive Day Selector Buttons -->
+            <div class="day-selector-row" role="group" aria-label="Select detox day">
+              <button type="button" class="day-btn" data-day="0">Day 1</button>
+              <button type="button" class="day-btn active" data-day="1">Day 2</button>
+              <button type="button" class="day-btn" data-day="2">Day 7</button>
+              <button type="button" class="day-btn" data-day="3">Day 14</button>
+              <button type="button" class="day-btn" data-day="4">Day 28</button>
+            </div>
+          </div>
+
+          <!-- LAB 2: Live 4-7-8 Vagus Nerve Breathing Lotus -->
+          <div class="lab-card lab-lotus-card">
+            <div class="lab-card-top">
+              <span class="lab-step-badge">02 · Live Craving SOS</span>
+              <span class="lab-live-tag tag-cyan" id="lotusPhaseBadge">4-7-8 Vagus Reset</span>
+            </div>
+
+            <h3 class="lab-title">Breathe With the 4-7-8 Lotus</h3>
+
+            <!-- Animated Multi-Petal Glowing Lotus (Matches Screenshot #3) -->
+            <div class="lotus-stage">
+              <div class="lotus-bloom is-breathing" id="lotusBloom" aria-hidden="true">
+                <div class="lotus-aura"></div>
+                <!-- 12 Geometric Petals -->
+                <div class="petal p1"></div>
+                <div class="petal p2"></div>
+                <div class="petal p3"></div>
+                <div class="petal p4"></div>
+                <div class="petal p5"></div>
+                <div class="petal p6"></div>
+                <div class="petal p7"></div>
+                <div class="petal p8"></div>
+                <div class="petal p9"></div>
+                <div class="petal p10"></div>
+                <div class="petal p11"></div>
+                <div class="petal p12"></div>
+                <div class="lotus-core">
+                  <span class="lotus-timer-num" id="lotusTimerNum">4s</span>
+                  <span class="lotus-phase-text" id="lotusPhaseText">INHALE</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4-7-8 Phase Indicators -->
+            <div class="breath-cycle-pills">
+              <div class="cycle-pill active" id="pillInhale">
+                <strong>4s</strong>
+                <span>Inhale</span>
+              </div>
+              <div class="cycle-pill" id="pillHold">
+                <strong>7s</strong>
+                <span>Hold</span>
+              </div>
+              <div class="cycle-pill" id="pillExhale">
+                <strong>8s</strong>
+                <span>Exhale</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn-lotus-toggle" id="btnLotusToggle">
+              <span>Pause Breathing Guide</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- LAB 3: 180-Second Urge Surfing Wave Strip -->
+        <div class="wave-banner-card">
+          <div class="wave-copy-col">
+            <span class="lab-step-badge">03 · 180-Second Urge Wave</span>
+            <h3>Every Weed Craving Peaks and Passes in 3 Minutes.</h3>
+            <p>Don't fight the wave—surf over the crest until dopamine settles.</p>
+          </div>
+
+          <div class="wave-svg-col" aria-hidden="true">
+            <svg class="craving-wave-svg" viewBox="0 0 600 130" fill="none">
+              <defs>
+                <linearGradient id="waveGrad" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#2D6A4F" stop-opacity="0.3" />
+                  <stop offset="45%" stop-color="#D99B26" stop-opacity="0.95" />
+                  <stop offset="100%" stop-color="#14B8A6" stop-opacity="0.85" />
+                </linearGradient>
+                <linearGradient id="waveFill" x1="300" y1="15" x2="300" y2="125" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#2D6A4F" stop-opacity="0.22" />
+                  <stop offset="100%" stop-color="#2D6A4F" stop-opacity="0.0" />
+                </linearGradient>
+              </defs>
+              <!-- Filled area under curve -->
+              <path d="M 20 105 C 120 105, 190 22, 280 22 C 370 22, 440 105, 580 105 L 580 120 L 20 120 Z" fill="url(#waveFill)" />
+              <!-- Curve path -->
+              <path id="urgeWavePath" d="M 20 105 C 120 105, 190 22, 280 22 C 370 22, 440 105, 580 105" stroke="url(#waveGrad)" stroke-width="4" stroke-linecap="round" />
+              <!-- Labels -->
+              <text x="45" y="92" class="wave-svg-label">0:00 Trigger</text>
+              <text x="242" y="14" class="wave-svg-label wave-peak-label">1:30 Peak Intensity</text>
+              <text x="485" y="92" class="wave-svg-label">3:00 Wave Passes</text>
+              <!-- Animated Surfer Dot -->
+              <circle r="8" fill="#D99B26" class="wave-surfer-dot">
+                <animateMotion dur="6s" repeatCount="indefinite" path="M 20 105 C 120 105, 190 22, 280 22 C 370 22, 440 105, 580 105" />
+              </circle>
+              <circle r="16" fill="#D99B26" fill-opacity="0.28">
+                <animateMotion dur="6s" repeatCount="indefinite" path="M 20 105 C 120 105, 190 22, 280 22 C 370 22, 440 105, 580 105" />
+              </circle>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. 8-STAGE ORIGAMI ORGAN RECOVERY TRACK ==================== -->
+    <section id="organs" class="organs-section">
+      <div class="container">
+        <div class="section-header-compact">
+          <span class="eyebrow-pill">🧬 3D Origami Recovery Timeline</span>
+          <h2 class="section-title">Watch Every Organ Heal in 3D.</h2>
+          <p class="section-sub">From carbon monoxide clearance in 8 hours to full dopamine equilibrium.</p>
+        </div>
+
+        <div class="origami-scroll-track">
+          <article class="origami-card">
+            <div class="origami-time-pill">8 Hours</div>
+            <div class="origami-img-box">
+              <img src="assets/recovery/8h.webp" alt="8 Hours Blood Oxygen Origami" loading="lazy" width="140" height="140" />
+            </div>
+            <h3 class="origami-title">Oxygen Normalizes</h3>
+            <p class="origami-micro">Carbon monoxide drops; blood oxygen rebounds.</p>
+          </article>
+
+          <article class="origami-card">
+            <div class="origami-time-pill">24 Hours</div>
+            <div class="origami-img-box">
+              <img src="assets/recovery/24h.webp" alt="24 Hours Heart Rate Origami" loading="lazy" width="140" height="140" />
+            </div>
+            <h3 class="origami-title">Heart Rate Calms</h3>
+            <p class="origami-micro">THC-induced resting tachycardia subsides.</p>
+          </article>
+
+          <article class="origami-card">
+            <div class="origami-time-pill">48 Hours</div>
+            <div class="origami-img-box">
+              <img src="assets/recovery/48h.webp" alt="48 Hours CB1 Awakening Origami" loading="lazy" width="140" height="140" />
+            </div>
+            <h3 class="origami-title">CB1 Awakening</h3>
+            <p class="origami-micro">Endocannabinoid receptors start upregulating.</p>
+          </article>
+
+          <article class="origami-card">
+            <div class="origami-time-pill">72 Hours</div>
+            <div class="origami-img-box">
+              <img src="assets/recovery/72h.webp" alt="72 Hours Bronchial Cilia Origami" loading="lazy" width="140" height="140" />
+            </div>
+            <h3 class="origami-title">Lungs Unclench</h3>
+            <p class="origami-micro">Bronchial cilia sweep out tar &amp; resin.</p>
+          </article>
+
+          <article class="origami-card">
+            <div class="origami-time-pill">7 Days</div>
+            <div class="origami-img-box">
+              <img src="assets/recovery/7d.webp" alt="7 Days REM Dream Rebound Origami" loading="lazy" width="140" height="140" />
+            </div>
+            <h3 class="origami-title">REM Dream Rebound</h3>
+            <p class="origami-micro">Deep dream sleep &amp; overnight memory restore.</p>
+          </article>
+
+          <article class="origami-card">
+            <div class="origami-time-pill">14 Days</div>
+            <div class="origami-img-box">
+              <img src="assets/recovery/14d.webp" alt="14 Days Hippocampus Clarity Origami" loading="lazy" width="140" height="140" />
+            </div>
+            <h3 class="origami-title">Sharp Recall</h3>
+            <p class="origami-micro">Working memory &amp; verbal fluency accelerate.</p>
+          </article>
+
+          <article class="origami-card highlight-card">
+            <div class="origami-time-pill gold-pill">30 Days</div>
+            <div class="origami-img-box">
+              <img src="assets/recovery/30d.webp" alt="30 Days CB1 Baseline Reset Origami" loading="lazy" width="140" height="140" />
+            </div>
+            <h3 class="origami-title">Full CB1 Reset</h3>
+            <p class="origami-micro">Receptor density returns to natural baseline.</p>
+          </article>
+
+          <article class="origami-card">
+            <div class="origami-time-pill">90 Days</div>
+            <div class="origami-img-box">
+              <img src="assets/recovery/90d.webp" alt="90 Days Dopamine Tone Origami" loading="lazy" width="140" height="140" />
+            </div>
+            <h3 class="origami-title">Dopamine Joy</h3>
+            <p class="origami-micro">Natural motivation &amp; lipid clearance complete.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. NANOBANANA 3D CLAY BENTO FEATURES ==================== -->
+    <section id="features" class="features-bento-section">
+      <div class="container">
+        <div class="section-header-compact">
+          <span class="eyebrow-pill">✨ Built for Cannabis &amp; T-Breaks</span>
+          <h2 class="section-title">Less Text. More Clarity.</h2>
+          <p class="section-sub">Six tactile tools crafted specifically for flower, carts, dabs, and edibles.</p>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card">
+            <div class="bento-art-wrap">
+              <img src="assets/features/feature-tbreak.webp" alt="3D Dual Mode T-Break Switch Illustration" class="bento-clay-img" loading="lazy" width="120" height="120" />
+            </div>
+            <div class="bento-body">
+              <span class="bento-tag">Flexible Goal</span>
+              <h3 class="bento-title">T-Break or Quit</h3>
+              <p class="bento-desc">Pick a 7, 14, or 30-day tolerance reset—or quit permanently.</p>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-art-wrap">
+              <img src="assets/features/feature-cb1.webp" alt="3D CB1 Brain Receptor Illustration" class="bento-clay-img" loading="lazy" width="120" height="120" />
+            </div>
+            <div class="bento-body">
+              <span class="bento-tag">Neuroscience</span>
+              <h3 class="bento-title">CB1 &amp; REM Tracker</h3>
+              <p class="bento-desc">Live percentages for receptor upregulation and dream rebound.</p>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-art-wrap">
+              <img src="assets/features/feature-lotus.webp" alt="3D Glowing 4-7-8 Lotus Illustration" class="bento-clay-img" loading="lazy" width="120" height="120" />
+            </div>
+            <div class="bento-body">
+              <span class="bento-tag">180s Relief</span>
+              <h3 class="bento-title">4-7-8 Vagus SOS</h3>
+              <p class="bento-desc">Haptic lotus breathing quiets anxiety &amp; night sweats fast.</p>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-art-wrap">
+              <img src="assets/features/feature-savings.webp" alt="3D Dispensary Savings Jar Illustration" class="bento-clay-img" loading="lazy" width="120" height="120" />
+            </div>
+            <div class="bento-body">
+              <span class="bento-tag">Dispensary Math</span>
+              <h3 class="bento-title">Grams &amp; Cash Saved</h3>
+              <p class="bento-desc">Watch every skipped eighth, vape cart, and pre-roll stack up.</p>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-art-wrap">
+              <img src="assets/features/feature-calendar.webp" alt="3D No-Shame Calendar Illustration" class="bento-clay-img" loading="lazy" width="120" height="120" />
+            </div>
+            <div class="bento-body">
+              <span class="bento-tag">Anti-Shame UX</span>
+              <h3 class="bento-title">Trigger Patterns</h3>
+              <p class="bento-desc">Log slips gently to spot late-night boredom or stress cues.</p>
+            </div>
+          </article>
+
+          <article class="bento-card">
+            <div class="bento-art-wrap">
+              <img src="assets/features/feature-privacy.webp" alt="3D Privacy Vault Shield Illustration" class="bento-clay-img" loading="lazy" width="120" height="120" />
+            </div>
+            <div class="bento-body">
+              <span class="bento-tag">Zero Accounts</span>
+              <h3 class="bento-title">100% On-Device</h3>
+              <p class="bento-desc">No sign-up, no cloud servers, and zero ad SDKs ever.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. 10-SCREEN APP STORE STORY GALLERY ==================== -->
+    <section id="gallery" class="gallery-section">
+      <div class="container">
+        <div class="gallery-header-row">
+          <div>
+            <span class="eyebrow-pill">📱 Inside the App</span>
+            <h2 class="section-title">Designed to Calm, Never Judge.</h2>
+          </div>
+          <div class="gallery-nav-btns">
+            <button type="button" class="gallery-arrow" id="galleryPrev" aria-label="Scroll left">←</button>
+            <button type="button" class="gallery-arrow" id="galleryNext" aria-label="Scroll right">→</button>
+          </div>
+        </div>
+
+        <div class="screenshots-carousel" id="screenshotsCarousel">
+          <figure class="shot-card">
+            <img src="assets/appstore/01-calm-progress.webp" alt="Unfog Calm Progress Dashboard" loading="lazy" width="280" height="606" />
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/appstore/02-body-recovery.webp" alt="Unfog CB1 and REM Body Recovery" loading="lazy" width="280" height="606" />
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/appstore/03-urge-surfing.webp" alt="Unfog 4-7-8 Lotus Urge Surfing" loading="lazy" width="280" height="606" />
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/appstore/04-savings.webp" alt="Unfog Dispensary Savings Tracker" loading="lazy" width="280" height="606" />
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/appstore/05-calendar.webp" alt="Unfog Craving & Trigger Calendar" loading="lazy" width="280" height="606" />
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/appstore/06-milestones.webp" alt="Unfog Milestones & Badges" loading="lazy" width="280" height="606" />
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/appstore/07-check-in.webp" alt="Unfog Anti-Shame Daily Check-In" loading="lazy" width="280" height="606" />
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/appstore/08-privacy.webp" alt="Unfog 100% On-Device Privacy" loading="lazy" width="280" height="606" />
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/appstore/09-dark-mode.webp" alt="Unfog Dark Mode for Night Sweats & Insomnia" loading="lazy" width="280" height="606" />
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/appstore/10-streak.webp" alt="Unfog Shareable Milestone Card" loading="lazy" width="280" height="606" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. VISUAL COMPARISON MATRIX ==================== -->
+    <section id="compare" class="compare-section">
+      <div class="container">
+        <div class="section-header-compact">
+          <span class="eyebrow-pill">⚖️ Why Unfog</span>
+          <h2 class="section-title">Built for THC, Not Generic Habits.</h2>
+        </div>
+
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="col-unfog">🌱 Unfog</th>
+                <th>Generic Sobriety Apps</th>
+                <th>$79/yr Quit Trackers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>30-Day T-Break Mode</strong></td>
+                <td class="col-unfog"><span class="badge-yes">✓ Built-In</span></td>
+                <td><span class="badge-no">✕ Quit Only</span></td>
+                <td><span class="badge-no">✕ Guilt Streaks</span></td>
+              </tr>
+              <tr>
+                <td><strong>CB1 &amp; REM Rebound Timeline</strong></td>
+                <td class="col-unfog"><span class="badge-yes">✓ 13 Origami Stages</span></td>
+                <td><span class="badge-no">✕ Generic Counters</span></td>
+                <td><span class="badge-mid">Basic Text</span></td>
+              </tr>
+              <tr>
+                <td><strong>4-7-8 Vagus Nerve Lotus SOS</strong></td>
+                <td class="col-unfog"><span class="badge-yes">✓ Instant &amp; Free</span></td>
+                <td><span class="badge-no">✕ None</span></td>
+                <td><span class="badge-mid">Paywalled</span></td>
+              </tr>
+              <tr>
+                <td><strong>Flower, Cart &amp; Edible Math</strong></td>
+                <td class="col-unfog"><span class="badge-yes">✓ Grams + Sessions</span></td>
+                <td><span class="badge-no">✕ Drinks / Cigarettes</span></td>
+                <td><span class="badge-yes">✓ Included</span></td>
+              </tr>
+              <tr>
+                <td><strong>100% On-Device Privacy</strong></td>
+                <td class="col-unfog"><span class="badge-yes">✓ Zero Cloud / Login</span></td>
+                <td><span class="badge-mid">Account Required</span></td>
+                <td><span class="badge-no">✕ Cloud Analytics</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. SCIENCE GUIDES PREVIEW + FINAL CTA ==================== -->
+    <section class="guides-preview-section">
+      <div class="container">
+        <div class="guides-banner-card">
+          <div class="guides-banner-copy">
+            <span class="eyebrow-pill">📚 Evidence-Based T-Break Library</span>
+            <h2>Curious About REM Rebound or CB1 Recovery?</h2>
+            <p>Explore our clinical, peer-reviewed guides on THC withdrawal timelines, vivid dreams, and tolerance breaks.</p>
+          </div>
+          <a href="guides/" class="btn-pill btn-forest">
+            <span>Read Science Guides →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta-section">
+      <div class="container">
+        <div class="final-cta-card">
+          <img src="assets/app-icon.png" alt="Unfog App Icon" class="final-cta-icon" width="84" height="84" />
+          <h2 class="final-cta-title">Start Your Unfog Journey Tonight.</h2>
+          <p class="final-cta-sub">Free on the App Store · 100% Private · Zero Account Needed</p>
+          <a href="https://apps.apple.com/us/app/id6825549617?pt=1793695638&ct=web_footer_cta&mt=8" class="btn-store-primary btn-store-gold" target="_blank" rel="noopener">
+            <svg class="apple-logo-lg" viewBox="0 0 170 170" fill="currentColor" aria-hidden="true">
+              <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.82-11.77-14.37-5.93-9.28-10.72-19.99-14.38-32.12-3.66-12.13-5.49-23.4-5.49-33.81 0-12.95 3.22-23.51 9.67-31.69 6.45-8.18 14.54-12.44 24.28-12.78 4.8 0 10.17 1.46 16.1 4.36 5.92 2.91 9.73 4.42 11.41 4.53 1.34 0 5.64-1.76 12.91-5.28 7.27-3.52 13.42-5.01 18.45-4.47 13.64 1.1 23.89 6.49 30.75 16.18-12.19 7.39-18.17 17.68-17.95 30.86.22 10.29 4.28 18.84 12.16 25.66 5.42 4.71 11.88 7.46 19.37 8.25-1.55 4.82-3.43 9.83-5.63 15.04zM119.22 31.01c0 8.06-2.94 15.61-8.82 22.65-7.09 8.3-15.68 13.1-25.02 12.35-.19-.97-.29-2.01-.29-3.12 0-7.74 3.25-15.96 9.09-22.71 2.91-3.38 6.6-6.19 11.09-8.43 4.48-2.23 8.73-3.47 12.75-3.71.13 1.04.2 2.03.2 2.97z"/>
+            </svg>
+            <div class="store-btn-text">
+              <span class="store-small">Download on the</span>
+              <span class="store-big">App Store</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/app-icon.png" alt="Unfog Icon" width="28" height="28" />
+        <span><strong>T-Break &amp; Quit Weed: Unfog</strong> · Crafted by <a href="https://ysliustudio.com/">YS Liu Studio</a></span>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer">
+        <a href="guides/">Science Guides</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="support.html">Support</a>
+        <a href="https://apps.apple.com/us/app/id6825549617" target="_blank" rel="noopener">App Store</a>
+      </nav>
+
+      <p class="footer-disclaimer">
+        Medical Disclaimer: Unfog is a mindfulness and habit-tracking companion, not a medical device. Always consult a qualified healthcare professional for medical advice.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
