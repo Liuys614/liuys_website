@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "agricola-scoring-rules-complete-strategy-guide",
+    "target_keyword": "agricola board game scoring rules and points calculation guide",
+    "secondary_keywords": ["how to score in agricola board game", "agricola negative points penalty calculation", "agricola score sheet app ios"],
+    "category": "Board Games · Scoring Rules",
+    "campaign_prefix": "seo_agricola_rules",
+    "pitch_screen": "app-icon.png",
+    "pitch_headline": "Effortless Agricola scorekeeping without paper sheets",
+    "pitch_body": "Calculate fields, pastures, grain, vegetables, farm animals, and bonus cards in seconds on iPhone.",
+    "status": "published"
+  },
+  {
+    "slug": "agricola-feeding-family-begging-cards-strategy",
+    "target_keyword": "agricola feeding family begging cards penalty strategy",
+    "secondary_keywords": ["how to feed family in agricola", "avoid begging cards in agricola", "agricola food engine tips"],
+    "category": "Strategy · Food Engine",
+    "campaign_prefix": "seo_agricola_food",
+    "pitch_screen": "app-icon.png",
+    "pitch_headline": "Track family food requirements and end-game score",
+    "pitch_body": "Focus on your farming strategy while the companion app manages all scoring categories.",
+    "status": "pending"
+  }
+]

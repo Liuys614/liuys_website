@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "sourdough-hydration-calculator-percentage-guide",
+    "target_keyword": "sourdough hydration calculator formula and percentage guide",
+    "secondary_keywords": ["bakers percentage sourdough formula", "70 vs 75 vs 80 hydration sourdough difference", "how to calculate sourdough water ratio"],
+    "category": "Baking Science · Formulas",
+    "campaign_prefix": "seo_sourdough_hydration",
+    "pitch_screen": "shot-1.webp",
+    "pitch_headline": "Calculate sourdough hydration & stretch-fold intervals on iPhone",
+    "pitch_body": "Custom Baker's percentage calculator with temperature-adjusted bulk fermentation timers and Live Activities.",
+    "status": "published"
+  },
+  {
+    "slug": "bulk-fermentation-temperature-time-chart",
+    "target_keyword": "sourdough bulk fermentation temperature and time chart",
+    "secondary_keywords": ["how to tell when bulk fermentation is done", "dough temperature vs proofing time", "sourdough aliquot jar method"],
+    "category": "Fermentation · Temperature",
+    "campaign_prefix": "seo_bulk_ferment_temp",
+    "pitch_screen": "shot-2.webp",
+    "pitch_headline": "Temperature-adjusted sourdough bulk fermentation timers",
+    "pitch_body": "Track ambient and dough temperature to automatically recalculate your proofing milestones.",
+    "status": "pending"
+  },
+  {
+    "slug": "sourdough-starter-feeding-ratio-1-1-1-vs-1-2-2",
+    "target_keyword": "sourdough starter feeding ratio 1 1 1 vs 1 2 2 vs 1 5 5",
+    "secondary_keywords": ["how to feed sourdough starter peak time", "when to use starter for baking", "maintain healthy levain"],
+    "category": "Starter Maintenance · Levain",
+    "campaign_prefix": "seo_starter_feeding_ratio",
+    "pitch_screen": "shot-3.webp",
+    "pitch_headline": "Never miss the peak of your sourdough starter",
+    "pitch_body": "Track starter doubling times and set exact feeding alarms with Levain on iOS.",
+    "status": "pending"
+  }
+]

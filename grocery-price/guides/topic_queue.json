@@ -1,0 +1,35 @@
+[
+  {
+    "slug": "how-to-calculate-unit-price-per-ounce-gram",
+    "target_keyword": "how to calculate unit price per ounce and gram formula",
+    "secondary_keywords": ["unit price calculator grocery formula", "how to compare prices with different sizes", "cost per ounce calculation"],
+    "category": "Smart Shopping · Math Guide",
+    "campaign_prefix": "seo_unit_price_calc",
+    "pitch_screen": "scanner_ui.png",
+    "pitch_headline": "Compare unit prices instantly with your iPhone camera",
+    "pitch_body": "Point your camera at shelf tags or package weights to see instant per-ounce and per-gram comparisons—no manual math required.",
+    "status": "published"
+  },
+  {
+    "slug": "is-costco-actually-cheaper-unit-price-breakdown",
+    "target_keyword": "is costco cheaper unit price comparison grocery breakdown",
+    "secondary_keywords": ["costco vs regular supermarket unit price", "what is worth buying at costco", "bulk buying price math"],
+    "category": "Store Comparison · Bulk Shopping",
+    "campaign_prefix": "seo_costco_unit_price",
+    "pitch_screen": "scanner_ui.png",
+    "pitch_headline": "Never guess if bulk size is really saving you money",
+    "pitch_body": "Scan package weights and store tags to reveal the real unit cost in seconds.",
+    "status": "pending"
+  },
+  {
+    "slug": "shrinkflation-examples-how-to-spot-unit-price-tricks",
+    "target_keyword": "how to spot shrinkflation grocery unit price tricks",
+    "secondary_keywords": ["shrinkflation packaging tricks", "cereal box size decrease same price", "track historical grocery prices"],
+    "category": "Inflation Defense · Consumer Awareness",
+    "campaign_prefix": "seo_shrinkflation_guide",
+    "pitch_screen": "scanner_ui.png",
+    "pitch_headline": "Track historical prices & spot hidden shrinkflation",
+    "pitch_body": "Keep a local personal price history on your phone so you instantly notice when packages shrink.",
+    "status": "pending"
+  }
+]

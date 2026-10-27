@@ -1,0 +1,30 @@
+{
+  "slug": "sourdough-hydration-calculator-percentage-guide",
+  "title": "Sourdough Hydration Calculator & Percentage Guide",
+  "subtitle": "How to Calculate Baker's Percentages for 65%, 75% & 80% Hydration Doughs",
+  "meta_description": "Master sourdough hydration math with Baker's percentages. Compare 65%, 75%, and 85% hydration dough handling, crumb openness, and water calculations.",
+  "published_date": "2026-10-27",
+  "reading_time": "6 min read",
+  "category": "Baking Science · Formulas",
+  "target_keyword": "sourdough hydration calculator formula and percentage guide",
+  "campaign_prefix": "seo_sourdough_hydration",
+  "pitch_screen": "shot-1.webp",
+  "pitch_headline": "Calculate sourdough hydration & stretch-fold intervals on iPhone",
+  "pitch_body": "Custom Baker's percentage calculator with temperature-adjusted bulk fermentation timers and Live Activities.",
+  "summary_excerpt": "A complete mathematical and practical guide on how to calculate total sourdough hydration, incorporate starter water, and pick the perfect hydration level for your flour.",
+  "body_html": "<p>In sourdough baking, <strong>hydration</strong> is the single most defining variable determining your loaf's interior crumb structure, crust blistering, and dough extensibility. A dough with 68% hydration handles like modeling clay, while an 82% hydration dough feels like a living, jiggly pillow.</p><p>Yet, many beginner and intermediate bakers get confused when accounting for the water and flour already present inside the <strong>levain (sourdough starter)</strong>. Below is the exact Baker's percentage math required to calculate true total hydration every single bake.</p><div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th>Hydration Level</th><th>Dough Characteristics</th><th>Crumb Structure</th><th>Recommended Flour Type</th><th>Ease of Handling</th></tr></thead><tbody><tr><td><strong>65% – 70%</strong></td><td>Firm, stiff, holds shape easily</td><td>Uniform sandwich crumb, tight cell structure</td><td>All-Purpose or Standard Bread Flour (11.5% protein)</td><td>Beginner-friendly; easy shaping</td></tr><tr><td><strong>72% – 76%</strong></td><td>Soft, supple, extensible</td><td>Classic open artisanal crumb with medium alveoli</td><td>High-protein Bread Flour (12.7%–13.5% protein)</td><td>Moderate; requires 3–4 stretch and folds</td></tr><tr><td><strong>78% – 85%+</strong></td><td>Very loose, glossy, sticky</td><td>Wild, custardy, translucent open crumb</td><td>Strong Hard Red Wheat, Manitoba, or High-Extraction flours</td><td>Advanced; requires coil folds and gentle pre-shaping</td></tr></tbody></table></div><h2>The Baker's Percentage Rule</h2><p>In professional baking, every ingredient weight is expressed as a <strong>percentage relative to the total flour weight</strong> (which is always 100%):</p><div class=\"guide-callout\"><strong>Hydration (%) = (Total Water Weight &divide; Total Flour Weight) &times; 100</strong>If you use 500g of flour and 375g of water:<br><strong>(375 &divide; 500) &times; 100 = 75% Hydration</strong></div><h2>How to Account for Starter (Levain) Hydration</h2><p>Most standard sourdough starters are maintained at <strong>100% hydration</strong> (equal parts flour and water by weight). To calculate the true total hydration of your dough, you must split your levain into half water and half flour:</p><ol><li>Suppose your recipe calls for <strong>500g flour</strong>, <strong>350g water</strong>, and <strong>100g starter</strong> (at 100% hydration).</li><li>The 100g starter contains <strong>50g flour</strong> and <strong>50g water</strong>.</li><li><strong>Total Flour:</strong> 500g + 50g = <strong>550g</strong>.</li><li><strong>Total Water:</strong> 350g + 50g = <strong>400g</strong>.</li><li><strong>True Hydration:</strong> (400 &divide; 550) &times; 100 = <strong>72.7% True Hydration</strong>.</li></ol><h2>How Flour Absorption Limits Your Hydration</h2><p>You cannot bake an 80% hydration loaf with standard low-protein all-purpose flour. Protein molecules (glutenin and gliadin) absorb water and create the structural web that traps carbon dioxide gases produced by wild yeast.</p><ul><li><strong>Whole Wheat &amp; Rye:</strong> Absorb 10% to 15% more water than white bread flour due to bran and pentosans, but produce a tighter crumb if not balanced with strong white flour.</li><li><strong>Autolyse Timing:</strong> For hydration above 75%, resting flour and water together for 45 to 60 minutes before adding salt and starter dramatically improves gluten extensibility.</li></ul>",
+  "faqs": [
+    {
+      "question": "What is the best hydration for beginner sourdough bakers?",
+      "answer": "A hydration level between 68% and 72% is ideal for beginners. It provides enough moisture for good oven spring and a soft crumb, while remaining firm enough to shape without sticking to your hands or bench knife."
+    },
+    {
+      "question": "Why is my high-hydration sourdough dough so sticky and wet?",
+      "answer": "Sticky dough usually indicates that the flour's protein content cannot support that water volume, the gluten was not sufficiently developed through stretch-and-folds, or the dough was over-fermented during the bulk stage."
+    },
+    {
+      "question": "Does higher hydration mean bigger holes in sourdough?",
+      "answer": "Higher hydration facilitates a lighter, more open crumb, but giant irregular holes are primarily achieved through proper bulk fermentation timing and gentle dough handling rather than excess water alone."
+    }
+  ]
+}

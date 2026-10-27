@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """
 Portfolio SEO Status & Pipeline Overview.
-Inspects all 4 programmatic SEO app pipelines:
+Inspects all 8 programmatic SEO app pipelines:
   - Alcohol Free Tracker (alcohol-free-tracker)
   - Quit Weed / Unfog (quit-weed)
   - Quit Vaping (quit-vaping)
   - Supplement & Pill Reminder (pill-reminder)
+  - Grocery Price Scanner (grocery-price)
+  - Sourdough Bake Timer: Levain (levain)
+  - Inkstone: Sign PDF & Docs (inkstone)
+  - Agricola Score Sheet (agricola-scorer)
 """
 import json
 import os
-import subprocess
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APPS = [
@@ -17,6 +20,10 @@ APPS = [
     ("quit-weed", "Quit Weed: Unfog"),
     ("quit-vaping", "Quit Vaping"),
     ("pill-reminder", "Supplement & Pill Reminder"),
+    ("grocery-price", "Grocery Price Scanner"),
+    ("levain", "Sourdough Bake Timer: Levain"),
+    ("inkstone", "Inkstone: Sign PDF & Docs"),
+    ("agricola-scorer", "Agricola Score Sheet"),
 ]
 
 
@@ -50,13 +57,15 @@ def inspect_app(app_dir_name: str, app_title: str):
 
 
 def main():
-    print("=" * 64)
-    print("   YS Liu Studio — Programmatic SEO Portfolio Dashboard")
-    print("=" * 64)
+    print("=" * 68)
+    print("   YS Liu Studio — Complete Programmatic SEO Portfolio (8 Apps)")
+    print("=" * 68)
     print()
+    total_published = 0
+    total_pending = 0
     for app_dir, title in APPS:
         inspect_app(app_dir, title)
-    print("=" * 64)
+    print("=" * 68)
 
 
 if __name__ == "__main__":

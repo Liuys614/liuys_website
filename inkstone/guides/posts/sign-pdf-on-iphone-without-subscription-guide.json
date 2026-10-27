@@ -1,0 +1,30 @@
+{
+  "slug": "sign-pdf-on-iphone-without-subscription-guide",
+  "title": "How to Sign a PDF on iPhone Without Paying a Subscription",
+  "subtitle": "Step-by-Step Guide to eSigning Documents & Sharing Links for Free",
+  "meta_description": "Learn how to sign PDF contracts, add initials, and request client signatures on iPhone without paying expensive recurring subscriptions like Adobe or DocuSign.",
+  "published_date": "2026-10-27",
+  "reading_time": "5 min read",
+  "category": "Productivity · Mobile eSign",
+  "target_keyword": "how to sign a pdf on iphone without paying subscription",
+  "campaign_prefix": "seo_sign_pdf_free",
+  "pitch_screen": "inkstone.png",
+  "pitch_headline": "Sign contracts & share encrypted browser links in seconds",
+  "pitch_body": "Prepare documents locally on iPhone and send secure signing links—recipients sign in browser with zero app download.",
+  "summary_excerpt": "A practical guide to signing PDF documents on iPhone and generating zero-friction browser signing links for clients without enterprise monthly subscriptions.",
+  "body_html": "<p>Need to sign a lease agreement, job offer, or client contractor agreement on your iPhone? Opening traditional PDF signature tools often leads straight into a forced $15-to-$30/month subscription paywall or demands that both you and your client create complex corporate accounts.</p><p>Fortunately, signing a PDF document on iOS and even <strong>requesting signatures from third parties</strong> does not require a costly enterprise software license. Below are the fastest, most secure methods to sign documents on your phone.</p><div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th>Method</th><th>Cost</th><th>Recipients Need App?</th><th>Best Used For</th></tr></thead><tbody><tr><td><strong>iOS Built-in Markup</strong></td><td>Free</td><td>N/A (Self-sign only)</td><td>Signing a one-off document where only you need to sign</td></tr><tr><td><strong>Traditional Enterprise eSign</strong></td><td>$15–$45 / mo</td><td>Requires account creation</td><td>Large corporate HR departments</td></tr><tr><td><strong>Inkstone PDF &amp; Links</strong></td><td>Pay once or free tier</td><td><strong>No app required</strong> (browser sign)</td><td>Freelancers, contractors, landlords, and small businesses</td></tr></tbody></table></div><h2>Method 1: Apple Markup (Best for Self-Signing)</h2><p>If you only need to sign a document yourself (such as a permission slip or insurance claim):</p><ol><li>Open the PDF in the <strong>Files app</strong> or from your email attachment.</li><li>Tap the circular <strong>Markup icon</strong> (pen tip) in the upper-right corner.</li><li>Tap the <strong>+</strong> button at the bottom toolbar and choose <strong>Signature</strong>.</li><li>Draw your signature with your finger or choose an existing saved signature, then drag and resize it into place.</li></ol><h2>Method 2: Sending a Document for Someone Else to Sign</h2><p>The limitation of Apple Markup is that it only works on your own device. When you need a client, tenant, or business partner to sign a contract, forcing them to print, sign, scan, or download an app introduces massive friction and delays.</p><div class=\"guide-callout\"><strong>The Browser Signing Link Advantage</strong>Modern mobile workflows allow you to prepare document fields (signature boxes, dates, initials) on your phone and generate an <strong>encrypted web link</strong>. The recipient simply opens the link in Safari, Chrome, or Edge on their phone or laptop, signs with their finger or trackpad, and both parties receive the sealed PDF immediately.</div>",
+  "faqs": [
+    {
+      "question": "Are electronic signatures made on an iPhone legally binding?",
+      "answer": "Yes. Under the US ESIGN Act and the Uniform Electronic Transactions Act (UETA), electronically signed contracts carry the same legal weight as traditional pen-and-paper signatures when both parties demonstrate intent to sign."
+    },
+    {
+      "question": "Do my clients need an iPhone to sign a link I send from Inkstone?",
+      "answer": "No. When you share a signing link, recipients can open and sign the document on any smartphone, tablet, or desktop browser (including Android and Windows PC) without downloading an app or creating an account."
+    },
+    {
+      "question": "Is it safe to sign documents on mobile devices?",
+      "answer": "Yes, provided the tool utilizes local on-device PDF processing or end-to-end encrypted transfer. Documents prepared locally never risk being crawled by public web indexing bots."
+    }
+  ]
+}
