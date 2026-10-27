@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modeCopy = {
     tbreak: {
       sub: 'Reset Your CB1.',
-      desc: 'Take a structured 7, 14, or 30-day tolerance break. Watch your CB1 receptors upregulate and reclaim deep REM sleep—100% private.'
+      desc: 'Take a structured 30-day tolerance break. Watch your CB1 receptors upregulate and reclaim deep REM sleep—100% private.'
     },
     quit: {
       sub: 'Unfog for Good.',
