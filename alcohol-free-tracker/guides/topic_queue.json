@@ -86,5 +86,71 @@
     "pitch_headline": "100% Local-First: Zero accounts, zero cloud uploads",
     "pitch_body": "Your drinking logs belong on your iPhone—not on a corporate server or public social feed.",
     "status": "pending"
+  },
+  {
+    "slug": "alcohol-weight-loss-timeline-how-much-weight-do-you-lose",
+    "target_keyword": "quit drinking weight loss timeline how much weight do you lose",
+    "secondary_keywords": ["empty calories in alcohol saved", "how long after quitting alcohol do you lose belly fat", "alcohol visceral fat drop"],
+    "category": "Metabolism · Body Composition",
+    "campaign_prefix": "seo_weight_loss_timeline",
+    "pitch_screen": "04-savings.webp",
+    "pitch_headline": "Track empty liquid calories eliminated automatically",
+    "pitch_body": "Calculate the exact calories and cash you save every alcohol-free week on iPhone.",
+    "status": "pending"
+  },
+  {
+    "slug": "alcohol-face-bloating-puffiness-recovery-timeline",
+    "target_keyword": "alcohol face puffiness before and after how long to go away",
+    "secondary_keywords": ["cortisol moon face alcohol", "facial bloating after drinking wine", "when does alcohol bloating disappear"],
+    "category": "Physical Recovery · Inflammation",
+    "campaign_prefix": "seo_face_bloating_timeline",
+    "pitch_screen": "02-body-recovery.webp",
+    "pitch_headline": "Watch systemic inflammation subside day by day",
+    "pitch_body": "Follow your body's cellular rehydration and gastric recovery milestones locally on iOS.",
+    "status": "pending"
+  },
+  {
+    "slug": "non-alcoholic-beer-while-quitting-alcohol-pros-cons",
+    "target_keyword": "can you drink non alcoholic beer while quitting alcohol",
+    "secondary_keywords": ["does non alcoholic beer trigger cravings", "0.5 percent alcohol in mocktails sobriety", "best na drinks for dry month"],
+    "category": "Harm Reduction · Strategy",
+    "campaign_prefix": "seo_na_beer_quitting",
+    "pitch_screen": "03-urge-surfing.webp",
+    "pitch_headline": "Ride out evening sensory habit loops with ease",
+    "pitch_body": "Replace the sensory pouring ritual while tracking true alcohol-free days on your visual calendar.",
+    "status": "pending"
+  },
+  {
+    "slug": "how-to-not-drink-at-parties-social-anxiety-guide",
+    "target_keyword": "how to deal with alcohol cravings at social events",
+    "secondary_keywords": ["how to say no to alcohol peer pressure", "sober at wedding tips", "substituting alcohol at dinners"],
+    "category": "Social Confidence · Playbook",
+    "campaign_prefix": "seo_parties_social_guide",
+    "pitch_screen": "07-check-in.webp",
+    "pitch_headline": "A mindful companion in your pocket for any event",
+    "pitch_body": "Open Craving SOS for a 3-minute grounding session right in the restroom before entering a social party.",
+    "status": "pending"
+  },
+  {
+    "slug": "blood-pressure-drop-after-quitting-alcohol-timeline",
+    "target_keyword": "blood pressure drop after quitting alcohol how fast",
+    "secondary_keywords": ["resting heart rate lower after stopping drinking", "alcohol hypertension recovery time", "cardiovascular benefits of 30 days dry"],
+    "category": "Cardiovascular Health",
+    "campaign_prefix": "seo_blood_pressure_drop",
+    "pitch_screen": "02-body-recovery.webp",
+    "pitch_headline": "Track your autonomic nervous system recovery",
+    "pitch_body": "Monitor the exact hours your resting heart rate and blood pressure stabilize after your last glass.",
+    "status": "pending"
+  },
+  {
+    "slug": "sober-curious-movement-benefits-how-to-start",
+    "target_keyword": "sober curious vs sobriety what is the difference",
+    "secondary_keywords": ["how to be sober curious without labels", "mindful relationship with alcohol", "reducing drinking days per month"],
+    "category": "Mindful Lifestyle",
+    "campaign_prefix": "seo_sober_curious_guide",
+    "pitch_screen": "05-calendar.webp",
+    "pitch_headline": "Explore mindful drinking without strict labels",
+    "pitch_body": "Track your alcohol-free momentum with zero streak shaming, zero guilt, and 100% privacy.",
+    "status": "pending"
   }
 ]
