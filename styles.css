@@ -1486,6 +1486,19 @@ a {
   max-width: 540px;
 }
 
+.dev-studio-dock-banner {
+  padding: 2.5rem 2.75rem;
+}
+
+.dev-dock-grid {
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 2px solid var(--color-black);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  box-shadow: 6px 6px 0px var(--color-black);
+}
+
 .footer-links-inline {
   display: flex;
   align-items: center;
