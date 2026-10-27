@@ -69,7 +69,36 @@
 
 ---
 
-## 四、 未來 1～4 週驗證與調整節奏 (Review Protocol)
+## 四、 全矩陣每日晨間發布流水線標準作業程序 (Unified SOP)
+
+未來每日晨間執行全自動/半自動發布流程時，請統一使用全矩陣管線：
+
+```bash
+# 1. 一鍵快檢全 8 款 App 的 GSC Strike Zone 與佇列狀態
+cd /Users/louisliu/Documents/repo/liuys_website
+python3 scripts/master_daily_pipeline.py --check
+```
+
+### 決策與發布規則：
+1. **優先級評估**：
+   * 凡出現 **`🟢 GSC STRIKE ZONE`** 或 **`🟡 GSC EMERGING`** 之 App，代表搜尋引擎已有真實曝光信號，**列為當日最高優先發布對象**。
+   * 若所有 App 皆為 **`⚪ QUEUE FALLBACK`**，則依輪替節奏（如今日發布 AFT，明日發布 Pill Reminder，後日發布 Unfog 等）或針對候選主題進行確認發布。
+2. **編譯全站與更新地圖**：
+   ```bash
+   python3 scripts/master_daily_pipeline.py --build
+   ```
+3. **即時推播搜尋引擎**：
+   ```bash
+   python3 scripts/master_daily_pipeline.py --indexnow
+   ```
+4. **提交與推播至 GitHub**：
+   ```bash
+   git add . && git commit -m "SEO(matrix): publish daily guide for <app_name>" && git push origin main
+   ```
+
+---
+
+## 五、 未來 1～4 週驗證與調整節奏 (Review Protocol)
 
 ### 階段一：第 7 天檢查（2026-11-03）
 * [ ] 檢查 GSC 涵蓋範圍（Coverage）：已提交的 36+ 網址是否有至少 30% 轉為 `Indexed`。
