@@ -11,6 +11,19 @@ import html
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MONOREPO_ROOT = os.path.dirname(ROOT_DIR)
+import sys
+sys.path.insert(0, os.path.join(MONOREPO_ROOT, "scripts"))
+from site_campaign import (  # noqa: E402
+    CF_BEACON,
+    DEFAULT_PROVIDER_TOKEN,
+    app_is_released,
+    coming_soon_markup,
+    guide_ct,
+    guides_index_ct,
+    make_asc_url,
+    smart_banner_tag,
+)
+
 GUIDES_DIR = os.path.join(ROOT_DIR, "guides")
 POSTS_DIR = os.path.join(GUIDES_DIR, "posts")
 CONFIG_PATH = os.path.join(GUIDES_DIR, "seo_config.json")
@@ -21,21 +34,17 @@ def load_config():
         return json.load(f)
 
 
-def make_asc_url(app_id: str, pt: str, ct: str) -> str:
-    clean_ct = re.sub(r"[^a-zA-Z0-9_-]", "_", ct)[:40]
-    return f"https://apps.apple.com/app/apple-store/id{app_id}?pt={pt}&ct={clean_ct}&mt=8"
-
-
 def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     site_url = cfg["site_url"].rstrip("/")
     app_id = cfg["app_id"]
-    pt = cfg["provider_token"]
+    pt = DEFAULT_PROVIDER_TOKEN
+    beacon = CF_BEACON
     slug = post["slug"]
     canonical_url = f"{site_url}/guides/{slug}.html"
-    prefix = post.get("campaign_prefix", f"seo_{slug[:24]}")
+    page_ct = guide_ct(slug)
 
-    url_nav = make_asc_url(app_id, pt, f"{prefix}_nav")
-    url_footer = make_asc_url(app_id, pt, f"{prefix}_foot")
+    url_nav = make_asc_url(app_id, pt, page_ct)
+    url_footer = make_asc_url(app_id, pt, page_ct)
 
     faqs = post.get("faqs", [])
     faq_schema_entities = [
@@ -178,6 +187,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
       {faq_section_html}
     </article>
   </main>
+{beacon}
 </body>
 </html>
 """
@@ -186,9 +196,13 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
 def render_guides_index_html(posts: list, cfg: dict) -> str:
     site_url = cfg["site_url"].rstrip("/")
     app_id = cfg["app_id"]
-    pt = cfg["provider_token"]
+    pt = DEFAULT_PROVIDER_TOKEN
+    beacon = CF_BEACON
     canonical_url = f"{site_url}/guides/index.html"
-    url_nav = make_asc_url(app_id, pt, "web_guides_nav")
+    app_slug = site_url.rstrip("/").rsplit("/", 1)[-1]
+    index_ct = guides_index_ct(app_slug)
+    banner = smart_banner_tag(app_id) if app_is_released(app_id) else ""
+    url_nav = make_asc_url(app_id, pt, index_ct)
 
     cards_html = []
     for p in posts:
@@ -208,6 +222,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
   <title>PDF Signing, Digital Contracts & Document Guides | Inkstone</title>
   <meta name="description" content="Step-by-step guides on signing PDF documents on iPhone, preparing contracts for client signature without subscriptions, and filling PDF forms securely." />
   <link rel="canonical" href="{canonical_url}" />
+  {banner}
   <style>
     body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8fafc; color: #1e293b; margin: 0; line-height: 1.65; }}
     .site-nav {{ background: #fff; border-bottom: 1px solid #e2e8f0; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; max-width: 1040px; margin: 0 auto; }}
@@ -229,6 +244,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
       {''.join(cards_html)}
     </div>
   </main>
+{beacon}
 </body>
 </html>
 """

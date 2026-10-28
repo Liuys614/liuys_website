@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found — YS Liu Studio</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="That page is not on YS Liu Studio. Go back home or open an app." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .not-found {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 12vh 1.5rem 6rem;
+    }
+    .not-found-kicker {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-mint-dark);
+    }
+    .not-found h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin: 0.6rem 0 1rem;
+    }
+    .not-found p {
+      color: var(--color-gray-600);
+      font-size: 1.05rem;
+      max-width: 38rem;
+    }
+    .not-found-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.75rem 0 2rem;
+    }
+    .not-found-apps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.75rem;
+      list-style: none;
+      padding: 0;
+    }
+    .not-found-apps a {
+      display: block;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      background: var(--bg-card);
+    }
+    .not-found-apps a:hover {
+      background: var(--bg-subtle);
+    }
+  </style>
+</head>
+<body>
+  <main class="not-found">
+    <p class="not-found-kicker">404</p>
+    <h1>That page is not here.</h1>
+    <p>The link may be out of date. Go back to the studio homepage, or open one of the apps.</p>
+    <div class="not-found-actions">
+      <a class="btn btn-dark" href="/">Back to YS Liu Studio</a>
+    </div>
+    <ul class="not-found-apps">
+      <li><a href="/inkstone/">Inkstone</a></li>
+      <li><a href="/pill-reminder/">Pill Reminder</a></li>
+      <li><a href="/grocery-price/">Grocery Price</a></li>
+      <li><a href="/alcohol-free-tracker/">Alcohol Free Tracker</a></li>
+      <li><a href="/quit-vaping/">Quit Vaping</a></li>
+      <li><a href="/levain/">Levain</a></li>
+      <li><a href="/quit-weed/">Unfog (Quit Weed)</a></li>
+      <li><a href="/agricola-scorer/">Agricola Scorer</a></li>
+    </ul>
+  </main>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f06b65322f34626b2e5688ab29fd1df"}'></script>
+</body>
+</html>
