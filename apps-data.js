@@ -158,7 +158,7 @@ export const APPS = [
       },
       {
         "label": "App Store",
-        "url": "https://apps.apple.com/app/id6801701847",
+        "url": "https://apps.apple.com/app/apple-store/id6801701847?pt=1793695638&ct=site-home&mt=8",
         "type": "appstore"
       }
     ],
@@ -216,7 +216,7 @@ export const APPS = [
       },
       {
         "label": "App Store",
-        "url": "https://apps.apple.com/app/id6794415548",
+        "url": "https://apps.apple.com/app/apple-store/id6794415548?pt=1793695638&ct=site-home&mt=8",
         "type": "appstore"
       }
     ],
@@ -299,7 +299,7 @@ export const APPS = [
       },
       {
         "label": "App Store",
-        "url": "https://apps.apple.com/app/id6773533304",
+        "url": "https://apps.apple.com/app/apple-store/id6773533304?pt=127596623&ct=site-home&mt=8",
         "type": "appstore"
       }
     ],
@@ -372,7 +372,7 @@ export const APPS = [
       },
       {
         "label": "App Store",
-        "url": "https://apps.apple.com/app/id6791035303",
+        "url": "https://apps.apple.com/app/apple-store/id6791035303?pt=1793695638&ct=site-home&mt=8",
         "type": "appstore"
       }
     ],
@@ -455,7 +455,7 @@ export const APPS = [
       },
       {
         "label": "App Store",
-        "url": "https://apps.apple.com/app/id6741305872",
+        "url": "https://apps.apple.com/app/apple-store/id6741305872?pt=1793695638&ct=site-home&mt=8",
         "type": "appstore"
       }
     ],
@@ -526,11 +526,12 @@ export const APPS = [
         "url": "/quit-weed/",
         "type": "web"
       },
+      // UNFOG_CTA homepage
       {
-        "label": "App Store",
-        "url": "https://apps.apple.com/app/id6825549617",
-        "type": "appstore"
-      }
+        "label": "Coming soon to the App Store",
+        "type": "coming-soon"
+      },
+      // /UNFOG_CTA
     ],
     "appStoreRating": "5.0",
     "appStoreReviews": 1,
@@ -585,6 +586,89 @@ export const APPS = [
         "full": "/images/screenshots/weed/9_APP_IPHONE_69_9.webp",
         "alt": "T-Break & Quit Weed: Unfog Screenshot 10 — Shareable Streak Cards"
       }
+    ]
+  },
+  {
+    "id": "quit-vaping",
+    "trackId": "6818660091",
+    "title": "Quit Vaping",
+    "category": "Health & Fitness",
+    "year": "2026",
+    "tagline": "Private nicotine tracker for disposables and pods",
+    "description": "Track vape-free days, watch lungs and dopamine reset, surf acute cravings in 3 minutes, and see pod savings add up. 100% private and offline.",
+    "icon": "/quit-vaping/assets/app-icon.png",
+    "accent": "#38bdf8",
+    "features": [
+      "Vape-free day tracking for disposables and pods",
+      "Body recovery timeline from 20 minutes to 30 days",
+      "3-minute urge surfing for nicotine cravings",
+      "100% private and offline, with no account"
+    ],
+    "links": [
+      {
+        "label": "Visit Website",
+        "url": "/quit-vaping/",
+        "type": "web"
+      },
+      {
+        "label": "App Store",
+        "url": "https://apps.apple.com/app/apple-store/id6818660091?pt=1793695638&ct=site-home&mt=8",
+        "type": "appstore"
+      }
+    ],
+    "appStoreRating": null,
+    "appStoreReviews": 0,
+    "screenshots": [
+      { "thumb": "/quit-vaping/assets/appstore/01-calm-progress.webp", "full": "/quit-vaping/assets/appstore/01-calm-progress.webp", "alt": "Quit Vaping calm progress screen" },
+      { "thumb": "/quit-vaping/assets/appstore/02-body-recovery.webp", "full": "/quit-vaping/assets/appstore/02-body-recovery.webp", "alt": "Quit Vaping body recovery timeline" },
+      { "thumb": "/quit-vaping/assets/appstore/03-urge-surfing.webp", "full": "/quit-vaping/assets/appstore/03-urge-surfing.webp", "alt": "Quit Vaping urge surfing" },
+      { "thumb": "/quit-vaping/assets/appstore/04-savings.webp", "full": "/quit-vaping/assets/appstore/04-savings.webp", "alt": "Quit Vaping savings" },
+      { "thumb": "/quit-vaping/assets/appstore/05-milestones.webp", "full": "/quit-vaping/assets/appstore/05-milestones.webp", "alt": "Quit Vaping milestones" },
+      { "thumb": "/quit-vaping/assets/appstore/06-calendar.webp", "full": "/quit-vaping/assets/appstore/06-calendar.webp", "alt": "Quit Vaping calendar" },
+      { "thumb": "/quit-vaping/assets/appstore/07-check-in.webp", "full": "/quit-vaping/assets/appstore/07-check-in.webp", "alt": "Quit Vaping daily check-in" },
+      { "thumb": "/quit-vaping/assets/appstore/08-privacy.webp", "full": "/quit-vaping/assets/appstore/08-privacy.webp", "alt": "Quit Vaping privacy" },
+      { "thumb": "/quit-vaping/assets/appstore/09-dark-mode.webp", "full": "/quit-vaping/assets/appstore/09-dark-mode.webp", "alt": "Quit Vaping dark mode" },
+      { "thumb": "/quit-vaping/assets/appstore/10-streak.webp", "full": "/quit-vaping/assets/appstore/10-streak.webp", "alt": "Quit Vaping streak" }
+    ]
+  },
+  {
+    "id": "levain",
+    "trackId": "6812950497",
+    "title": "Levain: Sourdough Bake Timer",
+    "category": "Food & Drink",
+    "year": "2026",
+    "tagline": "The sourdough timer that runs your whole bake",
+    "description": "Chain every proof and fold into one timeline, with alarms that ring through silent mode and a photo journal of every loaf.",
+    "icon": "/levain/assets/icon.png",
+    "accent": "#c4784a",
+    "features": [
+      "One timeline from autolyse through the bake",
+      "Alarms that ring through silent mode",
+      "Apple Watch and Lock Screen countdown",
+      "Baker's percentages and a photo journal, on device"
+    ],
+    "links": [
+      {
+        "label": "Visit Website",
+        "url": "/levain/",
+        "type": "web"
+      },
+      {
+        "label": "App Store",
+        "url": "https://apps.apple.com/app/apple-store/id6812950497?pt=1793695638&ct=site-home&mt=8",
+        "type": "appstore"
+      }
+    ],
+    "appStoreRating": null,
+    "appStoreReviews": 0,
+    "screenshots": [
+      { "thumb": "/levain/assets/shots/shot-1.webp", "full": "/levain/assets/shots/shot-1.webp", "alt": "Levain multi-stage bake timeline" },
+      { "thumb": "/levain/assets/shots/shot-2.webp", "full": "/levain/assets/shots/shot-2.webp", "alt": "Levain on Apple Watch" },
+      { "thumb": "/levain/assets/shots/shot-3.webp", "full": "/levain/assets/shots/shot-3.webp", "alt": "Levain recipe builder" },
+      { "thumb": "/levain/assets/shots/shot-4.webp", "full": "/levain/assets/shots/shot-4.webp", "alt": "Levain baking journal" },
+      { "thumb": "/levain/assets/shots/shot-5.webp", "full": "/levain/assets/shots/shot-5.webp", "alt": "Levain lock screen alarms" },
+      { "thumb": "/levain/assets/shots/shot-6.webp", "full": "/levain/assets/shots/shot-6.webp", "alt": "Levain bread library" },
+      { "thumb": "/levain/assets/shots/shot-7.webp", "full": "/levain/assets/shots/shot-7.webp", "alt": "Levain loaf history" }
     ]
   }
 ];

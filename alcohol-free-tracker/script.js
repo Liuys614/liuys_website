@@ -4,8 +4,9 @@
 
 const ASC_CONFIG = {
   appId: "6791035303",
-  providerToken: "1793695638", // Apple Developer / Provider ID (update in seo_config.json if needed)
-  defaultCampaign: "web_organic"
+  // Keep in sync with scripts/site_campaign.py DEFAULT_PROVIDER_TOKEN.
+  providerToken: "1793695638",
+  defaultCampaign: "site-alcohol-free-tracker-landing"
 };
 
 document.querySelectorAll("[data-year]").forEach((node) => {
@@ -26,10 +27,7 @@ document.querySelectorAll("[data-year]").forEach((node) => {
     }
     // Apple ASC campaign token max length is 40 chars, alphanumeric + _ -
     const cleanCt = baseCampaign.replace(/[^a-zA-Z0-9_-]/g, "_").slice(0, 40);
-    const targetUrl = new URL(`https://apps.apple.com/app/apple-store/id${ASC_CONFIG.appId}`);
-    targetUrl.searchParams.set("pt", ASC_CONFIG.providerToken);
-    targetUrl.searchParams.set("ct", cleanCt);
-    targetUrl.searchParams.set("mt", "8");
+    const targetUrl = new URL(`https://apps.apple.com/app/apple-store/id${ASC_CONFIG.appId}?pt=${ASC_CONFIG.providerToken}&ct=${cleanCt}&mt=8`);
     link.href = targetUrl.toString();
   });
 })();

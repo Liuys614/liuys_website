@@ -209,6 +209,15 @@ body {
   transform: translateY(-2px);
 }
 
+.is-coming-soon {
+  cursor: default;
+}
+
+.btn-forest.is-coming-soon:hover,
+.btn-store-primary.is-coming-soon:hover {
+  transform: none;
+}
+
 .apple-logo {
   width: 15px;
   height: 15px;

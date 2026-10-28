@@ -118,7 +118,13 @@ function renderProjects() {
 
           <div class="project-actions">
             ${app.links.map(link => {
-              if (link.type === "appstore") {
+              if (link.type === "coming-soon") {
+                return `
+                  <span class="btn-appstore-link is-coming-soon" aria-disabled="true">
+                    <span>Coming soon to the App Store</span>
+                  </span>
+                `;
+              } else if (link.type === "appstore") {
                 return `
                   <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn-appstore-link">
                     ${ICONS.apple}

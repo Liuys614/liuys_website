@@ -850,6 +850,15 @@ a {
   transform: translateY(-2px);
 }
 
+.btn-appstore-link.is-coming-soon {
+  cursor: default;
+}
+
+.btn-appstore-link.is-coming-soon:hover {
+  background: var(--color-black);
+  transform: none;
+}
+
 .btn-appstore-link svg {
   width: 17px;
   height: 17px;
