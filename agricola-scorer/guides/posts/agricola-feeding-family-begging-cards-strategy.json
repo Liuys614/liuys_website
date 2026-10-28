@@ -1,0 +1,34 @@
+{
+  "slug": "agricola-feeding-family-begging-cards-strategy",
+  "title": "Agricola Feeding Strategy: How to Avoid Begging Cards",
+  "subtitle": "Building an Unbreakable Food Engine & Family Growth Timing",
+  "meta_description": "Master the Harvest phase in Agricola. Learn how to avoid catastrophic -3 VP Begging Cards, compare the top 3 food engines, and time family growth without starving.",
+  "published_date": "2026-10-28",
+  "reading_time": "6 min read",
+  "category": "Strategy · Food Engine",
+  "target_keyword": "agricola feeding family begging cards penalty strategy",
+  "campaign_prefix": "seo_agricola_food",
+  "pitch_screen": "app-icon.png",
+  "pitch_headline": "Track family food requirements and end-game score",
+  "pitch_body": "Focus on your farming strategy while the companion app manages all scoring categories.",
+  "summary_excerpt": "An advanced strategy guide to building a consistent food engine in Agricola, dodging Begging Cards penalties, and managing harvest phase family feeding.",
+  "body_html": "<p>In Uwe Rosenberg's worker-placement masterpiece <em>Agricola</em>, no mechanic strikes greater terror into players' hearts than the <strong>Harvest phase</strong>. At the end of Rounds 4, 7, 9, 11, 13, and 14, every player must feed their growing farm family <strong>2 food units per adult</strong> (and 1 food for a newborn born that round).</p><p>If you come up short by even a single food unit, you are forced to take a <strong>Begging Card</strong>, inflicting a severe <strong>-3 Victory Point penalty per missing food</strong>. Taking just two or three Begging Cards (-6 to -9 VP) is almost impossible to overcome in competitive play. Here is how tournament players establish reliable food engines early and time family growth safely.</p><div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th>Food Engine Type</th><th>Required Setup &amp; Resources</th><th>Food Conversion Efficiency</th><th>Endgame Scoring Synergy</th></tr></thead><tbody><tr><td><strong>Fireplace / Cooking Hearth (Livestock Slaughter)</strong></td><td>2–3 Clay (Fireplace) or 4–5 Clay (Hearth)</td><td>Slaughter animals at any time: Sheep (2 food), Boar (2–3 food), Cattle (3–4 food)</td><td>High flexibility; pairs with breeding pairs for perpetual meat</td></tr><tr><td><strong>Bake Bread (Clay / Stone Oven)</strong></td><td>Clay + Stone (Clay Oven 3C/1S, Stone Oven 3C/3S)</td><td>Bake action converts 1 Grain into 5 food (Clay) or up to 2 Grain into 4 food each (Stone)</td><td>High explosive food bursts; frees up multiple rounds of actions</td></tr><tr><td><strong>Vegetable &amp; Grain Field Harvest</strong></td><td>Plow actions + Grain/Veg seeds + Field Phase</td><td>Vegetables yield 2 food in Hearth or 3 in Cooking Hearth; automatic yield at harvest</td><td>Direct points from plowed fields, grain count, and vegetable bonus</td></tr><tr><td><strong>Fishing / Day Laborer / Reed Bank</strong></td><td>Single action space visits</td><td>Static 1–3 food accumulation (inefficient long-term)</td><td>Emergency patch only; costs too many precious worker actions</td></tr></tbody></table></div><h2>The Golden Rule of Family Growth: Food Engine First</h2><p>The most common beginner mistake is rushing the <em>Family Growth</em> action in Stage 2 before securing an independent food production loop. While having a 3rd worker grants 50% more actions per round, an extra mouth to feed increases your harvest liability by 2 food every harvest.</p><p>Before growing your family, verify you have at least one of these two safeguards:</p><ol><li><strong>A Self-Sustaining Breeding Pair:</strong> At least one fenced pasture with two sheep, wild boar, or cattle that reproduce during the field phase, providing a guaranteed harvest slaughter without depleting breeding stock.</li><li><strong>Stored Sown Grain with an Oven:</strong> At least two harvested grain tokens ready to bake into 10 food during your next family growth or sow action.</li></ol><div class=\"guide-callout\"><strong>When is Taking a Begging Card Worth It?</strong>Almost never. However, in master-tier tournament play, intentionally taking <em>one</em> Begging Card (-3 VP) in Round 14 can occasionally be mathematically optimal if the alternative action gains 4 or 5 VP (such as completing an expensive Major Improvement or snatching a 4-point bonus card). Outside of Round 14, avoid begging cards at all costs.</div><h2>3 High-Yield Food Engine Combinations</h2><ul><li><strong>The Fireplace + Sheep Rush:</strong> Grabbing 2 Clay in Round 2 or 3 to purchase the small Fireplace ensures you can convert any sheep from the early Round 1-4 animal accumulation into immediate food.</li><li><strong>The Grain &amp; Clay Oven Leap:</strong> Sowing 2 grain fields in Stage 1 or 2 yields 6 grain over consecutive harvests. A single Clay Oven bake action converts 1 grain into 5 food, feeding a 3-person family for an entire harvest with zero wasted worker turns.</li><li><strong>Synergistic Occupations:</strong> Cards like <em>Mushroom Collector</em>, <em>Berry Picker</em>, or <em>Greengrocer</em> inject free food into your supply passively whenever you take necessary resource spaces (Wood or Reed).</li></ul><h2>Effortless End-Game Score Calculation</h2><p>Agricola end-game scoring requires tallying fields, pastures, grains, vegetables, sheep, wild boar, cattle, unused farm spaces (-1 each), rooms, family members (3 VP each), bonus points, and deducting begging card penalties. Using a dedicated companion score sheet app eliminates paper math errors and helps you visualize point targets during play.</p>",
+  "faqs": [
+    {
+      "question": "How much food do you need to feed each family member in Agricola?",
+      "answer": "Each adult family member requires 2 food units during the Harvest phase at the end of Rounds 4, 7, 9, 11, 13, and 14. A newborn family member born in the current round only requires 1 food unit for their first harvest."
+    },
+    {
+      "question": "What is the penalty for a Begging Card in Agricola?",
+      "answer": "Each Begging Card deducts 3 Victory Points from your final score at the end of the game. If you are missing 2 food during a harvest, you must take 2 Begging Cards (-6 Victory Points)."
+    },
+    {
+      "question": "When can you slaughter animals for food in Agricola?",
+      "answer": "If you own a Fireplace or Cooking Hearth, you can slaughter farm animals for food at any time—including during the feeding phase of the Harvest—without using a worker action."
+    },
+    {
+      "question": "Can you pay food with goods other than food tokens?",
+      "answer": "Only if you own the appropriate improvements. For example, grain can only be converted to food if baked with an Oven or cooked with a Fireplace/Hearth; vegetables and animals require a Fireplace or Cooking Hearth to convert to food."
+    }
+  ]
+}

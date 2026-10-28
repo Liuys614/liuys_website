@@ -1,0 +1,34 @@
+{
+  "slug": "bulk-fermentation-temperature-time-chart",
+  "title": "Sourdough Bulk Fermentation Chart: Temp vs. Time & Rise %",
+  "subtitle": "How Dough Temperature Dictates Proofing Duration & Target Volume",
+  "meta_description": "Master sourdough bulk fermentation with our comprehensive temperature-time chart. Learn why target rise percentages shift from 68°F to 82°F and how to read dough cues.",
+  "published_date": "2026-10-28",
+  "reading_time": "6 min read",
+  "category": "Fermentation · Temperature",
+  "target_keyword": "sourdough bulk fermentation temperature and time chart",
+  "campaign_prefix": "seo_bulk_ferment_temp",
+  "pitch_screen": "shot-2.webp",
+  "pitch_headline": "Temperature-adjusted sourdough bulk fermentation timers",
+  "pitch_body": "Track ambient and dough temperature to automatically recalculate your proofing milestones.",
+  "summary_excerpt": "A master baker's guide and reference chart correlating internal dough temperature, bulk fermentation duration, and target volume rise percentage.",
+  "body_html": "<p>Bulk fermentation—the first rise occurring after mixing levain into your dough until final shaping—is the single most critical step in sourdough bread baking. It establishes 90% of your loaf's volume, crumb structure, oven spring, and flavor profile.</p><p>Yet, more than 80% of sourdough baking failures (dense gummy bottoms, overproofed pancake dough, or pale dense crumb) stem from mistiming bulk fermentation. Recipes that give static directions like <em>\"let rise for 4 to 6 hours\"</em> ignore the primary variable: <strong>internal dough temperature</strong>.</p><div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th>Dough Temperature (°F / °C)</th><th>Target Volume Rise %</th><th>Approximate Bulk Duration</th><th>Dough Characteristics at End of Bulk</th></tr></thead><tbody><tr><td><strong>68°F / 20°C (Cold Kitchen)</strong></td><td><strong>75% – 100% rise</strong> (Nearly doubled)</td><td>9 to 12 hours</td><td>Very slow gas production; dough cools slowly in fridge so needs high initial rise</td></tr><tr><td><strong>72°F / 22°C (Mild Room Temp)</strong></td><td><strong>50% – 60% rise</strong></td><td>6.5 to 8.5 hours</td><td>Rounded domed edges; soft air pockets visible through glass vessel</td></tr><tr><td><strong>76°F / 24°C (Ideal Baker's Zone)</strong></td><td><strong>40% – 50% rise</strong></td><td>5 to 6.5 hours</td><td>Noticeable jiggle when shaken; bubbly underside; airy marshmallow texture</td></tr><tr><td><strong>80°F / 27°C (Warm Proofer)</strong></td><td><strong>30% – 40% rise</strong></td><td>4 to 5 hours</td><td>Fermentation moves quickly; dough retains warmth well into refrigerator retard</td></tr><tr><td><strong>84°F / 29°C (Summer Heat)</strong></td><td><strong>20% – 30% rise</strong></td><td>3 to 4 hours</td><td>Requires immediate shaping; gluten breaks down quickly if left longer</td></tr></tbody></table></div><h2>The Golden Rule: Why Warmer Dough Needs Less Percentage Rise</h2><p>The most counter-intuitive principle for novice bakers is that <strong>warmer dough must be shaped at a significantly lower percentage rise</strong> than cold dough. Here is why:</p><p>When you place an 80°F (27°C) shaped dough into a 38°F (3°C) refrigerator for an overnight cold retard, it takes <strong>3 to 4 hours</strong> for the center of the dough mass to chill down to dormancy temperature (below 45°F / 7°C). During those hours in the fridge, your warm dough continues fermenting rapidly.</p><p>Conversely, dough fermenting at 68°F (20°C) is already cool. When refrigerated, it drops below fermenting threshold in under an hour. If you shaped it at only a 30% rise, it would enter the oven severely underproofed.</p><div class=\"guide-callout\"><strong>Dough Temp vs. Room Temp</strong>Always measure the internal temperature of your dough with a digital probe thermometer—not just the ambient air of your kitchen. Water temperature, starter temperature, and friction during mixing create the actual thermal environment for your wild yeast.</div><h2>Visual and Tactile Sensory Cues (Don't Rely Solely on Time)</h2><p>While the temperature chart provides an essential baseline, use these four sensory tests before ending bulk fermentation:</p><ol><li><strong>The Domed Perimeter:</strong> Look at the edge of the dough meeting the container wall. Underproofed dough lies flat; properly fermented dough pulls away in a gentle, convex curve (domed top).</li><li><strong>The Jiggle Test:</strong> Gently shake your mixing bowl. A properly proofed sourdough will jiggle like gelatin or a firm custard, indicating hundreds of tiny aerated gas cells suspended throughout the gluten matrix.</li><li><strong>Sub-Surface Blisters:</strong> Look for smooth, translucent bubbles just beneath the skin of the dough.</li><li><strong>Clean Release from Hands:</strong> When moistened fingers touch the dough surface, it should feel silky, pillowy, and release cleanly with minimal sticky residue.</li></ol><h2>Using an Aliquot Jar for Zero-Guesswork Monitoring</h2><p>Because wide-bottom bowls make judging 30% to 50% volume increases notoriously difficult, use an <strong>aliquot jar</strong>: after mixing your levain, pinch off a small 30g to 40g sample of dough and place it into a narrow, straight-sided cylindrical spice jar with a rubber band marking the starting height. Place the jar right next to your main dough bowl so they share the exact same temperature curve.</p>",
+  "faqs": [
+    {
+      "question": "When does sourdough bulk fermentation start and end?",
+      "answer": "Bulk fermentation begins the exact moment your active levain (sourdough starter) is mixed into the flour and water dough. It ends when you turn the dough out onto your work surface to divide and perform final shaping."
+    },
+    {
+      "question": "What happens if you over-bulk ferment sourdough?",
+      "answer": "Over-bulked dough becomes overly acidic as lactic and acetic acids accumulate, degrading the gluten matrix. The dough becomes sticky, soupy, loses all surface tension during shaping, and collapses in the oven with poor oven spring."
+    },
+    {
+      "question": "Why does my sourdough not rise during bulk fermentation?",
+      "answer": "The most common causes are a weak, sluggish sourdough starter, cold water/kitchen temperatures (below 68°F / 20°C), or insufficient time. Check your starter's vitality and measure internal dough temperature."
+    },
+    {
+      "question": "Can I bulk ferment sourdough overnight on the counter?",
+      "answer": "Only if your kitchen ambient temperature is very cool (around 60°F–65°F / 15°C–18°C) and you use a small percentage of levain (such as 5–10%). At standard room temperatures (70°F+), an overnight counter bulk fermentation will severely overproof your dough."
+    }
+  ]
+}
