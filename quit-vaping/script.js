@@ -4,8 +4,8 @@
 
 const ASC_CONFIG = {
   appId: "6818660091",
-  // Keep in sync with scripts/site_campaign.py DEFAULT_PROVIDER_TOKEN.
-  providerToken: "1793695638",
+  // Keep in sync with scripts/site_campaign.py PROVIDER_TOKEN.
+  providerToken: "127596623",
   defaultCampaign: "site-quit-vaping-landing"
 };
 
