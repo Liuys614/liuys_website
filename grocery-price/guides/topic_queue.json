@@ -31,5 +31,27 @@
     "pitch_headline": "Track historical prices & spot hidden shrinkflation",
     "pitch_body": "Keep a local personal price history on your phone so you instantly notice when packages shrink.",
     "status": "pending"
+  },
+  {
+    "slug": "grocery-budget-calculator-per-person-per-month",
+    "target_keyword": "how much should one person spend on groceries per month",
+    "secondary_keywords": ["usda grocery budget guidelines single person", "average grocery bill for one adult", "calculate monthly food costs"],
+    "category": "Budgeting · Meal Planning",
+    "campaign_prefix": "seo_grocery_budget",
+    "pitch_screen": "scanner_ui.png",
+    "pitch_headline": "Track real grocery expenses down to the cent",
+    "pitch_body": "Compare unit prices while shopping to keep your monthly grocery spending under budget.",
+    "status": "pending"
+  },
+  {
+    "slug": "store-brand-vs-name-brand-taste-and-price-comparison",
+    "target_keyword": "store brand vs name brand grocery savings test",
+    "secondary_keywords": ["is generic food the same as name brand", "private label grocery savings percentage", "great value vs brand name math"],
+    "category": "Smart Shopping · Brand Analysis",
+    "campaign_prefix": "seo_store_vs_brand",
+    "pitch_screen": "scanner_ui.png",
+    "pitch_headline": "See how much you save choosing generic brands",
+    "pitch_body": "Scan two items side-by-side to reveal the exact unit price spread in seconds.",
+    "status": "pending"
   }
 ]

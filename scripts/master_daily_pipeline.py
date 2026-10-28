@@ -29,6 +29,7 @@ import urllib.error
 from datetime import datetime, timedelta
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Primary 7 Core Apps for Daily Programmatic SEO Publishing
 APPS = [
     ("alcohol-free-tracker", "Alcohol Free Tracker"),
     ("quit-weed", "Quit Weed: Unfog"),
@@ -37,6 +38,8 @@ APPS = [
     ("grocery-price", "Grocery Price Scanner"),
     ("levain", "Sourdough Bake Timer: Levain"),
     ("inkstone", "Inkstone: Sign PDF & Docs"),
+]
+PARKED_APPS = [
     ("agricola-scorer", "Agricola Score Sheet"),
 ]
 

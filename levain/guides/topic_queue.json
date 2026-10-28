@@ -31,5 +31,27 @@
     "pitch_headline": "Never miss the peak of your sourdough starter",
     "pitch_body": "Track starter doubling times and set exact feeding alarms with Levain on iOS.",
     "status": "pending"
+  },
+  {
+    "slug": "how-to-get-open-crumb-sourdough-aeration-tips",
+    "target_keyword": "how to get open crumb in sourdough bread aeration tips",
+    "secondary_keywords": ["open wild crumb sourdough technique", "dough strength coil folds crumb openness", "dough hydration open crumb"],
+    "category": "Crumb Structure · Technique",
+    "campaign_prefix": "seo_open_crumb_guide",
+    "pitch_screen": "shot-1.webp",
+    "pitch_headline": "Master stretch & fold timers for an airy, open crumb",
+    "pitch_body": "Time your coil folds with interactive Live Activities directly on your iPhone lock screen.",
+    "status": "pending"
+  },
+  {
+    "slug": "sourdough-cold-retard-flavor-blister-crust-guide",
+    "target_keyword": "why cold retard sourdough in fridge overnight blister crust",
+    "secondary_keywords": ["sourdough refrigerator fermentation time limit", "how to get crispy blistered sourdough crust", "acetic acid vs lactic acid cold retard"],
+    "category": "Baking Science · Cold Retard",
+    "campaign_prefix": "seo_cold_retard_guide",
+    "pitch_screen": "shot-2.webp",
+    "pitch_headline": "Calculate cold retard hours and bake timing",
+    "pitch_body": "Never overproof your banneton in the fridge—set precision cold ferment timers with Levain.",
+    "status": "pending"
   }
 ]

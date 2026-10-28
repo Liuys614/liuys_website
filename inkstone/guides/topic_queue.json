@@ -20,5 +20,38 @@
     "pitch_headline": "Add signatures, initials, dates and text fields",
     "pitch_body": "Complete lease agreements, NDAs, and invoices without expensive desktop PDF editors.",
     "status": "published"
+  },
+  {
+    "slug": "how-to-send-document-for-signature-without-docusign",
+    "target_keyword": "how to send a document for signature without docusign",
+    "secondary_keywords": ["free docusign alternative without monthly subscription", "send pdf to sign recipient no account", "cheap esign tool for freelancers"],
+    "category": "eSignature · Alternatives",
+    "campaign_prefix": "seo_docusign_alt",
+    "pitch_screen": "inkstone.png",
+    "pitch_headline": "Send signature requests with zero recipient downloads",
+    "pitch_body": "Your clients sign in any mobile or desktop web browser with one tap. No DocuSign accounts, no $30/month fees.",
+    "status": "pending"
+  },
+  {
+    "slug": "how-to-sign-lease-agreement-on-iphone-legally",
+    "target_keyword": "how to sign a lease agreement on iphone legally",
+    "secondary_keywords": ["is electronic signature on lease agreement legal", "tenant esign apartment contract mobile", "sign rental lease on phone"],
+    "category": "Real Estate · Legal Workflows",
+    "campaign_prefix": "seo_sign_lease_guide",
+    "pitch_screen": "inkstone.png",
+    "pitch_headline": "Sign rental leases and contracts with full legal validity",
+    "pitch_body": "Meets ESIGN Act and eIDAS compliance with immutable cryptographic PDF export.",
+    "status": "pending"
+  },
+  {
+    "slug": "how-to-add-signature-to-pdf-without-printing",
+    "target_keyword": "how to add signature to pdf without printing and scanning",
+    "secondary_keywords": ["paperless pdf signing iphone", "how to sign contract without printer", "digital signature phone free"],
+    "category": "Paperless Office · Quick Guide",
+    "campaign_prefix": "seo_sign_no_printer",
+    "pitch_screen": "inkstone.png",
+    "pitch_headline": "Go 100% paperless: Sign any contract in under 30 seconds",
+    "pitch_body": "Ditch the printer, scanner, and pen. Draw, store, and stamp your vector signature on iOS.",
+    "status": "pending"
   }
 ]
