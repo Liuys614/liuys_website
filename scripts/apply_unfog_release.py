@@ -5,7 +5,7 @@ The single switch is UNFOG_RELEASED in scripts/site_campaign.py.
 False: download buttons become a non-link "Coming soon to the App Store"
 and the Smart App Banner is omitted.
 True: those buttons become App Store links again (ct=site-quit-weed-landing,
-pt=DEFAULT_PROVIDER_TOKEN).
+pt=PROVIDER_TOKEN).
 
 /quit-weed-tracker/ is a symlink to /quit-weed/, so editing quit-weed covers both.
 Guide HTML is rendered by quit-weed/scripts/build_guide.py, which reads the same flag.
@@ -19,7 +19,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from site_campaign import (  # noqa: E402
-    DEFAULT_PROVIDER_TOKEN,
+    PROVIDER_TOKEN,
     UNFOG_APP_ID,
     UNFOG_RELEASED,
     coming_soon_markup,
@@ -77,7 +77,7 @@ def _class_of(tag: str) -> str:
 
 
 def _live_anchor(class_name: str, inner: str) -> str:
-    url = make_asc_url(UNFOG_APP_ID, DEFAULT_PROVIDER_TOKEN, LANDING_CT)
+    url = make_asc_url(UNFOG_APP_ID, PROVIDER_TOKEN, LANDING_CT)
     if class_name:
         return (
             f'<a href="{url}" class="{class_name}" target="_blank" rel="noopener">{inner}</a>'
@@ -140,7 +140,7 @@ def _sync_schema_and_banner(text: str) -> str:
     url_line = '"url": "https://ysliustudio.com/quit-weed/",'
     download = (
         '"downloadUrl": "'
-        + make_asc_url(UNFOG_APP_ID, DEFAULT_PROVIDER_TOKEN, LANDING_CT)
+        + make_asc_url(UNFOG_APP_ID, PROVIDER_TOKEN, LANDING_CT)
         + '",'
     )
     if url_line in text and "downloadUrl" not in text:
@@ -166,7 +166,7 @@ def sync_quit_weed_html(path: str) -> None:
 
 def _homepage_link_block() -> str:
     if UNFOG_RELEASED:
-        url = make_asc_url(UNFOG_APP_ID, DEFAULT_PROVIDER_TOKEN, "site-home")
+        url = make_asc_url(UNFOG_APP_ID, PROVIDER_TOKEN, "site-home")
         body = (
             "{\n"
             '        "label": "App Store",\n'

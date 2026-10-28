@@ -158,7 +158,7 @@ export const APPS = [
       },
       {
         "label": "App Store",
-        "url": "https://apps.apple.com/app/apple-store/id6801701847?pt=1793695638&ct=site-home&mt=8",
+        "url": "https://apps.apple.com/app/apple-store/id6801701847?pt=127596623&ct=site-home&mt=8",
         "type": "appstore"
       }
     ],
@@ -216,7 +216,7 @@ export const APPS = [
       },
       {
         "label": "App Store",
-        "url": "https://apps.apple.com/app/apple-store/id6794415548?pt=1793695638&ct=site-home&mt=8",
+        "url": "https://apps.apple.com/app/apple-store/id6794415548?pt=127596623&ct=site-home&mt=8",
         "type": "appstore"
       }
     ],
@@ -372,7 +372,7 @@ export const APPS = [
       },
       {
         "label": "App Store",
-        "url": "https://apps.apple.com/app/apple-store/id6791035303?pt=1793695638&ct=site-home&mt=8",
+        "url": "https://apps.apple.com/app/apple-store/id6791035303?pt=127596623&ct=site-home&mt=8",
         "type": "appstore"
       }
     ],
@@ -455,7 +455,7 @@ export const APPS = [
       },
       {
         "label": "App Store",
-        "url": "https://apps.apple.com/app/apple-store/id6741305872?pt=1793695638&ct=site-home&mt=8",
+        "url": "https://apps.apple.com/app/apple-store/id6741305872?pt=127596623&ct=site-home&mt=8",
         "type": "appstore"
       }
     ],
@@ -612,7 +612,7 @@ export const APPS = [
       },
       {
         "label": "App Store",
-        "url": "https://apps.apple.com/app/apple-store/id6818660091?pt=1793695638&ct=site-home&mt=8",
+        "url": "https://apps.apple.com/app/apple-store/id6818660091?pt=127596623&ct=site-home&mt=8",
         "type": "appstore"
       }
     ],
@@ -655,7 +655,7 @@ export const APPS = [
       },
       {
         "label": "App Store",
-        "url": "https://apps.apple.com/app/apple-store/id6812950497?pt=1793695638&ct=site-home&mt=8",
+        "url": "https://apps.apple.com/app/apple-store/id6812950497?pt=127596623&ct=site-home&mt=8",
         "type": "appstore"
       }
     ],

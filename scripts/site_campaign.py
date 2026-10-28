@@ -1,15 +1,17 @@
 """Shared App Store campaign settings for YS Liu Studio.
 
-Change provider tokens here. Guide builders import this module, so the next
-pipeline run keeps the same pt. Grocery Price landing pages and in-page tools
-are static HTML and use GROCERY_LANDING_PROVIDER_TOKEN (pt=127596623). Every
-other App Store link that already carries a pt uses DEFAULT_PROVIDER_TOKEN
-(pt=1793695638), including grocery guide pages. Leave both values as they are
-until the provider token is confirmed.
+Change the provider token here. Guide builders import this module, so the next
+pipeline run keeps the same pt. Apple's campaign-link format is:
 
-Static landing pages duplicate these pt values in HTML. After changing a token
-here, update those pages (or re-run scripts/apply_unfog_release.py for Unfog)
-so the HTML matches.
+    https://apps.apple.com/app/apple-store/id<APPID>?pt=<PROVIDER_TOKEN>&ct=<campaign>&mt=8
+
+PROVIDER_TOKEN is the App Store Connect provider token (127596623), confirmed
+in App Store Connect's campaign link generator. 1793695638 is the developer
+(artist) id used only on apps.apple.com/developer/... links, not a pt value.
+
+Static landing pages and alcohol-free-tracker/script.js plus quit-vaping/script.js
+duplicate this token. After changing it here, update those copies (or re-run
+scripts/apply_unfog_release.py for Unfog) so the HTML matches.
 """
 
 import re
@@ -17,11 +19,8 @@ import re
 # Apple campaign token (ct) max length.
 CT_MAX = 40
 
-# Most apps, including grocery guide pages.
-DEFAULT_PROVIDER_TOKEN = "1793695638"
-
-# Grocery Price landing page and /grocery-price/tools/ pages only.
-GROCERY_LANDING_PROVIDER_TOKEN = "127596623"
+# App Store Connect provider token. Not the developer/artist id.
+PROVIDER_TOKEN = "127596623"
 
 # Quit Weed / Unfog is not on the App Store yet. Its product URL 404s.
 # Flip to True once app id 6825549617 is live, then run:

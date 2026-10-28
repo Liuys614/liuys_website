@@ -21,7 +21,7 @@ import sys
 sys.path.insert(0, os.path.join(MONOREPO_ROOT, "scripts"))
 from site_campaign import (  # noqa: E402
     CF_BEACON,
-    DEFAULT_PROVIDER_TOKEN,
+    PROVIDER_TOKEN,
     app_is_released,
     coming_soon_markup,
     guide_ct,
@@ -90,7 +90,7 @@ def render_guide_card(p: dict, link_prefix: str = "") -> str:
 def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     site_url = cfg["site_url"].rstrip("/")
     app_id = cfg["app_id"]
-    pt = DEFAULT_PROVIDER_TOKEN
+    pt = PROVIDER_TOKEN
     beacon = CF_BEACON
     slug = post["slug"]
     canonical_url = f"{site_url}/guides/{slug}.html"
@@ -336,7 +336,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
 def render_guides_index_html(posts: list, cfg: dict) -> str:
     site_url = cfg["site_url"].rstrip("/")
     app_id = cfg["app_id"]
-    pt = DEFAULT_PROVIDER_TOKEN
+    pt = PROVIDER_TOKEN
     beacon = CF_BEACON
     canonical_url = f"{site_url}/guides/index.html"
     app_slug = site_url.rstrip("/").rsplit("/", 1)[-1]
