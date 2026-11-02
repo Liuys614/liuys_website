@@ -105,7 +105,7 @@ def try_gsc_strike_zone(cfg: dict, published_keywords: set):
     primary_prop = cfg.get("gsc_property", "sc-domain:ysliustudio.com")
     page_prefix = cfg.get("site_url", "https://ysliustudio.com/alcohol-free-tracker")
     properties_to_try = []
-    for p in [primary_prop, "sc-domain:ysliustudio.com", "https://liuys614.github.io/AlcoholFreeTracker-Website/"]:
+    for p in [primary_prop, "sc-domain:ysliustudio.com"]:
         if p and p not in properties_to_try:
             properties_to_try.append(p)
 
