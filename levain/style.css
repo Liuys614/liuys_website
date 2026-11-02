@@ -266,3 +266,111 @@ footer p { margin: .35em 0; }
   .shot-card img { width: 190px; height: 411px; border-radius: 20px; }
   .problem-grid { grid-template-columns: 1fr; }
 }
+
+/* Interactive Sourdough Hydration Calculator */
+.interactive-calc-card {
+  margin: 36px 0;
+  padding: 28px;
+  background: var(--card, rgba(255, 255, 255, 0.7));
+  border: 1px solid var(--hairline, #DCCEC0);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.interactive-calc-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  color: var(--ink, #3D2B1C);
+}
+
+.interactive-calc-card p.calc-desc {
+  margin: 0 0 24px;
+  color: var(--secondary, #6B5340);
+  font-size: 0.95rem;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.calc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calc-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink, #3D2B1C);
+  display: flex;
+  justify-content: space-between;
+}
+
+.calc-field label span.calc-val {
+  color: var(--crust, #C8891F);
+  font-weight: 700;
+}
+
+.calc-field input[type="number"],
+.calc-field input[type="range"] {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--hairline, #DCCEC0);
+  background: var(--bg-mid, #F7F1EA);
+  font-size: 0.95rem;
+  color: var(--ink, #3D2B1C);
+  outline: none;
+}
+
+.calc-field input[type="range"] {
+  accent-color: var(--crust, #C8891F);
+  cursor: pointer;
+}
+
+.calc-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--hairline, #DCCEC0);
+}
+
+.calc-stat-box {
+  background: rgba(200, 137, 31, 0.08);
+  padding: 16px 18px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-stat-box.featured {
+  background: rgba(200, 137, 31, 0.16);
+  border: 1px solid rgba(200, 137, 31, 0.3);
+}
+
+.calc-stat-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--secondary, #6B5340);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.calc-stat-num {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--crust-deep, #A66E14);
+  line-height: 1.2;
+}
+
+.calc-stat-sub {
+  font-size: 0.82rem;
+  color: var(--secondary, #6B5340);
+  margin-top: 4px;
+}
