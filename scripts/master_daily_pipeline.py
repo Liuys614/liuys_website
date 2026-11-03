@@ -128,14 +128,24 @@ def get_recent_revenue_by_app() -> dict:
     Used to grant organic rotation weighting bonuses to apps generating actual revenue.
     """
     app_mapping = {
-        "pill-reminder": ["pill reminder", "supplement", "pillreminder"],
-        "alcohol-free-tracker": ["alcohol", "alcoholfreetracker"],
+        "pill-reminder": ["pill reminder", "supplement", "com.louisliu.pillreminder"],
+        "alcohol-free-tracker": ["alcohol", "alcoholfreetracker", "com.louisliu.alcoholfreetracker"],
         "agricola-scorer": ["agricola"],
-        "grocery-price": ["grocery", "groceryprice"],
+        "grocery-price": ["grocery", "com.louisliu.groceryprice"],
         "quit-vaping": ["vaping", "vape"],
         "quit-weed": ["unfog", "weed"],
         "levain": ["levain", "sourdough"],
         "inkstone": ["inkstone", "sign pdf"]
+    }
+    # Standard Currency FX Conversion to USD (prevents mixing TWD/EUR directly with USD)
+    fx_to_usd = {
+        "USD": 1.0,
+        "TWD": 1.0 / 32.2,
+        "EUR": 1.08,
+        "GBP": 1.28,
+        "CAD": 0.74,
+        "JPY": 0.0066,
+        "AUD": 0.66
     }
     rev_by_app = {k: 0.0 for k in app_mapping}
     if not os.path.exists(FINANCIAL_RECORDS_DIR):
@@ -159,14 +169,18 @@ def get_recent_revenue_by_app() -> dict:
                     sku = (r.get("SKU", "") or "").lower()
                     title = (r.get("Title", "") or "").lower()
                     proceeds = float(r.get("Developer Proceeds", 0) or 0)
+                    currency = (r.get("Currency of Proceeds", "USD") or "USD").upper().strip()
+                    if proceeds <= 0:
+                        continue
+                    proceeds_usd = proceeds * fx_to_usd.get(currency, 1.0)
                     for app_key, patterns in app_mapping.items():
                         if any(p in sku or p in title for p in patterns):
-                            rev_by_app[app_key] += proceeds
+                            rev_by_app[app_key] += proceeds_usd
                             break
         except Exception:
             pass
 
-    return rev_by_app
+    return {k: round(v, 2) for k, v in rev_by_app.items()}
 
 
 def collect_portfolio_data(token: str) -> dict:
