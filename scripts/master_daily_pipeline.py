@@ -23,8 +23,10 @@ Apps Managed (All 8):
   8. agricola-scorer      ("Agricola Score Sheet")
 """
 import argparse
+import csv
 import glob
 import json
+import math
 import os
 import re
 import subprocess
@@ -32,10 +34,12 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+from collections import defaultdict
 from datetime import datetime, timedelta
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GSC_SITE = "sc-domain:ysliustudio.com"
+FINANCIAL_RECORDS_DIR = "/Users/louisliu/Documents/App_Financial_Records"
 
 APPS = [
     ("alcohol-free-tracker", "Alcohol Free Tracker", "/Users/louisliu/Documents/repo/liuys_website/SEO-Strategy-Playbook.md"),
@@ -117,12 +121,61 @@ def gsc_query(token: str, dimensions: list, start_date: str, end_date: str, row_
         return []
 
 
+def get_recent_revenue_by_app() -> dict:
+    """
+    Parses exact ASC sales reports from ~/Documents/App_Financial_Records to determine
+    the latest monthly / 30-day proceeds per app.
+    Used to grant organic rotation weighting bonuses to apps generating actual revenue.
+    """
+    app_mapping = {
+        "pill-reminder": ["pill reminder", "supplement", "pillreminder"],
+        "alcohol-free-tracker": ["alcohol", "alcoholfreetracker"],
+        "agricola-scorer": ["agricola"],
+        "grocery-price": ["grocery", "groceryprice"],
+        "quit-vaping": ["vaping", "vape"],
+        "quit-weed": ["unfog", "weed"],
+        "levain": ["levain", "sourdough"],
+        "inkstone": ["inkstone", "sign pdf"]
+    }
+    rev_by_app = {k: 0.0 for k in app_mapping}
+    if not os.path.exists(FINANCIAL_RECORDS_DIR):
+        return rev_by_app
+
+    # Priority 1: Check most recent consolidated monthly report (.tsv)
+    monthly_files = sorted(glob.glob(os.path.join(FINANCIAL_RECORDS_DIR, "2026", "*", "Revenue", "ASC_Monthly_SalesReport_*.tsv")))
+    target_files = []
+    if monthly_files:
+        target_files = [monthly_files[-1]]
+    else:
+        # Fallback to recent daily files
+        daily_files = sorted(glob.glob(os.path.join(FINANCIAL_RECORDS_DIR, "2026", "*", "Revenue", "daily", "*.tsv")))
+        target_files = daily_files[-30:]
+
+    for fpath in target_files:
+        try:
+            with open(fpath, "r", encoding="utf-8", errors="replace") as f:
+                reader = csv.DictReader(f, delimiter="\t")
+                for r in reader:
+                    sku = (r.get("SKU", "") or "").lower()
+                    title = (r.get("Title", "") or "").lower()
+                    proceeds = float(r.get("Developer Proceeds", 0) or 0)
+                    for app_key, patterns in app_mapping.items():
+                        if any(p in sku or p in title for p in patterns):
+                            rev_by_app[app_key] += proceeds
+                            break
+        except Exception:
+            pass
+
+    return rev_by_app
+
+
 def collect_portfolio_data(token: str) -> dict:
     end_date = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
     start_date = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
     today_str = datetime.now().strftime("%Y-%m-%d")
     today_dt = datetime.strptime(today_str, "%Y-%m-%d")
 
+    rev_map = get_recent_revenue_by_app()
     query_page_rows = gsc_query(token, ["query", "page"], start_date, end_date)
     page_rows = gsc_query(token, ["page"], start_date, end_date)
 
@@ -155,6 +208,7 @@ def collect_portfolio_data(token: str) -> dict:
         except Exception:
             days_since_pub = 14
 
+        revenue = rev_map.get(app_dir, 0.0)
         app_data[app_dir] = {
             "app_dir": app_dir,
             "app_title": app_title,
@@ -164,6 +218,7 @@ def collect_portfolio_data(token: str) -> dict:
             "published_count": len(posts),
             "latest_published_date": latest_pub_str,
             "days_since_last_publish": days_since_pub,
+            "recent_revenue_usd": round(revenue, 2),
             "pending_queue": pending_queue,
             "gsc_pages": {},
             "gsc_queries": [],
@@ -312,25 +367,32 @@ def build_recommendations(app_data: dict) -> dict:
         for app_dir, info in app_data.items():
             if not info["pending_queue"]:
                 continue
-            # Score: higher days_since_last_publish + lower published_count + active GSC impressions bonus
+            # Score: higher days_since_last_publish + lower published_count + active GSC impressions bonus + revenue weight
             days_score = min(info["days_since_last_publish"], 30) * 3.0
             scarcity_score = max(0, 15 - info["published_count"]) * 4.0
             crawl_bonus = min(info["total_page_impressions"], 20) * 1.5
+            # Revenue Weight Bonus: grant logarithmic priority to apps generating proven ASC proceeds
+            # e.g., $150 -> +26.3 pts, $95 -> +23.8 pts, $47 -> +20.2 pts, $25 -> +17.1 pts, $0 -> 0 pts
+            rev_usd = info.get("recent_revenue_usd", 0.0)
+            revenue_bonus = round(math.log10(rev_usd + 1.0) * 12.0, 1)
+
             # Penalize apps published within last 24 hours to prevent consecutive-day spam
             recent_penalty = -50.0 if info["days_since_last_publish"] <= 1 else 0.0
             # Diversify across subfolders: if this app already has today's refresh_target, let another app get the new guide
             same_app_refresh_penalty = -15.0 if (best_refresh and best_refresh["app_dir"] == app_dir) else 0.0
-            total_score = round(days_score + scarcity_score + crawl_bonus + recent_penalty + same_app_refresh_penalty, 1)
-            rotation_pool.append((total_score, app_dir, info))
+            total_score = round(days_score + scarcity_score + crawl_bonus + revenue_bonus + recent_penalty + same_app_refresh_penalty, 1)
+            rotation_pool.append((total_score, revenue_bonus, app_dir, info))
 
-        rotation_pool.sort(key=lambda x: (-x[0], x[2]["published_count"]))
+        rotation_pool.sort(key=lambda x: (-x[0], x[3]["published_count"]))
         if rotation_pool:
-            top_score, win_app, win_info = rotation_pool[0]
+            top_score, rev_bonus, win_app, win_info = rotation_pool[0]
             next_topic = win_info["pending_queue"][0]
             publish_target = {
                 "action": "PUBLISH_NEW_GUIDE",
                 "selection_mode": "eight_app_fair_rotation",
                 "rotation_score": top_score,
+                "revenue_bonus": rev_bonus,
+                "recent_revenue_usd": win_info.get("recent_revenue_usd", 0.0),
                 "app_dir": win_app,
                 "app_title": win_info["app_title"],
                 "log_path": win_info["log_path"],
@@ -339,10 +401,11 @@ def build_recommendations(app_data: dict) -> dict:
                 "subfolder_gsc_impressions": win_info["total_page_impressions"],
                 "topic": next_topic,
                 "rationale": (
-                    f"Selected via 8-App Anti-Spike Rotation (score {top_score}): "
+                    f"Selected via 8-App Revenue-Weighted Anti-Spike Rotation (score {top_score}): "
                     f"{win_info['app_title']} has {win_info['published_count']} guides "
-                    f"({win_info['days_since_last_publish']}d since last publish) and "
-                    f"{win_info['total_page_impressions']} GSC page impressions."
+                    f"({win_info['days_since_last_publish']}d since last publish), "
+                    f"USD ${win_info.get('recent_revenue_usd', 0.0):.2f} recent ASC revenue (+{rev_bonus} pts), "
+                    f"and {win_info['total_page_impressions']} GSC page impressions."
                 )
             }
 
@@ -384,7 +447,9 @@ def run_check():
         q_cnt = len(info["gsc_queries"])
 
         badge = "🟢 GSC ACTIVE" if impr >= 5 else ("🟡 GSC WARMING" if impr >= 1 else "⚪ COLD START")
-        print(f"[{badge}] {info['app_title']} ({app_dir})")
+        rev_val = info.get("recent_revenue_usd", 0.0)
+        rev_str = f" | Recent Revenue: USD ${rev_val:.2f}" if rev_val > 0 else ""
+        print(f"[{badge}] {info['app_title']} ({app_dir}){rev_str}")
         print(f"  • Guides: {info['published_count']} published (last: {info['latest_published_date']}, {info['days_since_last_publish']}d ago) | Queue: {len(info['pending_queue'])} pending")
         print(f"  • GSC (30d): {impr} page impressions across {len(info['gsc_pages'])} URLs | {q_cnt} visible query rows")
         if info["gsc_queries"]:
