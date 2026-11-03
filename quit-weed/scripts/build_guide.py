@@ -79,7 +79,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
                 "headline": post["title"],
                 "description": post["meta_description"],
                 "datePublished": post["published_date"],
-                "dateModified": post["published_date"],
+                "dateModified": post.get("updated_date", post["published_date"]),
                 "mainEntityOfPage": canonical_url,
                 "image": f"{site_url}/assets/appstore/{pitch_screen}",
                 "author": {
@@ -273,16 +273,16 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
 
 def update_sitemaps(posts: list, cfg: dict):
     site_url = cfg["site_url"].rstrip("/")
-    today = datetime.now().strftime("%Y-%m-%d")
+    latest_date = max((p.get("updated_date", p.get("published_date", "2026-10-27")) for p in posts), default="2026-10-27")
     urls = [
-        (f"{site_url}/", today),
-        (f"{site_url}/guides/index.html", today),
-        (f"{site_url}/support.html", today),
-        (f"{site_url}/privacy.html", today),
-        (f"{site_url}/terms.html", today),
+        (f"{site_url}/", latest_date),
+        (f"{site_url}/guides/index.html", latest_date),
+        (f"{site_url}/support.html", "2026-10-21"),
+        (f"{site_url}/privacy.html", "2026-10-21"),
+        (f"{site_url}/terms.html", "2026-10-21"),
     ]
     for p in posts:
-        urls.append((f"{site_url}/guides/{p['slug']}.html", p.get("published_date", today)))
+        urls.append((f"{site_url}/guides/{p['slug']}.html", p.get("updated_date", p.get("published_date", latest_date))))
 
     xml_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -304,6 +304,12 @@ def update_sitemaps(posts: list, cfg: dict):
             if loc not in master_content:
                 entry = f"  <url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>\n"
                 master_content = master_content.replace("</urlset>", entry + "</urlset>")
+            else:
+                master_content = re.sub(
+                    rf"<url><loc>{re.escape(loc)}</loc><lastmod>[^<]+</lastmod></url>",
+                    f"<url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>",
+                    master_content
+                )
         with open(master_sitemap, "w", encoding="utf-8") as f:
             f.write(master_content)
 
@@ -339,7 +345,9 @@ def main():
             "slug": p["slug"],
             "title": p["title"],
             "target_keyword": p.get("target_keyword", ""),
+            "secondary_keywords": p.get("secondary_keywords", []),
             "published_date": p.get("published_date", ""),
+            "updated_date": p.get("updated_date", p.get("published_date", "")),
             "category": p.get("category", "")
         }
         for p in posts

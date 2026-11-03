@@ -124,7 +124,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
                 "headline": full_title,
                 "description": post["meta_description"],
                 "datePublished": post["published_date"],
-                "dateModified": post["published_date"],
+                "dateModified": post.get("updated_date", post["published_date"]),
                 "mainEntityOfPage": canonical_url,
                 "image": f"{site_url}/assets/appstore/{post.get('pitch_screen', '02-body-recovery.webp')}",
                 "author": {
@@ -439,16 +439,16 @@ def update_homepage_guides_preview(posts: list):
 
 def update_sitemaps(posts: list, cfg: dict):
     site_url = cfg["site_url"].rstrip("/")
-    today = datetime.now().strftime("%Y-%m-%d")
+    latest_date = max((p.get("updated_date", p.get("published_date", "2026-10-27")) for p in posts), default="2026-10-27")
     urls = [
-        (f"{site_url}/", today),
-        (f"{site_url}/guides/index.html", today),
+        (f"{site_url}/", latest_date),
+        (f"{site_url}/guides/index.html", latest_date),
         (f"{site_url}/support.html", "2026-10-20"),
         (f"{site_url}/privacy.html", "2026-10-20"),
         (f"{site_url}/terms.html", "2026-10-20"),
     ]
     for p in posts:
-        urls.append((f"{site_url}/guides/{p['slug']}.html", p.get("published_date", today)))
+        urls.append((f"{site_url}/guides/{p['slug']}.html", p.get("updated_date", p.get("published_date", latest_date))))
 
     xml_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -468,7 +468,7 @@ def update_sitemaps(posts: list, cfg: dict):
             master_content = f.read()
         for p in posts:
             guide_loc = f"{site_url}/guides/{p['slug']}.html"
-            pub_date = p.get("published_date", today)
+            pub_date = p.get("updated_date", p.get("published_date", latest_date))
             if guide_loc not in master_content:
                 entry = f"  <url><loc>{guide_loc}</loc><lastmod>{pub_date}</lastmod></url>\n"
                 marker = f"<url><loc>{site_url}/guides/index.html</loc>"
@@ -478,6 +478,12 @@ def update_sitemaps(posts: list, cfg: dict):
                         master_content = master_content[:idx+1] + entry + master_content[idx+1:]
                 else:
                     master_content = master_content.replace("</urlset>", entry + "</urlset>")
+            else:
+                master_content = re.sub(
+                    rf"<url><loc>{re.escape(guide_loc)}</loc><lastmod>[^<]+</lastmod></url>",
+                    f"<url><loc>{guide_loc}</loc><lastmod>{pub_date}</lastmod></url>",
+                    master_content
+                )
         with open(master_sitemap, "w", encoding="utf-8") as f:
             f.write(master_content)
 
@@ -517,7 +523,9 @@ def main():
             "title": p["title"],
             "subtitle": p.get("subtitle", ""),
             "target_keyword": p.get("target_keyword", ""),
+            "secondary_keywords": p.get("secondary_keywords", []),
             "published_date": p.get("published_date", ""),
+            "updated_date": p.get("updated_date", p.get("published_date", "")),
             "campaign_prefix": p.get("campaign_prefix", "")
         }
         for p in posts

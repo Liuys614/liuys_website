@@ -69,36 +69,34 @@
 
 ---
 
-## 四、 全矩陣每日晨間發布流水線標準作業程序 (Unified SOP)
+## 四、 全矩陣每日晨間發布流水線標準作業程序 (8-App Anti-Content-Farm SOP)
 
-未來每日晨間執行全自動/半自動發布流程時，請統一使用全矩陣管線：
+為避免被 Google 判定為「機器人規模化垃圾內容 (Scaled Content Abuse / Content Farm)」，本管線嚴格執行 **「先強化既有曝光頁、每日限發 1 篇高密度工具/實證文、8 款 App 智慧輪替」** 原則：
 
 ```bash
-# 1. 一鍵快檢全 8 款 App 的 GSC Strike Zone 與佇列狀態
+# 1. 一鍵產生全 8 款 App 的每日防垃圾內容行動計畫 (1 篇舊文強化 + 1 篇新文輪替)
 cd /Users/louisliu/Documents/repo/liuys_website
-python3 scripts/master_daily_pipeline.py --check
+python3 scripts/master_daily_pipeline.py --recommend
 ```
 
-### 決策與發布規則：
-1. **優先級評估**：
-   * 凡出現 **`🟢 GSC STRIKE ZONE`** 或 **`🟡 GSC EMERGING`** 之 App，代表搜尋引擎已有真實曝光信號，**列為當日最高優先發布對象**。
-   * 若所有 App 皆為 **`⚪ QUEUE FALLBACK`**，則依輪替節奏（如今日發布 AFT，明日發布 Pill Reminder，後日發布 Unfog 等）或針對候選主題進行確認發布。
-2. **編譯全站與更新地圖**：
-   ```bash
-   python3 scripts/master_daily_pipeline.py --build
-   ```
-3. **即時推播搜尋引擎**：
-   ```bash
-   python3 scripts/master_daily_pipeline.py --indexnow
-   ```
-4. **提交與推播至 GitHub**：
-   ```bash
-   git add . && git commit -m "SEO(matrix): publish daily guide for <app_name>" && git push origin main
-   ```
+### 防機器人農文 (Anti-Content-Farm) 四大鐵律：
+1. **Refresh Before Spawn（零關鍵字內耗）**：
+   * 只要 GSC 出現真實搜尋詞落在現有文章 (`pos 10..95`)，優先將該關鍵字與精準問答補入現有文章（更新 `updated_date` 與 `secondary_keywords` / `faqs`），絕不為同義詞重複開設低品質新網址。
+2. **Natural Editorial Velocity（嚴格每日限額 1 篇新文章）**：
+   * 全站每日最多僅針對 **1 款 App** 發布 **1 篇新指南**，由 `master_daily_pipeline.py --recommend` 依據「距離上次發文天數 + 已發篇數稀缺度 + 子目錄 GSC 活躍曝光」自動在 8 款 App 間公平輪替，杜絕單一子目錄短時間暴增大量頁面。
+3. **High Information Gain & Concise Utility（拒絕 3000 字 AI 廢話長文）**：
+   * 每篇嚴格控制在 **750～1,150 字** 的高密度結構：首段 50 字必須給出定量結論（`guide-callout` TL;DR Answer Box），內文至少 40% 價值來自 **結構化數據對照表、劑量/溫度/計分矩陣或互動式計算器連結**。
+4. **Accurate Sitemap `lastmod`（誠實時間戳記）**：
+   * 各 App 的 `sitemap.xml` 與主站 `sitemap.xml` 僅在文章實際新增或修改 (`updated_date`) 時更新 `lastmod`，絕不每日偽造全站 `lastmod = today`。
 
 ---
 
-## 五、 未來 1～4 週驗證與調整節奏 (Review Protocol)
+## 五、 每日晨間發布與舊文強化紀錄 (Portfolio Action Log)
+
+| 日期 | 動作類型 | App | 指南標題與網址 | 目標關鍵字 / GSC 觸發詞 | ASC Token (`ct`) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **2026-11-03** | `REFRESH_EXISTING` | **Levain** (`levain`) | [Sourdough Bulk Fermentation Chart](https://ysliustudio.com/levain/guides/bulk-fermentation-temperature-time-chart.html) | `bulk fermentation chart` (GSC Pos 67.0, Page Impr 14) | `seo_bulk_ferment_temp` |
+| **2026-11-03** | `PUBLISH_NEW` | **Quit Vaping** (`quit-vaping`) | [How to Cure Vaper's Tongue Fast: Causes, Reset Protocol & Recovery Timeline](https://ysliustudio.com/quit-vaping/guides/how-to-cure-vapers-tongue-fast.html) | `how to cure vapers tongue symptoms timeline` (8-App Rotation Score 93.0) | `seo_vapers_tongue_card` |
 
 ### 階段一：第 7 天檢查（2026-11-03）
 * [ ] 檢查 GSC 涵蓋範圍（Coverage）：已提交的 36+ 網址是否有至少 30% 轉為 `Indexed`。

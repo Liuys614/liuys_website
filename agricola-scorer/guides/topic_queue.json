@@ -2,7 +2,11 @@
   {
     "slug": "agricola-scoring-rules-complete-strategy-guide",
     "target_keyword": "agricola board game scoring rules and points calculation guide",
-    "secondary_keywords": ["how to score in agricola board game", "agricola negative points penalty calculation", "agricola score sheet app ios"],
+    "secondary_keywords": [
+      "how to score in agricola board game",
+      "agricola negative points penalty calculation",
+      "agricola score sheet app ios"
+    ],
     "category": "Board Games · Scoring Rules",
     "campaign_prefix": "seo_agricola_rules",
     "pitch_screen": "app-icon.png",
@@ -13,12 +17,76 @@
   {
     "slug": "agricola-feeding-family-begging-cards-strategy",
     "target_keyword": "agricola feeding family begging cards penalty strategy",
-    "secondary_keywords": ["how to feed family in agricola", "avoid begging cards in agricola", "agricola food engine tips"],
+    "secondary_keywords": [
+      "how to feed family in agricola",
+      "avoid begging cards in agricola",
+      "agricola food engine tips"
+    ],
     "category": "Strategy · Food Engine",
     "campaign_prefix": "seo_agricola_food",
     "pitch_screen": "app-icon.png",
     "pitch_headline": "Track family food requirements and end-game score",
     "pitch_body": "Focus on your farming strategy while the companion app manages all scoring categories.",
     "status": "published"
+  },
+  {
+    "slug": "agricola-pasture-fencing-layout-max-animals-15-fences",
+    "target_keyword": "agricola pasture fencing layout max animals with 15 fences",
+    "secondary_keywords": [
+      "agricola optimal fence layout stables",
+      "how many animals fit in pasture agricola",
+      "agricola 15 wood fences 4 pastures layout"
+    ],
+    "category": "Board Games · Spatial Math",
+    "campaign_prefix": "seo_agricola_fences",
+    "pitch_screen": "app-icon.png",
+    "pitch_headline": "Score pastures, stables, and livestock automatically",
+    "pitch_body": "Tap in your pastures, fenced stables, sheep, boar, and cattle—Agricola Score Sheet calculates exact points and unused farmyard penalties.",
+    "status": "pending"
+  },
+  {
+    "slug": "agricola-solo-mode-rules-food-and-target-score-table",
+    "target_keyword": "agricola solo rules 3 food per family member target score",
+    "secondary_keywords": [
+      "agricola solo campaign point thresholds",
+      "agricola 1 player rules differences",
+      "how to win agricola solo game"
+    ],
+    "category": "Board Games · Solo Rules",
+    "campaign_prefix": "seo_agricola_solo",
+    "pitch_screen": "app-icon.png",
+    "pitch_headline": "Log your solo campaign high scores and farm history",
+    "pitch_body": "Keep a permanent offline history of your solo Agricola runs and compare category breakdowns across games.",
+    "status": "pending"
+  },
+  {
+    "slug": "agricola-revised-edition-vs-original-scoring-differences",
+    "target_keyword": "agricola revised edition vs original rules and scoring differences",
+    "secondary_keywords": [
+      "agricola 2016 revised edition changes",
+      "agricola action space differences 1st vs 2nd edition",
+      "agricola score pad revised vs classic"
+    ],
+    "category": "Board Games · Edition Reference",
+    "campaign_prefix": "seo_agricola_editions",
+    "pitch_screen": "app-icon.png",
+    "pitch_headline": "Works for both Classic and Revised Edition Agricola",
+    "pitch_body": "Score any edition of Agricola in under 30 seconds with instant category caps and penalty detection.",
+    "status": "pending"
+  },
+  {
+    "slug": "agricola-family-growth-timing-stage-5-vs-stage-12",
+    "target_keyword": "agricola family growth timing strategy when to build rooms",
+    "secondary_keywords": [
+      "agricola rush family growth action space",
+      "wood hut vs clay hut renovation timing agricola",
+      "agricola action economy per family member"
+    ],
+    "category": "Strategy · Action Economy",
+    "campaign_prefix": "seo_agricola_family",
+    "pitch_screen": "app-icon.png",
+    "pitch_headline": "See how rooms and family members impact your final score",
+    "pitch_body": "Compare Wood, Clay, and Stone house points side by side with family member bonuses.",
+    "status": "pending"
   }
 ]
