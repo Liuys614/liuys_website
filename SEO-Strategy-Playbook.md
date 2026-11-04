@@ -97,6 +97,8 @@ python3 scripts/master_daily_pipeline.py --recommend
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **2026-11-03** | `REFRESH_EXISTING` | **Levain** (`levain`) | [Sourdough Bulk Fermentation Chart](https://ysliustudio.com/levain/guides/bulk-fermentation-temperature-time-chart.html) | `bulk fermentation chart` (GSC Pos 67.0, Page Impr 14) | `seo_bulk_ferment_temp` |
 | **2026-11-03** | `PUBLISH_NEW` | **Quit Vaping** (`quit-vaping`) | [How to Cure Vaper's Tongue Fast: Causes, Reset Protocol & Recovery Timeline](https://ysliustudio.com/quit-vaping/guides/how-to-cure-vapers-tongue-fast.html) | `how to cure vapers tongue symptoms timeline` (8-App Rotation Score 93.0) | `seo_vapers_tongue_card` |
+| **2026-11-04** | `REFRESH_EXISTING` | **Supplement & Pill Reminder** (`pill-reminder`) | [Best Time to Take Magnesium Glycinate: Morning or Night?](https://ysliustudio.com/pill-reminder/guides/magnesium-glycinate-best-time-to-take.html) | `when to take magnesium glycinate` (GSC Pos 66.5, Page Impr 15) | `seo_magnesium_timing` |
+| **2026-11-04** | `PUBLISH_NEW` | **Levain** (`levain`) | [Sourdough Starter Feeding Ratios: 1:1:1 vs. 1:2:2 vs. 1:5:5 Guide](https://ysliustudio.com/levain/guides/sourdough-starter-feeding-ratio-1-1-1-vs-1-2-2.html) | `sourdough starter feeding ratio 1 1 1 vs 1 2 2 vs 1 5 5` (8-App Rotation Score 103.0) | `seo_starter_feeding_ratio` |
 
 ### 階段一：第 7 天檢查（2026-11-03）
 * [ ] 檢查 GSC 涵蓋範圍（Coverage）：已提交的 36+ 網址是否有至少 30% 轉為 `Indexed`。
