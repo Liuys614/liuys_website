@@ -27,6 +27,7 @@ from site_campaign import (  # noqa: E402
     guide_ct,
     guides_index_ct,
     make_asc_url,
+    medical_disclaimer_html,
     smart_banner_tag,
 )
 
@@ -218,6 +219,11 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
 
     pitch_screen = post.get("pitch_screen", "02-body-recovery.webp")
 
+    disclaimer_html = medical_disclaimer_html(
+        "alcohol-free-tracker",
+        reviewed_date=post.get("updated_date", post["published_date"]),
+    )
+
     return f"""<!doctype html>
 <html lang="en">
   <head>
@@ -282,6 +288,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
           <article class="guide-article">
             {rendered_body}
           </article>
+          {disclaimer_html}
           {faq_section_html}
         </div>
 

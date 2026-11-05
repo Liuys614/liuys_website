@@ -98,3 +98,56 @@ def store_cta(app_id: str, pt: str, ct: str, class_name: str, inner_html: str, e
         f'<a href="{url}" class="{class_name}"{attrs} target="_blank" rel="noopener">'
         f"{inner_html}</a>"
     )
+
+
+# Per-app medical / YMYL disclaimers for health guide pages.
+HEALTH_GUIDE_DISCLAIMERS = {
+    "alcohol-free-tracker": (
+        "This guide is for general information only and is not medical advice. "
+        "It doesn't replace a qualified health professional. Alcohol withdrawal can be "
+        "dangerous—seek medical help for severe shaking, seizures, confusion, or "
+        "hallucinations. In an emergency, call your local emergency number."
+    ),
+    "quit-weed": (
+        "This guide is for general information only and is not medical advice. "
+        "It doesn't replace a doctor or other qualified health professional. "
+        "If withdrawal or mental-health symptoms are severe, or you are unsure what to do, "
+        "talk to a professional. In an emergency, call your local emergency number."
+    ),
+    "quit-vaping": (
+        "This guide is for general information only and is not medical advice. "
+        "It doesn't replace a doctor or other qualified health professional. "
+        "Talk to a professional if nicotine withdrawal is severe, you are pregnant, "
+        "or you also use other tobacco products. In an emergency, call your local emergency number."
+    ),
+    "pill-reminder": (
+        "This guide is for general information only and is not medical advice. "
+        "It doesn't replace a doctor, pharmacist, or your package leaflet. "
+        "Follow your prescriber's instructions for timing and missed doses. "
+        "If you have symptoms, are pregnant, or are unsure what to do, talk to a professional. "
+        "In an emergency, call your local emergency number."
+    ),
+}
+
+
+def medical_disclaimer_html(app_key: str, reviewed_date: str | None = None) -> str:
+    """Return a guide-callout medical disclaimer for health apps, or empty string."""
+    import html as _html
+
+    body = HEALTH_GUIDE_DISCLAIMERS.get(app_key)
+    if not body:
+        return ""
+    reviewed = ""
+    if reviewed_date:
+        reviewed = (
+            f'<p class="guide-disclaimer-reviewed">'
+            f"Last reviewed: {_html.escape(reviewed_date)}</p>"
+        )
+    return (
+        f'<aside class="guide-callout guide-medical-disclaimer" role="note" '
+        f'aria-label="Medical disclaimer">'
+        f"<strong>Medical disclaimer</strong>"
+        f"<p>{_html.escape(body)}</p>"
+        f"{reviewed}"
+        f"</aside>"
+    )

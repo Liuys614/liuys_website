@@ -1982,6 +1982,16 @@ body {
   color: var(--teal-dark);
 }
 
+.guide-medical-disclaimer p {
+  margin: 0;
+}
+
+.guide-disclaimer-reviewed {
+  margin: 10px 0 0;
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
 .guide-table-wrap {
   overflow-x: auto;
   margin: 26px 0;

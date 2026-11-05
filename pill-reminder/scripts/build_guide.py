@@ -26,6 +26,7 @@ from site_campaign import (  # noqa: E402
     guide_ct,
     guides_index_ct,
     make_asc_url,
+    medical_disclaimer_html,
     smart_banner_tag,
 )
 
@@ -125,6 +126,11 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
           {''.join(faq_html_items)}
         </section>"""
 
+    disclaimer_html = medical_disclaimer_html(
+        "pill-reminder",
+        reviewed_date=post.get("updated_date", post["published_date"]),
+    )
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -154,6 +160,8 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     .guide-table td {{ padding: 12px 16px; border: 1px solid var(--hairline-strong); color: var(--ink-soft); }}
     .guide-callout {{ background: var(--due-soft); border-left: 4px solid var(--due); padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 24px 0; font-size: 0.96rem; line-height: 1.6; color: var(--ink); }}
     .guide-callout strong {{ display: block; margin-bottom: 4px; color: var(--brand-dark); }}
+    .guide-medical-disclaimer p {{ margin: 0; }}
+    .guide-disclaimer-reviewed {{ margin: 10px 0 0; font-size: 0.88rem; color: var(--muted); }}
     .app-pitch-card {{ background: linear-gradient(135deg, var(--paper-deep) 0%, #fff 100%); border: 1.5px solid var(--hairline-strong); border-radius: 20px; padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 36px 0; }}
     .app-pitch-card .eyebrow {{ font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--taken); letter-spacing: 0.05em; margin-bottom: 6px; }}
     .app-pitch-card h3 {{ font-size: 1.25rem; font-weight: 800; color: var(--ink); margin: 0 0 8px; }}
@@ -188,6 +196,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
       <div class="guide-content">
         {post['body_html']}
       </div>
+      {disclaimer_html}
       {faq_section_html}
     </article>
   </main>

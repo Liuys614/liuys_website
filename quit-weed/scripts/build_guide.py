@@ -26,6 +26,7 @@ from site_campaign import (  # noqa: E402
     guide_ct,
     guides_index_ct,
     make_asc_url,
+    medical_disclaimer_html,
     smart_banner_tag,
 )
 
@@ -130,6 +131,11 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
           {''.join(faq_html_items)}
         </section>"""
 
+    disclaimer_html = medical_disclaimer_html(
+        "quit-weed",
+        reviewed_date=post.get("updated_date", post["published_date"]),
+    )
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -153,6 +159,10 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     .guide-content h2 {{ font-size: 1.38rem; color: #1E3F35; margin: 30px 0 12px; font-weight: 800; }}
     .guide-content p, .guide-content li {{ font-size: 1.02rem; line-height: 1.72; color: #233B32; margin-bottom: 14px; }}
     .guide-content ul {{ padding-left: 22px; margin-bottom: 18px; }}
+    .guide-callout {{ background: #F6F4EE; border-left: 4px solid #2F6B57; padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 24px 0; font-size: 0.96rem; line-height: 1.6; color: #233B32; }}
+    .guide-callout strong {{ display: block; margin-bottom: 4px; color: #1E3F35; }}
+    .guide-medical-disclaimer p {{ margin: 0; }}
+    .guide-disclaimer-reviewed {{ margin: 10px 0 0; font-size: 0.88rem; color: #52665E; }}
     .guide-faq-box {{ margin-top: 38px; padding-top: 28px; border-top: 1px solid rgba(30,63,53,0.12); }}
     .guide-faq-item {{ background: #F6F4EE; border-radius: 16px; padding: 16px 20px; margin-bottom: 12px; }}
     .guide-faq-item summary {{ font-weight: 800; color: #152E26; cursor: pointer; }}
@@ -187,6 +197,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
       <div class="guide-content">
         {post['body_html']}
       </div>
+      {disclaimer_html}
       {faq_section_html}
     </article>
 
