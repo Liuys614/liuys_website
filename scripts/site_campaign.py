@@ -14,6 +14,8 @@ duplicate this token. After changing it here, update those copies (or re-run
 scripts/apply_unfog_release.py for Unfog) so the HTML matches.
 """
 
+from __future__ import annotations
+
 import re
 
 # Apple campaign token (ct) max length.

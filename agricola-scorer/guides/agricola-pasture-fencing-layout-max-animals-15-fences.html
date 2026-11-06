@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agricola Pasture Fencing Layout: Max Animals with 15 Fences | Agricola Score Sheet</title>
+  <meta name="description" content="Master Agricola fence math. Learn the optimal 2×3 four-pasture layout using all 15 wood fences to house up to 24 animals, max out pasture VPs, and avoid empty space penalties." />
+  <link rel="canonical" href="https://ysliustudio.com/agricola-scorer/guides/agricola-pasture-fencing-layout-max-animals-15-fences.html" />
+  <meta name="apple-itunes-app" content="app-id=6741305872" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Agricola Pasture Fencing Layout: Max Animals with 15 Fences" />
+  <meta property="og:description" content="Master Agricola fence math. Learn the optimal 2×3 four-pasture layout using all 15 wood fences to house up to 24 animals, max out pasture VPs, and avoid empty space penalties." />
+  <meta property="og:url" content="https://ysliustudio.com/agricola-scorer/guides/agricola-pasture-fencing-layout-max-animals-15-fences.html" />
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fbf9f5; color: #2c1810; margin: 0; line-height: 1.65; }
+    .site-nav { background: #fff; border-bottom: 1px solid #e7dac9; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; max-width: 1040px; margin: 0 auto; }
+    .site-nav a { text-decoration: none; color: #2c1810; font-weight: 700; }
+    .site-nav .btn { background: #8b5a2b; color: #fff; padding: 8px 16px; border-radius: 99px; font-size: 0.88rem; }
+    .guide-wrap { max-width: 820px; margin: 40px auto 72px; background: #fff; border-radius: 20px; padding: 40px; border: 1px solid #e7dac9; box-shadow: 0 4px 24px rgba(44,24,16,0.04); }
+    .guide-wrap h1 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: #2c1810; line-height: 1.2; margin: 12px 0 16px; font-weight: 800; }
+    .guide-meta { font-size: 0.86rem; color: #7d6350; font-weight: 600; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #f2e9de; }
+    .guide-content h2 { font-size: 1.35rem; color: #2c1810; margin: 32px 0 12px; font-weight: 800; }
+    .guide-content p, .guide-content li { font-size: 1.02rem; line-height: 1.72; color: #423023; margin-bottom: 14px; }
+    .guide-content ul, .guide-content ol { padding-left: 22px; margin-bottom: 18px; }
+    .guide-table { width: 100%; border-collapse: collapse; margin: 24px 0 32px; font-size: 0.94rem; }
+    .guide-table th { background: #f7f1e8; padding: 12px 14px; text-align: left; border: 1px solid #e7dac9; font-weight: 700; color: #2c1810; }
+    .guide-table td { padding: 12px 14px; border: 1px solid #e7dac9; }
+    .guide-callout { background: #fdf6ec; border-left: 4px solid #b45309; padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 24px 0; font-size: 0.96rem; }
+    .guide-callout strong { display: block; margin-bottom: 4px; color: #92400e; }
+    .app-card { background: linear-gradient(135deg, #fdf6ec 0%, #fff 100%); border: 1.5px solid #fed7aa; border-radius: 18px; padding: 26px 30px; margin: 36px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .app-card h3 { font-size: 1.22rem; font-weight: 800; color: #92400e; margin: 0 0 6px; }
+    .app-card p { font-size: 0.92rem; color: #423023; margin: 0 0 14px; }
+    .app-card a { display: inline-block; background: #8b5a2b; color: #fff; padding: 9px 18px; border-radius: 99px; text-decoration: none; font-weight: 700; font-size: 0.88rem; }
+    .eyebrow { display: inline-block; background: #fef3c7; color: #92400e; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 99px; letter-spacing: 0.04em; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Agricola Pasture Fencing Layout: Max Animals with 15 Fences",
+      "description": "Master Agricola fence math. Learn the optimal 2\u00d73 four-pasture layout using all 15 wood fences to house up to 24 animals, max out pasture VPs, and avoid empty space penalties.",
+      "datePublished": "2026-11-06",
+      "dateModified": "2026-11-06",
+      "mainEntityOfPage": "https://ysliustudio.com/agricola-scorer/guides/agricola-pasture-fencing-layout-max-animals-15-fences.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Agricola Board Game Rules Research"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Agricola Score Sheet",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ysliustudio.com/agricola-scorer/app-icon.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Agricola Scorer Home",
+          "item": "https://ysliustudio.com/agricola-scorer/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Rules Guides",
+          "item": "https://ysliustudio.com/agricola-scorer/guides/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Agricola Pasture Fencing Layout: Max Animals with 15 Fences",
+          "item": "https://ysliustudio.com/agricola-scorer/guides/agricola-pasture-fencing-layout-max-animals-15-fences.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many animals can you hold in Agricola with 15 fences?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With 15 fences, base capacity is 12 animals in a 2\u00d73 four-pasture grid (or 16 in a 2\u00d74 three-pasture grid). With 4 stables in the 2\u00d73 grid, capacity doubles to 24 animals. Adding 1 house pet brings the farm total to 25 animals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a stable double pasture capacity or add 2 spaces in Agricola?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A stable inside a pasture doubles that pasture's total capacity. A 1-space pasture holds 2 animals normally, or 4 with a stable. A 2-space pasture holds 4 animals normally, or 8 with a stable. An unfenced stable outside holds only 1 animal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can different animal types share the same pasture in Agricola?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Under official Agricola rules, each pasture can only contain one species (sheep only, boar only, or cattle only). You need at least 3 separate pastures to hold all three animal types simultaneously."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you move or remove fences once built in Agricola?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Fences are permanent once built and cannot be moved or removed. Furthermore, all fences placed during an action must immediately complete fully enclosed pasture boundaries."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="site-nav">
+    <a href="../index.html">Agricola Score Sheet</a>
+    <a href="https://apps.apple.com/app/apple-store/id6741305872?pt=127596623&amp;ct=seo-agricola-pasture-fencing-layout-max-&amp;mt=8" class="btn" target="_blank" rel="noopener">Get Scorer on App Store</a>
+  </div>
+
+  <main style="padding: 0 16px;">
+    <article class="guide-wrap">
+      <span class="eyebrow">Board Games · Spatial Math</span>
+      <h1>Agricola Pasture Fencing Layout: Max Animals with 15 Fences</h1>
+      <div class="guide-meta">
+        Published 2026-11-06 · 6 min read · Agricola Companion Rules Series
+      </div>
+      <div class="guide-content">
+        <div class="guide-callout"><strong>Quick Answer — Optimal 15-Fence Agricola Layout:</strong> The highest-yield fence layout uses all <strong>15 wooden fences</strong> to enclose a <strong>2×3 grid (6 farm spaces) split into 4 separate pastures</strong> (two 2-space and two 1-space pastures). This reaches the maximum <strong>4 Victory Points</strong> for pastures, holds up to <strong>24 animals with 4 stables</strong>, and covers 6 farmyard spaces to avoid empty-tile penalties.</div><p>In Uwe Rosenberg's worker-placement classic <em>Agricola</em>, each player receives exactly 15 wooden fence pieces. Once placed, fences cannot be moved or reconfigured. Because unused farmyard spaces inflict a <strong>-1 point penalty</strong>, and missing any animal type (sheep, wild boar, cattle) deducts <strong>-1 point each</strong>, optimal fence layout geometry is vital for competitive play.</p><p>Understanding pasture thresholds alongside overall <a href="agricola-scoring-rules-complete-strategy-guide.html">Agricola scoring rules</a> transforms fences from a wood drain into a high-scoring endgame engine.</p><div class="guide-table-wrap"><table class="guide-table"><thead><tr><th>Fence Layout</th><th>Fences Used</th><th>Pastures (VP)</th><th>Tiles Covered</th><th>Base Capacity</th><th>Max Capacity with Stables</th><th>Strategic Value</th></tr></thead><tbody><tr><td><strong>2×3 Grid (4 Pastures)</strong></td><td>15 (All)</td><td><strong>4 (4 VP max)</strong></td><td>6 tiles</td><td>12 animals</td><td><strong>24 animals</strong> (4 stables)</td><td><strong>Tournament standard:</strong> Max pasture VP, separate pens for sheep, boar, cattle + breeding, covers 6 tiles.</td></tr><tr><td><strong>2×2 Grid (4 Pastures)</strong></td><td>12</td><td><strong>4 (4 VP max)</strong></td><td>4 tiles</td><td>8 animals</td><td>16 animals (4 stables)</td><td><strong>Resource saver:</strong> Saves 3 wood for rooms while securing full 4 pasture VPs.</td></tr><tr><td><strong>2×4 Grid (3 Pastures)</strong></td><td>15 (All)</td><td>3 (3 VP)</td><td><strong>8 tiles</strong></td><td>16 animals</td><td><strong>32 animals</strong> (3 stables)</td><td><strong>Land coverage:</strong> Clears 8 empty spaces; misses the 4th pasture VP point.</td></tr><tr><td><strong>1×4 Linear Strip (4 Pastures)</strong></td><td>13</td><td><strong>4 (4 VP max)</strong></td><td>4 tiles</td><td>8 animals</td><td>16 animals (4 stables)</td><td><strong>Edge alignment:</strong> Runs along one board perimeter without blocking 3×2 plow blocks.</td></tr><tr><td><strong>Unfenced Stables</strong></td><td>0</td><td>0 (-1 VP)</td><td>1 tile each</td><td>1 animal each</td><td>1 animal (no multiplier)</td><td><strong>Early tempo:</strong> Houses early breeding pairs before wood is available for fencing.</td></tr></tbody></table></div><h2>Why the 15-Fence Limit Dictates Board Geometry</h2><p>The borders of your 3×5 player board <strong>do not count as fences</strong>; every side must be enclosed by wooden fences. Building a single standalone pasture costs 4 fences and holds 2 animals. Building two separate single pastures costs 8 fences and holds 4 animals.</p><p>To maximize efficiency, competitive players build contiguous pastures that share internal borders. Because pasture points cap at 4 pastures (1 pasture = 1 VP, 2 = 2 VP, 3 = 3 VP, 4+ = 4 VP), any layout yielding fewer than 4 pastures forfeits free endgame victory points.</p><h2>The Blueprint: 2×3 Four-Pasture Master Layout</h2><p>The standard tournament setup encloses a 2-row by 3-column rectangle on your farm grid:</p><ul><li><strong>Outer Perimeter (10 Fences):</strong> 3 top, 3 bottom, 2 left, 2 right = 10 fences.</li><li><strong>Internal Dividers (5 Fences):</strong> 2 vertical between columns 1 and 2; 2 vertical between columns 2 and 3; and 1 horizontal dividing column 2 = 5 fences.</li></ul><p>This layout uses all 15 fences to create four dedicated pastures:</p><ol><li><strong>Pasture 1 (2 spaces):</strong> Holds 4 animals (8 with 1 stable). Best for <strong>Sheep</strong> (needs 8+ for max 4 VP).</li><li><strong>Pasture 2 (1 space):</strong> Holds 2 animals (4 with 1 stable). Ideal for <strong>Wild Boar</strong> (needs 7+ for 4 VP, or 3–4 for 2 VP).</li><li><strong>Pasture 3 (1 space):</strong> Holds 2 animals (4 with 1 stable). Ideal for <strong>Cattle</strong> (needs 6+ for 4 VP, or 2–3 for 2 VP).</li><li><strong>Pasture 4 (2 spaces):</strong> Holds 4 animals (8 with 1 stable). Flexible overflow for breeding or harvest slaughter in your <a href="agricola-feeding-family-begging-cards-strategy.html">food engine</a>.</li></ol><p>Base capacity is 12 animals. With 4 stables (one per pasture), capacity reaches <strong>24 animals</strong>. Covering 6 tiles also eliminates 6 potential unused space penalties (-6 VP).</p><h2>Stable Capacity Math &amp; Doubling Rules</h2><p>Stables cost 2 wood each. Their interaction with fences determines livestock capacity:</p><ul><li><strong>Unfenced Stable:</strong> Holds <strong>1 animal</strong> of any kind on an open farmyard tile and eliminates the -1 unused space penalty.</li><li><strong>Fenced Stable:</strong> A stable inside an enclosed pasture <strong>doubles that pasture's capacity</strong> (a 1-space pasture holds 4; a 2-space pasture holds 8).</li><li><strong>Multiple Stables:</strong> Each additional stable doubles capacity again (e.g., a 2-space pasture with 2 stables holds 16 animals). However, placing 1 stable in each of your 4 pastures is superior for species separation.</li><li><strong>House Pet:</strong> Your farmhouse holds <strong>1 pet animal</strong> for free, regardless of fences or family size.</li></ul><h2>Livestock Scoring &amp; Breeding Mechanics</h2><p>Maxing out animal points requires 8 sheep (4 VP), 7 boar (4 VP), and 6 cattle (4 VP), for 12 VP. Combined with 4 VP for 4 pastures, livestock delivers up to <strong>16 victory points</strong>.</p><p>During Harvest, having at least 2 animals of a species produces <strong>1 newborn</strong>. Offspring require open pasture or stable space; if pastures are full, the newborn is discarded unless converted into food immediately via a Fireplace or Cooking Hearth.</p><h2>4 Strategic Fencing Rules</h2><ol><li><strong>Never Fence Before Stage 3:</strong> Prioritize wood for rooms (5 wood + 2 reed) and family growth in Stages 1–2.</li><li><strong>Fence in a Single Action:</strong> The Fences action lets you place up to 15 fences at once. Save wood and build your entire grid in one turn.</li><li><strong>Protect 5 Spaces for Plowed Fields:</strong> Place your 2×3 pasture block in an outer corner so the remaining 9 tiles can fit your farmhouse and 5 plowed fields (4 VP).</li><li><strong>Use Unfenced Stables Early:</strong> If 3+ sheep accumulate in Stage 2, build an unfenced stable or house a pet to secure the breeding pair before committing to fences.</li></ol>
+      </div>
+      <div class="app-card">
+        <div>
+          <h3>Score pastures, stables, and livestock automatically</h3>
+          <p>Tap in your pastures, fenced stables, sheep, boar, and cattle—Agricola Score Sheet calculates exact points and unused farmyard penalties.</p>
+          <a href="https://apps.apple.com/app/apple-store/id6741305872?pt=127596623&amp;ct=seo-agricola-pasture-fencing-layout-max-&amp;mt=8" target="_blank" rel="noopener">Download Agricola Scorer &rarr;</a>
+        </div>
+      </div>
+      
+        <section style="margin-top:40px;padding-top:28px;border-top:1px solid #e7dac9;">
+          <h2 style="font-size:1.4rem;font-weight:800;color:#2c1810;margin-bottom:18px;">Frequently Asked Questions</h2>
+          
+          <details open style="background:#fcfaf6;border-radius:12px;padding:16px 20px;margin-bottom:12px;border:1px solid #e7dac9;">
+            <summary style="font-weight:700;color:#2c1810;cursor:pointer;">How many animals can you hold in Agricola with 15 fences?</summary>
+            <p style="margin:10px 0 0;font-size:0.95rem;color:#5c4738;line-height:1.6;">With 15 fences, base capacity is 12 animals in a 2×3 four-pasture grid (or 16 in a 2×4 three-pasture grid). With 4 stables in the 2×3 grid, capacity doubles to 24 animals. Adding 1 house pet brings the farm total to 25 animals.</p>
+          </details>
+          <details open style="background:#fcfaf6;border-radius:12px;padding:16px 20px;margin-bottom:12px;border:1px solid #e7dac9;">
+            <summary style="font-weight:700;color:#2c1810;cursor:pointer;">Does a stable double pasture capacity or add 2 spaces in Agricola?</summary>
+            <p style="margin:10px 0 0;font-size:0.95rem;color:#5c4738;line-height:1.6;">A stable inside a pasture doubles that pasture&#x27;s total capacity. A 1-space pasture holds 2 animals normally, or 4 with a stable. A 2-space pasture holds 4 animals normally, or 8 with a stable. An unfenced stable outside holds only 1 animal.</p>
+          </details>
+          <details open style="background:#fcfaf6;border-radius:12px;padding:16px 20px;margin-bottom:12px;border:1px solid #e7dac9;">
+            <summary style="font-weight:700;color:#2c1810;cursor:pointer;">Can different animal types share the same pasture in Agricola?</summary>
+            <p style="margin:10px 0 0;font-size:0.95rem;color:#5c4738;line-height:1.6;">No. Under official Agricola rules, each pasture can only contain one species (sheep only, boar only, or cattle only). You need at least 3 separate pastures to hold all three animal types simultaneously.</p>
+          </details>
+          <details open style="background:#fcfaf6;border-radius:12px;padding:16px 20px;margin-bottom:12px;border:1px solid #e7dac9;">
+            <summary style="font-weight:700;color:#2c1810;cursor:pointer;">Can you move or remove fences once built in Agricola?</summary>
+            <p style="margin:10px 0 0;font-size:0.95rem;color:#5c4738;line-height:1.6;">No. Fences are permanent once built and cannot be moved or removed. Furthermore, all fences placed during an action must immediately complete fully enclosed pasture boundaries.</p>
+          </details>
+        </section>
+    </article>
+  </main>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f06b65322f34626b2e5688ab29fd1df"}'></script>
+</body>
+</html>
