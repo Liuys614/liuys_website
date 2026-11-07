@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YS Liu Studio — Estudio Independiente de Aplicaciones Móviles</title>
+  <meta name="description" content="YS Liu Studio crea aplicaciones iOS rápidas, intuitivas y enfocadas en la privacidad para productividad, salud, finanzas y utilidad cotidiana." />
+  <link rel="canonical" href="https://ysliustudio.com/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://ysliustudio.com/" />
+  <link rel="alternate" hreflang="en" href="https://ysliustudio.com/" />
+  <link rel="alternate" hreflang="zh-TW" href="https://ysliustudio.com/zh-tw/" />
+  <link rel="alternate" hreflang="de" href="https://ysliustudio.com/de/" />
+  <link rel="alternate" hreflang="fr" href="https://ysliustudio.com/fr/" />
+  <link rel="alternate" hreflang="ja" href="https://ysliustudio.com/ja/" />
+  <link rel="alternate" hreflang="ko" href="https://ysliustudio.com/ko/" />
+  <link rel="alternate" hreflang="es" href="https://ysliustudio.com/es/" />
+  <link rel="alternate" hreflang="it" href="https://ysliustudio.com/it/" />
+  <meta property="og:title" content="YS Liu Studio — Estudio Independiente de Aplicaciones Móviles" />
+  <meta property="og:description" content="YS Liu Studio crea aplicaciones iOS rápidas, intuitivas y enfocadas en la privacidad para productividad, salud, finanzas y utilidad cotidiana." />
+  <meta property="og:url" content="https://ysliustudio.com/es/" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "YS Liu Studio",
+    "url": "https://ysliustudio.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Louis Liu",
+      "jobTitle": "Mobile Software Engineer & Founder",
+      "url": "https://ysliustudio.com/developer/"
+    },
+    "sameAs": [
+      "https://apps.apple.com/us/developer/yi-shih-liu/id1793695638?ct=site-home",
+      "https://github.com/liuys614",
+      "https://www.linkedin.com/in/louisliu-ios"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#top" class="nav-brand">
+        <span class="brand-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="6" fill="#00dc82" />
+            <path d="M8 6.8V17.2H16.2" stroke="#0a0b0e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-name">YS Liu Studio</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#apps" class="nav-link active">Aplicaciones</a>
+        <a href="#philosophy" class="nav-link">Filosofía</a>
+        <a href="/developer/" class="nav-link">Desarrollador</a>
+        <a href="#contact" class="nav-link">Soporte</a>
+      </nav>
+
+      <div class="nav-cta-wrap">
+        <div class="lang-switcher">
+    <button class="lang-btn" type="button" aria-label="Select Language" aria-expanded="false">
+      <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span class="lang-current">Español</span>
+      <svg class="lang-chevron" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <div class="lang-dropdown">
+      <a href="/" class="lang-opt" data-lang="en">English</a>
+      <a href="/zh-tw/" class="lang-opt" data-lang="zh-tw">繁體中文</a>
+      <a href="/de/" class="lang-opt" data-lang="de">Deutsch</a>
+      <a href="/fr/" class="lang-opt" data-lang="fr">Français</a>
+      <a href="/ja/" class="lang-opt" data-lang="ja">日本語</a>
+      <a href="/ko/" class="lang-opt" data-lang="ko">한국어</a>
+      <a href="/es/" class="lang-opt active" data-lang="es">Español</a>
+      <a href="/it/" class="lang-opt" data-lang="it">Italiano</a>
+    </div>
+  </div>
+        <a href="/developer/" class="btn btn-nav">
+          <span>Conoce al desarrollador</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" class="nav-btn-arrow">
+            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Studio Hero Section -->
+    <section class="hero-section studio-hero">
+      <div class="section-container studio-hero-container">
+        <div class="studio-hero-content">
+          <div class="figma-node-pill">
+            <span class="node-square node-tl"></span>
+            <span class="node-square node-tr"></span>
+            <span class="node-square node-bl"></span>
+            <span class="node-square node-br"></span>
+            <span class="pill-text">Estudio de Apps Independiente · Fundado en 2024</span>
+          </div>
+
+          <h1 class="hero-title studio-display-title">
+            Aplicaciones móviles diseñadas para aportar claridad al día a día.
+          </h1>
+
+          <p class="hero-description studio-lead">
+            <strong>YS Liu Studio</strong> construye aplicaciones nativas y privadas diseñadas para resolver problemas reales sin publicidad ni sobrecarga. Cada app cuenta con un cuidado diseño táctil y fiabilidad sin conexión.
+          </p>
+
+          <div class="hero-actions-row">
+            <a href="#apps" class="btn btn-dark">
+              <span>Explorar aplicaciones</span>
+              <svg viewBox="0 0 20 20" fill="currentColor" class="btn-icon-down">
+                <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v10.586l3.293-3.293a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L9 14.586V4a1 1 0 011-1z" clip-rule="evenodd" />
+              </svg>
+            </a>
+
+            <a href="/developer/" class="btn btn-secondary-clean">
+              <span>Sobre Louis Liu (Fundador)</span>
+              <svg viewBox="0 0 20 20" fill="currentColor" class="btn-arrow-dark">
+                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Studio App Dock Showcase -->
+        <div class="studio-dock-preview">
+          <div class="dock-card">
+            <div class="dock-card-label">8 aplicaciones disponibles en el App Store</div>
+            <div class="dock-icons-grid">
+              <a href="#project-inkstone" class="dock-app-item" title="Inkstone: Sign PDF & Docs">
+                <img src="/images/icons/inkstone.png" alt="Inkstone Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Inkstone</span>
+              </a>
+              <a href="#project-pill-reminder" class="dock-app-item" title="Supplement & Pill Reminder">
+                <img src="/images/icons/pill.png" alt="Pill Reminder Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Pill Reminder</span>
+              </a>
+              <a href="#project-grocery-price-scanner" class="dock-app-item" title="Grocery Price Scanner">
+                <img src="/images/icons/grocery.png" alt="Grocery Price Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Grocery Price</span>
+              </a>
+              <a href="#project-alcohol-free-tracker" class="dock-app-item" title="Alcohol Free Tracker">
+                <img src="/images/icons/alcohol.png" alt="Alcohol Free Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Sobriety</span>
+              </a>
+              <a href="#project-quit-weed" class="dock-app-item" title="T-Break & Quit Weed: Unfog">
+                <img src="/images/icons/weed.png" alt="Unfog Quit Weed Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Unfog</span>
+              </a>
+              <a href="#project-agricola-scorer" class="dock-app-item" title="Agricola Score Sheet">
+                <img src="/images/icons/agricola.png" alt="Agricola Scorer Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Agricola</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Marquee Strip -->
+    <section class="marquee-strip" aria-hidden="true">
+      <div class="marquee-green-accent"></div>
+      <div class="marquee-inner">
+        <div class="marquee-track">
+          <span class="marquee-item">Rendimiento 100% Nativo</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Privacidad Ante Todo</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Experiencia Sin Fricción</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Inteligencia en el Dispositivo</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Diseño Accesible</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Más de 40 países</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Fiabilidad 100% Fuera de Línea</span>
+          <span class="marquee-star">✦</span>
+          <!-- Duplicate for seamless infinite loop -->
+          <span class="marquee-item">Rendimiento 100% Nativo</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Privacidad Ante Todo</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Experiencia Sin Fricción</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Inteligencia en el Dispositivo</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Diseño Accesible</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Más de 40 países</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">Fiabilidad 100% Fuera de Línea</span>
+          <span class="marquee-star">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Philosophy / Pillars -->
+    <section id="philosophy" class="section-container studio-pillars-section">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-number">01</div>
+          <h3 class="pillar-title">Menos pasos, más agilidad</h3>
+          <p class="pillar-desc">
+            Cada toque cuenta. Optimizamos la jerarquía visual y la respuesta háptica para completar tareas en segundos.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-number">02</div>
+          <h3 class="pillar-title">Privacidad y datos en el dispositivo</h3>
+          <p class="pillar-desc">
+            Tus datos de salud, contratos y hábitos te pertenecen. Sin rastreadores de anuncios ni subidas a servidores.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-number">03</div>
+          <h3 class="pillar-title">Calidad de nivel empresarial</h3>
+          <p class="pillar-desc">
+            Construido con la misma solidez que sistemas para millones de usuarios: Swift moderno y máxima estabilidad.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Apps Suite Showcase -->
+    <section id="apps" class="section-container projects-section">
+      <div class="projects-header-row">
+        <div>
+          <div class="figma-node-pill">
+            <span class="node-square node-tl"></span>
+            <span class="node-square node-tr"></span>
+            <span class="node-square node-bl"></span>
+            <span class="node-square node-br"></span>
+            <span class="pill-text">Suite de Productos</span>
+          </div>
+          <h2 class="projects-headline">Apps de YS Liu Studio</h2>
+          <p class="projects-sub">
+            Descubre nuestras aplicaciones nativas. Haz clic en las capturas para ver la interfaz en alta resolución.
+          </p>
+        </div>
+
+        <a href="https://apps.apple.com/us/developer/yi-shih-liu/id1793695638?ct=site-home" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-header-contact">
+          <span>Ver en App Store</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" class="btn-arrow">
+            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- 5 Apps Container -->
+      <div class="projects-list" id="projectsList">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Health & Sobriety Evidence-Based Guides Section -->
+    <section id="guides" class="section-container guides-showcase-section">
+      <div class="projects-header-row">
+        <div>
+          <div class="figma-node-pill">
+            <span class="node-square node-tl"></span>
+            <span class="node-square node-tr"></span>
+            <span class="node-square node-bl"></span>
+            <span class="node-square node-br"></span>
+            <span class="pill-text">Investigación y Evidencia</span>
+          </div>
+          <h2 class="projects-headline">Guías de Salud y Hábitos</h2>
+          <p class="projects-sub">
+            Guías científicas y cronogramas de recuperación fisiológica para apoyar cambios duraderos.
+          </p>
+        </div>
+      </div>
+
+      <div class="guides-showcase-grid">
+        <!-- Alcohol Free Tracker Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">🍷</span>
+            <div>
+              <h3 class="guide-hub-title">Alcohol Free Tracker</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Sobriety blueprints, physiological recovery timelines, neurotransmitter science, and craving urge surfing.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/alcohol-free-tracker/guides/30-day-dry-challenge-survival-blueprint.html">✦ 30-Day Dry Challenge Survival Blueprint</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/alcohol-free-tracker/guides/alcohol-recovery-timeline-day-by-day.html">✦ Body Recovery Timeline: 8h to 30 Days</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/alcohol-free-tracker/guides/how-to-survive-evening-alcohol-cravings-urge-surfing.html">✦ How to Beat 5 PM Cravings: 3-Min Urge Surfing</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/alcohol-free-tracker/guides/alcohol-and-rem-sleep-how-long-to-recover.html">✦ Alcohol & REM Sleep: How Long to Recover?</a>
+            </li>
+          </ul>
+          <a href="/alcohol-free-tracker/guides/" class="guide-hub-footer-link">View all Alcohol-Free Guides &rarr;</a>
+        </div>
+
+        <!-- Quit Weed / Unfog Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">🌿</span>
+            <div>
+              <h3 class="guide-hub-title">Quit Weed: Unfog</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">THC detox science, endocannabinoid CB1 receptor upregulation, withdrawal sleep protocols, and craving relief.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/quit-weed/guides/thc-withdrawal-timeline-cb1-recovery.html">✦ THC Detox Timeline: Day-by-Day Body Recovery</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/quit-weed/guides/rem-rebound-vivid-dreams-quitting-weed.html">✦ Cannabis Withdrawal Insomnia: Sleep Solutions</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/quit-weed/guides/how-long-for-cb1-receptors-to-reset-t-break.html">✦ Stop Weed Cravings with 4-7-8 Breathing</a>
+            </li>
+          </ul>
+          <a href="/quit-weed/guides/" class="guide-hub-footer-link">View all Quit Weed Guides &rarr;</a>
+        </div>
+
+        <!-- Quit Vaping Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">💨</span>
+            <div>
+              <h3 class="guide-hub-title">Quit Vaping</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Nicotine withdrawal timeline, lung and cardiovascular healing, oral fixation replacement, and pod expense calculators.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/quit-vaping/guides/vaping-recovery-timeline-day-by-day.html">✦ Vape Recovery Timeline: 20 Min to 30 Days</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/quit-vaping/guides/how-to-survive-nicotine-cravings-urge-surfing.html">✦ How to Beat Acute Nicotine Cravings (3-Min)</a>
+            </li>
+          </ul>
+          <a href="/quit-vaping/guides/" class="guide-hub-footer-link">View all Quit Vaping Guides &rarr;</a>
+        </div>
+
+        <!-- Supplement & Pill Reminder Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">💊</span>
+            <div>
+              <h3 class="guide-hub-title">Pill &amp; Vitamin Reminder</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Supplement timing, bioavailability, vitamin pairing synergies, and missed dose safety protocols.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/pill-reminder/guides/magnesium-glycinate-best-time-to-take.html">✦ Best Time to Take Magnesium Glycinate</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/pill-reminder/guides/">✦ Vitamin &amp; Supplement Timing Protocol</a>
+            </li>
+          </ul>
+          <a href="/pill-reminder/guides/" class="guide-hub-footer-link">View all Pill Reminder Guides &rarr;</a>
+        </div>
+
+        <!-- Grocery Price Scanner Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">🛒</span>
+            <div>
+              <h3 class="guide-hub-title">Grocery Price Scanner</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Unit price formulas, package shrinkflation detection, and smart supermarket inflation shopping guides.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/grocery-price/guides/how-to-calculate-unit-price-per-ounce-gram.html">✦ How to Calculate Price per Ounce &amp; Gram</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/grocery-price/guides/">✦ Unit Cost &amp; Supermarket Math Guides</a>
+            </li>
+          </ul>
+          <a href="/grocery-price/guides/" class="guide-hub-footer-link">View all Smart Grocery Guides &rarr;</a>
+        </div>
+
+        <!-- Sourdough Timer: Levain Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">🍞</span>
+            <div>
+              <h3 class="guide-hub-title">Sourdough Timer: Levain</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Baker's percentage formulas, sourdough hydration scaling, and temperature-adjusted fermentation timing.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/levain/guides/sourdough-hydration-calculator-percentage-guide.html">✦ Sourdough Hydration Calculator &amp; Percentages</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/levain/guides/">✦ Bulk Fermentation &amp; Starter Feeding Charts</a>
+            </li>
+          </ul>
+          <a href="/levain/guides/" class="guide-hub-footer-link">View all Sourdough Guides &rarr;</a>
+        </div>
+
+        <!-- Inkstone: Sign PDF Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">✍️</span>
+            <div>
+              <h3 class="guide-hub-title">Inkstone: Sign PDF</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Mobile contract signing, subscription-free eSign workflows, and browser link signature sharing.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/inkstone/guides/sign-pdf-on-iphone-without-subscription-guide.html">✦ Sign PDF on iPhone Without Subscription</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/inkstone/guides/">✦ Mobile eSign &amp; Contract Workflows</a>
+            </li>
+          </ul>
+          <a href="/inkstone/guides/" class="guide-hub-footer-link">View all PDF Signing Guides &rarr;</a>
+        </div>
+
+        <!-- Agricola Score Sheet Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">🎲</span>
+            <div>
+              <h3 class="guide-hub-title">Agricola Score Sheet</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">End-game victory point rules, harvest food engines, room upgrades, and begging card penalty math.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/agricola-scorer/guides/agricola-scoring-rules-complete-strategy-guide.html">✦ Agricola Scoring Rules &amp; Point Calculations</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/agricola-scorer/guides/">✦ Harvest Food Engine &amp; Strategy Guides</a>
+            </li>
+          </ul>
+          <a href="/agricola-scorer/guides/" class="guide-hub-footer-link">View all Agricola Guides &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet the Founder Banner -->
+    <section class="section-container founder-banner-section">
+      <div class="founder-banner-card">
+        <div class="founder-banner-left">
+          <img src="/images/profile.jpg" alt="Louis Liu" class="founder-avatar" />
+          <div>
+            <span class="founder-eyebrow">Detrás del Estudio</span>
+            <h3 class="founder-heading">Desarrollado por Louis Liu</h3>
+            <p class="founder-bio-short">
+              Ingeniero de software móvil sénior con experiencia en streaming a escala, compiladores y sistemas embebidos.
+            </p>
+          </div>
+        </div>
+        <a href="/developer/" class="btn btn-dark">
+          <span>Ver perfil y currículum</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" class="btn-arrow">
+            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Dark CTA & Support Section -->
+    <section id="contact" class="cta-dark-section">
+      <div class="cta-dark-container">
+        <div class="cta-left">
+          <h2 class="cta-big-heading">
+            Soporte y<br />Consultas del Estudio
+          </h2>
+          <p class="cta-lead-text">
+            ¿Tienes comentarios, necesitas soporte o quieres colaborar? Escríbenos directamente cuando quieras.
+          </p>
+        </div>
+
+        <div class="cta-right">
+          <!-- Figma Box with Email -->
+          <div class="figma-contact-box">
+            <span class="node-square node-tl"></span>
+            <span class="node-square node-tr"></span>
+            <span class="node-square node-bl"></span>
+            <span class="node-square node-br"></span>
+            <span class="figma-email-text">liuys614@gmail.com</span>
+          </div>
+
+          <div class="cta-btns-group">
+            <a href="mailto:liuys614@gmail.com" class="btn btn-mint-cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Email Support</span>
+            </a>
+
+            <button type="button" class="btn btn-outline-light" id="btnCopyEmail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="copyEmailLabel">Copy Email</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-footer-bottom">
+        <span>Copyright © 2026 YS Liu Studio. All Rights Reserved.</span>
+        <div class="footer-links-inline">
+          <a href="/developer/" class="cta-back-top">Developer</a>
+          <span>·</span>
+          <a href="/alcohol-free-tracker/guides/" class="cta-back-top">Alcohol-Free</a>
+          <span>·</span>
+          <a href="/quit-weed/guides/" class="cta-back-top">Quit Weed</a>
+          <span>·</span>
+          <a href="/quit-vaping/guides/" class="cta-back-top">Quit Vaping</a>
+          <span>·</span>
+          <a href="/pill-reminder/guides/" class="cta-back-top">Pill Reminder</a>
+          <span>·</span>
+          <a href="/grocery-price/guides/" class="cta-back-top">Grocery Price</a>
+          <span>·</span>
+          <a href="/levain/guides/" class="cta-back-top">Sourdough</a>
+          <span>·</span>
+          <a href="/inkstone/guides/" class="cta-back-top">Inkstone PDF</a>
+          <span>·</span>
+          <a href="/agricola-scorer/guides/" class="cta-back-top">Agricola</a>
+          <span>·</span>
+          <a href="https://apps.apple.com/us/developer/yi-shih-liu/id1793695638?ct=site-home" target="_blank" rel="noopener noreferrer" class="cta-back-top">App Store</a>
+          <span>·</span>
+          <a href="#top" class="cta-back-top">
+            <span>Back to Top</span>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 17a1 1 0 01-1-1V5.414l-3.293 3.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L11 5.414V16a1 1 0 01-1 1z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Fullscreen Interactive Lightbox Modal -->
+  <div id="lightbox" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Screenshot Viewer">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-dialog">
+      <div class="lightbox-header">
+        <div class="lightbox-meta">
+          <span class="lightbox-app-title" id="lightboxAppTitle">Inkstone</span>
+          <span class="lightbox-counter" id="lightboxCounter">1 of 5</span>
+        </div>
+        <button type="button" class="lightbox-btn-close" id="lightboxBtnClose" aria-label="Close viewer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="lightbox-body">
+        <button type="button" class="lightbox-nav-btn lightbox-prev" id="lightboxPrev" aria-label="Previous screenshot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="lightbox-image-stage">
+          <img src="" alt="App Screenshot Preview" class="lightbox-img" id="lightboxImg" />
+        </div>
+
+        <button type="button" class="lightbox-nav-btn lightbox-next" id="lightboxNext" aria-label="Next screenshot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="lightbox-footer-hint">
+        Use <kbd>←</kbd> <kbd>→</kbd> arrow keys to navigate, <kbd>ESC</kbd> to exit.
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast" role="status" aria-live="polite">
+    <svg viewBox="0 0 20 20" fill="currentColor" class="toast-icon">
+      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+    </svg>
+    <span id="toastMessage">Email copied to clipboard!</span>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f06b65322f34626b2e5688ab29fd1df"}'></script>
+  <script src="/lang-switcher.js" defer></script>
+</body>
+</html>

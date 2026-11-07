@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YS Liu Studio — 독립 모바일 앱 스튜디오</title>
+  <meta name="description" content="YS Liu Studio는 생산성, 건강 관리, 베이킹, 가격 비교를 위한 빠르고 직관적이며 프라이버시를 최우선으로 하는 네이티브 iOS 앱을 만듭니다." />
+  <link rel="canonical" href="https://ysliustudio.com/ko/" />
+  <link rel="alternate" hreflang="x-default" href="https://ysliustudio.com/" />
+  <link rel="alternate" hreflang="en" href="https://ysliustudio.com/" />
+  <link rel="alternate" hreflang="zh-TW" href="https://ysliustudio.com/zh-tw/" />
+  <link rel="alternate" hreflang="de" href="https://ysliustudio.com/de/" />
+  <link rel="alternate" hreflang="fr" href="https://ysliustudio.com/fr/" />
+  <link rel="alternate" hreflang="ja" href="https://ysliustudio.com/ja/" />
+  <link rel="alternate" hreflang="ko" href="https://ysliustudio.com/ko/" />
+  <link rel="alternate" hreflang="es" href="https://ysliustudio.com/es/" />
+  <link rel="alternate" hreflang="it" href="https://ysliustudio.com/it/" />
+  <meta property="og:title" content="YS Liu Studio — 독립 모바일 앱 스튜디오" />
+  <meta property="og:description" content="YS Liu Studio는 생산성, 건강 관리, 베이킹, 가격 비교를 위한 빠르고 직관적이며 프라이버시를 최우선으로 하는 네이티브 iOS 앱을 만듭니다." />
+  <meta property="og:url" content="https://ysliustudio.com/ko/" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "YS Liu Studio",
+    "url": "https://ysliustudio.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Louis Liu",
+      "jobTitle": "Mobile Software Engineer & Founder",
+      "url": "https://ysliustudio.com/developer/"
+    },
+    "sameAs": [
+      "https://apps.apple.com/us/developer/yi-shih-liu/id1793695638?ct=site-home",
+      "https://github.com/liuys614",
+      "https://www.linkedin.com/in/louisliu-ios"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#top" class="nav-brand">
+        <span class="brand-logo-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="6" fill="#00dc82" />
+            <path d="M8 6.8V17.2H16.2" stroke="#0a0b0e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="brand-name">YS Liu Studio</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#apps" class="nav-link active">앱</a>
+        <a href="#philosophy" class="nav-link">철학</a>
+        <a href="/developer/" class="nav-link">개발자</a>
+        <a href="#contact" class="nav-link">지원</a>
+      </nav>
+
+      <div class="nav-cta-wrap">
+        <div class="lang-switcher">
+    <button class="lang-btn" type="button" aria-label="Select Language" aria-expanded="false">
+      <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span class="lang-current">한국어</span>
+      <svg class="lang-chevron" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <div class="lang-dropdown">
+      <a href="/" class="lang-opt" data-lang="en">English</a>
+      <a href="/zh-tw/" class="lang-opt" data-lang="zh-tw">繁體中文</a>
+      <a href="/de/" class="lang-opt" data-lang="de">Deutsch</a>
+      <a href="/fr/" class="lang-opt" data-lang="fr">Français</a>
+      <a href="/ja/" class="lang-opt" data-lang="ja">日本語</a>
+      <a href="/ko/" class="lang-opt active" data-lang="ko">한국어</a>
+      <a href="/es/" class="lang-opt" data-lang="es">Español</a>
+      <a href="/it/" class="lang-opt" data-lang="it">Italiano</a>
+    </div>
+  </div>
+        <a href="/developer/" class="btn btn-nav">
+          <span>개발자 소개</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" class="nav-btn-arrow">
+            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Studio Hero Section -->
+    <section class="hero-section studio-hero">
+      <div class="section-container studio-hero-container">
+        <div class="studio-hero-content">
+          <div class="figma-node-pill">
+            <span class="node-square node-tl"></span>
+            <span class="node-square node-tr"></span>
+            <span class="node-square node-bl"></span>
+            <span class="node-square node-br"></span>
+            <span class="pill-text">인디 앱 스튜디오 · 2024년 설립</span>
+          </div>
+
+          <h1 class="hero-title studio-display-title">
+            일상의 명확함을 위한 섬세한 모바일 앱.
+          </h1>
+
+          <p class="hero-description studio-lead">
+            <strong>YS Liu Studio</strong>는 군더더기 없이 일상의 문제를 해결하는 프라이버시 우선 네이티브 앱을 개발합니다. 손끝에 전해지는 햅틱 피드백, 직관적인 워크플로우, 완벽한 오프라인 안정성을 고집합니다.
+          </p>
+
+          <div class="hero-actions-row">
+            <a href="#apps" class="btn btn-dark">
+              <span>전체 앱 둘러보기</span>
+              <svg viewBox="0 0 20 20" fill="currentColor" class="btn-icon-down">
+                <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v10.586l3.293-3.293a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L9 14.586V4a1 1 0 011-1z" clip-rule="evenodd" />
+              </svg>
+            </a>
+
+            <a href="/developer/" class="btn btn-secondary-clean">
+              <span>설립자 Louis Liu 소개</span>
+              <svg viewBox="0 0 20 20" fill="currentColor" class="btn-arrow-dark">
+                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Studio App Dock Showcase -->
+        <div class="studio-dock-preview">
+          <div class="dock-card">
+            <div class="dock-card-label">App Store에서 서비스 중인 8개의 앱</div>
+            <div class="dock-icons-grid">
+              <a href="#project-inkstone" class="dock-app-item" title="Inkstone: Sign PDF & Docs">
+                <img src="/images/icons/inkstone.png" alt="Inkstone Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Inkstone</span>
+              </a>
+              <a href="#project-pill-reminder" class="dock-app-item" title="Supplement & Pill Reminder">
+                <img src="/images/icons/pill.png" alt="Pill Reminder Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Pill Reminder</span>
+              </a>
+              <a href="#project-grocery-price-scanner" class="dock-app-item" title="Grocery Price Scanner">
+                <img src="/images/icons/grocery.png" alt="Grocery Price Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Grocery Price</span>
+              </a>
+              <a href="#project-alcohol-free-tracker" class="dock-app-item" title="Alcohol Free Tracker">
+                <img src="/images/icons/alcohol.png" alt="Alcohol Free Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Sobriety</span>
+              </a>
+              <a href="#project-quit-weed" class="dock-app-item" title="T-Break & Quit Weed: Unfog">
+                <img src="/images/icons/weed.png" alt="Unfog Quit Weed Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Unfog</span>
+              </a>
+              <a href="#project-agricola-scorer" class="dock-app-item" title="Agricola Score Sheet">
+                <img src="/images/icons/agricola.png" alt="Agricola Scorer Icon" class="dock-icon-img" />
+                <span class="dock-icon-name">Agricola</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Marquee Strip -->
+    <section class="marquee-strip" aria-hidden="true">
+      <div class="marquee-green-accent"></div>
+      <div class="marquee-inner">
+        <div class="marquee-track">
+          <span class="marquee-item">100% 네이티브 퍼포먼스</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">철저한 프라이버시 보호</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">군더더기 없는 직관적 UI</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">온디바이스 인텔리전스</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">접근성 중심 디자인</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">전 세계 40+ 국가 지원</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">오프라인 신뢰성 보장</span>
+          <span class="marquee-star">✦</span>
+          <!-- Duplicate for seamless infinite loop -->
+          <span class="marquee-item">100% 네이티브 퍼포먼스</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">철저한 프라이버시 보호</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">군더더기 없는 직관적 UI</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">온디바이스 인텔리전스</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">접근성 중심 디자인</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">전 세계 40+ 국가 지원</span>
+          <span class="marquee-star">✦</span>
+          <span class="marquee-item">오프라인 신뢰성 보장</span>
+          <span class="marquee-star">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Philosophy / Pillars -->
+    <section id="philosophy" class="section-container studio-pillars-section">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-number">01</div>
+          <h3 class="pillar-title">최소한의 단계, 극대화된 몰입</h3>
+          <p class="pillar-desc">
+            불필요한 팝업을 줄이고 시각적 계층 구조에 집중하여 몇 초 만에 작업을 완료할 수 있도록 설계합니다.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-number">02</div>
+          <h3 class="pillar-title">기기 내 저장 및 프라이버시 우선</h3>
+          <p class="pillar-desc">
+            건강 기록과 서명 문서는 기기 내에만 안전하게 보관됩니다. 광고 트래커나 무단 서버 업로드가 없습니다.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-number">03</div>
+          <h3 class="pillar-title">엔터프라이즈급 소프트웨어 완성도</h3>
+          <p class="pillar-desc">
+            수백만 사용자를 지원하는 대규모 시스템 수준의 엄격한 Swift 아키텍처와 견고한 안정성을 바탕으로 제작됩니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Apps Suite Showcase -->
+    <section id="apps" class="section-container projects-section">
+      <div class="projects-header-row">
+        <div>
+          <div class="figma-node-pill">
+            <span class="node-square node-tl"></span>
+            <span class="node-square node-tr"></span>
+            <span class="node-square node-bl"></span>
+            <span class="node-square node-br"></span>
+            <span class="pill-text">제품 라인업</span>
+          </div>
+          <h2 class="projects-headline">YS Liu Studio의 앱</h2>
+          <p class="projects-sub">
+            정성껏 만든 네이티브 앱을 확인해 보세요. 스크린샷을 클릭하면 고화질로 인터페이스를 확인할 수 있습니다.
+          </p>
+        </div>
+
+        <a href="https://apps.apple.com/us/developer/yi-shih-liu/id1793695638?ct=site-home" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-header-contact">
+          <span>App Store에서 보기</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" class="btn-arrow">
+            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- 5 Apps Container -->
+      <div class="projects-list" id="projectsList">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Health & Sobriety Evidence-Based Guides Section -->
+    <section id="guides" class="section-container guides-showcase-section">
+      <div class="projects-header-row">
+        <div>
+          <div class="figma-node-pill">
+            <span class="node-square node-tl"></span>
+            <span class="node-square node-tr"></span>
+            <span class="node-square node-bl"></span>
+            <span class="node-square node-br"></span>
+            <span class="pill-text">과학적 리서치</span>
+          </div>
+          <h2 class="projects-headline">건강 및 습관 회복 가이드</h2>
+          <p class="projects-sub">
+            신경과학과 생리학적 회복 타임라인을 바탕으로 건강한 습관 변화를 돕는 심층 가이드.
+          </p>
+        </div>
+      </div>
+
+      <div class="guides-showcase-grid">
+        <!-- Alcohol Free Tracker Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">🍷</span>
+            <div>
+              <h3 class="guide-hub-title">Alcohol Free Tracker</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Sobriety blueprints, physiological recovery timelines, neurotransmitter science, and craving urge surfing.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/alcohol-free-tracker/guides/30-day-dry-challenge-survival-blueprint.html">✦ 30-Day Dry Challenge Survival Blueprint</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/alcohol-free-tracker/guides/alcohol-recovery-timeline-day-by-day.html">✦ Body Recovery Timeline: 8h to 30 Days</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/alcohol-free-tracker/guides/how-to-survive-evening-alcohol-cravings-urge-surfing.html">✦ How to Beat 5 PM Cravings: 3-Min Urge Surfing</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/alcohol-free-tracker/guides/alcohol-and-rem-sleep-how-long-to-recover.html">✦ Alcohol & REM Sleep: How Long to Recover?</a>
+            </li>
+          </ul>
+          <a href="/alcohol-free-tracker/guides/" class="guide-hub-footer-link">View all Alcohol-Free Guides &rarr;</a>
+        </div>
+
+        <!-- Quit Weed / Unfog Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">🌿</span>
+            <div>
+              <h3 class="guide-hub-title">Quit Weed: Unfog</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">THC detox science, endocannabinoid CB1 receptor upregulation, withdrawal sleep protocols, and craving relief.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/quit-weed/guides/thc-withdrawal-timeline-cb1-recovery.html">✦ THC Detox Timeline: Day-by-Day Body Recovery</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/quit-weed/guides/rem-rebound-vivid-dreams-quitting-weed.html">✦ Cannabis Withdrawal Insomnia: Sleep Solutions</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/quit-weed/guides/how-long-for-cb1-receptors-to-reset-t-break.html">✦ Stop Weed Cravings with 4-7-8 Breathing</a>
+            </li>
+          </ul>
+          <a href="/quit-weed/guides/" class="guide-hub-footer-link">View all Quit Weed Guides &rarr;</a>
+        </div>
+
+        <!-- Quit Vaping Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">💨</span>
+            <div>
+              <h3 class="guide-hub-title">Quit Vaping</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Nicotine withdrawal timeline, lung and cardiovascular healing, oral fixation replacement, and pod expense calculators.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/quit-vaping/guides/vaping-recovery-timeline-day-by-day.html">✦ Vape Recovery Timeline: 20 Min to 30 Days</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/quit-vaping/guides/how-to-survive-nicotine-cravings-urge-surfing.html">✦ How to Beat Acute Nicotine Cravings (3-Min)</a>
+            </li>
+          </ul>
+          <a href="/quit-vaping/guides/" class="guide-hub-footer-link">View all Quit Vaping Guides &rarr;</a>
+        </div>
+
+        <!-- Supplement & Pill Reminder Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">💊</span>
+            <div>
+              <h3 class="guide-hub-title">Pill &amp; Vitamin Reminder</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Supplement timing, bioavailability, vitamin pairing synergies, and missed dose safety protocols.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/pill-reminder/guides/magnesium-glycinate-best-time-to-take.html">✦ Best Time to Take Magnesium Glycinate</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/pill-reminder/guides/">✦ Vitamin &amp; Supplement Timing Protocol</a>
+            </li>
+          </ul>
+          <a href="/pill-reminder/guides/" class="guide-hub-footer-link">View all Pill Reminder Guides &rarr;</a>
+        </div>
+
+        <!-- Grocery Price Scanner Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">🛒</span>
+            <div>
+              <h3 class="guide-hub-title">Grocery Price Scanner</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Unit price formulas, package shrinkflation detection, and smart supermarket inflation shopping guides.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/grocery-price/guides/how-to-calculate-unit-price-per-ounce-gram.html">✦ How to Calculate Price per Ounce &amp; Gram</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/grocery-price/guides/">✦ Unit Cost &amp; Supermarket Math Guides</a>
+            </li>
+          </ul>
+          <a href="/grocery-price/guides/" class="guide-hub-footer-link">View all Smart Grocery Guides &rarr;</a>
+        </div>
+
+        <!-- Sourdough Timer: Levain Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">🍞</span>
+            <div>
+              <h3 class="guide-hub-title">Sourdough Timer: Levain</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Baker's percentage formulas, sourdough hydration scaling, and temperature-adjusted fermentation timing.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/levain/guides/sourdough-hydration-calculator-percentage-guide.html">✦ Sourdough Hydration Calculator &amp; Percentages</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/levain/guides/">✦ Bulk Fermentation &amp; Starter Feeding Charts</a>
+            </li>
+          </ul>
+          <a href="/levain/guides/" class="guide-hub-footer-link">View all Sourdough Guides &rarr;</a>
+        </div>
+
+        <!-- Inkstone: Sign PDF Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">✍️</span>
+            <div>
+              <h3 class="guide-hub-title">Inkstone: Sign PDF</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">Mobile contract signing, subscription-free eSign workflows, and browser link signature sharing.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/inkstone/guides/sign-pdf-on-iphone-without-subscription-guide.html">✦ Sign PDF on iPhone Without Subscription</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/inkstone/guides/">✦ Mobile eSign &amp; Contract Workflows</a>
+            </li>
+          </ul>
+          <a href="/inkstone/guides/" class="guide-hub-footer-link">View all PDF Signing Guides &rarr;</a>
+        </div>
+
+        <!-- Agricola Score Sheet Hub Card -->
+        <div class="guide-hub-card">
+          <div class="guide-hub-header">
+            <span class="guide-hub-icon">🎲</span>
+            <div>
+              <h3 class="guide-hub-title">Agricola Score Sheet</h3>
+            </div>
+          </div>
+          <p class="guide-hub-desc">End-game victory point rules, harvest food engines, room upgrades, and begging card penalty math.</p>
+          <ul class="guide-hub-links">
+            <li class="guide-hub-link-item">
+              <a href="/agricola-scorer/guides/agricola-scoring-rules-complete-strategy-guide.html">✦ Agricola Scoring Rules &amp; Point Calculations</a>
+            </li>
+            <li class="guide-hub-link-item">
+              <a href="/agricola-scorer/guides/">✦ Harvest Food Engine &amp; Strategy Guides</a>
+            </li>
+          </ul>
+          <a href="/agricola-scorer/guides/" class="guide-hub-footer-link">View all Agricola Guides &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet the Founder Banner -->
+    <section class="section-container founder-banner-section">
+      <div class="founder-banner-card">
+        <div class="founder-banner-left">
+          <img src="/images/profile.jpg" alt="Louis Liu" class="founder-avatar" />
+          <div>
+            <span class="founder-eyebrow">스튜디오 소개</span>
+            <h3 class="founder-heading">개발자 Louis Liu 제작</h3>
+            <p class="founder-bio-short">
+              대규모 스트리밍 플랫폼, 컴파일러 가속 및 임베디드 소프트웨어 경험을 보유한 시니어 모바일 엔지니어.
+            </p>
+          </div>
+        </div>
+        <a href="/developer/" class="btn btn-dark">
+          <span>개발자 프로필 및 이력 보기</span>
+          <svg viewBox="0 0 20 20" fill="currentColor" class="btn-arrow">
+            <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Dark CTA & Support Section -->
+    <section id="contact" class="cta-dark-section">
+      <div class="cta-dark-container">
+        <div class="cta-left">
+          <h2 class="cta-big-heading">
+            고객 지원 및<br />스튜디오 문의
+          </h2>
+          <p class="cta-lead-text">
+            앱에 대한 의견이나 기술 지원, 협업 제안이 있으신가요? 언제든 편하게 연락해 주세요.
+          </p>
+        </div>
+
+        <div class="cta-right">
+          <!-- Figma Box with Email -->
+          <div class="figma-contact-box">
+            <span class="node-square node-tl"></span>
+            <span class="node-square node-tr"></span>
+            <span class="node-square node-bl"></span>
+            <span class="node-square node-br"></span>
+            <span class="figma-email-text">liuys614@gmail.com</span>
+          </div>
+
+          <div class="cta-btns-group">
+            <a href="mailto:liuys614@gmail.com" class="btn btn-mint-cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Email Support</span>
+            </a>
+
+            <button type="button" class="btn btn-outline-light" id="btnCopyEmail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="copyEmailLabel">Copy Email</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-footer-bottom">
+        <span>Copyright © 2026 YS Liu Studio. All Rights Reserved.</span>
+        <div class="footer-links-inline">
+          <a href="/developer/" class="cta-back-top">Developer</a>
+          <span>·</span>
+          <a href="/alcohol-free-tracker/guides/" class="cta-back-top">Alcohol-Free</a>
+          <span>·</span>
+          <a href="/quit-weed/guides/" class="cta-back-top">Quit Weed</a>
+          <span>·</span>
+          <a href="/quit-vaping/guides/" class="cta-back-top">Quit Vaping</a>
+          <span>·</span>
+          <a href="/pill-reminder/guides/" class="cta-back-top">Pill Reminder</a>
+          <span>·</span>
+          <a href="/grocery-price/guides/" class="cta-back-top">Grocery Price</a>
+          <span>·</span>
+          <a href="/levain/guides/" class="cta-back-top">Sourdough</a>
+          <span>·</span>
+          <a href="/inkstone/guides/" class="cta-back-top">Inkstone PDF</a>
+          <span>·</span>
+          <a href="/agricola-scorer/guides/" class="cta-back-top">Agricola</a>
+          <span>·</span>
+          <a href="https://apps.apple.com/us/developer/yi-shih-liu/id1793695638?ct=site-home" target="_blank" rel="noopener noreferrer" class="cta-back-top">App Store</a>
+          <span>·</span>
+          <a href="#top" class="cta-back-top">
+            <span>Back to Top</span>
+            <svg viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 17a1 1 0 01-1-1V5.414l-3.293 3.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0l5 5a1 1 0 01-1.414 1.414L11 5.414V16a1 1 0 01-1 1z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Fullscreen Interactive Lightbox Modal -->
+  <div id="lightbox" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Screenshot Viewer">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-dialog">
+      <div class="lightbox-header">
+        <div class="lightbox-meta">
+          <span class="lightbox-app-title" id="lightboxAppTitle">Inkstone</span>
+          <span class="lightbox-counter" id="lightboxCounter">1 of 5</span>
+        </div>
+        <button type="button" class="lightbox-btn-close" id="lightboxBtnClose" aria-label="Close viewer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="lightbox-body">
+        <button type="button" class="lightbox-nav-btn lightbox-prev" id="lightboxPrev" aria-label="Previous screenshot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="lightbox-image-stage">
+          <img src="" alt="App Screenshot Preview" class="lightbox-img" id="lightboxImg" />
+        </div>
+
+        <button type="button" class="lightbox-nav-btn lightbox-next" id="lightboxNext" aria-label="Next screenshot">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="lightbox-footer-hint">
+        Use <kbd>←</kbd> <kbd>→</kbd> arrow keys to navigate, <kbd>ESC</kbd> to exit.
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast" role="status" aria-live="polite">
+    <svg viewBox="0 0 20 20" fill="currentColor" class="toast-icon">
+      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+    </svg>
+    <span id="toastMessage">Email copied to clipboard!</span>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f06b65322f34626b2e5688ab29fd1df"}'></script>
+  <script src="/lang-switcher.js" defer></script>
+</body>
+</html>

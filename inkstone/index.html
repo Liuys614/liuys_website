@@ -6,6 +6,15 @@
 <title>Inkstone: Sign PDF & Docs — eSign & Encrypted Signing Links</title>
 <meta name="description" content="Prepare documents in seconds, sign locally for free, or share an encrypted signing link that recipients can sign directly in their browser with zero app download.">
 <link rel="canonical" href="https://ysliustudio.com/inkstone/">
+  <link rel="alternate" hreflang="x-default" href="https://ysliustudio.com/inkstone/" />
+  <link rel="alternate" hreflang="en" href="https://ysliustudio.com/inkstone/" />
+  <link rel="alternate" hreflang="zh-TW" href="https://ysliustudio.com/zh-tw/inkstone/" />
+  <link rel="alternate" hreflang="de" href="https://ysliustudio.com/de/inkstone/" />
+  <link rel="alternate" hreflang="fr" href="https://ysliustudio.com/fr/inkstone/" />
+  <link rel="alternate" hreflang="ja" href="https://ysliustudio.com/ja/inkstone/" />
+  <link rel="alternate" hreflang="ko" href="https://ysliustudio.com/ko/inkstone/" />
+  <link rel="alternate" hreflang="es" href="https://ysliustudio.com/es/inkstone/" />
+  <link rel="alternate" hreflang="it" href="https://ysliustudio.com/it/inkstone/" />
 <meta name="apple-itunes-app" content="app-id=6801701847">
 <style>
   :root {
@@ -38,9 +47,36 @@
          color:var(--mist);font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
   footer a{color:var(--seal);text-decoration:none;font-weight:600}
 </style>
+  <link rel="stylesheet" href="/lang-switcher.css" />
 </head>
 <body>
 <div class="wrap">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+  <a href="/" style="font-weight: 700; text-decoration: none; color: inherit; font-size: 0.95rem;">← YS Liu Studio</a>
+  <div class="lang-switcher">
+    <button class="lang-btn" type="button" aria-label="Select Language" aria-expanded="false">
+      <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span class="lang-current">English</span>
+      <svg class="lang-chevron" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <div class="lang-dropdown">
+      <a href="/inkstone/" class="lang-opt active" data-lang="en">English</a>
+      <a href="/zh-tw/inkstone/" class="lang-opt" data-lang="zh-tw">繁體中文</a>
+      <a href="/de/inkstone/" class="lang-opt" data-lang="de">Deutsch</a>
+      <a href="/fr/inkstone/" class="lang-opt" data-lang="fr">Français</a>
+      <a href="/ja/inkstone/" class="lang-opt" data-lang="ja">日本語</a>
+      <a href="/ko/inkstone/" class="lang-opt" data-lang="ko">한국어</a>
+      <a href="/es/inkstone/" class="lang-opt" data-lang="es">Español</a>
+      <a href="/it/inkstone/" class="lang-opt" data-lang="it">Italiano</a>
+    </div>
+  </div>
+</div>
   <header>
     <img src="/images/icons/inkstone.png" alt="Inkstone Icon" class="app-icon">
     <div>
@@ -87,5 +123,6 @@
   </footer>
 </div>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f06b65322f34626b2e5688ab29fd1df"}'></script>
+  <script src="/lang-switcher.js" defer></script>
 </body>
 </html>

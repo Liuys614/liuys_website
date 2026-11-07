@@ -6,6 +6,15 @@
 <title>Levain — Sourdough Bake Timer &amp; Proofing Schedule</title>
 <meta name="description" content="A multi-stage sourdough timer for iPhone. Chain every proof and fold into one schedule, with alarms that ring through silent mode and a photo bake journal.">
 <link rel="canonical" href="https://ysliustudio.com/levain/">
+  <link rel="alternate" hreflang="x-default" href="https://ysliustudio.com/levain/" />
+  <link rel="alternate" hreflang="en" href="https://ysliustudio.com/levain/" />
+  <link rel="alternate" hreflang="zh-TW" href="https://ysliustudio.com/zh-tw/levain/" />
+  <link rel="alternate" hreflang="de" href="https://ysliustudio.com/de/levain/" />
+  <link rel="alternate" hreflang="fr" href="https://ysliustudio.com/fr/levain/" />
+  <link rel="alternate" hreflang="ja" href="https://ysliustudio.com/ja/levain/" />
+  <link rel="alternate" hreflang="ko" href="https://ysliustudio.com/ko/levain/" />
+  <link rel="alternate" hreflang="es" href="https://ysliustudio.com/es/levain/" />
+  <link rel="alternate" hreflang="it" href="https://ysliustudio.com/it/levain/" />
 <meta name="apple-itunes-app" content="app-id=6812950497">
 <meta name="theme-color" content="#FBEEE2" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#2A2018" media="(prefers-color-scheme: dark)">
@@ -78,9 +87,39 @@
   ]
 }
 </script>
+  <link rel="stylesheet" href="/lang-switcher.css" />
 </head>
 
 <body>
+<div class="wrap" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; padding-bottom: 0.5rem;">
+  <a href="/" style="font-weight: 700; text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 0.5rem;">
+    <svg viewBox="0 0 24 24" fill="none" style="width: 20px; height: 20px;"><rect width="24" height="24" rx="6" fill="#00dc82"/><path d="M8 6.8V17.2H16.2" stroke="#0a0b0e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>YS Liu Studio</span>
+  </a>
+  <div class="lang-switcher">
+    <button class="lang-btn" type="button" aria-label="Select Language" aria-expanded="false">
+      <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span class="lang-current">English</span>
+      <svg class="lang-chevron" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <div class="lang-dropdown">
+      <a href="/levain/" class="lang-opt active" data-lang="en">English</a>
+      <a href="/zh-tw/levain/" class="lang-opt" data-lang="zh-tw">繁體中文</a>
+      <a href="/de/levain/" class="lang-opt" data-lang="de">Deutsch</a>
+      <a href="/fr/levain/" class="lang-opt" data-lang="fr">Français</a>
+      <a href="/ja/levain/" class="lang-opt" data-lang="ja">日本語</a>
+      <a href="/ko/levain/" class="lang-opt" data-lang="ko">한국어</a>
+      <a href="/es/levain/" class="lang-opt" data-lang="es">Español</a>
+      <a href="/it/levain/" class="lang-opt" data-lang="it">Italiano</a>
+    </div>
+  </div>
+</div>
 
 <header class="hero wrap">
   <img class="appicon" src="assets/icon.png" width="112" height="112"
@@ -252,5 +291,6 @@
 </footer>
 
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f06b65322f34626b2e5688ab29fd1df"}'></script>
+  <script src="/lang-switcher.js" defer></script>
 </body>
 </html>

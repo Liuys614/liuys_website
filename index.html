@@ -6,6 +6,15 @@
   <title>YS Liu Studio — Independent Mobile App Studio</title>
   <meta name="description" content="YS Liu Studio crafts fast, intuitive, and privacy-first iOS & Android applications for productivity, health, finance, and everyday utility." />
   <link rel="canonical" href="https://ysliustudio.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://ysliustudio.com/" />
+  <link rel="alternate" hreflang="en" href="https://ysliustudio.com/" />
+  <link rel="alternate" hreflang="zh-TW" href="https://ysliustudio.com/zh-tw/" />
+  <link rel="alternate" hreflang="de" href="https://ysliustudio.com/de/" />
+  <link rel="alternate" hreflang="fr" href="https://ysliustudio.com/fr/" />
+  <link rel="alternate" hreflang="ja" href="https://ysliustudio.com/ja/" />
+  <link rel="alternate" hreflang="ko" href="https://ysliustudio.com/ko/" />
+  <link rel="alternate" hreflang="es" href="https://ysliustudio.com/es/" />
+  <link rel="alternate" hreflang="it" href="https://ysliustudio.com/it/" />
   <meta property="og:title" content="YS Liu Studio — Independent Mobile App Studio" />
   <meta property="og:description" content="Crafting fast, intuitive, and privacy-first native mobile apps for everyday utility." />
   <meta property="og:url" content="https://ysliustudio.com/" />
@@ -57,6 +66,29 @@
       </nav>
 
       <div class="nav-cta-wrap">
+        <div class="lang-switcher">
+    <button class="lang-btn" type="button" aria-label="Select Language" aria-expanded="false">
+      <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span class="lang-current">English</span>
+      <svg class="lang-chevron" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <div class="lang-dropdown">
+      <a href="/" class="lang-opt active" data-lang="en">English</a>
+      <a href="/zh-tw/" class="lang-opt" data-lang="zh-tw">繁體中文</a>
+      <a href="/de/" class="lang-opt" data-lang="de">Deutsch</a>
+      <a href="/fr/" class="lang-opt" data-lang="fr">Français</a>
+      <a href="/ja/" class="lang-opt" data-lang="ja">日本語</a>
+      <a href="/ko/" class="lang-opt" data-lang="ko">한국어</a>
+      <a href="/es/" class="lang-opt" data-lang="es">Español</a>
+      <a href="/it/" class="lang-opt" data-lang="it">Italiano</a>
+    </div>
+  </div>
         <a href="/developer/" class="btn btn-nav">
           <span>Meet the Developer</span>
           <svg viewBox="0 0 20 20" fill="currentColor" class="nav-btn-arrow">
@@ -578,5 +610,6 @@
 
   <script type="module" src="/app.js"></script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f06b65322f34626b2e5688ab29fd1df"}'></script>
+  <script src="/lang-switcher.js" defer></script>
 </body>
 </html>

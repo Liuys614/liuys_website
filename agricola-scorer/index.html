@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="canonical" href="https://ysliustudio.com/agricola-scorer/" />
+  <link rel="alternate" hreflang="x-default" href="https://ysliustudio.com/agricola-scorer/" />
+  <link rel="alternate" hreflang="en" href="https://ysliustudio.com/agricola-scorer/" />
+  <link rel="alternate" hreflang="zh-TW" href="https://ysliustudio.com/zh-tw/agricola-scorer/" />
+  <link rel="alternate" hreflang="de" href="https://ysliustudio.com/de/agricola-scorer/" />
+  <link rel="alternate" hreflang="fr" href="https://ysliustudio.com/fr/agricola-scorer/" />
+  <link rel="alternate" hreflang="ja" href="https://ysliustudio.com/ja/agricola-scorer/" />
+  <link rel="alternate" hreflang="ko" href="https://ysliustudio.com/ko/agricola-scorer/" />
+  <link rel="alternate" hreflang="es" href="https://ysliustudio.com/es/agricola-scorer/" />
+  <link rel="alternate" hreflang="it" href="https://ysliustudio.com/it/agricola-scorer/" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agricola Scorer</title>
@@ -101,8 +111,35 @@
             background-color: #264d26;
         }
     </style>
+  <link rel="stylesheet" href="/lang-switcher.css" />
 </head>
 <body>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+  <a href="/" style="font-weight: bold; text-decoration: none; color: #336633;">← YS Liu Studio</a>
+  <div class="lang-switcher">
+    <button class="lang-btn" type="button" aria-label="Select Language" aria-expanded="false">
+      <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </svg>
+      <span class="lang-current">English</span>
+      <svg class="lang-chevron" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <div class="lang-dropdown">
+      <a href="/agricola-scorer/" class="lang-opt active" data-lang="en">English</a>
+      <a href="/zh-tw/agricola-scorer/" class="lang-opt" data-lang="zh-tw">繁體中文</a>
+      <a href="/de/agricola-scorer/" class="lang-opt" data-lang="de">Deutsch</a>
+      <a href="/fr/agricola-scorer/" class="lang-opt" data-lang="fr">Français</a>
+      <a href="/ja/agricola-scorer/" class="lang-opt" data-lang="ja">日本語</a>
+      <a href="/ko/agricola-scorer/" class="lang-opt" data-lang="ko">한국어</a>
+      <a href="/es/agricola-scorer/" class="lang-opt" data-lang="es">Español</a>
+      <a href="/it/agricola-scorer/" class="lang-opt" data-lang="it">Italiano</a>
+    </div>
+  </div>
+</div>
     <h1>Agricola Scorer</h1>
     
     <div class="tabs">
@@ -219,5 +256,6 @@
         }
     </script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f06b65322f34626b2e5688ab29fd1df"}'></script>
+  <script src="/lang-switcher.js" defer></script>
 </body>
 </html>
