@@ -1,10 +1,16 @@
 import { PROFILE, APPS } from "./apps-data.js";
+import { UI_STRINGS, APPS_I18N } from "./app-i18n.js";
 
 // ============================================================================
 // State Management
 // ============================================================================
 let currentLightboxApp = null;
 let currentLightboxIndex = 0;
+
+function getCurrentLocaleKey() {
+  const match = window.location.pathname.match(/^\/(zh-tw|de|fr|ja|ko|es|it)(\/|$)/);
+  return match ? match[1] : null;
+}
 
 function getCurrentLocalePrefix() {
   const match = window.location.pathname.match(/^\/(zh-tw|de|fr|ja|ko|es|it)(\/|$)/);
@@ -70,9 +76,15 @@ const ICONS = {
 function renderTimeline() {
   if (!timelineStreamEl || !PROFILE.timeline) return;
 
+  const locale = getCurrentLocaleKey();
+  const ui = (locale && UI_STRINGS[locale]) ? UI_STRINGS[locale] : {
+    work: "Work Experience",
+    education: "Education"
+  };
+
   timelineStreamEl.innerHTML = PROFILE.timeline.map(item => {
     const isWork = item.type === "work";
-    const typeLabel = isWork ? "Work Experience" : "Education";
+    const typeLabel = isWork ? ui.work : ui.education;
     const typeClass = isWork ? "type-work" : "type-education";
 
     return `
@@ -106,8 +118,21 @@ function renderTimeline() {
 function renderProjects() {
   if (!projectsListEl || !APPS) return;
 
+  const locale = getCurrentLocaleKey();
+  const ui = (locale && UI_STRINGS[locale]) ? UI_STRINGS[locale] : {
+    comingSoon: "Coming soon to the App Store",
+    downloadAppStore: "Download on App Store",
+    inspect: "Inspect",
+    visitWebsite: "Visit Website"
+  };
+
   projectsListEl.innerHTML = APPS.map((app, appIdx) => {
     const screenshotCount = app.screenshots ? app.screenshots.length : 0;
+    const appI18n = (locale && APPS_I18N[app.id] && APPS_I18N[app.id][locale]) ? APPS_I18N[app.id][locale] : {};
+
+    const category = appI18n.category || app.category;
+    const tagline = appI18n.tagline || app.tagline;
+    const description = appI18n.desc || app.description;
 
     return `
       <article class="project-card" id="project-${app.id}">
@@ -117,17 +142,17 @@ function renderProjects() {
             <img src="${app.icon}" alt="${app.title} Icon" class="project-app-icon" loading="lazy" />
             <div>
               <div class="project-badges-row">
-                <span class="category-tag">${app.category}</span>
+                <span class="category-tag">${category}</span>
               </div>
               <h3 class="project-title">${app.title}</h3>
             </div>
           </div>
 
-          <div class="project-tagline">${app.tagline}</div>
-          <p class="project-desc">${app.description}</p>
+          <div class="project-tagline">${tagline}</div>
+          <p class="project-desc">${description}</p>
 
           <ul class="project-features">
-            ${app.features.map(f => `
+            ${((appI18n && appI18n.features) ? appI18n.features : app.features).map(f => `
               <li class="feature-bullet">
                 ${ICONS.featureCheck}
                 <span>${f}</span>
@@ -140,22 +165,23 @@ function renderProjects() {
               if (link.type === "coming-soon") {
                 return `
                   <span class="btn-appstore-link is-coming-soon" aria-disabled="true">
-                    <span>Coming soon to the App Store</span>
+                    <span>${ui.comingSoon}</span>
                   </span>
                 `;
               } else if (link.type === "appstore") {
                 return `
                   <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn-appstore-link">
                     ${ICONS.apple}
-                    <span>Download on App Store</span>
+                    <span>${ui.downloadAppStore}</span>
                   </a>
                 `;
               } else {
                 const siteUrl = localizeInternalUrl(link.url);
                 const isInternal = link.url.startsWith("/");
+                const label = (link.label === "Visit Website") ? ui.visitWebsite : link.label;
                 return `
                   <a href="${siteUrl}" ${isInternal ? "" : 'target="_blank" rel="noopener noreferrer"'} class="btn-site-link">
-                    <span>${link.label}</span>
+                    <span>${label}</span>
                     ${ICONS.externalLink}
                   </a>
                 `;
@@ -179,7 +205,7 @@ function renderProjects() {
                 <div class="tile-hover-cue">
                   <span class="inspect-pill">
                     ${ICONS.zoom}
-                    <span>Inspect</span>
+                    <span>${ui.inspect}</span>
                   </span>
                 </div>
               </div>

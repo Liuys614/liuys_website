@@ -3,6 +3,17 @@
  */
 (function () {
   const SUPPORTED_LOCALES = ["zh-tw", "de", "fr", "ja", "ko", "es", "it"];
+  const APPS_WITH_LOCALES = [
+    "quit-vaping",
+    "alcohol-free-tracker",
+    "pill-reminder",
+    "quit-weed",
+    "levain",
+    "grocery-price",
+    "inkstone",
+    "agricola-scorer"
+  ];
+  const EXEMPT_PATHS = ["developer", "privacy", "terms", "support", "assets", "images", "scripts", "css", "js"];
 
   function getCurrentLocale() {
     const match = window.location.pathname.match(/^\/(zh-tw|de|fr|ja|ko|es|it)(\/|$)/);
@@ -15,7 +26,13 @@
     links.forEach((a) => {
       const href = a.getAttribute("href");
       if (!href) return;
-      if (href.startsWith("http://") || href.startsWith("https://") || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+      if (
+        href.startsWith("http://") ||
+        href.startsWith("https://") ||
+        href.startsWith("#") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:")
+      ) {
         return;
       }
       // If link is a lang-switcher option, do not rewrite
@@ -30,9 +47,21 @@
       // Handle absolute app paths like /quit-vaping/ or /alcohol-free-tracker/
       if (href.startsWith("/")) {
         const clean = href.replace(/^\/+/, "");
-        const firstSegment = clean.split("/")[0];
-        if (!SUPPORTED_LOCALES.includes(firstSegment)) {
-          a.setAttribute("href", `/${locale}/${clean}`);
+        const parts = clean.split("/");
+        const firstSegment = parts[0];
+
+        // Never rewrite exempt paths like /developer/, /privacy.html, etc.
+        if (EXEMPT_PATHS.includes(firstSegment)) return;
+
+        // Never rewrite if already localized
+        if (SUPPORTED_LOCALES.includes(firstSegment)) return;
+
+        // If it's a known app landing page (and NOT a sub-guide or sub-page like /app/guides/...)
+        if (APPS_WITH_LOCALES.includes(firstSegment)) {
+          // If the link is to the app root (e.g. /quit-vaping/ or /quit-vaping)
+          if (parts.length === 1 || (parts.length === 2 && (parts[1] === "" || parts[1] === "index.html"))) {
+            a.setAttribute("href", `/${locale}/${firstSegment}/`);
+          }
         }
       }
     });
@@ -92,25 +121,49 @@
       rewriteInternalLinks(currentLocale);
 
       // Intercept clicks on internal links as a fallback guard
-      document.addEventListener("click", (e) => {
-        const anchor = e.target.closest("a[href]");
-        if (!anchor) return;
-        if (anchor.classList.contains("lang-opt")) return;
+      document.addEventListener(
+        "click",
+        (e) => {
+          const anchor = e.target.closest("a[href]");
+          if (!anchor) return;
+          if (anchor.classList.contains("lang-opt")) return;
 
-        const href = anchor.getAttribute("href");
-        if (!href || href.startsWith("http://") || href.startsWith("https://") || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
-          return;
-        }
-
-        if (href.startsWith("/")) {
-          const clean = href.replace(/^\/+/, "");
-          const firstSegment = clean.split("/")[0];
-          if (!SUPPORTED_LOCALES.includes(firstSegment)) {
-            e.preventDefault();
-            window.location.href = `/${currentLocale}/${clean}`;
+          const href = anchor.getAttribute("href");
+          if (
+            !href ||
+            href.startsWith("http://") ||
+            href.startsWith("https://") ||
+            href.startsWith("#") ||
+            href.startsWith("mailto:") ||
+            href.startsWith("tel:")
+          ) {
+            return;
           }
-        }
-      }, true);
+
+          if (href === "/" || href === "/index.html" || href === "index.html") {
+            e.preventDefault();
+            window.location.href = `/${currentLocale}/`;
+            return;
+          }
+
+          if (href.startsWith("/")) {
+            const clean = href.replace(/^\/+/, "");
+            const parts = clean.split("/");
+            const firstSegment = parts[0];
+
+            if (EXEMPT_PATHS.includes(firstSegment)) return;
+            if (SUPPORTED_LOCALES.includes(firstSegment)) return;
+
+            if (APPS_WITH_LOCALES.includes(firstSegment)) {
+              if (parts.length === 1 || (parts.length === 2 && (parts[1] === "" || parts[1] === "index.html"))) {
+                e.preventDefault();
+                window.location.href = `/${currentLocale}/${firstSegment}/`;
+              }
+            }
+          }
+        },
+        true
+      );
 
       // Re-run rewriter when DOM changes dynamically (e.g. app.js timeline render)
       const observer = new MutationObserver(() => {
@@ -126,3 +179,4 @@
     initLangSwitcher();
   }
 })();
+
