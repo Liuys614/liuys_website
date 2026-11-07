@@ -50,7 +50,7 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Where is my alcohol tracker data stored?",
+              "name": "我的戒酒追蹤數據儲存在哪裡？",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Your profile, check-ins, drink levels, times, and notes are stored 100% locally on your device. Alcohol Free Tracker requires no account and never uploads your personal logs to external servers."
@@ -58,7 +58,7 @@
             },
             {
               "@type": "Question",
-              "name": "Can I use Alcohol Free Tracker for moderation or Dry January instead of quitting completely?",
+              "name": "我可以用這款 App 來節制飲酒或進行 30 天挑戰，而不是完全戒絕嗎？",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes. You can use the app to stop drinking completely, cut back with mindful moderation check-ins, or complete a 30-day dry challenge without streak-shaming."
@@ -66,7 +66,7 @@
             },
             {
               "@type": "Question",
-              "name": "How does the 3-minute Urge Surfing feature work?",
+              "name": "3 分鐘衝動衝浪呼吸引導是如何運作的？",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Alcohol cravings typically crest and fade within 3 to 5 minutes. Our built-in Urge Surfing tool uses guided breathing and 360° spatial audio to help your nervous system ride out the wave calmly."
@@ -146,19 +146,19 @@
           <div class="hero-visual" aria-label="Alcohol Free Tracker Today screen preview">
             <div class="hero-orbit" aria-hidden="true"></div>
             <div class="hero-phone-container">
-              <img class="hero-phone" src="/alcohol-free-tracker/assets/screenshots_localized/zh-tw/hero-today.webp" alt="Alcohol Free Tracker Today screen showing 145 alcohol-free days, check-in controls, body recovery timeline, savings estimate, and logged streak" width="540" height="1174" fetchpriority="high">
+              <img class="hero-phone" src="/alcohol-free-tracker/assets/screenshots_localized/zh-tw/hero-today-raw.webp" alt="Alcohol Free Tracker Today screen showing 145 alcohol-free days, check-in controls, body recovery timeline, savings estimate, and logged streak" width="540" height="1174" fetchpriority="high">
               <div class="hero-floating-card hero-floating-rem" aria-hidden="true">
                 <span class="floating-icon">🧬</span>
                 <div>
-                  <strong>Deep REM Sleep</strong>
-                  <span>Day 7 · restoring</span>
+                  <strong>深度 REM 睡眠</strong>
+                  <span>第 7 天 · 逐步修復中</span>
                 </div>
               </div>
               <div class="hero-floating-card hero-floating-sos" aria-hidden="true">
                 <span class="floating-icon">🌊</span>
                 <div>
-                  <strong>Craving SOS</strong>
-                  <span>Calm 4-6 breathing</span>
+                  <strong>渴望緊急舒緩 (SOS)</strong>
+                  <span>4-6 秒緩慢深呼吸</span>
                 </div>
               </div>
             </div>
@@ -172,19 +172,19 @@
         <div class="sci-glow sci-glow-b" aria-hidden="true"></div>
         <div class="container sci-inner">
           <header class="sci-head reveal">
-            <p class="sci-eyebrow">The science</p>
-            <h2 id="sci-title">Cravings are waves.<br><em>Your body is already healing.</em></h2>
+            <p class="sci-eyebrow">科學實證原理</p>
+            <h2 id="sci-title">渴望如海浪般起伏。<br><em>你的身體正在自我修復。</em></h2>
           </header>
 
           <!-- 1. Urge curve -->
           <article class="sci-urge reveal" id="urge-curve">
             <div class="sci-urge-copy">
-              <span class="sci-tag">01 · Urge surfing</span>
-              <h3>An urge rises, peaks, and passes — if you let it.</h3>
+              <span class="sci-tag">01 · 衝動衝浪法</span>
+              <h3>衝動會升起、抵達頂峰，隨後自然退去——只要你靜靜覺察。</h3>
               <ol class="urge-steps">
-                <li data-step="rise"><b>Rise</b><span>A cue — 5 PM, the fridge, a bad day.</span></li>
-                <li data-step="peak"><b>Peak</b><span>Notice it in your body. Don't argue with it.</span></li>
-                <li data-step="pass"><b>Pass</b><span>Breathe until it fades on its own.</span></li>
+                <li data-step="升起"><b>升起</b><span>觸發點——傍晚 5 點、打開冰箱、疲憊的一天。</span></li>
+                <li data-step="頂峰"><b>頂峰</b><span>在身體中覺察它，無需爭辯或對抗。</span></li>
+                <li data-step="退去"><b>退去</b><span>保持緩慢深呼吸，直到渴望自行平息。</span></li>
               </ol>
               <p class="sci-cite">Bowen &amp; Marlatt (2009), <i>Psychology of Addictive Behaviors</i> 23(4)</p>
             </div>
@@ -213,14 +213,14 @@
                 <path class="urge-area" d="M40 268 C 120 262, 170 200, 220 120 S 285 46, 310 46 S 370 70, 420 150 S 520 262, 620 266 L 620 270 L 40 270 Z" fill="url(#urgeFill)"/>
                 <path class="urge-line" id="urgePath" d="M40 268 C 120 262, 170 200, 220 120 S 285 46, 310 46 S 370 70, 420 150 S 520 262, 620 266" fill="none" stroke="url(#urgeStroke)" stroke-width="4" stroke-linecap="round"/>
                 <g class="urge-labels">
-                  <text x="150" y="300">Rise</text>
-                  <text x="310" y="300" text-anchor="middle">Peak</text>
-                  <text x="500" y="300">Pass</text>
+                  <text x="150" y="300">升起</text>
+                  <text x="310" y="300" text-anchor="middle">頂峰</text>
+                  <text x="500" y="300">退去</text>
                   <line class="peak-mark" x1="310" y1="60" x2="310" y2="270"/>
                 </g>
                 <circle class="urge-dot" id="urgeDot" r="9" cx="40" cy="268" filter="url(#dotGlow)"/>
               </svg>
-              <figcaption><span class="axis-y">Craving intensity</span><span class="axis-x">Time →</span></figcaption>
+              <figcaption><span class="axis-y">渴望強度</span><span class="axis-x">時間軸 →</span></figcaption>
             </figure>
           </article>
 
@@ -282,26 +282,26 @@
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">實證科學戒酒與正念飲酒管理</p>
-            <h2>The old way broke your spirit. The new way protects your momentum.</h2>
+            <h2>傳統方式只會打擊意志，全新模式守護你的進步動能。</h2>
             <p>Traditional addiction apps rely on shame, mandatory public forums, and streak resets that trigger binge relapses. We chose harm reduction.</p>
           </div>
 
           <div class="compare-grid">
             <div class="compare-card compare-old">
-              <h3>Traditional Sobriety Apps</h3>
+              <h3>傳統戒酒 App</h3>
               <ul class="compare-list">
                 <li>
                   <span class="icon-bad">✕</span>
                   <div>
-                    <strong>Mandatory account registration</strong>
-                    <span>Forces email signups and sends spam notifications.</span>
+                    <strong>強制註冊帳號</strong>
+                    <span>強制索取 Email 並推送擾人廣告通知。</span>
                   </div>
                 </li>
                 <li>
                   <span class="icon-bad">✕</span>
                   <div>
-                    <strong>Streak-shaming on slip-ups</strong>
-                    <span>Resets to Day 0 in red text, triggering the "Abstinence Violation Effect" (bingeing).</span>
+                    <strong>中斷記錄時羞辱懲罰</strong>
+                    <span>以刺眼的紅色重設為第 0 天，容易引發「破戒後暴飲暴食效應」。</span>
                   </div>
                 </li>
                 <li>
@@ -314,15 +314,15 @@
                 <li>
                   <span class="icon-bad">✕</span>
                   <div>
-                    <strong>Aggressive $80/yr paywalls</strong>
-                    <span>Locks basic day counting behind deceptive subscription trials.</span>
+                    <strong>昂貴年費訂閱陷阱</strong>
+                    <span>將最基本的計日功能鎖在昂貴的自動扣款試用期之後。</span>
                   </div>
                 </li>
                 <li>
                   <span class="icon-bad">✕</span>
                   <div>
                     <strong>Cloud tracking &amp; data brokers</strong>
-                    <span>Sensitive drinking logs uploaded to third-party databases.</span>
+                    <span>將極具隱私的飲酒紀錄上傳到第三方雲端資料庫。</span>
                   </div>
                 </li>
               </ul>
@@ -341,29 +341,29 @@
                 <li>
                   <span class="icon-good">✓</span>
                   <div>
-                    <strong>Non-judgmental check-ins</strong>
-                    <span>Log alcohol-free, light, or moderate days without losing your reflection streak.</span>
+                    <strong>溫和客觀的每日簽到</strong>
+                    <span>自由記錄無酒日、微醺或適量飲酒，絕不抹滅你的反思連續紀錄。</span>
                   </div>
                 </li>
                 <li>
                   <span class="icon-good">✓</span>
                   <div>
-                    <strong>Quiet personal sanctuary</strong>
-                    <span>No feeds, no influencers, no ads. Just your progress.</span>
+                    <strong>安靜私密的個人天地</strong>
+                    <span>沒有社交動態、沒有網紅推銷、零廣告，專注於你的進步。</span>
                   </div>
                 </li>
                 <li>
                   <span class="icon-good">✓</span>
                   <div>
-                    <strong>Honest indie pricing</strong>
-                    <span>Free core features with optional flexible Pro and Lifetime ownership.</span>
+                    <strong>良心獨立開發者定價</strong>
+                    <span>核心功能永久免費，並提供彈性 Pro 與買斷終身方案。</span>
                   </div>
                 </li>
                 <li>
                   <span class="icon-good">✓</span>
                   <div>
-                    <strong>100% on-device privacy</strong>
-                    <span>Protected by Apple local storage. We couldn't sell your data even if we tried.</span>
+                    <strong>100% 離線本地儲存</strong>
+                    <span>受 Apple 本地沙盒嚴密保護，我們就算想賣也根本拿不到資料。</span>
                   </div>
                 </li>
               </ul>
@@ -377,9 +377,9 @@
           <div class="gallery-heading">
             <div>
               <p class="eyebrow">實證科學戒酒與正念飲酒管理</p>
-              <h2>From evening craving relief to long-term milestones.</h2>
+              <h2>從抵擋傍晚飲酒衝動，到見證長期健康里程碑。</h2>
             </div>
-            <p>Explore the latest iOS experience. Swipe or scroll horizontally to inspect all 10 screens.</p>
+            <p>探索精緻的 iOS 原生體驗。水平滑動查看全部 10 個核心畫面。</p>
           </div>
         </div>
         <div class="story-gallery" role="list" aria-label="Alcohol Free Tracker App Store screenshots">
@@ -401,7 +401,7 @@
           <div class="section-heading">
             <p class="eyebrow">實證科學戒酒與正念飲酒管理</p>
             <h2>Practical science for cutting back &amp; staying alcohol-free.</h2>
-            <p>Actionable timelines, craving management protocols, and honest guides for sober-curious and mindful drinkers.</p>
+            <p>提供具體時間軸、抗渴應對指南，陪伴每一位好奇清醒生活的實踐者。</p>
           </div>
           <div class="guides-preview-grid" id="home-guides-list">
             <article class="guide-card">
@@ -451,7 +451,7 @@
         <div class="privacy-grid container">
           <div class="privacy-copy">
             <p class="eyebrow">實證科學戒酒與正念飲酒管理</p>
-            <h2>Your personal tracking does not need an audience.</h2>
+            <h2>個人健康記錄，本就不需要向任何人公開。</h2>
             <p>Alcohol Free Tracker works without an account or network connection. Your profile, check-ins, notes, and drinking history stay on your device.</p>
             <div class="assurance-list">
               <div><strong>100% private</strong><span>Core tracker data is stored locally on your iPhone.</span></div>
@@ -472,8 +472,8 @@
           <div class="cta-card">
             <div>
               <p class="eyebrow">實證科學戒酒與正念飲酒管理</p>
-              <h2>Ready for a calmer kind of progress?</h2>
-              <p>Track honestly, watch your body recover, and see your savings add up—100% privately.</p>
+              <h2>準備好展開更平靜、無負擔的進步了嗎？</h2>
+              <p>誠實記錄每一步，見證身體修復與荷包增長——100% 屬於你個人的隱私。</p>
             </div>
             <a class="button button-light app-store-button" data-campaign="site-alcohol-free-tracker-landing" href="https://apps.apple.com/app/apple-store/id6791035303?pt=127596623&amp;ct=site-alcohol-free-tracker-landing&amp;mt=8" target="_blank" rel="noopener" aria-label="Download Alcohol Free Tracker on the App Store">
               <span class="store-kicker">前往下載於</span>
@@ -487,7 +487,7 @@
         <div class="container">
           <div class="section-heading support-heading">
             <p class="eyebrow">實證科學戒酒與正念飲酒管理</p>
-            <h2>Answers when you need them.</h2>
+            <h2>隨時解答你的疑問。</h2>
             <p>Find quick answers here or send an email if you need a hand.</p>
           </div>
 

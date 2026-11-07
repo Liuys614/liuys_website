@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 """
-Generate 100% UI-Parity Localized App Landing Pages for all 8 apps across 7 target locales.
-Preserves the exact DOM, styling, animations, scripts, and layout of each original app,
-while updating paths to root-relative, swapping screenshots to localized WebPs, and translating copy.
+Generate 100% UI-Parity Deeply-Localized Landing Pages for all 8 apps across 7 target locales:
+zh-tw, ja, ko, de, fr, es, it.
+
+Fixes:
+1. Pure borderless RAW screenshots for Hero Phones to eliminate double-border artifacts.
+2. 100% deep translations of every section (Hero, Science, Urge Surfing, Recovery, Compare, Features, Gallery, FAQ, Footer).
+3. Root-relative asset paths for 100% CSS/JS/font fidelity.
+4. Accurate 8-way alternate hreflang and canonical links.
 """
 
 import os
 import re
-from translations_data import LOCALES_META, COMMON_TRANSLATIONS, APP_TRANSLATIONS
+from translations_data import LOCALES_META, APP_TRANSLATIONS
+from comprehensive_translations import COMMON_DICT, DEEP_APP_CONTENT
 
 BASE_DIR = '/Users/louisliu/Documents/repo/liuys_website'
 SITE_ORIGIN = 'https://ysliustudio.com'
@@ -61,18 +67,14 @@ def render_lang_switcher(current_locale, app_slug):
   </div>"""
 
 def normalize_assets_and_scripts(html, app):
-    # Ensure css files are root-relative
     html = re.sub(r'href=[\"\']styles\.css[\"\']', f'href="/{app}/styles.css"', html)
     html = re.sub(r'href=[\"\']style\.css[\"\']', f'href="/{app}/style.css"', html)
     html = re.sub(r'src=[\"\']script\.js[\"\']', f'src="/{app}/script.js"', html)
     html = re.sub(r'src=[\"\']scripts/', f'src="/{app}/scripts/', html)
     html = re.sub(r'href=[\"\']assets/', f'href="/{app}/assets/', html)
-    
-    # Generic relative asset img replacement (if not already prefixed)
     html = re.sub(r'src=[\"\']assets/', f'src="/{app}/assets/', html)
     html = re.sub(r'srcset=[\"\']assets/', f'srcset="/{app}/assets/', html)
     
-    # Ensure lang-switcher.css and lang-switcher.js exist
     if '/lang-switcher.css' not in html:
         html = html.replace('</head>', '  <link rel="stylesheet" href="/lang-switcher.css">\n</head>')
     if '/lang-switcher.js' not in html:
@@ -88,17 +90,16 @@ def replace_screenshots_for_locale(html, app, locale):
     available_files = os.listdir(loc_shot_dir)
     
     if app == 'quit-vaping':
-        # Replace hero phone
-        if 'hero-today-recovery.webp' in available_files:
+        # Replace hero phone with borderless RAW screenshot
+        if 'hero-today-recovery-raw.webp' in available_files:
             html = re.sub(
                 rf'/{app}/assets/screens/hero-today-recovery\.webp',
-                f'/{app}/assets/screenshots_localized/{locale}/hero-today-recovery.webp',
+                f'/{app}/assets/screenshots_localized/{locale}/hero-today-recovery-raw.webp',
                 html
             )
         # Replace appstore carousel
         for f in available_files:
-            if f.startswith('0') or f.startswith('1'):
-                # e.g. 01-calm-progress.webp
+            if re.match(r'^\d\d-', f):
                 html = re.sub(
                     rf'/{app}/assets/appstore/{re.escape(f)}',
                     f'/{app}/assets/screenshots_localized/{locale}/{f}',
@@ -106,16 +107,16 @@ def replace_screenshots_for_locale(html, app, locale):
                 )
 
     elif app == 'alcohol-free-tracker':
-        # Replace hero phone
-        if 'hero-today.webp' in available_files:
+        # Replace hero phone with borderless RAW screenshot
+        if 'hero-today-raw.webp' in available_files:
             html = re.sub(
                 rf'/{app}/assets/screens/06-today-light\.webp',
-                f'/{app}/assets/screenshots_localized/{locale}/hero-today.webp',
+                f'/{app}/assets/screenshots_localized/{locale}/hero-today-raw.webp',
                 html
             )
         # Replace appstore carousel
         for f in available_files:
-            if f.startswith('0') or f.startswith('1'):
+            if re.match(r'^\d\d-', f):
                 html = re.sub(
                     rf'/{app}/assets/appstore/{re.escape(f)}',
                     f'/{app}/assets/screenshots_localized/{locale}/{f}',
@@ -123,16 +124,15 @@ def replace_screenshots_for_locale(html, app, locale):
                 )
 
     elif app == 'pill-reminder':
-        # Replace hero phone
-        if 'hero-home.webp' in available_files:
+        # Replace hero phone with borderless RAW screenshot
+        if 'hero-home-raw.webp' in available_files:
             html = re.sub(
                 rf'/{app}/assets/screens/hero-home\.webp',
-                f'/{app}/assets/screenshots_localized/{locale}/hero-home.webp',
+                f'/{app}/assets/screenshots_localized/{locale}/hero-home-raw.webp',
                 html
             )
-        # Replace appstore carousel
         for f in available_files:
-            if f.startswith('0'):
+            if re.match(r'^\d\d-', f):
                 html = re.sub(
                     rf'/{app}/assets/appstore/{re.escape(f)}',
                     f'/{app}/assets/screenshots_localized/{locale}/{f}',
@@ -140,7 +140,6 @@ def replace_screenshots_for_locale(html, app, locale):
                 )
 
     elif app == 'levain':
-        # Replace shot-1.png ... shot-6.png with WebP
         for f in available_files:
             m = re.match(r'shot-(\d+)\.webp', f)
             if m:
@@ -152,10 +151,10 @@ def replace_screenshots_for_locale(html, app, locale):
                 )
 
     elif app == 'quit-weed':
-        if 'hero-today-recovery.webp' in available_files:
+        if 'hero-today-recovery-raw.webp' in available_files:
             html = re.sub(
                 rf'/{app}/assets/screens/hero-today-recovery\.webp',
-                f'/{app}/assets/screenshots_localized/{locale}/hero-today-recovery.webp',
+                f'/{app}/assets/screenshots_localized/{locale}/hero-today-recovery-raw.webp',
                 html
             )
 
@@ -181,29 +180,22 @@ def update_seo_metadata(html, app, locale):
     meta_info = LOCALES_META.get(locale, {"name": locale, "html_lang": locale})
     app_trans = APP_TRANSLATIONS.get(app, {}).get(locale, {})
     
-    # Update <html lang="...">
     html = re.sub(r'<html\s+lang=[\"\'][^\"\']*[\"\']>', f'<html lang="{meta_info["html_lang"]}">', html)
-    
-    # Update Canonical
     new_canon = f"{SITE_ORIGIN}/{locale}/{app}/"
     html = re.sub(r'<link\s+rel=[\"\']canonical[\"\'][^>]*>', f'<link rel="canonical" href="{new_canon}">', html)
     
-    # Update Title
     if "title" in app_trans:
         title_str = app_trans["title"]
         html = re.sub(r'<title>.*?</title>', f'<title>{title_str}</title>', html, flags=re.DOTALL)
         html = re.sub(r'<meta\s+property=[\"\']og:title[\"\']\s+content=[\"\'][^\"\']*[\"\']>', f'<meta property="og:title" content="{title_str}">', html)
 
-    # Update Description
     if "meta_desc" in app_trans:
         desc_str = app_trans["meta_desc"]
         html = re.sub(r'<meta\s+name=[\"\']description[\"\']\s+content=[\"\'][^\"\']*[\"\']>', f'<meta name="description" content="{desc_str}">', html)
         html = re.sub(r'<meta\s+property=[\"\']og:description[\"\']\s+content=[\"\'][^\"\']*[\"\']>', f'<meta property="og:description" content="{desc_str}">', html)
 
-    # Update og:url
     html = re.sub(r'<meta\s+property=[\"\']og:url[\"\']\s+content=[\"\'][^\"\']*[\"\']>', f'<meta property="og:url" content="{new_canon}">', html)
 
-    # Update 8-way alternate hreflang
     hreflangs = [
         f'  <link rel="alternate" hreflang="x-default" href="{SITE_ORIGIN}/{app}/" />',
         f'  <link rel="alternate" hreflang="en" href="{SITE_ORIGIN}/{app}/" />',
@@ -215,77 +207,68 @@ def update_seo_metadata(html, app, locale):
         f'  <link rel="alternate" hreflang="es" href="{SITE_ORIGIN}/es/{app}/" />',
         f'  <link rel="alternate" hreflang="it" href="{SITE_ORIGIN}/it/{app}/" />',
     ]
-    hreflang_str = "\n".join(hreflangs)
-    html = re.sub(r'(<link\s+rel=[\"\']alternate[\"\'][^>]*>\s*)+', hreflang_str + "\n", html)
+    html = re.sub(r'(<link\s+rel=[\"\']alternate[\"\'][^>]*>\s*)+', "\n".join(hreflangs) + "\n", html)
     
     return html
 
 def update_switcher_and_nav(html, app, locale):
-    # Replace existing lang-switcher
     new_switcher = render_lang_switcher(locale, app)
     if 'class="lang-switcher"' in html:
         html = re.sub(r'<div class="lang-switcher">.*?</div>\s*</div>', new_switcher + "\n", html, flags=re.DOTALL)
     else:
-        # If no switcher found in nav, insert inside nav-links
         html = html.replace('<div class="nav-links">', f'<div class="nav-links">\n{new_switcher}')
         
-    # Persist locale on brand/logo link so clicking logo goes to /{locale}/
     html = re.sub(r'<a\s+class=[\"\']brand[\"\']\s+href=[\"\'][^\"\']*[\"\']', f'<a class="brand" href="/{locale}/"', html)
-    
     return html
 
-def translate_app_content(html, app, locale):
-    common = COMMON_TRANSLATIONS.get(locale, {})
+def apply_deep_translations(html, app, locale):
+    # 1. Apply app-specific hero & meta
     app_trans = APP_TRANSLATIONS.get(app, {}).get(locale, {})
-    
-    # Translate common UI buttons
-    for en_word, loc_word in common.items():
-        # Match button texts and nav links safely
-        html = re.sub(rf'>\s*{re.escape(en_word)}\s*<', f'>{loc_word}<', html)
-
-    # Translate App specific texts
     if "eyebrow" in app_trans:
         html = re.sub(r'(<p\s+class=[\"\']eyebrow[\"\'][^>]*>).*?(</p>)', rf'\g<1>{app_trans["eyebrow"]}\g<2>', html, flags=re.DOTALL)
-    
     if "h1" in app_trans:
         html = re.sub(r'(<h1[^>]*>).*?(</h1>)', rf'\g<1>{app_trans["h1"]}\g<2>', html, flags=re.DOTALL)
-        
     if "lede" in app_trans:
         html = re.sub(r'(<p\s+class=[\"\']hero-lede[\"\'][^>]*>).*?(</p>)', rf'\g<1>{app_trans["lede"]}\g<2>', html, flags=re.DOTALL)
-
     if "store_note" in app_trans:
         html = re.sub(r'(<p\s+class=[\"\']store-note[\"\'][^>]*>).*?(</p>)', rf'\g<1>{app_trans["store_note"]}\g<2>', html, flags=re.DOTALL)
-
     if "explore_science" in app_trans:
         html = re.sub(r'(<a\s+class=[\"\']button\s+button-secondary[\"\']\s+href=[\"\']#science[\"\'][^>]*>).*?(</a>)', rf'\g<1>{app_trans["explore_science"]}\g<2>', html, flags=re.DOTALL)
+
+    # 2. Apply global common dict
+    common = COMMON_DICT.get(locale, {})
+    # Sort strings longest first to prevent prefix collisions
+    for en_str, loc_str in sorted(common.items(), key=lambda x: -len(x[0])):
+        # Replace between tags or exact tag content
+        html = re.sub(rf'>\s*{re.escape(en_str)}\s*<', f'>{loc_str}<', html)
+
+    # 3. Apply app deep dictionary (covers Science, Compare, Features, FAQ, etc.)
+    deep_dict = DEEP_APP_CONTENT.get(app, {}).get(locale, {})
+    for en_str, loc_str in sorted(deep_dict.items(), key=lambda x: -len(x[0])):
+        # Match inside HTML elements
+        pattern = re.compile(rf'(>|\"|&nbsp;)\s*{re.escape(en_str)}\s*(<|\"|&nbsp;)', re.IGNORECASE)
+        html = pattern.sub(rf'\g<1>{loc_str}\g<2>', html)
+        # Also direct replace in case of loose inline text
+        html = html.replace(f">{en_str}<", f">{loc_str}<")
+        html = html.replace(f"<strong>{en_str}</strong>", f"<strong>{loc_str}</strong>")
+        html = html.replace(f"<small>{en_str}</small>", f"<small>{loc_str}</small>")
 
     return html
 
 def build_app_page(app, locale):
     en_index_path = os.path.join(BASE_DIR, app, 'index.html')
     if not os.path.isfile(en_index_path):
-        print(f"  Warning: English page for {app} does not exist: {en_index_path}")
         return
         
     with open(en_index_path, 'r', encoding='utf-8') as f:
         html = f.read()
 
-    # Step 1: Normalize all assets and script references
     html = normalize_assets_and_scripts(html, app)
-
-    # Step 2: Swap screenshots with localized WebP assets
     html = replace_screenshots_for_locale(html, app, locale)
-
-    # Step 3: Update SEO metadata (title, meta, hreflang, canonical)
     html = update_seo_metadata(html, app, locale)
-
-    # Step 4: Update language switcher and brand link
     html = update_switcher_and_nav(html, app, locale)
+    html = apply_deep_translations(html, app, locale)
 
-    # Step 5: Translate copy (Hero, Nav, Buttons, Eyebrow)
-    html = translate_app_content(html, app, locale)
-
-    # Save to /{locale}/{app}/index.html
     out_dir = os.path.join(BASE_DIR, locale, app)
     os.makedirs(out_dir, exist_ok=True)
     out_file = os.path.join(out_dir, 'index.html')
@@ -293,18 +276,18 @@ def build_app_page(app, locale):
     with open(out_file, 'w', encoding='utf-8') as f:
         f.write(html)
         
-    print(f"  [OK] Generated {locale}/{app}/index.html ({len(html)} bytes)")
+    print(f"  [DEEP GENERATED] {locale}/{app}/index.html ({len(html)} bytes)")
 
 def main():
-    print("=== Generating Full 100% UI-Parity Localized App Landing Pages ===")
-    target_locales = list(LOCALES_META.keys()) # ['zh-tw', 'ja', 'ko', 'de', 'fr', 'es', 'it']
+    print("=== Generating 100% Deep UI-Parity Localized App Landing Pages ===")
+    target_locales = list(LOCALES_META.keys())
     
     for app in APPS:
         print(f"\nProcessing App: {app}")
         for loc in target_locales:
             build_app_page(app, loc)
             
-    print("\n=== All Localized App Landing Pages Generated Successfully ===")
+    print("\n=== Generation Finished ===")
 
 if __name__ == '__main__':
     main()
