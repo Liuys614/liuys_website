@@ -81,15 +81,19 @@ def token_overlap_ratio(query: str, target: str) -> float:
 
 
 def get_gcloud_token() -> str:
-    try:
-        proc = subprocess.run(
-            ["gcloud", "auth", "application-default", "print-access-token"],
-            capture_output=True, text=True, timeout=10
-        )
-        if proc.returncode == 0 and proc.stdout.strip():
-            return proc.stdout.strip().splitlines()[-1]
-    except Exception:
-        pass
+    for cmd in [
+        ["gcloud", "auth", "application-default", "print-access-token"],
+        ["gcloud", "auth", "print-access-token"],
+    ]:
+        try:
+            proc = subprocess.run(
+                cmd,
+                capture_output=True, text=True, timeout=25
+            )
+            if proc.returncode == 0 and proc.stdout.strip():
+                return proc.stdout.strip().splitlines()[-1]
+        except Exception:
+            pass
     return ""
 
 

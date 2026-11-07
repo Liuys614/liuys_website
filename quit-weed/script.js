@@ -234,4 +234,42 @@ document.addEventListener('DOMContentLoaded', () => {
       carousel.scrollBy({ left: 300, behavior: 'smooth' });
     });
   }
+
+  /* --------------------------------------------------------------------------
+     5. PRE-LAUNCH EARLY ACCESS WAITLIST CAPTURE
+     -------------------------------------------------------------------------- */
+  const waitlistForms = document.querySelectorAll('.prelaunch-form');
+  waitlistForms.forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = form.querySelector('.prelaunch-input');
+      const email = input ? input.value.trim() : '';
+      if (!email) return;
+
+      try {
+        const existing = JSON.parse(localStorage.getItem('unfog_waitlist_emails') || '[]');
+        if (!existing.includes(email)) {
+          existing.push(email);
+          localStorage.setItem('unfog_waitlist_emails', JSON.stringify(existing));
+        }
+      } catch (err) {
+        // Ignore localStorage quota errors
+      }
+
+      const successEl = form.querySelector('.prelaunch-success');
+      const inputGroup = form.querySelector('.prelaunch-input-group');
+      if (inputGroup) inputGroup.style.display = 'none';
+      if (successEl) successEl.style.display = 'block';
+
+      // Fallback ping: trigger mailto in background window or send via beacon
+      const mailtoUrl = `mailto:liuys614@gmail.com?subject=Unfog%20Early%20Access%20Sign-up&body=Please%20notify%20me%20when%20Unfog%20launches%3A%20${encodeURIComponent(email)}`;
+      const link = document.createElement('a');
+      link.href = mailtoUrl;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  });
 });
