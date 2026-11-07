@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Levain — サワードウ発酵タイマー＆製パン管理 (マナーモード貫通アラーム)</title>
-  <meta name="description" content="iPhone専用の多段階サワードウタイマー。オートリーズ、一次発酵、パンチ・折りたたみ、成形、冷蔵発酵、焼成までを1本のスケジュールに。マナーモード貫通アラームと写真ベイク日誌搭載。" />
-  <link rel="canonical" href="https://ysliustudio.com/ja/levain/" />
-  <link rel="alternate" hreflang="x-default" href="https://ysliustudio.com/levain/" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Levain サワードウタイマー — 自家製酵母とパン作りの発酵管理</title>
+<meta name="description" content="Levainはサワードウブレッド愛好家専用の発酵タイマーiOSアプリです。種継ぎスケジュール、パンチ・折り込みタイマー、ライブアクティビティ対応。">
+<link rel="canonical" href="https://ysliustudio.com/ja/levain/">
+    <link rel="alternate" hreflang="x-default" href="https://ysliustudio.com/levain/" />
   <link rel="alternate" hreflang="en" href="https://ysliustudio.com/levain/" />
   <link rel="alternate" hreflang="zh-TW" href="https://ysliustudio.com/zh-tw/levain/" />
   <link rel="alternate" hreflang="de" href="https://ysliustudio.com/de/levain/" />
@@ -15,75 +15,88 @@
   <link rel="alternate" hreflang="ko" href="https://ysliustudio.com/ko/levain/" />
   <link rel="alternate" hreflang="es" href="https://ysliustudio.com/es/levain/" />
   <link rel="alternate" hreflang="it" href="https://ysliustudio.com/it/levain/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Levain — サワードウ発酵タイマー＆製パン管理 (マナーモード貫通アラーム)" />
-  <meta property="og:description" content="iPhone専用の多段階サワードウタイマー。オートリーズ、一次発酵、パンチ・折りたたみ、成形、冷蔵発酵、焼成までを1本のスケジュールに。マナーモード貫通アラームと写真ベイク日誌搭載。" />
-  <meta property="og:url" content="https://ysliustudio.com/ja/levain/" />
-  <meta property="og:locale" content="ja_JP" />
-  <meta name="apple-itunes-app" content="app-id=6812950497, affiliate-data=pt=127596623&ct=site-levain-ja, app-argument=https://ysliustudio.com/ja/levain/">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
-  <link rel="stylesheet" href="/lang-switcher.css" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Levain (ルヴァン)",
-    "operatingSystem": "iOS",
-    "applicationCategory": "UtilitiesApplication",
-    "url": "https://ysliustudio.com/ja/levain/",
-    "downloadUrl": "https://apps.apple.com/app/apple-store/id6812950497?pt=127596623&ct=site-levain-ja&mt=8",
-    "description": "iPhone専用の多段階サワードウタイマー。オートリーズ、一次発酵、パンチ・折りたたみ、成形、冷蔵発酵、焼成までを1本のスケジュールに。マナーモード貫通アラームと写真ベイク日誌搭載。",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+<meta name="apple-itunes-app" content="app-id=6812950497">
+<meta name="theme-color" content="#FBEEE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2A2018" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Levain">
+<meta property="og:title" content="Levain サワードウタイマー — 自家製酵母とパン作りの発酵管理">
+<meta property="og:description" content="Levainはサワードウブレッド愛好家専用の発酵タイマーiOSアプリです。種継ぎスケジュール、パンチ・折り込みタイマー、ライブアクティビティ対応。">
+<meta property="og:url" content="https://ysliustudio.com/ja/levain/">
+<meta property="og:image" content="https://ysliustudio.com/levain/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Levain — Sourdough Bake Timer &amp; Proofing Schedule">
+<meta name="twitter:description" content="A multi-stage sourdough timer for iPhone. Alarms that ring through silent mode, a Live Activity countdown, and a photo journal of every loaf.">
+<meta name="twitter:image" content="https://ysliustudio.com/levain/assets/og.png">
+
+<link rel="icon" href="/levain/assets/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/levain/assets/icon-180.png">
+<link rel="stylesheet" href="/levain/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Levain",
+  "alternateName": "Sourdough Bake Timer: Levain",
+  "description": "A multi-stage sourdough bake timer for iPhone. Chain autolyse, bulk ferment, folds, shape, cold retard and bake into one schedule, with alarms that ring through silent mode, a Live Activity countdown, a baker's percentage calculator and a photo bake journal.",
+  "applicationCategory": "LifestyleApplication",
+  "applicationSubCategory": "Food & Drink",
+  "operatingSystem": "iOS 26.0 or later",
+  "url": "https://ysliustudio.com/levain/",
+  "installUrl": "https://apps.apple.com/app/apple-store/id6812950497?pt=127596623&ct=site-levain-landing&mt=8",
+  "image": "https://ysliustudio.com/levain/assets/og.png",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": { "@type": "Person", "name": "Levain" },
+  "publisher": { "@type": "Person", "name": "Levain" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will the alarms wake me during an overnight proof?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Stage alerts use AlarmKit, so they ring through silent mode and Focus the way a Clock alarm does. Loud alarms are set per stage, so you can keep the overnight cold retard quiet and make the oven timer loud." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when a stage runs past its timer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The clock keeps counting up instead of resetting. Dough is ready when it is ready, so Levain waits and tells you how far past the planned time you are." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is baker's percentage calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Percentages update as you edit ingredients, with levain counted as half flour and half water — the standard assumption for a 100% hydration starter." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Levain need an account or an internet connection?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. There is no account and no sign-up, and your recipes, bakes and photos stay on your iPhone." }
     }
-  }
-  </script>
-  <style>
-    .app-landing-wrap { max-width: 980px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
-    .app-hero-header { display: flex; align-items: center; gap: 1.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
-    .app-big-icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 10px 25px rgba(0,0,0,0.12); flex-shrink: 0; }
-    .app-hero-info { flex: 1; min-width: 280px; }
-    .app-badge { display: inline-flex; padding: 0.3rem 0.8rem; background: rgba(0,220,130,0.12); color: #047857; border-radius: 9999px; font-size: 0.82rem; font-weight: 700; margin-bottom: 0.6rem; }
-    .app-main-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; line-height: 1.15; color: #0a0b0e; margin: 0 0 0.5rem; letter-spacing: -0.025em; }
-    .app-hero-sub { font-size: 1.15rem; color: #475569; line-height: 1.6; margin: 0; }
-    .app-cta-row { display: flex; gap: 1rem; margin: 2rem 0 3rem; flex-wrap: wrap; align-items: center; }
-    .btn-app-dl { display: inline-flex; align-items: center; gap: 0.65rem; background: #0a0b0e; color: #ffffff; padding: 0.95rem 1.85rem; border-radius: 100px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: transform 0.15s ease, background 0.15s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-    .btn-app-dl:hover { background: #27272a; transform: translateY(-2px); }
-    .btn-app-dl svg { width: 20px; height: 20px; }
-    .btn-app-back { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.95rem 1.5rem; border-radius: 100px; border: 1.5px solid #e2e8f0; color: #334155; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.15s ease; }
-    .btn-app-back:hover { background: #f8fafc; border-color: #cbd5e1; color: #0f172a; }
-    .app-features-card { background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 2.25rem; box-shadow: 0 4px 16px rgba(15,23,42,0.04); margin-bottom: 3.5rem; }
-    .app-features-card h2 { font-size: 1.45rem; font-weight: 800; color: #0a0b0e; margin: 0 0 1.25rem; }
-    .app-feat-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
-    .app-feat-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 1rem; color: #334155; line-height: 1.6; }
-    .feat-check { width: 20px; height: 20px; color: #059669; flex-shrink: 0; margin-top: 2px; }
-    .app-footer-nav { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e2e8f0; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; color: #64748b; font-size: 0.9rem; }
-    .app-footer-nav a { color: #0f172a; font-weight: 600; text-decoration: none; }
-    .app-footer-nav a:hover { text-decoration: underline; }
-  </style>
+  ]
+}
+</script>
+  <link rel="stylesheet" href="/lang-switcher.css" />
 </head>
+
 <body>
-
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="/ja/" class="nav-brand">
-        <span class="brand-logo-icon">
-          <svg viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="6" fill="#00dc82" />
-            <path d="M8 6.8V17.2H16.2" stroke="#0a0b0e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span class="brand-name">YS Liu Studio</span>
-      </a>
-
-      <div class="nav-cta-wrap">
-        <div class="lang-switcher">
+<div class="wrap" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; padding-bottom: 0.5rem;">
+  <a href="/" style="font-weight: 700; text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 0.5rem;">
+    <svg viewBox="0 0 24 24" fill="none" style="width: 20px; height: 20px;"><rect width="24" height="24" rx="6" fill="#00dc82"/><path d="M8 6.8V17.2H16.2" stroke="#0a0b0e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>YS Liu Studio</span>
+  </a>
+  <div class="lang-switcher">
     <button class="lang-btn" type="button" aria-label="Select Language" aria-expanded="false">
       <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="12" cy="12" r="10"></circle>
@@ -106,71 +119,179 @@
       <a href="/it/levain/" class="lang-opt" data-lang="it">Italiano</a>
     </div>
   </div>
-        <a href="/ja/" class="btn btn-nav">
-          <span>YS Liu Studio</span>
-        </a>
-      </div>
+
+</div>
+
+<header class="hero wrap">
+  <img class="appicon" src="/levain/assets/icon.png" width="112" height="112"
+       alt="The Levain app icon: a rounded sourdough loaf with a small face.">
+  <h1>最高の発酵タイミングを逃さない。</h1>
+  <p class="tagline">The sourdough timer that runs your whole bake.</p>
+  <p>From autolyse to oven: chain every proof and fold into one timeline, with alarms that ring through silent mode and a photo journal of every loaf.</p>
+  <a class="cta" href="https://apps.apple.com/app/apple-store/id6812950497?pt=127596623&amp;ct=site-levain-landing&amp;mt=8">Download on the App Store</a>
+  <span class="cta-note">iPhone &amp; Apple Watch · iOS 26 or later</span>
+</header>
+
+<div class="shots wrap" aria-label="Screenshots of Levain running on iPhone and Apple Watch">
+  <div class="shot-card">
+    <picture>
+      <source srcset="/levain/assets/shots/shot-1.webp" type="image/webp">
+      <img src="/levain/assets/screenshots_localized/ja/shot-1.webp" alt="Multi-stage sourdough bake timeline with active countdown and next-day schedule" width="232" height="502" loading="eager">
+    </picture>
+    <div class="shot-caption">Multi-Stage Timeline</div>
+  </div>
+  <div class="shot-card">
+    <picture>
+      <source srcset="/levain/assets/shots/shot-2.webp" type="image/webp">
+      <img src="/levain/assets/screenshots_localized/ja/shot-2.webp" alt="Levain on Apple Watch for hands-free timers on your wrist" width="232" height="502" loading="lazy">
+    </picture>
+    <div class="shot-caption">Apple Watch Companion</div>
+  </div>
+  <div class="shot-card">
+    <picture>
+      <source srcset="/levain/assets/shots/shot-3.webp" type="image/webp">
+      <img src="/levain/assets/screenshots_localized/ja/shot-3.webp" alt="Custom sourdough recipe builder with rotary timer dial and baker's math" width="232" height="502" loading="lazy">
+    </picture>
+    <div class="shot-caption">Recipe &amp; Ratio Builder</div>
+  </div>
+  <div class="shot-card">
+    <picture>
+      <source srcset="/levain/assets/shots/shot-4.webp" type="image/webp">
+      <img src="/levain/assets/screenshots_localized/ja/shot-4.webp" alt="Visual baking journal on calendar with loaf cutout stickers" width="232" height="502" loading="lazy">
+    </picture>
+    <div class="shot-caption">Visual Baking Journal</div>
+  </div>
+  <div class="shot-card">
+    <picture>
+      <source srcset="/levain/assets/shots/shot-5.webp" type="image/webp">
+      <img src="/levain/assets/screenshots_localized/ja/shot-5.webp" alt="Lock screen Live Activity and loud alarms that cut through silent mode" width="232" height="502" loading="lazy">
+    </picture>
+    <div class="shot-caption">Lock Screen &amp; Loud Alarms</div>
+  </div>
+  <div class="shot-card">
+    <picture>
+      <source srcset="/levain/assets/shots/shot-6.webp" type="image/webp">
+      <img src="/levain/assets/screenshots_localized/ja/shot-6.webp" alt="Bread recipe library for classic sourdough, ciabatta, focaccia and more" width="232" height="502" loading="lazy">
+    </picture>
+    <div class="shot-caption">Complete Bread Library</div>
+  </div>
+  <div class="shot-card">
+    <picture>
+      <source srcset="/levain/assets/shots/shot-7.webp" type="image/webp">
+      <img src="/levain/assets/shots/shot-7.png" alt="Detailed loaf log with hydration percentages and process history" width="232" height="502" loading="lazy">
+    </picture>
+    <div class="shot-caption">Detailed Loaf History</div>
+  </div>
+</div>
+
+<main class="wrap">
+
+<section>
+  <h2>Built for how sourdough is actually baked</h2>
+  <p class="section-lead">Standard kitchen timers count down once. Sourdough takes 24 hours across multiple delicate stages. Here is what Levain solves.</p>
+
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="badge problem-badge">The Problem</div>
+      <p class="card-problem">Kitchen timers only run once. You have to reset alarms for autolyse, 4 folds, shape, and cold proof.</p>
+      <div class="badge solution-badge">How Levain Solves It</div>
+      <h3>One Continuous Schedule</h3>
+      <p class="card-solution">Chain every stage from mix to bake into a single timeline. Shows exact clock times for every step, even crossing midnight.</p>
     </div>
-  </header>
 
-  <main class="app-landing-wrap">
-    <!-- Header -->
-    <div class="app-hero-header">
-      <img src="/levain/assets/icon-180.png" alt="Levain (ルヴァン) Icon" class="app-big-icon" />
-      <div class="app-hero-info">
-        <span class="app-badge">iOS App · YS Liu Studio</span>
-        <h1 class="app-main-title">Levain (ルヴァン)</h1>
-        <p class="app-hero-sub">サワードウ発酵タイマー＆製パンアシスタント</p>
-      </div>
+    <div class="problem-card">
+      <div class="badge problem-badge">The Problem</div>
+      <p class="card-problem">Sleeping through an overnight shape or fold because your phone was on silent or Focus mode.</p>
+      <div class="badge solution-badge">How Levain Solves It</div>
+      <h3>Alarms That Cut Through Silent</h3>
+      <p class="card-solution">Powered by Apple AlarmKit. Alerts ring loud like a real Clock alarm when it matters, with quiet retard alerts overnight.</p>
     </div>
 
-    <!-- CTA Row -->
-    <div class="app-cta-row">
-      <a href="https://apps.apple.com/app/apple-store/id6812950497?pt=127596623&ct=site-levain-ja&mt=8" target="_blank" rel="noopener noreferrer" class="btn-app-dl">
-        <svg viewBox="0 0 170 170" fill="currentColor">
-          <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.77-11.71-14.19-5.78-9.02-10.3-19.34-13.57-30.95-3.26-11.61-4.9-22.75-4.9-33.42 0-14.65 3.7-26.65 11.09-36 7.4-9.35 16.63-14.11 27.69-14.28 5.34 0 11.2 1.34 17.58 4.02 6.38 2.68 10.4 4.07 12.06 4.17 2.05 0 6.39-1.48 13.01-4.44 6.63-2.96 12.19-4.27 16.7-3.92 12.38.83 22.35 5.48 29.9 13.97-10.88 6.59-16.2 15.69-15.96 27.32.25 9.17 3.77 16.96 10.58 23.36 6.8 6.4 14.88 10.02 24.23 10.85-2.22 6.64-4.8 12.96-7.75 18.96zM119.22 31.84c0-7.39 2.67-14.23 8.01-20.52 5.34-6.29 11.89-10.28 19.66-11.97.74 7.73-1.68 14.76-7.25 21.08-5.57 6.32-12.37 10.12-20.42 11.41z"/>
-        </svg>
-        <span>App Store で Levain を入手</span>
-      </a>
-
-      <a href="/ja/" class="btn-app-back">
-        <span>← YS Liu Studio トップへ</span>
-      </a>
+    <div class="problem-card">
+      <div class="badge problem-badge">The Problem</div>
+      <p class="card-problem">Hands covered in flour and wet dough make unlocking your phone messy and inconvenient.</p>
+      <div class="badge solution-badge">How Levain Solves It</div>
+      <h3>Apple Watch &amp; Live Activity</h3>
+      <p class="card-solution">Glance at remaining time and step numbers right on your wrist or Lock Screen. Haptic taps notify you without touching your phone.</p>
     </div>
 
-    <!-- Features Card -->
-    <div class="app-features-card">
-      <h2>Key Features</h2>
-      <ul class="app-feat-list">
-        <li class="app-feat-item">
-          <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          <div><strong>ステップ連続タイマー:</strong> オートリーズから焼成までを一つの時間軸で管理。毎回手動でタイマーをセットし直す必要はありません。</div>
-        </li>
-        <li class="app-feat-item">
-          <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          <div><strong>マナーモード貫通アラーム:</strong> Critical Alert（重大な通知）に対応。端末がサイレントモードや集中モードでも確実にアラームを鳴らします。</div>
-        </li>
-        <li class="app-feat-item">
-          <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          <div><strong>ライブアクティビティ＆Dynamic Island:</strong> 画面をロックしたままでも、次の折りたたみ時間や現在の発酵残り時間をひと目で確認できます。</div>
-        </li>
-        <li class="app-feat-item">
-          <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          <div><strong>ベーカーズパーセント＆写真日誌:</strong> 加水率の正確な計算と、焼き上がったパンの断面・気泡の写真を記録してマイレシピを進化させましょう。</div>
-        </li>
-      </ul>
+    <div class="problem-card">
+      <div class="badge problem-badge">The Problem</div>
+      <p class="card-problem">Dough ferments faster on warm days and slower on cold days. Timers resetting to zero cause confusion.</p>
+      <div class="badge solution-badge">How Levain Solves It</div>
+      <h3>Over-Time Tracking</h3>
+      <p class="card-solution">When a stage ends, the timer counts up instead of resetting. You always know exactly how far past target your dough has fermented.</p>
     </div>
 
-    <!-- Footer -->
-    <footer class="app-footer-nav">
-      <div>© 2026 YS Liu Studio. All rights reserved.</div>
-      <div style="display: flex; gap: 1.5rem;">
-        <a href="/levain/privacy.html">Privacy Policy</a>
-        <a href="/ja/">YS Liu Studio Home</a>
-      </div>
-    </footer>
-  </main>
+    <div class="problem-card">
+      <div class="badge problem-badge">The Problem</div>
+      <p class="card-problem">Calculating starter hydration manually and forgetting which adjustments produced your best loaf.</p>
+      <div class="badge solution-badge">How Levain Solves It</div>
+      <h3>Baker's Math &amp; Photo Journal</h3>
+      <p class="card-solution">Live baker's percentage with 50/50 starter split. Log bakes with automatic loaf cutout stickers and timeline snapshots.</p>
+    </div>
 
+    <div class="problem-card">
+      <div class="badge problem-badge">The Problem</div>
+      <p class="card-problem">Cloud-dependent apps require logins, track private data, or fail without Wi-Fi in the kitchen.</p>
+      <div class="badge solution-badge">How Levain Solves It</div>
+      <h3>100% Private &amp; Offline</h3>
+      <p class="card-solution">No account, no sign-up, no analytics tracking. All recipes, logs, and photos stay entirely on your device.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Questions</h2>
+
+  <details>
+    <summary>Will the alarms wake me during an overnight proof?</summary>
+    <p>Yes. Stage alerts use AlarmKit, so they ring through silent mode and Focus the way a
+       Clock alarm does. Loud alarms are set per stage, so you can keep the overnight cold
+       retard quiet and make the oven timer loud.</p>
+  </details>
+
+  <details>
+    <summary>What happens when a stage runs past its timer?</summary>
+    <p>The clock keeps counting up instead of resetting. Dough is ready when it is ready, so
+       Levain waits and tells you how far past the planned time you are.</p>
+  </details>
+
+  <details>
+    <summary>Does Levain need an account or an internet connection?</summary>
+    <p>No. There is no account and no sign-up, and your recipes, bakes and photos stay on
+       your iPhone. Details are in the <a href="privacy.html">プライバシーポリシー</a>.</p>
+  </details>
+
+  <details>
+    <summary>How is baker's percentage calculated?</summary>
+    <p>Percentages update as you edit ingredients, with levain counted as half flour and
+       half water — the standard assumption for a 100% hydration starter.</p>
+  </details>
+</section>
+
+<section>
+  <h2>Get Levain</h2>
+  <p>Available on iPhone and Apple Watch. Ready to bake when you are.</p>
+  <p><a class="cta" href="https://apps.apple.com/app/apple-store/id6812950497?pt=127596623&amp;ct=site-levain-landing&amp;mt=8">Download on the App Store</a></p>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="privacy.html">プライバシーポリシー</a> ·
+      <a href="terms.html">Terms of Use</a> ·
+      <a href="support.html">サポート</a>
+    </nav>
+    <p>Questions? <a href="mailto:liuys614@gmail.com">liuys614@gmail.com</a></p>
+    <p>Made by an independent developer. Not affiliated with Apple Inc.</p>
+    <p>&copy; 2026 Levain</p>
+  </div>
+</footer>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f06b65322f34626b2e5688ab29fd1df"}'></script>
   <script src="/lang-switcher.js" defer></script>
 </body>
 </html>

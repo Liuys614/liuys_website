@@ -6,6 +6,25 @@ import { PROFILE, APPS } from "./apps-data.js";
 let currentLightboxApp = null;
 let currentLightboxIndex = 0;
 
+function getCurrentLocalePrefix() {
+  const match = window.location.pathname.match(/^\/(zh-tw|de|fr|ja|ko|es|it)(\/|$)/);
+  return match ? `/${match[1]}` : "";
+}
+
+function localizeInternalUrl(url) {
+  if (!url || url.startsWith("http://") || url.startsWith("https://") || url.startsWith("#") || url.startsWith("mailto:")) {
+    return url;
+  }
+  const prefix = getCurrentLocalePrefix();
+  if (!prefix) return url;
+  const clean = url.replace(/^\/+/, "");
+  if (clean.startsWith("zh-tw/") || clean.startsWith("de/") || clean.startsWith("fr/") || 
+      clean.startsWith("ja/") || clean.startsWith("ko/") || clean.startsWith("es/") || clean.startsWith("it/")) {
+    return url;
+  }
+  return `${prefix}/${clean}`;
+}
+
 // ============================================================================
 // DOM Elements
 // ============================================================================
@@ -132,8 +151,10 @@ function renderProjects() {
                   </a>
                 `;
               } else {
+                const siteUrl = localizeInternalUrl(link.url);
+                const isInternal = link.url.startsWith("/");
                 return `
-                  <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn-site-link">
+                  <a href="${siteUrl}" ${isInternal ? "" : 'target="_blank" rel="noopener noreferrer"'} class="btn-site-link">
                     <span>${link.label}</span>
                     ${ICONS.externalLink}
                   </a>

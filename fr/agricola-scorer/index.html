@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agricola Fiche de Score — Calculateur de Points & Règles Complètes</title>
-  <meta name="description" content="L'outil de décompte indispensable pour le jeu de société Agricola. Gérez cultures, élevage, aménagements et cartes mendicité en toute simplicité." />
-  <link rel="canonical" href="https://ysliustudio.com/fr/agricola-scorer/" />
-  <link rel="alternate" hreflang="x-default" href="https://ysliustudio.com/agricola-scorer/" />
+  <link rel="canonical" href="https://ysliustudio.com/fr/agricola-scorer/">
+    <link rel="alternate" hreflang="x-default" href="https://ysliustudio.com/agricola-scorer/" />
   <link rel="alternate" hreflang="en" href="https://ysliustudio.com/agricola-scorer/" />
   <link rel="alternate" hreflang="zh-TW" href="https://ysliustudio.com/zh-tw/agricola-scorer/" />
   <link rel="alternate" hreflang="de" href="https://ysliustudio.com/de/agricola-scorer/" />
@@ -15,75 +11,112 @@
   <link rel="alternate" hreflang="ko" href="https://ysliustudio.com/ko/agricola-scorer/" />
   <link rel="alternate" hreflang="es" href="https://ysliustudio.com/es/agricola-scorer/" />
   <link rel="alternate" hreflang="it" href="https://ysliustudio.com/it/agricola-scorer/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Agricola Fiche de Score — Calculateur de Points & Règles Complètes" />
-  <meta property="og:description" content="L'outil de décompte indispensable pour le jeu de société Agricola. Gérez cultures, élevage, aménagements et cartes mendicité en toute simplicité." />
-  <meta property="og:url" content="https://ysliustudio.com/fr/agricola-scorer/" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta name="apple-itunes-app" content="app-id=6741305872, affiliate-data=pt=127596623&ct=site-agricola-scorer-fr, app-argument=https://ysliustudio.com/fr/agricola-scorer/">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricola Scorer — Feuille de Marque Numérique pour le Jeu Agricola</title>
+    <meta name="apple-itunes-app" content="app-id=6741305872">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        h1, h2 {
+            color: #336633;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-button {
+            background-color: #f1f1f1;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 20px;
+            margin-right: 5px;
+            font-size: 16px;
+            transition: 0.3s;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        
+        .tab-button.active {
+            background-color: #336633;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+            animation: fadeEffect 1s;
+        }
+        
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        .category {
+            margin-bottom: 15px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .app-features {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .download-button {
+            display: block;
+            background-color: #336633;
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 30px auto;
+            max-width: 200px;
+        }
+        
+        .download-button:hover {
+            background-color: #264d26;
+        }
+    </style>
   <link rel="stylesheet" href="/lang-switcher.css" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Agricola Scorer (Calculateur de Score)",
-    "operatingSystem": "iOS",
-    "applicationCategory": "UtilitiesApplication",
-    "url": "https://ysliustudio.com/fr/agricola-scorer/",
-    "downloadUrl": "https://apps.apple.com/app/apple-store/id6741305872?pt=127596623&ct=site-agricola-scorer-fr&mt=8",
-    "description": "L'outil de décompte indispensable pour le jeu de société Agricola. Gérez cultures, élevage, aménagements et cartes mendicité en toute simplicité.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  </script>
-  <style>
-    .app-landing-wrap { max-width: 980px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
-    .app-hero-header { display: flex; align-items: center; gap: 1.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
-    .app-big-icon { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 10px 25px rgba(0,0,0,0.12); flex-shrink: 0; }
-    .app-hero-info { flex: 1; min-width: 280px; }
-    .app-badge { display: inline-flex; padding: 0.3rem 0.8rem; background: rgba(0,220,130,0.12); color: #047857; border-radius: 9999px; font-size: 0.82rem; font-weight: 700; margin-bottom: 0.6rem; }
-    .app-main-title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; line-height: 1.15; color: #0a0b0e; margin: 0 0 0.5rem; letter-spacing: -0.025em; }
-    .app-hero-sub { font-size: 1.15rem; color: #475569; line-height: 1.6; margin: 0; }
-    .app-cta-row { display: flex; gap: 1rem; margin: 2rem 0 3rem; flex-wrap: wrap; align-items: center; }
-    .btn-app-dl { display: inline-flex; align-items: center; gap: 0.65rem; background: #0a0b0e; color: #ffffff; padding: 0.95rem 1.85rem; border-radius: 100px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: transform 0.15s ease, background 0.15s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-    .btn-app-dl:hover { background: #27272a; transform: translateY(-2px); }
-    .btn-app-dl svg { width: 20px; height: 20px; }
-    .btn-app-back { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.95rem 1.5rem; border-radius: 100px; border: 1.5px solid #e2e8f0; color: #334155; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.15s ease; }
-    .btn-app-back:hover { background: #f8fafc; border-color: #cbd5e1; color: #0f172a; }
-    .app-features-card { background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 2.25rem; box-shadow: 0 4px 16px rgba(15,23,42,0.04); margin-bottom: 3.5rem; }
-    .app-features-card h2 { font-size: 1.45rem; font-weight: 800; color: #0a0b0e; margin: 0 0 1.25rem; }
-    .app-feat-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
-    .app-feat-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 1rem; color: #334155; line-height: 1.6; }
-    .feat-check { width: 20px; height: 20px; color: #059669; flex-shrink: 0; margin-top: 2px; }
-    .app-footer-nav { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e2e8f0; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; color: #64748b; font-size: 0.9rem; }
-    .app-footer-nav a { color: #0f172a; font-weight: 600; text-decoration: none; }
-    .app-footer-nav a:hover { text-decoration: underline; }
-  </style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="/fr/" class="nav-brand">
-        <span class="brand-logo-icon">
-          <svg viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="6" fill="#00dc82" />
-            <path d="M8 6.8V17.2H16.2" stroke="#0a0b0e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span class="brand-name">YS Liu Studio</span>
-      </a>
-
-      <div class="nav-cta-wrap">
-        <div class="lang-switcher">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+  <a href="/" style="font-weight: bold; text-decoration: none; color: #336633;">← YS Liu Studio</a>
+  <div class="lang-switcher">
     <button class="lang-btn" type="button" aria-label="Select Language" aria-expanded="false">
       <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="12" cy="12" r="10"></circle>
@@ -106,79 +139,124 @@
       <a href="/it/agricola-scorer/" class="lang-opt" data-lang="it">Italiano</a>
     </div>
   </div>
-        <a href="/fr/" class="btn btn-nav">
-          <span>YS Liu Studio</span>
-        </a>
-      </div>
+
+</div>
+    <h1>Calculez vos points Agricola<br>en un clin d'œil.</h1>
+    
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'AppDescription')">App Description</button>
+        <button class="tab-button" onclick="openTab(event, 'PrivacyPolicy')">Confidentialité</button>
     </div>
-  </header>
+    
+    <!-- App Description Tab -->
+    <div id="AppDescription" class="tab-content" style="display: block;">
+        <h2>The Ultimate Scoring Tool for Agricola Board Game</h2>
+        
+        <p>Agricola Scorer is a simple yet powerful tool designed specifically for Agricola board game enthusiasts. Say goodbye to manual calculations and score sheet errors!</p>
+        
+        <div class="app-features">
+            <h3>Key Features:</h3>
+            <ul>
+                <li>Easy and intuitive scoring for all Agricola game categories</li>
+                <li>Support for both Family Game and Standard Game scoring</li>
+                <li>Save and track your game history</li>
+                <li>Compare scores with friends</li>
+                <li>Statistics to track your improvement over time</li>
+                <li>Clean, user-friendly interface</li>
+            </ul>
+        </div>
+        
+        <p>Whether you're a casual player or a serious Agricola competitor, this app will enhance your gaming experience by making the scoring process quick, accurate, and hassle-free.</p>
+        
+        <p>Available for iPhone and iPad.</p>
+        
+        <a href="https://apps.apple.com/app/apple-store/id6741305872?pt=127596623&amp;ct=site-agricola-scorer-landing&amp;mt=8" class="download-button">Download on the App Store</a>
+    </div>
+    
+    <!-- Privacy Policy Tab -->
+    <div id="PrivacyPolicy" class="tab-content">
+        <h2>Confidentialité</h2>
+        <p><strong>Effective Date:</strong> March 1, 2024</p>
 
-  <main class="app-landing-wrap">
-    <!-- Header -->
-    <div class="app-hero-header">
-      <img src="/images/icons/agricola.png" alt="Agricola Scorer (Calculateur de Score) Icon" class="app-big-icon" />
-      <div class="app-hero-info">
-        <span class="app-badge">iOS App · YS Liu Studio</span>
-        <h1 class="app-main-title">Agricola Scorer (Calculateur de Score)</h1>
-        <p class="app-hero-sub">Le compagnon idéal pour Agricola — Fini les erreurs de calcul manuel en fin de partie</p>
-      </div>
+        <h3>1. Introduction</h3>
+        <p>This Privacy Policy describes how YI-SHIH LIU ("we," "us," or "our") collects, uses, and shares information when you use the Agricola Scorer mobile application (the "App"). We are committed to protecting your privacy.</p>
+
+        <h3>2. Information We Collect</h3>
+        <ul>
+          <li><strong>User-Entered Data:</strong>
+            <p>We collect the Agricola game scores and related information you enter into the App, including category scores and game logs.</p>
+          </li>
+          <li><strong>Usage Data:</strong>
+            <p>We may collect information about how you use the App, such as the features you use and the frequency of use.</p>
+          </li>
+          <li><strong>Device Information:</strong>
+            <p>We may collect information about the device information, such as device type, operating system, etc.</p>
+          </li>
+        </ul>
+
+        <h3>3. How We Use Your Information</h3>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Provide and maintain the App's functionality, including score calculation and history tracking.</li>
+          <li>Improve the App's features and user experience.</li>
+        </ul>
+
+        <h3>4. Data Storage and Security</h3>
+        <p>We store your game score data on our server side.</p>
+        <p>We take reasonable measures to protect your data from unauthorized access, use, or disclosure.</p>
+        <p>We retain your score data indefinitely. This allows you to track your progress and achievements over time without limitation. However, you may request deletion of your score data at any time by contacting us through app feedback form. Upon receiving your request, we will promptly delete all of your score data from our systems.</p>
+
+        <h3>5. User Rights and Choices</h3>
+        <p>You can access, review, and edit your game score data within the App's history log.</p>
+        <p>You can delete individual game logs or clear your entire game history within the App.</p>
+
+        <h3>6. Children's Privacy</h3>
+        <p>Our App is not intended for children under 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete it.</p>
+
+        <h3>7. Third-Party Services</h3>
+        <p>We use Google Firebase for our app's infrastructure. Firebase collects and processes the following data:</p>
+        <ul>
+          <li>User authentication information (if you use our login features)</li>
+          <li>App performance data including crash reports</li>
+          <li>User score data and app usage analytics</li>
+          <li>Device information (such as device model, operating system version, and unique device identifiers)</li>
+        </ul>
+        <p>This data helps us improve our app, fix technical issues, and enhance your experience. Firebase's data collection and processing are governed by Google's Privacy Policy, which you can review at <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>, and the Firebase Terms of Service available at <a href="https://firebase.google.com/terms">https://firebase.google.com/terms</a>.</p>
+            
+        <h3>8. Changes to This Privacy Policy</h3>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+        <p>You are advised to review this Privacy Policy periodically for any changes.</p>
+
+        <h3>9. This website</h3>
+        <p>This site uses Cloudflare Web Analytics, which is cookieless and collects aggregate traffic data.</p>
+
+        <h3>10. Contact Us</h3>
+        <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+        <p><a href="mailto:liuys614@gmail.com">liuys614@gmail.com</a></p>
     </div>
 
-    <!-- CTA Row -->
-    <div class="app-cta-row">
-      <a href="https://apps.apple.com/app/apple-store/id6741305872?pt=127596623&ct=site-agricola-scorer-fr&mt=8" target="_blank" rel="noopener noreferrer" class="btn-app-dl">
-        <svg viewBox="0 0 170 170" fill="currentColor">
-          <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.77-11.71-14.19-5.78-9.02-10.3-19.34-13.57-30.95-3.26-11.61-4.9-22.75-4.9-33.42 0-14.65 3.7-26.65 11.09-36 7.4-9.35 16.63-14.11 27.69-14.28 5.34 0 11.2 1.34 17.58 4.02 6.38 2.68 10.4 4.07 12.06 4.17 2.05 0 6.39-1.48 13.01-4.44 6.63-2.96 12.19-4.27 16.7-3.92 12.38.83 22.35 5.48 29.9 13.97-10.88 6.59-16.2 15.69-15.96 27.32.25 9.17 3.77 16.96 10.58 23.36 6.8 6.4 14.88 10.02 24.23 10.85-2.22 6.64-4.8 12.96-7.75 18.96zM119.22 31.84c0-7.39 2.67-14.23 8.01-20.52 5.34-6.29 11.89-10.28 19.66-11.97.74 7.73-1.68 14.76-7.25 21.08-5.57 6.32-12.37 10.12-20.42 11.41z"/>
-        </svg>
-        <span>Télécharger sur l'App Store</span>
-      </a>
-
-      <a href="/fr/" class="btn-app-back">
-        <span>← Retour à YS Liu Studio</span>
-      </a>
-    </div>
-
-    <!-- Features Card -->
-    <div class="app-features-card">
-      <h2>Fonctionnalités clés :</h2>
-      <ul class="app-feat-list">
-        <li class="app-feat-item">
-          <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          <span>Calcul intuitif de toutes les catégories (champs, pâturages, animaux, céréales)</span>
-        </li>
-        <li class="app-feat-item">
-          <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          <span>Support complet des règles du jeu Standard et du jeu Familial</span>
-        </li>
-        <li class="app-feat-item">
-          <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          <span>Sauvegarde et historique complet de toutes vos parties</span>
-        </li>
-        <li class="app-feat-item">
-          <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          <span>Comparaison détaillée des scores entre joueurs</span>
-        </li>
-        <li class="app-feat-item">
-          <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          <span>Statistiques d'évolution pour mesurer votre progression</span>
-        </li>
-        <li class="app-feat-item">
-          <svg class="feat-check" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          <span>Interface épurée et agréable, optimisée pour iPhone et iPad</span>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Footer -->
-    <footer class="app-footer-nav">
-      <div>© 2026 YS Liu Studio. All rights reserved.</div>
-      <div style="display: flex; gap: 1.5rem;">
-        <a href="/agricola-scorer/privacy.html">Privacy Policy</a>
-        <a href="/fr/">YS Liu Studio Home</a>
-      </div>
-    </footer>
-  </main>
-
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            
+            // Hide all tab content
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            
+            // Remove "active" class from all tab buttons
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            
+            // Show the current tab and add "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5f06b65322f34626b2e5688ab29fd1df"}'></script>
   <script src="/lang-switcher.js" defer></script>
 </body>
 </html>
