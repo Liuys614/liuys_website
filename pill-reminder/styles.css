@@ -67,20 +67,20 @@ img { display: block; max-width: 100%; }
 
 .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
-.brand { display: inline-flex; align-items: center; gap: 11px; font-size: 0.95rem; font-weight: 760; letter-spacing: -0.015em; text-decoration: none; }
+.brand { display: inline-flex; align-items: center; gap: 11px; font-size: 0.95rem; font-weight: 760; letter-spacing: -0.015em; text-decoration: none; white-space: nowrap; }
 .brand img { width: 36px; height: 36px; border-radius: 10px; box-shadow: 0 4px 14px rgba(33, 42, 53, 0.16); outline: 1px solid rgba(0, 0, 0, 0.08); }
 
-.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links { display: flex; align-items: center; gap: clamp(2px, 0.6vw, 6px); flex-shrink: 0; }
 .nav-links a {
-  min-height: 42px; display: inline-flex; align-items: center; padding: 0 13px;
-  border-radius: 12px; color: var(--muted); font-size: 0.88rem; font-weight: 650;
-  text-decoration: none; transition: color 180ms ease, background-color 180ms ease;
+  min-height: 42px; display: inline-flex; align-items: center; padding: 0 11px;
+  border-radius: 12px; color: var(--muted); font-size: clamp(0.78rem, 0.86vw, 0.88rem); font-weight: 650;
+  text-decoration: none; white-space: nowrap; transition: color 180ms ease, background-color 180ms ease;
 }
 .nav-links a:hover { color: var(--ink); background: var(--nav-hover); }
 
 .nav-download {
   margin-left: 7px; background: var(--brand); color: var(--on-brand) !important;
-  padding: 0 18px !important; border-radius: 12px;
+  padding: 0 16px !important; border-radius: 12px; white-space: nowrap;
 }
 .nav-download:hover { background: var(--brand-dark); }
 .nav-download.is-disabled { background: var(--paper-deep); color: var(--muted) !important; cursor: default; }
@@ -140,8 +140,14 @@ img { display: block; max-width: 100%; }
   filter: blur(2px);
 }
 .hero-phone {
-  position: relative; width: min(320px, 78vw); height: auto; border-radius: 34px; box-shadow: var(--shadow);
-  outline: 8px solid var(--phone-outline); outline-offset: -1px;
+  position: relative;
+  width: min(340px, 80vw);
+  height: auto;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  filter: drop-shadow(0 32px 72px rgba(27, 43, 65, 0.25)) drop-shadow(0 10px 24px rgba(27, 43, 65, 0.14));
 }
 
 /* Proof strip */

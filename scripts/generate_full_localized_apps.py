@@ -314,7 +314,13 @@ def replace_screenshots_for_locale(html, app, locale):
     available_files = os.listdir(loc_shot_dir)
     
     if app == 'quit-vaping':
-        if 'hero-today-recovery-raw.webp' in available_files:
+        if 'hero-today.webp' in available_files:
+            html = re.sub(
+                rf'/{app}/assets/screens/hero-today-recovery\.webp',
+                f'/{app}/assets/screenshots_localized/{locale}/hero-today.webp',
+                html
+            )
+        elif 'hero-today-recovery-raw.webp' in available_files:
             html = re.sub(
                 rf'/{app}/assets/screens/hero-today-recovery\.webp',
                 f'/{app}/assets/screenshots_localized/{locale}/hero-today-recovery-raw.webp',
@@ -329,10 +335,16 @@ def replace_screenshots_for_locale(html, app, locale):
                 )
 
     elif app == 'alcohol-free-tracker':
-        if 'hero-today-raw.webp' in available_files:
+        if 'hero-today.webp' in available_files:
             html = re.sub(
                 rf'/{app}/assets/screens/06-today-light\.webp',
-                f'/{app}/assets/screenshots_localized/{locale}/hero-today-raw.webp',
+                f'/{app}/assets/screenshots_localized/{locale}/hero-today.webp',
+                html
+            )
+        if 'privacy-phone.webp' in available_files:
+            html = re.sub(
+                rf'/{app}/assets/screens/body-recovery-phone\.webp',
+                f'/{app}/assets/screenshots_localized/{locale}/privacy-phone.webp',
                 html
             )
         for f in available_files:
@@ -344,10 +356,10 @@ def replace_screenshots_for_locale(html, app, locale):
                 )
 
     elif app == 'pill-reminder':
-        if 'hero-home-raw.webp' in available_files:
+        if 'hero-home.webp' in available_files:
             html = re.sub(
                 rf'/{app}/assets/screens/hero-home\.webp',
-                f'/{app}/assets/screenshots_localized/{locale}/hero-home-raw.webp',
+                f'/{app}/assets/screenshots_localized/{locale}/hero-home.webp',
                 html
             )
         for f in available_files:
@@ -359,10 +371,10 @@ def replace_screenshots_for_locale(html, app, locale):
                 )
 
     elif app == 'quit-weed':
-        if 'hero-today-recovery-raw.webp' in available_files:
+        if 'hero-today.webp' in available_files:
             html = re.sub(
                 rf'/{app}/assets/screens/hero-today-recovery\.webp',
-                f'/{app}/assets/screenshots_localized/{locale}/hero-today-recovery-raw.webp',
+                f'/{app}/assets/screenshots_localized/{locale}/hero-today.webp',
                 html
             )
         for f in available_files:

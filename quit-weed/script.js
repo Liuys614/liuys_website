@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clarity: 25,
       blurPx: 1.1,
       fogOpacity: 0.32,
-      img: 'assets/recovery/24h.webp',
+      img: '/quit-weed/assets/recovery/24h.webp',
       quote: '"First 24h: Blood oxygen normalizes while residual THC begins clearing."'
     },
     {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clarity: 42,
       blurPx: 0.6,
       fogOpacity: 0.2,
-      img: 'assets/recovery/48h.webp',
+      img: '/quit-weed/assets/recovery/48h.webp',
       quote: '"48 hours THC-free: PET scans show CB1 cannabinoid receptors begin rebuilding."'
     },
     {
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clarity: 68,
       blurPx: 0.2,
       fogOpacity: 0.1,
-      img: 'assets/recovery/7d.webp',
+      img: '/quit-weed/assets/recovery/7d.webp',
       quote: '"Day 7: Deep REM sleep rebounds strongly—vivid dreams and overnight memory return."'
     },
     {
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clarity: 86,
       blurPx: 0,
       fogOpacity: 0.03,
-      img: 'assets/recovery/14d.webp',
+      img: '/quit-weed/assets/recovery/14d.webp',
       quote: '"Day 14: Verbal recall, focus, and morning energy stabilize near baseline."'
     },
     {
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clarity: 100,
       blurPx: 0,
       fogOpacity: 0,
-      img: 'assets/recovery/30d.webp',
+      img: '/quit-weed/assets/recovery/30d.webp',
       quote: '"Day 28: Full CB1 receptor density restored across cortex and hippocampus!"'
     }
   ];

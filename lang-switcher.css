@@ -23,6 +23,7 @@
   transition: all 0.15s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   line-height: 1;
+  white-space: nowrap;
 }
 
 .lang-btn:hover,
@@ -94,6 +95,7 @@
   color: #334155;
   text-decoration: none;
   transition: all 0.12s ease;
+  white-space: nowrap;
 }
 
 .lang-opt:hover {

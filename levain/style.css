@@ -251,7 +251,7 @@ footer {
   color: var(--faint);
 }
 footer nav { margin-bottom: 1em; }
-footer nav a { margin: 0 .55em; font-weight: 600; }
+footer nav a { margin: 0 .55em; font-weight: 600; white-space: nowrap; }
 footer p { margin: .35em 0; }
 
 /* --- small screens --------------------------------------------------------- */
