@@ -88,6 +88,9 @@ python3 scripts/master_daily_pipeline.py --recommend
    * 每篇嚴格控制在 **750～1,150 字** 的高密度結構：首段 50 字必須給出定量結論（`guide-callout` TL;DR Answer Box），內文至少 40% 價值來自 **結構化數據對照表、劑量/溫度/計分矩陣或互動式計算器連結**。
 4. **Accurate Sitemap `lastmod`（誠實時間戳記）**：
    * 各 App 的 `sitemap.xml` 與主站 `sitemap.xml` 僅在文章實際新增或修改 (`updated_date`) 時更新 `lastmod`，絕不每日偽造全站 `lastmod = today`。
+5. **Multi-Market i18n Synchronization（多國語系自動同步編譯）**：
+   * 每日 `--build` 時自動聯動 `scripts/build_i18n.py` 與 `scripts/generate_full_localized_apps.py`，同步編譯 7 大目標市場（`zh-tw` 繁中、`de` 德語、`fr` 法語、`ja` 日語、`ko` 韓語、`es` 西語、`it` 義語）的 56 款 App 落地頁與工作室首頁，並生成全站 138+ 網址的雙向 8 語系 `xhtml:link rel="alternate" hreflang` Sitemap，確保國際搜尋引擎流量完整覆蓋。
+
 
 ---
 
