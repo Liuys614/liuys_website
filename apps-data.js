@@ -354,7 +354,7 @@ export const APPS = [
     "title": "Alcohol Free Tracker",
     "category": "Lifestyle & Wellness",
     "year": "2026",
-    "tagline": "Mindful Sobriety & Habit Milestone Companion",
+    "tagline": "CalmDry — Mindful Sobriety & Habit Milestone Companion",
     "description": "Track your sobriety streak in real-time, celebrate health and financial milestones, and reflect in a private, distraction-free journal.",
     "icon": "/images/icons/alcohol.png",
     "accent": "#10b981",
