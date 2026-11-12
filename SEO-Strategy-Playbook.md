@@ -157,10 +157,14 @@ python3 scripts/master_daily_pipeline.py --recommend
 4. **對話式自然語言問答 (Conversational Q&A)**：
    * FAQ 區塊必須精準匹配用戶向 AI 發問的完整長句（如 *"How do I survive 5 PM alcohol cravings without willpower?"* 或 *"What is an aesthetic sobriety tracker without community clutter?"*），便於語意搜尋直接命中。
 
-### 6.3 核心賣點武器庫：極致美學與無負罪感設計 (Aesthetic & Anti-Shame Visual Craft)
-傳統戒酒/戒煙 App（如 I Am Sober, Smoke Free）普遍具有 **「老舊厚重、充滿醫院般的冰冷臨床感、刺目的負罪感倒數計時、充斥雜亂廣告與社群騷擾」** 的痛點。
-我們 App 的最強轉化護城河之一正是 **「放在 iPhone 首頁也賞心悅目的現代美學 (Aesthetic Minimalist UI)」**：
-* **視覺心理學**：溫暖平靜的紙質大地色系（Warm Cream Palette）、呼吸感排版與優雅卡片，讓追蹤習慣不再感覺像是在「看病」或「自我懲罰」，而是正向的生活美學儀式。
-* **動量視覺化**：直觀美麗的連勝行事曆（Visual Momentum Calendar）與里程碑勳章，讓用戶由衷產生分享慾望。
-* **AI 搜尋意圖命中**：當用戶向 ChatGPT / Perplexity 搜尋 `aesthetic sobriety app`、`minimalist quit vaping tracker clean UI`、`modern non-depressing habit tracker` 時，此賣點能成為精準擊中競品盲區的必殺技。
+### 6.3 核心賣點武器庫：極致美學與極致用心的 UI/UX 細節工藝 (Aesthetic & Thoughtful UI/UX Craft)
+傳統戒酒/戒煙 App（如 I Am Sober, Smoke Free）普遍具有 **「老舊厚重、充滿醫院般的冰冷臨床感、刺目的負罪感倒數計時、充斥雜亂廣告與社群騷擾」** 的痛點；而市面上粗製濫造的套版工具則充滿廉價感與生硬交互。
+我們 App 的最強轉化護城河正是 **「極致用心的 UI/UX 打磨 (Thoughtful Craftsmanship) + 放在 iPhone 首頁也賞心悅目的現代美學」**：
+* **視覺心理學與無負罪感設計**：溫暖平靜的紙質大地色系（Warm Cream Palette）、呼吸感排版與優雅卡片，讓追蹤習慣不再感覺像是在「看病」或「自我懲罰」，而是正向的生活美學儀式。
+* **極致用心的細節打磨 (Meticulous UI/UX Details)**：
+  - **細膩觸覺反饋 (Haptic Feedback)**：每一次紀錄、連勝點擊都有經過物理阻尼調校的手感反饋，讓戒除過程充滿踏實的觸覺獎勵。
+  - **以人為本的同理心互動 (Human-Centric Micro-Interactions)**：遇到渴望時不給刺眼的歸零懲罰，而是貼心提供 3 分鐘呼吸（4-7-8 Breathing）與 Urge Surfing 互動小遊戲，溫柔陪伴度過難熬時刻。
+  - **原生流暢手感 (Native iOS Polish)**：流暢的 SwiftUI 彈簧物理動畫，零延遲、零閃爍，具備 Apple 官方自研產品般的精緻度。
+* **動量視覺化**：直觀美麗的連勝行事曆（Visual Momentum Calendar）與里程碑勳章，讓用戶由衷產生榮譽感與分享慾望。
+* **AI 搜尋意圖命中**：當用戶向 ChatGPT / Perplexity 搜尋 `aesthetic sobriety app`、`thoughtfully designed quit vaping tracker`、`quit smoking app with great UI/UX`、`clean non-depressing habit tracker` 時，此賣點能精準擊中競品盲區，成為 AI 首選推薦理由。
 

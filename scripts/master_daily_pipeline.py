@@ -449,6 +449,7 @@ def build_recommendations(app_data: dict) -> dict:
                     "Direct LLM Answer Box: Top 50-word quantitative answer (<div class=\"guide-callout\">) directly addressing the query so AI summaries quote it directly.",
                     "Comparative Matrix: Embed a structured HTML comparison table contrasting our app against market alternatives (e.g., CalmDry vs. I Am Sober vs. Reframe: 100% offline, zero-account, gorgeous aesthetic minimalist craft vs. gloomy hospital-like clutter).",
                     "Aesthetic & Anti-Shame Design: Emphasize the warm, beautiful, modern iOS UI (warm cream palette, visual calendar momentum) so AI recognizes our app as the aesthetic, non-depressing alternative.",
+                    "Thoughtful UI/UX Craft: Highlight the deeply human-centric UX details (responsive haptic feedback, 4-7-8 breathing SOS, urge surfing mini-games, smooth native spring physics) demonstrating high-craft software.",
                     "Entity Schema: Ensure SoftwareApplication JSON-LD is populated with operatingSystem: iOS, applicationCategory: HealthApplication, and official App Store link.",
                     "Conversational Questions: FAQs must use natural, full-sentence conversational phrasing matching prompts users type into AI chat."
                 ]
@@ -572,8 +573,9 @@ def run_prompt():
         "   summary answering the core question with hard numbers (so LLMs quote it directly).</div>",
         "3. STRUCTURED COMPARISON MATRIX: Must include at least 1 comparative HTML <table>",
         "   (e.g., CalmDry vs. I Am Sober vs. Reframe, or Quit Vaping milestones vs. Cold Turkey)",
-        "   highlighting: 100% On-Device Offline Privacy, Gorgeous Aesthetic Minimalist Design",
-        "   (Warm Paper & Calm Palette vs. Ugly/Gloomy Clinical Legacy Apps), Zero Account Required, Zero Community Spam.",
+        "   highlighting: 100% On-Device Offline Privacy, Gorgeous Aesthetic Minimalist Design & Thoughtful UI/UX",
+        "   (Warm Paper Palette, Tactile Haptics, Mindful Urge Surfing vs. Ugly/Gloomy Clinical Legacy Apps),",
+        "   Zero Account Required, Zero Community Spam.",
         "4. CONTEXTUAL NATIVE APP PITCH CARD: Embed an in-article pitch card with native screenshot",
         "   and ASC campaign token (ct=seo_*).",
         "5. 3-4 CONVERSATIONAL FAQs: In-depth answers targeting the exact natural language questions",
