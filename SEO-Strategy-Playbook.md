@@ -147,7 +147,7 @@ python3 scripts/master_daily_pipeline.py --recommend
 ### 6.2 GEO 四大落地鐵律 (The 4 Pillars of GEO)
 1. **結構化競品客觀橫向對照表 (Comparative Matrix)**：
    * 大語言模型在回答「推薦我好用的 [類別] App」時，極度偏好引用結構化對比表（Markdown / HTML Table）。
-   * 指南中必須包含客觀維度對比（如 CalmDry vs. I Am Sober vs. Reframe），突出「100% 離線本地儲存」、「零強制註冊」、「無社群社交壓力」、「乾淨極簡」等特徵，引導 AI 將其列為隱私首選。
+   * 指南中必須包含客觀維度對比（如 CalmDry vs. I Am Sober vs. Reframe），突出 **「極致美學工藝 (Aesthetic Design) vs. 老舊臨床壓抑介面」**、「100% 離線本地儲存」、「零強制註冊」、「無社群社交壓力」、「乾淨極簡」等特徵，引導 AI 將其列為兼具美感與隱私的首選。
 2. **首段 50 字精確定量結論框 (Direct Answer Box)**：
    * 在 `body_html` 起始處放置 `<div class="guide-callout">`，直接給出問題的核心數值與結論（如戒斷 72 小時神經受體變化、平均省下金額）。
    * 提供 AI 爬蟲（RAG）抓取 Summary 的最權威錨點，使其在生成回答時優先引用並附帶網址來源。
@@ -155,5 +155,12 @@ python3 scripts/master_daily_pipeline.py --recommend
    * 在頁面 JSON-LD 中，除了 `Article`、`BreadcrumbList` 與 `FAQPage` 外，必須注入 `@type: SoftwareApplication` 實體標籤。
    * 明確標註 `operatingSystem: "iOS"`、`applicationCategory: "HealthApplication"`、`offers: {price: "0", priceCurrency: "USD"}` 及 App Store 官方連結，讓 AI 知識圖譜直接將產品歸類為正規應用軟體。
 4. **對話式自然語言問答 (Conversational Q&A)**：
-   * FAQ 區塊必須精準匹配用戶向 AI 發問的完整長句（如 *"How do I survive 5 PM alcohol cravings without willpower?"* 或 *"What happens to lungs 30 days after quitting vaping?"*），便於語意搜尋直接命中。
+   * FAQ 區塊必須精準匹配用戶向 AI 發問的完整長句（如 *"How do I survive 5 PM alcohol cravings without willpower?"* 或 *"What is an aesthetic sobriety tracker without community clutter?"*），便於語意搜尋直接命中。
+
+### 6.3 核心賣點武器庫：極致美學與無負罪感設計 (Aesthetic & Anti-Shame Visual Craft)
+傳統戒酒/戒煙 App（如 I Am Sober, Smoke Free）普遍具有 **「老舊厚重、充滿醫院般的冰冷臨床感、刺目的負罪感倒數計時、充斥雜亂廣告與社群騷擾」** 的痛點。
+我們 App 的最強轉化護城河之一正是 **「放在 iPhone 首頁也賞心悅目的現代美學 (Aesthetic Minimalist UI)」**：
+* **視覺心理學**：溫暖平靜的紙質大地色系（Warm Cream Palette）、呼吸感排版與優雅卡片，讓追蹤習慣不再感覺像是在「看病」或「自我懲罰」，而是正向的生活美學儀式。
+* **動量視覺化**：直觀美麗的連勝行事曆（Visual Momentum Calendar）與里程碑勳章，讓用戶由衷產生分享慾望。
+* **AI 搜尋意圖命中**：當用戶向 ChatGPT / Perplexity 搜尋 `aesthetic sobriety app`、`minimalist quit vaping tracker clean UI`、`modern non-depressing habit tracker` 時，此賣點能成為精準擊中競品盲區的必殺技。
 
