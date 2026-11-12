@@ -97,6 +97,19 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
                     {"@type": "ListItem", "position": 2, "name": "Guides", "item": f"{site_url}/guides/index.html"},
                     {"@type": "ListItem", "position": 3, "name": post["title"], "item": canonical_url}
                 ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Quit Vaping & Smoking Tracker",
+                "operatingSystem": "iOS",
+                "applicationCategory": "HealthApplication",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "url": url_footer,
+                "description": "Evidence-based quit vaping and smoking tracker with real-time recovery timeline, craving SOS exercises, and money-saved milestones."
             }
         ]
     }

@@ -148,6 +148,19 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
                     {"@type": "ListItem", "position": 2, "name": "Guides", "item": f"{site_url}/guides/index.html"},
                     {"@type": "ListItem", "position": 3, "name": post["title"], "item": canonical_url}
                 ]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Alcohol Free Tracker (CalmDry)",
+                "operatingSystem": "iOS",
+                "applicationCategory": "HealthApplication",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "url": url_footer,
+                "description": "100% private, local-first sobriety and alcohol-free tracker for iPhone and iPad with urge surfing and zero-account design."
             }
         ]
     }

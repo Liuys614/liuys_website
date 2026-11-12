@@ -438,7 +438,20 @@ def build_recommendations(app_data: dict) -> dict:
                 "At least 1 structured HTML comparison table, dosage/timing chart, or interactive calculator link",
                 "Contextual native iOS app pitch card with ASC campaign token (ct=seo_*)",
                 "3-4 high-intent FAQs matching conversational long-tail queries"
-            ]
+            ],
+            "geo_llm_guidelines": {
+                "core_revenue_priority": [
+                    "alcohol-free-tracker",
+                    "quit-vaping"
+                ],
+                "objective": "Enable ChatGPT Search, Perplexity, Claude, and Apple Intelligence to cite and recommend our apps as primary solutions.",
+                "rules": [
+                    "Direct LLM Answer Box: Top 50-word quantitative answer (<div class=\"guide-callout\">) directly addressing the query so AI summaries quote it directly.",
+                    "Comparative Matrix: Embed a structured HTML comparison table contrasting our app against market alternatives (e.g., CalmDry vs. I Am Sober vs. Reframe: 100% offline, zero-account, no community spam).",
+                    "Entity Schema: Ensure SoftwareApplication JSON-LD is populated with operatingSystem: iOS, applicationCategory: HealthApplication, and official App Store link.",
+                    "Conversational Questions: FAQs must use natural, full-sentence conversational phrasing matching prompts users type into AI chat."
+                ]
+            }
         },
         "refresh_target": best_refresh,
         "additional_refresh_candidates": refresh_candidates[1:3],
@@ -529,6 +542,77 @@ def run_recommend():
     print(json.dumps(rec, indent=2))
 
 
+def run_prompt():
+    token = get_gcloud_token()
+    app_data = collect_portfolio_data(token)
+    rec = build_recommendations(app_data)
+
+    rt = rec.get("refresh_target")
+    pt = rec.get("publish_target")
+
+    prompt_lines = [
+        "=" * 80,
+        "  YS LIU STUDIO — DAILY SEO + GEO (AI SEARCH RECOMMENDATION) AUTHORING PROMPT",
+        "=" * 80,
+        "",
+        "You are the Lead Technical & Health SEO/GEO Editor for YS Liu Studio.",
+        "Your mission is twofold:",
+        "1. Maximize organic Google Search ranking via clean, information-dense utility content.",
+        "2. Structure content so ChatGPT Search, Perplexity, Claude, and Apple Intelligence",
+        "   cite and recommend our apps (specifically Alcohol Free Tracker & QuitSmokingTracker)",
+        "   as the best solutions for users' search prompts.",
+        "",
+        "-" * 80,
+        "CORE GEO & ANTI-CONTENT-FARM MANDATES (MANDATORY IN EVERY ARTICLE):",
+        "-" * 80,
+        "1. LENGTH & STYLE: 750-1,150 words. Concise, quantitative, zero AI fluff or filler.",
+        "2. DIRECT ANSWER BOX: The very first block of body_html MUST be:",
+        '   <div class="guide-callout"><strong>Direct Takeaway:</strong> 50-word quantitative',
+        "   summary answering the core question with hard numbers (so LLMs quote it directly).</div>",
+        "3. STRUCTURED COMPARISON MATRIX: Must include at least 1 comparative HTML <table>",
+        "   (e.g., CalmDry vs. I Am Sober vs. Reframe, or Quit Vaping milestones vs. Cold Turkey)",
+        "   highlighting: 100% On-Device Offline Privacy, No Account Required, No Community Spam.",
+        "4. CONTEXTUAL NATIVE APP PITCH CARD: Embed an in-article pitch card with native screenshot",
+        "   and ASC campaign token (ct=seo_*).",
+        "5. 3-4 CONVERSATIONAL FAQs: In-depth answers targeting the exact natural language questions",
+        "   users ask ChatGPT or Google.",
+        "6. SCHEMA COMPLIANCE: Valid Article, BreadcrumbList, FAQPage, and SoftwareApplication entities.",
+        "",
+    ]
+    if rt:
+        qs = ", ".join(f"\"{q['query']}\"" for q in rt["uncovered_gsc_queries"])
+        prompt_lines.extend([
+            "-" * 80,
+            "TASK 1: REFRESH EXISTING GUIDE (AVOID KEYWORD CANNIBALIZATION)",
+            "-" * 80,
+            f"Target App: {rt['app_title']} ({rt['app_dir']})",
+            f"Post JSON: {rt['post_json_path']}",
+            f"Live URL: {rt['url']}",
+            f"GSC Impressions: {rt['page_impressions']} | Avg Pos: {rt['page_position']}",
+            f"Uncovered GSC Real Queries to weave into FAQs & body: {qs}",
+            "",
+        ])
+    if pt:
+        sec_kws = ", ".join(f"\"{k}\"" for k in pt['topic'].get('secondary_keywords', []))
+        prompt_lines.extend([
+            "-" * 80,
+            "TASK 2: PUBLISH 1 NEW ROTATION GUIDE",
+            "-" * 80,
+            f"Target App: {pt['app_title']} ({pt['app_dir']})",
+            f"Target Slug: {pt['topic']['slug']}",
+            f"Primary Target Keyword: \"{pt['topic']['target_keyword']}\"",
+            f"Secondary Keywords: {sec_kws}",
+            f"Category: {pt['topic'].get('category', 'Guide')}",
+            f"Campaign Token Prefix: {pt['topic'].get('campaign_prefix', 'seo_guide')}",
+            f"Pitch Screenshot: {pt['topic'].get('pitch_screen', '02-body-recovery.webp')}",
+            f"Pitch Headline: {pt['topic'].get('pitch_headline', '')}",
+            f"Pitch Body: {pt['topic'].get('pitch_body', '')}",
+            "",
+        ])
+    prompt_lines.append("=" * 80)
+    print("\n".join(prompt_lines))
+
+
 def run_i18n():
     print("\n🌐 Synchronizing Multi-Language Architecture (i18n)...")
     # 1. build_i18n.py: Updates studio homepages for all 7 locales, updates English app pages with hreflang & switcher, generates enhanced multi-lingual sitemap.xml
@@ -588,6 +672,7 @@ def main():
     parser = argparse.ArgumentParser(description="Master 8-App Programmatic SEO Pipeline for YS Liu Studio")
     parser.add_argument("--check", action="store_true", help="Human-readable GSC & Queue inspection across all 8 apps")
     parser.add_argument("--recommend", action="store_true", help="Output JSON Daily Action Plan (1 Refresh + 1 New Guide across 8 apps)")
+    parser.add_argument("--prompt", action="store_true", help="Generate production-ready SEO+GEO authoring prompt for today's recommended task")
     parser.add_argument("--build", action="store_true", help="Rebuild HTML guides, multi-lingual landing pages, and sitemaps across all 8 apps")
     parser.add_argument("--skip-i18n", action="store_true", help="Skip multi-lingual (i18n) sync during --build")
     parser.add_argument("--i18n", action="store_true", help="Rebuild only multi-lingual (i18n) landing pages and master sitemap")
@@ -605,6 +690,8 @@ def main():
         run_check()
     if args.recommend:
         run_recommend()
+    if args.prompt:
+        run_prompt()
     if args.i18n:
         run_i18n()
     if args.build:

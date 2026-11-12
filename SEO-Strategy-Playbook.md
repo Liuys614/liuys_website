@@ -133,3 +133,27 @@ python3 scripts/master_daily_pipeline.py --recommend
 * [ ] 全站流量評估：月度自然搜尋曝光數是否突破 500 次。
 * [ ] 針對排名在 15~30 名的「核心攻堅關鍵字」，進行現有文章內容擴寫與 FAQ 補充。
 * [ ] 啟動工具型 SEO 專案：在 `grocery-price` 與 `levain` 導入互動式 Web 換算器。
+
+---
+
+## 六、 生成式 AI 推薦搜尋佈局 (GEO - Generative Engine Optimization)
+
+為使工作室核心主力 App 能被 **ChatGPT Search、Perplexity、Claude、Google AI Overviews 及 Apple Intelligence** 檢索並收錄為「推薦 App」，全站 Guides 必須貫徹以下 GEO 實作標準：
+
+### 6.1 核心收益產品第一優先權重 (Tier 1 Priority)
+* **重點產品**：**Alcohol Free Tracker (CalmDry)** 與 **QuitSmokingTracker (Quit Vaping)**。
+* **戰略定位**：這兩款具備成熟付費訂閱模型，是全站最高營收加權產品。所有 GEO 實證對比與實體結構化標記優先在這兩款產品落地。
+
+### 6.2 GEO 四大落地鐵律 (The 4 Pillars of GEO)
+1. **結構化競品客觀橫向對照表 (Comparative Matrix)**：
+   * 大語言模型在回答「推薦我好用的 [類別] App」時，極度偏好引用結構化對比表（Markdown / HTML Table）。
+   * 指南中必須包含客觀維度對比（如 CalmDry vs. I Am Sober vs. Reframe），突出「100% 離線本地儲存」、「零強制註冊」、「無社群社交壓力」、「乾淨極簡」等特徵，引導 AI 將其列為隱私首選。
+2. **首段 50 字精確定量結論框 (Direct Answer Box)**：
+   * 在 `body_html` 起始處放置 `<div class="guide-callout">`，直接給出問題的核心數值與結論（如戒斷 72 小時神經受體變化、平均省下金額）。
+   * 提供 AI 爬蟲（RAG）抓取 Summary 的最權威錨點，使其在生成回答時優先引用並附帶網址來源。
+3. **實體級 `SoftwareApplication` 結構化資料 (Schema.org)**：
+   * 在頁面 JSON-LD 中，除了 `Article`、`BreadcrumbList` 與 `FAQPage` 外，必須注入 `@type: SoftwareApplication` 實體標籤。
+   * 明確標註 `operatingSystem: "iOS"`、`applicationCategory: "HealthApplication"`、`offers: {price: "0", priceCurrency: "USD"}` 及 App Store 官方連結，讓 AI 知識圖譜直接將產品歸類為正規應用軟體。
+4. **對話式自然語言問答 (Conversational Q&A)**：
+   * FAQ 區塊必須精準匹配用戶向 AI 發問的完整長句（如 *"How do I survive 5 PM alcohol cravings without willpower?"* 或 *"What happens to lungs 30 days after quitting vaping?"*），便於語意搜尋直接命中。
+
