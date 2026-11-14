@@ -33,8 +33,20 @@ def main():
 
     url = f"https://api.appstoreconnect.apple.com/v1/apps/{APP_ID}/appStoreVersions?limit=5"
     req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
-    with urllib.request.urlopen(req, timeout=15) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        err_body = e.read().decode("utf-8")
+        try:
+            err_json = json.loads(err_body)
+        except Exception:
+            err_json = {"raw": err_body}
+        print(json.dumps({
+            "error": f"HTTP {e.code}: {e.reason}",
+            "details": err_json
+        }, indent=2))
+        return
 
     versions = []
     for v in data.get("data", []):
