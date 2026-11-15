@@ -44,6 +44,17 @@
     "status": "published"
   },
   {
+    "slug": "scanner-del-prezzo",
+    "target_keyword": "scanner del prezzo",
+    "secondary_keywords": ["scanner prezzi supermercato iphone", "lettore prezzo al chilo e litro", "app per confrontare prezzi spesa", "calcolare prezzo unitario spesa", "riconoscere shrinkflation supermercato"],
+    "category": "Spesa Intelligente · Scanner Prezzi",
+    "campaign_prefix": "seo_scanner_del_prezzo",
+    "pitch_screen": "scanner_ui.png",
+    "pitch_headline": "Confronta i prezzi unitari all'istante con la fotocamera del tuo iPhone",
+    "pitch_body": "Punta la fotocamera sui cartellini del supermercato per vedere subito il prezzo al kg o al litro: risparmia senza fare calcoli a mente.",
+    "status": "published"
+  },
+  {
     "slug": "store-brand-vs-name-brand-taste-and-price-comparison",
     "target_keyword": "store brand vs name brand grocery savings test",
     "secondary_keywords": ["is generic food the same as name brand", "private label grocery savings percentage", "great value vs brand name math"],

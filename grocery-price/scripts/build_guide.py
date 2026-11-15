@@ -111,16 +111,23 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
             <p style="margin:10px 0 0;font-size:0.95rem;color:#4b5563;line-height:1.6;">{a}</p>
           </details>""")
 
+    lang = post.get("lang", "en")
+    faq_heading = post.get("faq_heading", "Domande Frequenti" if lang == "it" else "Frequently Asked Questions")
+    nav_btn_text = post.get("nav_btn_text", "Scarica Gratis per iPhone" if lang == "it" else "Get iPhone Scanner Free")
+    app_cta_text = post.get("pitch_button_label", "Confronta i Prezzi su App Store &rarr;" if lang == "it" else "Compare Prices on App Store &rarr;")
+    meta_prefix = "Pubblicato il" if lang == "it" else "Published"
+    meta_series = post.get("meta_series", "Guida Pratica alla Spesa Intelligente" if lang == "it" else "Grocery Price Scanner Research Series")
+
     faq_section_html = ""
     if faq_html_items:
         faq_section_html = f"""
         <section style="margin-top:40px;padding-top:28px;border-top:1px solid #e5e7eb;">
-          <h2 style="font-size:1.4rem;font-weight:800;color:#111827;margin-bottom:18px;">Frequently Asked Questions</h2>
+          <h2 style="font-size:1.4rem;font-weight:800;color:#111827;margin-bottom:18px;">{faq_heading}</h2>
           {''.join(faq_html_items)}
         </section>"""
 
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{lang}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -166,7 +173,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
       <img src="../assets/app-icon.png" width="30" height="30" style="border-radius:6px;" alt="Logo" />
       <span>Grocery Price Scanner</span>
     </a>
-    <a href="{html.escape(url_nav)}" class="btn" target="_blank" rel="noopener">Get iPhone Scanner Free</a>
+    <a href="{html.escape(url_nav)}" class="btn" target="_blank" rel="noopener">{nav_btn_text}</a>
   </div>
 
   <main style="padding: 0 16px;">
@@ -174,7 +181,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
       <span class="eyebrow">{html.escape(post.get('category', 'Smart Shopping Guide'))}</span>
       <h1>{html.escape(post['title'])}</h1>
       <div class="guide-meta">
-        Published {html.escape(post['published_date'])} · {html.escape(post.get('reading_time', '5 min read'))} · Grocery Price Scanner Research Series
+        {meta_prefix} {html.escape(post['published_date'])} · {html.escape(post.get('reading_time', '5 min read'))} · {meta_series}
       </div>
       <div class="guide-content">
         {post['body_html']}
@@ -183,7 +190,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
         <div>
           <h3>{html.escape(post.get('pitch_headline', 'Scan & compare grocery prices in seconds'))}</h3>
           <p>{html.escape(post.get('pitch_body', 'Calculate unit prices automatically with your camera.'))}</p>
-          <a href="{html.escape(url_footer)}" target="_blank" rel="noopener">Compare Prices on App Store &rarr;</a>
+          <a href="{html.escape(url_footer)}" target="_blank" rel="noopener">{app_cta_text}</a>
         </div>
       </div>
       {faq_section_html}
