@@ -161,6 +161,20 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     .guide-content ul {{ padding-left: 22px; margin-bottom: 18px; }}
     .guide-callout {{ background: #F6F4EE; border-left: 4px solid #2F6B57; padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 24px 0; font-size: 0.96rem; line-height: 1.6; color: #233B32; }}
     .guide-callout strong {{ display: block; margin-bottom: 4px; color: #1E3F35; }}
+    .guide-table-wrap {{ overflow-x: auto; margin: 26px 0; border-radius: 18px; border: 1px solid rgba(30,63,53,0.1); }}
+    .guide-table {{ width: 100%; border-collapse: collapse; font-size: 0.93rem; }}
+    .guide-table th, .guide-table td {{ padding: 13px 16px; text-align: left; border-bottom: 1px solid rgba(30,63,53,0.08); }}
+    .guide-table th {{ background: #E8F0EC; font-weight: 700; color: #152E26; }}
+    .guide-table tr:last-child td {{ border-bottom: 0; }}
+    .app-pitch-card {{ margin: 36px 0; padding: 28px; border-radius: 26px; background: linear-gradient(135deg, #1E3F35, #152E26); color: #f8f5ef; display: grid; grid-template-columns: 1fr 180px; align-items: center; gap: 24px; box-shadow: 0 18px 42px -12px rgba(21, 46, 38, 0.15); }}
+    .app-pitch-card .eyebrow {{ color: #A3D9C9; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }}
+    .app-pitch-card h3 {{ margin: 0 0 10px; font-size: 1.45rem; font-weight: 700; color: white; line-height: 1.25; }}
+    .app-pitch-card p {{ margin: 0 0 20px; color: #c7d5d0; font-size: 0.95rem; line-height: 1.55; }}
+    .app-pitch-card img {{ width: 100%; border-radius: 18px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35); }}
+    @media (max-width: 680px) {{
+      .app-pitch-card {{ grid-template-columns: 1fr; text-align: center; }}
+      .app-pitch-card img {{ max-width: 200px; margin: 0 auto; }}
+    }}
     .guide-medical-disclaimer p {{ margin: 0; }}
     .guide-disclaimer-reviewed {{ margin: 10px 0 0; font-size: 0.88rem; color: #52665E; }}
     .guide-faq-box {{ margin-top: 38px; padding-top: 28px; border-top: 1px solid rgba(30,63,53,0.12); }}
