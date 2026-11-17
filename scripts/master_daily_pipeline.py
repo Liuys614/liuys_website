@@ -52,6 +52,15 @@ APPS = [
     ("agricola-scorer", "Agricola Score Sheet", "/Users/louisliu/Documents/repo/liuys_website/SEO-Strategy-Playbook.md"),
 ]
 
+# Apps with no App Store listing yet get no new guides (no conversion path).
+# Refreshes of their existing guides are still allowed.
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from site_campaign import UNFOG_RELEASED
+except Exception:
+    UNFOG_RELEASED = False
+NOT_LIVE_APPS = set() if UNFOG_RELEASED else {"quit-weed"}
+
 STOPWORDS = {
     "the", "and", "for", "with", "how", "what", "when", "why", "does", "can",
     "you", "your", "from", "that", "this", "are", "was", "after", "while",
@@ -323,7 +332,8 @@ def build_recommendations(app_data: dict) -> dict:
                         slug_to_uncovered_queries.setdefault(slug, []).append(q_obj)
                         break
                 if not covered and q_obj["impressions"] >= 2 and 10.0 <= q_obj["position"] <= 90.0:
-                    distinct_gsc_new_topics.append((app_dir, q_obj))
+                    if app_dir not in NOT_LIVE_APPS:
+                        distinct_gsc_new_topics.append((app_dir, q_obj))
 
         for slug, q_list in slug_to_uncovered_queries.items():
             post = posts[slug]
@@ -383,7 +393,7 @@ def build_recommendations(app_data: dict) -> dict:
         # 8-App Fair Anti-Spike Rotation
         rotation_pool = []
         for app_dir, info in app_data.items():
-            if not info["pending_queue"]:
+            if not info["pending_queue"] or app_dir in NOT_LIVE_APPS:
                 continue
             # Score: higher days_since_last_publish + lower published_count + active GSC impressions bonus + revenue weight
             days_score = min(info["days_since_last_publish"], 30) * 3.0
