@@ -31,6 +31,13 @@ POSTS_DIR = os.path.join(GUIDES_DIR, "posts")
 CONFIG_PATH = os.path.join(GUIDES_DIR, "seo_config.json")
 
 
+def get_seo_title(post):
+    """<title> tag: keyword-first title, ' | Inkstone' suffix only if it fits in 60 chars."""
+    base = (post.get("seo_title") or post["title"]).strip()
+    branded = base + " | Inkstone"
+    return branded if len(branded) <= 60 else base
+
+
 def load_config():
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -126,7 +133,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{html.escape(post['title'])} | Inkstone PDF Sign</title>
+  <title>{html.escape(get_seo_title(post))}</title>
   <meta name="description" content="{html.escape(post['meta_description'])}" />
   <link rel="canonical" href="{canonical_url}" />
   <meta name="apple-itunes-app" content="app-id={app_id}" />

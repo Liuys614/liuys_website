@@ -38,6 +38,13 @@ POSTS_DIR = os.path.join(GUIDES_DIR, "posts")
 CONFIG_PATH = os.path.join(GUIDES_DIR, "seo_config.json")
 
 
+def get_seo_title(post):
+    """<title> tag: keyword-first title, ' | Quit Vaping' suffix only if it fits in 60 chars."""
+    base = (post.get("seo_title") or post["title"]).strip()
+    branded = base + " | Quit Vaping"
+    return branded if len(branded) <= 60 else base
+
+
 def load_config():
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -203,7 +210,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     <meta property="og:title" content="{html.escape(post['title'])} — Quit Vaping">
     <meta property="og:description" content="{html.escape(post['meta_description'])}">
     <meta property="og:image" content="{site_url}/assets/appstore/{pitch_screen}">
-    <title>{html.escape(post['title'])} | Quit Vaping Guides</title>
+    <title>{html.escape(get_seo_title(post))}</title>
     <link rel="icon" href="../assets/app-icon.png">
     <link rel="apple-touch-icon" href="../assets/app-icon.png">
     <link rel="stylesheet" href="../styles.css">
@@ -332,7 +339,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
     <meta name="description" content="Evidence-based guides on nicotine withdrawal timelines, 3-minute urge surfing for vape cravings, dopamine recovery, and kicking disposables.">
     <meta name="theme-color" content="#F4F7FA">
     <link rel="canonical" href="{canonical_url}">
-    <title>Nicotine Cessation, Lung Healing &amp; Dopamine Reset Guides | Quit Vaping</title>
+    <title>Nicotine Cessation &amp; Lung Healing Guides | Quit Vaping</title>
     <link rel="icon" href="../assets/app-icon.png">
     <link rel="apple-touch-icon" href="../assets/app-icon.png">
     <link rel="stylesheet" href="../styles.css">
