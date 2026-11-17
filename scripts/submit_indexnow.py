@@ -11,7 +11,7 @@ import urllib.error
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITEMAP_PATH = os.path.join(ROOT_DIR, "sitemap.xml")
-KEY = "4a8f9c2d1b7e6a5d3f2c1e8b7a6d5c4e"
+KEY = "b6bff41b36b1c359457277434b3b5002"
 HOST = "ysliustudio.com"
 KEY_LOCATION = f"https://{HOST}/{KEY}.txt"
 
