@@ -32,7 +32,7 @@ VAGUE = re.compile(
     re.I,
 )
 CLINICAL = re.compile(r"\b(clinical(?:ly)?(?! trial| guideline| practice)|peer[- ]reviewed|evidence[- ]based|science[- ]backed|scientifically proven)\b", re.I)
-ABSOLUTE = re.compile(r"\b(always take|never take|is harmless|completely harmless|is broken|guarantee[sd]?|cures?|100% safe|zero risk)\b", re.I)
+ABSOLUTE = re.compile(r"\b(always take|never take|is harmless|completely harmless|(?:addiction|dependence|habit) is (?:broken|gone|over)|guarantee[sd]? (?:that|to|you|recovery|results)|cures? (?:anxiety|insomnia|withdrawal|addiction|cravings)|100% safe|zero risk)\b", re.I)
 SOURCE_HINT = re.compile(r"(\(\d{4}\)|et al\.|doi\.org|pubmed|ncbi\.nlm|nih\.gov|journal of|\bJ\.? ?[A-Z][a-z]+)", re.I)
 
 
