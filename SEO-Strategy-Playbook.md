@@ -38,7 +38,7 @@
 
 ### 假設 3：IndexNow 即時推播破除搜尋引擎發現時滯
 * **思考**：Google 爬取 Sitemap 週期不可控，而 Bing、Yandex 支援 IndexNow 協議，可在提交幾分鐘內啟動爬蟲。
-* **實踐**：在 `liuys_website` 配置 IndexNow 專屬金鑰 `4a8f9c2d1b7e6a5d3f2c1e8b7a6d5c4e.txt` 與批次推播腳本 `scripts/submit_indexnow.py`。
+* **實踐**：在 `liuys_website` 配置 IndexNow 專屬金鑰 `b6bff41b36b1c359457277434b3b5002.txt` 與批次推播腳本 `scripts/submit_indexnow.py`。
 * **驗證指標**：在 Bing Webmaster Tools 或 Bing 搜尋結果中，是否在發布 48 小時內即可檢索到新頁面。
 
 ### 假設 4：複製 pSEO 至 Pill Reminder (高意圖用藥長尾庫)
@@ -58,7 +58,7 @@
    * 主站首頁 `index.html` 嵌入精美手繪風格的「Evidence-Based Guides Hub」導覽區塊。
    * 主站頁尾嵌入直達 Alcohol-Free、Quit Weed、Quit Vaping 指南的錨文字連結。
 3. **IndexNow 即時推播機制就緒**：
-   * 生成並部署驗證金鑰 `4a8f9c2d1b7e6a5d3f2c1e8b7a6d5c4e.txt`。
+   * 生成並部署驗證金鑰 `b6bff41b36b1c359457277434b3b5002.txt`。
    * 建立 `scripts/submit_indexnow.py`，支援一鍵將全站 44+ 網址推播至搜尋引擎。
 4. **GSC Strike Zone 腳本升級**：
    * 同步升級 `alcohol-free-tracker`、`quit-weed`、`quit-vaping` 的 `select_next_topic.py`，加入雙層階梯式門檻（Primary + Emerging）。
