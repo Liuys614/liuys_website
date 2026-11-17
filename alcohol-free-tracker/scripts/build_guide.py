@@ -52,6 +52,13 @@ def get_full_title(post: dict) -> str:
     return post["title"]
 
 
+def get_seo_title(post: dict) -> str:
+    """<title> tag: keyword-first post title, brand suffix only if it fits in 60 chars."""
+    base = (post.get("seo_title") or post["title"]).strip()
+    branded = f"{base} | Alcohol Free Tracker"
+    return branded if len(branded) <= 60 else base
+
+
 def get_category_icon(category: str) -> str:
     c = category.lower()
     if any(k in c for k in ["craving", "urge"]):
@@ -254,7 +261,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     <meta property="og:title" content="{html.escape(full_title)} — Alcohol Free Tracker">
     <meta property="og:description" content="{html.escape(post['meta_description'])}">
     <meta property="og:image" content="{site_url}/assets/appstore/{pitch_screen}">
-    <title>{html.escape(full_title)} | Alcohol Free Tracker Guides</title>
+    <title>{html.escape(get_seo_title(post))}</title>
     <link rel="icon" href="../assets/app-icon.png">
     <link rel="apple-touch-icon" href="../assets/app-icon.png">
     <link rel="stylesheet" href="../styles.css">
