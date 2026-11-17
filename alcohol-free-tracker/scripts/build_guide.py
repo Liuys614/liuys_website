@@ -86,7 +86,7 @@ def render_guide_card(p: dict, link_prefix: str = "") -> str:
 
     return f"""            <article class="guide-card">
               <div class="guide-card-meta">
-                <span class="guide-tag">{cat_icon} {html.escape(cat)}</span>
+                <span class="guide-tag">{html.escape(cat)}</span>
                 <span class="guide-reading-time">{reading_time}</span>
               </div>
               <h3 class="guide-card-title"><a href="{link}">{title}</a></h3>{subtitle_html}
@@ -193,7 +193,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
         faq_section_html = f"""
             <div class="support-card faq" style="margin-top: 42px;">
               <p class="eyebrow">Frequently Asked Questions</p>
-              <h2>Common questions about {html.escape(post.get('target_keyword', 'recovery'))}</h2>
+              <h2>Frequently asked questions</h2>
               {''.join(faq_html_items)}
             </div>"""
 
@@ -217,7 +217,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
 
     def inject_h2(match):
         raw_text = match.group(1)
-        plain_text = re.sub(r"<[^>]+>", "", raw_text).strip()
+        plain_text = html.unescape(re.sub(r"<[^>]+>", "", raw_text)).strip()
         slug_id = re.sub(r"[^a-z0-9]+", "-", plain_text.lower()).strip("-")
         headings.append((slug_id, plain_text))
         return f'<h2 id="{slug_id}">{raw_text}</h2>'
@@ -292,7 +292,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
           <div class="guide-breadcrumb">
             <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Guides</a> &rsaquo; <span>{html.escape(post.get('category', 'Guide'))}</span>
           </div>
-          <span class="guide-tag">{cat_icon} {html.escape(post.get('category', 'Evidence-Based Guide'))}</span>
+          <span class="guide-tag">{html.escape(post.get('category', 'Guide'))}</span>
           <h1 class="guide-hero-title">{html.escape(post['title'])}</h1>
           {f'<p class="guide-hero-subtitle">{html.escape(post["subtitle"])}</p>' if post.get('subtitle') else ''}
           <div class="guide-meta">
@@ -382,7 +382,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="origin-when-cross-origin">
     <meta name="apple-itunes-app" content="app-id={app_id}, affiliate-data=pt={pt}&ct={banner_ct('gh')}, app-argument={canonical_url}">
-    <meta name="description" content="Evidence-based guides on alcohol body recovery timelines, 3-minute urge surfing for evening cravings, hangover anxiety relief, and mindful drinking.">
+    <meta name="description" content="Guides on alcohol recovery timelines, 3-minute urge surfing for evening cravings, hangover anxiety relief, and mindful drinking.">
     <meta name="theme-color" content="#F7F4EE">
     <link rel="canonical" href="{canonical_url}">
     <title>Sobriety, Body Recovery &amp; Mindful Drinking Guides | Alcohol Free Tracker</title>
@@ -410,9 +410,9 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
     <main>
       <section class="guide-hero">
         <div class="container">
-          <p class="eyebrow">Evidence-Based Resource Library</p>
+          <p class="eyebrow">Guide library</p>
           <h1>Guides for alcohol-free recovery &amp; mindful drinking.</h1>
-          <p class="hero-lede">Practical physiological timelines, neuroscience-backed craving protocols, and judgment-free strategies for cutting back or staying sober.</p>
+          <p class="hero-lede">Recovery timelines, craving tools and judgment-free strategies for cutting back or staying sober.</p>
         </div>
       </section>
 

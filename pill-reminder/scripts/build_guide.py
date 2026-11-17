@@ -158,32 +158,32 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
   <link rel="stylesheet" href="../styles.css" />
   <style>
     .guide-shell {{ max-width: 820px; margin: 48px auto 72px; background: var(--white, #fff); border-radius: 24px; padding: 44px; border: 1px solid var(--hairline-strong); box-shadow: var(--shadow-soft); }}
-    .guide-shell h1 {{ font-size: clamp(1.9rem, 3.5vw, 2.5rem); color: var(--ink); line-height: 1.18; margin: 12px 0 14px; font-weight: 800; }}
+    .guide-shell h1 {{ font-size: clamp(1.9rem, 3.5vw, 2.5rem); color: var(--ink); line-height: 1.18; margin: 12px 0 14px; font-weight: 600; }}
     .guide-meta-bar {{ font-size: 0.86rem; color: var(--muted); font-weight: 600; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--hairline); }}
     .guide-app-card {{ margin: 32px 0; padding: 22px 24px; border-radius: 18px; background: #2c3646; color: #fff; }}
     .guide-app-card h3 {{ margin: 0 0 8px; font-size: 1.15rem; color: #fff; }}
     .guide-app-card p {{ margin: 0 0 14px; line-height: 1.6; color: rgba(255,255,255,.85); }}
-    .guide-app-card a {{ display: inline-block; padding: 10px 18px; border-radius: 999px; background: #fff; color: #2c3646; font-weight: 700; text-decoration: none; }}
-    .guide-content h2 {{ font-size: 1.38rem; color: var(--brand-dark); margin: 32px 0 12px; font-weight: 800; }}
+    .guide-app-card a {{ display: inline-block; padding: 10px 18px; border-radius: 999px; background: #fff; color: #2c3646; font-weight: 600; text-decoration: none; }}
+    .guide-content h2 {{ font-size: 1.38rem; color: var(--brand-dark); margin: 32px 0 12px; font-weight: 600; }}
     .guide-content p, .guide-content li {{ font-size: 1.02rem; line-height: 1.72; color: var(--ink-soft); margin-bottom: 14px; }}
     .guide-content ul, .guide-content ol {{ padding-left: 22px; margin-bottom: 18px; }}
     .guide-table-wrap {{ overflow-x: auto; margin: 24px 0 32px; }}
     .guide-table {{ width: 100%; border-collapse: collapse; font-size: 0.95rem; text-align: left; }}
-    .guide-table th {{ background: var(--paper-deep); color: var(--ink); font-weight: 700; padding: 12px 16px; border: 1px solid var(--hairline-strong); }}
+    .guide-table th {{ background: var(--paper-deep); color: var(--ink); font-weight: 600; padding: 12px 16px; border: 1px solid var(--hairline-strong); }}
     .guide-table td {{ padding: 12px 16px; border: 1px solid var(--hairline-strong); color: var(--ink-soft); }}
     .guide-callout {{ background: var(--due-soft); border-left: 4px solid var(--due); padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 24px 0; font-size: 0.96rem; line-height: 1.6; color: var(--ink); }}
     .guide-callout strong {{ display: block; margin-bottom: 4px; color: var(--brand-dark); }}
     .guide-medical-disclaimer p {{ margin: 0; }}
     .guide-disclaimer-reviewed {{ margin: 10px 0 0; font-size: 0.88rem; color: var(--muted); }}
     .app-pitch-card {{ background: linear-gradient(135deg, var(--paper-deep) 0%, var(--white, #fff) 100%); border: 1.5px solid var(--hairline-strong); border-radius: 20px; padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 36px 0; }}
-    .app-pitch-card .eyebrow {{ font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--taken); letter-spacing: 0.05em; margin-bottom: 6px; }}
-    .app-pitch-card h3 {{ font-size: 1.25rem; font-weight: 800; color: var(--ink); margin: 0 0 8px; }}
+    .app-pitch-card .eyebrow {{ font-size: 0.78rem; font-weight: 600; color: var(--taken); margin-bottom: 6px; }}
+    .app-pitch-card h3 {{ font-size: 1.25rem; font-weight: 600; color: var(--ink); margin: 0 0 8px; }}
     .app-pitch-card p {{ font-size: 0.94rem; color: var(--ink-soft); margin-bottom: 16px; }}
     .guide-faq-box {{ margin-top: 38px; padding-top: 28px; border-top: 1px solid var(--hairline); }}
     .guide-faq-item {{ background: var(--paper); border-radius: 14px; padding: 16px 20px; margin-bottom: 12px; }}
-    .guide-faq-item summary {{ font-weight: 800; color: var(--ink); cursor: pointer; }}
+    .guide-faq-item summary {{ font-weight: 600; color: var(--ink); cursor: pointer; }}
     .guide-faq-item p {{ margin: 10px 0 0; font-size: 0.95rem; color: var(--ink-soft); }}
-    .eyebrow-pill {{ display: inline-block; background: var(--brand-soft); color: var(--brand); font-size: 0.76rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 99px; letter-spacing: 0.04em; }}
+    .eyebrow-pill {{ display: inline-block; background: var(--brand-soft); color: var(--brand); font-size: 0.76rem; font-weight: 600; padding: 4px 10px; border-radius: 99px; letter-spacing: 0.04em; }}
   </style>
   <script type="application/ld+json">
 {json.dumps(schema_graph, indent=2)}
@@ -204,7 +204,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
       <span class="eyebrow-pill">{html.escape(post.get('category', 'Supplement Guide'))}</span>
       <h1>{html.escape(post['title'])}</h1>
       <div class="guide-meta-bar">
-        Published {html.escape(post['published_date'])} · {html.escape(post.get('reading_time', '5 min read'))} · Evidence-Based Supplement &amp; Medication Series
+        Published {html.escape(post['published_date'])} · {html.escape(post.get('reading_time', '5 min read'))} · Supplement &amp; Medication Series
       </div>
       <div class="guide-content">
         {normalize_body_ct(post['body_html'], slug)}
@@ -240,14 +240,14 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
         cards_html.append(f"""
         <article class="feature-card" style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 28px;">
           <span class="eyebrow-pill" style="margin-bottom: 10px;">{html.escape(p.get('category', 'Guide'))}</span>
-          <h2 style="font-size: 1.25rem; font-weight: 800; margin: 4px 0 10px;"><a href="{p['slug']}.html" style="color: inherit; text-decoration: none;">{html.escape(p['title'])}</a></h2>
+          <h2 style="font-size: 1.25rem; font-weight: 600; margin: 4px 0 10px;"><a href="{p['slug']}.html" style="color: inherit; text-decoration: none;">{html.escape(p['title'])}</a></h2>
           <p style="font-size: 0.94rem; color: var(--muted); margin-bottom: 16px; line-height: 1.5;">{html.escape(p.get('summary_excerpt', p['meta_description']))}</p>
-          <a href="{p['slug']}.html" style="font-weight: 700; color: var(--taken); text-decoration: none; font-size: 0.92rem; margin-top: auto;">Read Guide ({html.escape(p.get('reading_time', '5 min'))}) &rarr;</a>
+          <a href="{p['slug']}.html" style="font-weight: 600; color: var(--taken); text-decoration: none; font-size: 0.92rem; margin-top: auto;">Read Guide ({html.escape(p.get('reading_time', '5 min'))}) &rarr;</a>
         </article>""")
 
     empty_placeholder = ""
     if not cards_html:
-        empty_placeholder = "<p style='color: var(--muted); grid-column: 1/-1;'>Publishing daily evidence-based guides soon.</p>"
+        empty_placeholder = "<p style='color: var(--muted); grid-column: 1/-1;'>New guides coming soon.</p>"
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -255,7 +255,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Supplement Timing & Medication Guides | Pill Reminder</title>
-  <meta name="description" content="Evidence-based guides on supplement timing, vitamin bioavailability, missed medication protocols, and safe daily dosing schedules." />
+  <meta name="description" content="Guides on supplement timing, absorption, missed doses and daily dosing schedules, with links to NIH and CDC sources." />
   <link rel="canonical" href="{canonical_url}" />
   {banner}
   <link rel="icon" type="image/png" href="../assets/favicon-32.png" />
@@ -273,9 +273,9 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
 
   <main class="content" style="padding: 56px 20px 80px;">
     <div style="text-align: center; max-width: 680px; margin: 0 auto 48px;">
-      <span class="eyebrow-pill" style="margin-bottom: 12px;">💊 Evidence-Based Health Library</span>
-      <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; color: var(--ink); margin: 12px 0;">Supplement &amp; Medication Guides</h1>
-      <p style="font-size: 1.05rem; color: var(--muted); line-height: 1.6;">Optimal timing, nutrient synergy, missed dose protocols, and science-backed supplement schedules.</p>
+      <span class="eyebrow-pill" style="margin-bottom: 12px;">Supplement &amp; medication guides</span>
+      <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; color: var(--ink); margin: 12px 0;">Supplement &amp; Medication Guides</h1>
+      <p style="font-size: 1.05rem; color: var(--muted); line-height: 1.6;">Timing, nutrient pairing, missed doses, and science-backed supplement schedules.</p>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">

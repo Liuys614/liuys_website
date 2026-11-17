@@ -116,7 +116,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
         a = html.escape(item["answer"])
         faq_html_items.append(f"""
           <details open style="background:#fdfbf7;border-radius:14px;padding:16px 20px;margin-bottom:12px;border:1px solid #ebd9c8;">
-            <summary style="font-weight:700;color:#3d2714;cursor:pointer;">{q}</summary>
+            <summary style="font-weight:600;color:#3d2714;cursor:pointer;">{q}</summary>
             <p style="margin:10px 0 0;font-size:0.95rem;color:#6b4f39;line-height:1.6;">{a}</p>
           </details>""")
 
@@ -124,7 +124,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     if faq_html_items:
         faq_section_html = f"""
         <section style="margin-top:40px;padding-top:28px;border-top:1px solid #ebd9c8;">
-          <h2 style="font-size:1.4rem;font-weight:800;color:#3d2714;margin-bottom:18px;">Frequently Asked Questions</h2>
+          <h2 style="font-size:1.4rem;font-weight:600;color:#3d2714;margin-bottom:18px;">Frequently Asked Questions</h2>
           {''.join(faq_html_items)}
         </section>"""
 
@@ -146,24 +146,24 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
   <style>
     body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #faf8f5; color: #2e241c; margin: 0; line-height: 1.65; }}
     .site-nav {{ background: #fff; border-bottom: 1px solid #ebd9c8; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; max-width: 1040px; margin: 0 auto; }}
-    .site-nav a {{ text-decoration: none; color: #3d2714; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }}
+    .site-nav a {{ text-decoration: none; color: #3d2714; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }}
     .site-nav .btn {{ background: #c25e1a; color: #fff; padding: 8px 16px; border-radius: 99px; font-size: 0.88rem; }}
     .guide-wrap {{ max-width: 820px; margin: 40px auto 72px; background: #fff; border-radius: 20px; padding: 40px; border: 1px solid #ebd9c8; box-shadow: 0 4px 24px rgba(78,44,20,0.05); }}
-    .guide-wrap h1 {{ font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: #3d2714; line-height: 1.2; margin: 12px 0 16px; font-weight: 800; }}
+    .guide-wrap h1 {{ font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: #3d2714; line-height: 1.2; margin: 12px 0 16px; font-weight: 600; }}
     .guide-meta {{ font-size: 0.86rem; color: #8c7360; font-weight: 600; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #f3ece4; }}
-    .guide-content h2 {{ font-size: 1.35rem; color: #3d2714; margin: 32px 0 12px; font-weight: 800; }}
+    .guide-content h2 {{ font-size: 1.35rem; color: #3d2714; margin: 32px 0 12px; font-weight: 600; }}
     .guide-content p, .guide-content li {{ font-size: 1.02rem; line-height: 1.72; color: #4a3b2f; margin-bottom: 14px; }}
     .guide-content ul, .guide-content ol {{ padding-left: 22px; margin-bottom: 18px; }}
     .guide-table {{ width: 100%; border-collapse: collapse; margin: 24px 0 32px; font-size: 0.94rem; }}
-    .guide-table th {{ background: #fdf5ec; padding: 12px 14px; text-align: left; border: 1px solid #ebd9c8; font-weight: 700; color: #3d2714; }}
+    .guide-table th {{ background: #fdf5ec; padding: 12px 14px; text-align: left; border: 1px solid #ebd9c8; font-weight: 600; color: #3d2714; }}
     .guide-table td {{ padding: 12px 14px; border: 1px solid #ebd9c8; }}
     .guide-callout {{ background: #fff8f0; border-left: 4px solid #c25e1a; padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 24px 0; font-size: 0.96rem; }}
     .guide-callout strong {{ display: block; margin-bottom: 4px; color: #9c4309; }}
     .app-card {{ background: linear-gradient(135deg, #fff8f0 0%, #fff 100%); border: 1.5px solid #fed7aa; border-radius: 18px; padding: 26px 30px; margin: 36px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; }}
-    .app-card h3 {{ font-size: 1.22rem; font-weight: 800; color: #9c4309; margin: 0 0 6px; }}
+    .app-card h3 {{ font-size: 1.22rem; font-weight: 600; color: #9c4309; margin: 0 0 6px; }}
     .app-card p {{ font-size: 0.92rem; color: #4a3b2f; margin: 0 0 14px; }}
-    .app-card a {{ display: inline-block; background: #c25e1a; color: #fff; padding: 9px 18px; border-radius: 99px; text-decoration: none; font-weight: 700; font-size: 0.88rem; }}
-    .eyebrow {{ display: inline-block; background: #ffedd5; color: #9c4309; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; padding: 4px 10px; border-radius: 99px; letter-spacing: 0.04em; }}
+    .app-card a {{ display: inline-block; background: #c25e1a; color: #fff; padding: 9px 18px; border-radius: 99px; text-decoration: none; font-weight: 600; font-size: 0.88rem; }}
+    .eyebrow {{ display: inline-block; background: #ffedd5; color: #9c4309; font-size: 0.74rem; font-weight: 600; padding: 4px 10px; border-radius: 99px; letter-spacing: 0.04em; }}
   </style>
   <script type="application/ld+json">
 {json.dumps(schema_graph, indent=2)}
@@ -219,10 +219,10 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
     for p in posts:
         cards_html.append(f"""
         <article style="background:#fff;border:1px solid #ebd9c8;border-radius:16px;padding:24px;display:flex;flex-direction:column;align-items:flex-start;">
-          <span style="display:inline-block;background:#ffedd5;color:#9c4309;font-size:0.74rem;font-weight:700;text-transform:uppercase;padding:3px 9px;border-radius:99px;margin-bottom:10px;">{html.escape(p.get('category', 'Guide'))}</span>
-          <h2 style="font-size:1.22rem;font-weight:800;margin:4px 0 10px;"><a href="{p['slug']}.html" style="color:#3d2714;text-decoration:none;">{html.escape(p['title'])}</a></h2>
+          <span style="display:inline-block;background:#ffedd5;color:#9c4309;font-size:0.74rem;font-weight:600;padding:3px 9px;border-radius:99px;margin-bottom:10px;">{html.escape(p.get('category', 'Guide'))}</span>
+          <h2 style="font-size:1.22rem;font-weight:600;margin:4px 0 10px;"><a href="{p['slug']}.html" style="color:#3d2714;text-decoration:none;">{html.escape(p['title'])}</a></h2>
           <p style="font-size:0.92rem;color:#6b4f39;margin-bottom:16px;line-height:1.5;">{html.escape(p.get('summary_excerpt', p['meta_description']))}</p>
-          <a href="{p['slug']}.html" style="font-weight:700;color:#c25e1a;text-decoration:none;font-size:0.9rem;margin-top:auto;">Read Guide ({html.escape(p.get('reading_time', '5 min'))}) &rarr;</a>
+          <a href="{p['slug']}.html" style="font-weight:600;color:#c25e1a;text-decoration:none;font-size:0.9rem;margin-top:auto;">Read Guide ({html.escape(p.get('reading_time', '5 min'))}) &rarr;</a>
         </article>""")
 
     return f"""<!DOCTYPE html>
@@ -231,14 +231,14 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sourdough Hydration, Fermentation & Baking Guides | Levain</title>
-  <meta name="description" content="Science-backed guides on sourdough baker's percentage calculations, hydration scaling, bulk fermentation temperature control, and starter feeding ratios." />
+  <meta name="description" content="Guides on sourdough baker's percentage calculations, hydration scaling, bulk fermentation temperature control, and starter feeding ratios." />
   <link rel="canonical" href="{canonical_url}" />
   {banner}
   <link rel="icon" type="image/png" href="../assets/favicon.png" />
   <style>
     body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #faf8f5; color: #2e241c; margin: 0; line-height: 1.65; }}
     .site-nav {{ background: #fff; border-bottom: 1px solid #ebd9c8; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; max-width: 1040px; margin: 0 auto; }}
-    .site-nav a {{ text-decoration: none; color: #3d2714; font-weight: 700; }}
+    .site-nav a {{ text-decoration: none; color: #3d2714; font-weight: 600; }}
     .site-nav .btn {{ background: #c25e1a; color: #fff; padding: 8px 16px; border-radius: 99px; font-size: 0.88rem; }}
   </style>
 </head>
@@ -249,7 +249,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
   </div>
   <main style="max-width:1040px;margin:48px auto 80px;padding:0 20px;">
     <div style="text-align:center;max-width:640px;margin:0 auto 48px;">
-      <h1 style="font-size:clamp(2rem,3.8vw,2.7rem);font-weight:800;color:#3d2714;margin:12px 0;">Sourdough Science &amp; Baking Guides</h1>
+      <h1 style="font-size:clamp(2rem,3.8vw,2.7rem);font-weight:600;color:#3d2714;margin:12px 0;">Sourdough Science &amp; Baking Guides</h1>
       <p style="font-size:1.05rem;color:#8c7360;">Master Baker's percentages, bulk fermentation timing by temperature, and consistent open-crumb sourdough bread.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));gap:24px;">

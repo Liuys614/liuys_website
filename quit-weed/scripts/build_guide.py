@@ -163,9 +163,9 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
   <link rel="stylesheet" href="../styles.css" />
   <style>
     .guide-shell {{ max-width: 820px; margin: 48px auto 72px; background: #fff; border-radius: 28px; padding: 44px; border: 1px solid rgba(30,63,53,0.11); box-shadow: 0 18px 42px -12px rgba(21,46,38,0.08); }}
-    .guide-shell h1 {{ font-size: clamp(1.9rem, 3.5vw, 2.6rem); color: #152E26; line-height: 1.15; margin: 12px 0 14px; font-weight: 800; }}
+    .guide-shell h1 {{ font-size: clamp(1.9rem, 3.5vw, 2.6rem); color: #152E26; line-height: 1.15; margin: 12px 0 14px; font-weight: 600; }}
     .guide-meta-bar {{ font-size: 0.86rem; color: #52665E; font-weight: 600; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid rgba(30,63,53,0.1); }}
-    .guide-content h2 {{ font-size: 1.38rem; color: #1E3F35; margin: 30px 0 12px; font-weight: 800; }}
+    .guide-content h2 {{ font-size: 1.38rem; color: #1E3F35; margin: 30px 0 12px; font-weight: 600; }}
     .guide-content p, .guide-content li {{ font-size: 1.02rem; line-height: 1.72; color: #233B32; margin-bottom: 14px; }}
     .guide-content ul {{ padding-left: 22px; margin-bottom: 18px; }}
     .guide-callout {{ background: #F6F4EE; border-left: 4px solid #2F6B57; padding: 16px 20px; border-radius: 0 12px 12px 0; margin: 24px 0; font-size: 0.96rem; line-height: 1.6; color: #233B32; }}
@@ -173,11 +173,11 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     .guide-table-wrap {{ overflow-x: auto; margin: 26px 0; border-radius: 18px; border: 1px solid rgba(30,63,53,0.1); }}
     .guide-table {{ width: 100%; border-collapse: collapse; font-size: 0.93rem; }}
     .guide-table th, .guide-table td {{ padding: 13px 16px; text-align: left; border-bottom: 1px solid rgba(30,63,53,0.08); }}
-    .guide-table th {{ background: #E8F0EC; font-weight: 700; color: #152E26; }}
+    .guide-table th {{ background: #E8F0EC; font-weight: 600; color: #152E26; }}
     .guide-table tr:last-child td {{ border-bottom: 0; }}
     .app-pitch-card {{ margin: 36px 0; padding: 28px; border-radius: 26px; background: linear-gradient(135deg, #1E3F35, #152E26); color: #f8f5ef; display: grid; grid-template-columns: 1fr 180px; align-items: center; gap: 24px; box-shadow: 0 18px 42px -12px rgba(21, 46, 38, 0.15); }}
-    .app-pitch-card .eyebrow {{ color: #A3D9C9; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }}
-    .app-pitch-card h3 {{ margin: 0 0 10px; font-size: 1.45rem; font-weight: 700; color: white; line-height: 1.25; }}
+    .app-pitch-card .eyebrow {{ color: #A3D9C9; font-size: 0.82rem; font-weight: 600; margin-bottom: 10px; }}
+    .app-pitch-card h3 {{ margin: 0 0 10px; font-size: 1.45rem; font-weight: 600; color: white; line-height: 1.25; }}
     .app-pitch-card p {{ margin: 0 0 20px; color: #c7d5d0; font-size: 0.95rem; line-height: 1.55; }}
     .app-pitch-card img {{ width: 100%; border-radius: 18px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35); }}
     @media (max-width: 680px) {{
@@ -188,7 +188,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     .guide-disclaimer-reviewed {{ margin: 10px 0 0; font-size: 0.88rem; color: #52665E; }}
     .guide-faq-box {{ margin-top: 38px; padding-top: 28px; border-top: 1px solid rgba(30,63,53,0.12); }}
     .guide-faq-item {{ background: #F6F4EE; border-radius: 16px; padding: 16px 20px; margin-bottom: 12px; }}
-    .guide-faq-item summary {{ font-weight: 800; color: #152E26; cursor: pointer; }}
+    .guide-faq-item summary {{ font-weight: 600; color: #152E26; cursor: pointer; }}
     .guide-faq-item p {{ margin: 10px 0 0; font-size: 0.95rem; color: #385249; }}
   </style>
   <script type="application/ld+json">
@@ -215,7 +215,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
       <span class="eyebrow-pill">{html.escape(post.get('category', 'Science Guide'))}</span>
       <h1>{html.escape(post['title'])}</h1>
       <div class="guide-meta-bar">
-        Published {html.escape(post['published_date'])} · {html.escape(post.get('reading_time', '5 min read'))} · Evidence-Based THC &amp; CB1 Recovery Series
+        Published {html.escape(post['published_date'])} · {html.escape(post.get('reading_time', '5 min read'))} · THC &amp; CB1 Recovery Series
       </div>
       <div class="guide-content">
         {normalize_body_ct(post['body_html'], slug)}
@@ -258,7 +258,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
           <span class="bento-tag">{html.escape(p.get('category', 'Science Guide'))}</span>
           <h2 class="bento-title" style="font-size: 1.28rem;"><a href="{p['slug']}.html" style="color: inherit; text-decoration: none;">{html.escape(p['title'])}</a></h2>
           <p class="bento-desc" style="margin-bottom: 12px;">{html.escape(p.get('summary_excerpt', p['meta_description']))}</p>
-          <a href="{p['slug']}.html" style="font-weight: 800; color: #2D6A4F; text-decoration: none; font-size: 0.9rem;">Read Guide ({html.escape(p.get('reading_time', '5 min'))}) →</a>
+          <a href="{p['slug']}.html" style="font-weight: 600; color: #2D6A4F; text-decoration: none; font-size: 0.9rem;">Read Guide ({html.escape(p.get('reading_time', '5 min'))}) →</a>
         </article>""")
 
     return f"""<!DOCTYPE html>
@@ -267,7 +267,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>THC Withdrawal, CB1 Recovery & T-Break Science Guides | Unfog</title>
-  <meta name="description" content="Evidence-based guides on cannabis tolerance breaks (T-Breaks), CB1 receptor upregulation timelines, REM sleep dream rebound, and 4-7-8 craving relief." />
+  <meta name="description" content="Guides on cannabis tolerance breaks (T-Breaks), CB1 receptor upregulation timelines, REM sleep dream rebound, and 4-7-8 craving relief." />
   <link rel="canonical" href="{canonical_url}" />
   {banner}
   <link rel="icon" type="image/png" href="../assets/app-icon.png" />

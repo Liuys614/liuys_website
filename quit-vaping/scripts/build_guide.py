@@ -118,7 +118,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
                     "priceCurrency": "USD"
                 },
                 "url": url_footer,
-                "description": "Evidence-based quit vaping and smoking tracker with real-time recovery timeline, craving SOS exercises, and money-saved milestones."
+                "description": "Private quit vaping tracker with a recovery timeline, craving SOS exercises, and money-saved milestones."
             }
         ]
     }
@@ -142,7 +142,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
         faq_section_html = f"""
             <div class="support-card faq" style="margin-top: 42px;">
               <p class="eyebrow">Frequently Asked Questions</p>
-              <h2>Common questions about {html.escape(post.get('target_keyword', 'nicotine cessation'))}</h2>
+              <h2>Frequently asked questions</h2>
               {''.join(faq_html_items)}
             </div>"""
 
@@ -166,7 +166,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
 
     def inject_h2(match):
         raw_text = match.group(1)
-        plain_text = re.sub(r"<[^>]+>", "", raw_text).strip()
+        plain_text = html.unescape(re.sub(r"<[^>]+>", "", raw_text)).strip()
         slug_id = re.sub(r"[^a-z0-9]+", "-", plain_text.lower()).strip("-")
         headings.append((slug_id, plain_text))
         return f'<h2 id="{slug_id}">{raw_text}</h2>'
@@ -241,7 +241,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
           <div class="guide-breadcrumb">
             <a href="../index.html">Home</a> &rsaquo; <a href="index.html">Guides</a> &rsaquo; <span>{html.escape(post.get('category', 'Guide'))}</span>
           </div>
-          <span class="guide-tag">{html.escape(post.get('category', 'Evidence-Based Guide'))}</span>
+          <span class="guide-tag">{html.escape(post.get('category', 'Guide'))}</span>
           <h1>{html.escape(post['title'])}</h1>
           <div class="guide-meta">
             <span>Published {html.escape(post['published_date'])}</span>
@@ -336,7 +336,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="origin-when-cross-origin">
     <meta name="apple-itunes-app" content="app-id={app_id}, affiliate-data=pt={pt}&ct={banner_ct('gh')}, app-argument={canonical_url}">
-    <meta name="description" content="Evidence-based guides on nicotine withdrawal timelines, 3-minute urge surfing for vape cravings, dopamine recovery, and kicking disposables.">
+    <meta name="description" content="Guides on nicotine withdrawal timelines, 3-minute urge surfing for vape cravings, dopamine recovery, and kicking disposables.">
     <meta name="theme-color" content="#F4F7FA">
     <link rel="canonical" href="{canonical_url}">
     <title>Nicotine Cessation &amp; Lung Healing Guides | Quit Vaping</title>
@@ -364,9 +364,9 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
     <main>
       <section class="guide-hero">
         <div class="container">
-          <p class="eyebrow">Evidence-Based Resource Library</p>
+          <p class="eyebrow">Guide library</p>
           <h1>Guides for quitting vaping &amp; nicotine recovery.</h1>
-          <p class="hero-lede">Practical physiological timelines, neuroscience-backed craving protocols, and judgment-free strategies for quitting disposables and pods.</p>
+          <p class="hero-lede">Recovery timelines, craving tools and judgment-free strategies for quitting disposables and pods.</p>
         </div>
       </section>
 
