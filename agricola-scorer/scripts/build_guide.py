@@ -19,6 +19,8 @@ from site_campaign import (  # noqa: E402
     app_is_released,
     coming_soon_markup,
     guide_ct,
+    banner_ct,
+    normalize_body_ct,
     guides_index_ct,
     make_asc_url,
     smart_banner_tag,
@@ -43,8 +45,8 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     canonical_url = f"{site_url}/guides/{slug}.html"
     page_ct = guide_ct(slug)
 
-    url_nav = make_asc_url(app_id, pt, page_ct)
-    url_footer = make_asc_url(app_id, pt, page_ct)
+    url_nav = make_asc_url(app_id, pt, guide_ct(slug, "nav"))
+    url_footer = make_asc_url(app_id, pt, guide_ct(slug, "foot"))
 
     faqs = post.get("faqs", [])
     faq_schema_entities = [
@@ -169,7 +171,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
         Published {html.escape(post['published_date'])} · {html.escape(post.get('reading_time', '5 min read'))} · Agricola Companion Rules Series
       </div>
       <div class="guide-content">
-        {post['body_html']}
+        {normalize_body_ct(post['body_html'], slug)}
       </div>
       <div class="app-card">
         <div>
@@ -195,7 +197,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
     canonical_url = f"{site_url}/guides/index.html"
     app_slug = site_url.rstrip("/").rsplit("/", 1)[-1]
     index_ct = guides_index_ct(app_slug)
-    banner = smart_banner_tag(app_id) if app_is_released(app_id) else ""
+    banner = smart_banner_tag(app_id, banner_ct('gh')) if app_is_released(app_id) else ""
     url_nav = make_asc_url(app_id, pt, index_ct)
 
     cards_html = []

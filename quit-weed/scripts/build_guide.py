@@ -24,6 +24,8 @@ from site_campaign import (  # noqa: E402
     app_is_released,
     coming_soon_markup,
     guide_ct,
+    banner_ct,
+    normalize_body_ct,
     guides_index_ct,
     make_asc_url,
     medical_disclaimer_html,
@@ -45,13 +47,13 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     app_id = cfg["app_id"]
     pt = PROVIDER_TOKEN
     beacon = CF_BEACON
-    banner = smart_banner_tag(app_id) if app_is_released(app_id) else ""
     slug = post["slug"]
+    banner = smart_banner_tag(app_id, banner_ct('g', slug)) if app_is_released(app_id) else ""
     canonical_url = f"{site_url}/guides/{slug}.html"
     page_ct = guide_ct(slug)
 
-    url_nav = make_asc_url(app_id, pt, page_ct)
-    url_footer = make_asc_url(app_id, pt, page_ct)
+    url_nav = make_asc_url(app_id, pt, guide_ct(slug, "nav"))
+    url_footer = make_asc_url(app_id, pt, guide_ct(slug, "foot"))
     nav_inner = "Get Unfog App"
     foot_inner = """<div class="store-btn-text"><span class="store-small">Download on the</span><span class="store-big">App Store</span></div>"""
     nav_cta = f'<a href="{html.escape(url_nav)}" class="btn-pill btn-forest" target="_blank" rel="noopener">{nav_inner}</a>' if app_is_released(app_id) else coming_soon_markup("btn-pill btn-forest")
@@ -209,7 +211,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
         Published {html.escape(post['published_date'])} · {html.escape(post.get('reading_time', '5 min read'))} · Evidence-Based THC &amp; CB1 Recovery Series
       </div>
       <div class="guide-content">
-        {post['body_html']}
+        {normalize_body_ct(post['body_html'], slug)}
       </div>
       {disclaimer_html}
       {faq_section_html}
@@ -238,7 +240,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
     canonical_url = f"{site_url}/guides/index.html"
     app_slug = site_url.rstrip("/").rsplit("/", 1)[-1]
     index_ct = guides_index_ct(app_slug)
-    banner = smart_banner_tag(app_id) if app_is_released(app_id) else ""
+    banner = smart_banner_tag(app_id, banner_ct('gh')) if app_is_released(app_id) else ""
     url_nav = make_asc_url(app_id, pt, index_ct)
     nav_cta = f'<a href="{html.escape(url_nav)}" class="btn-pill btn-forest" target="_blank" rel="noopener">Get Unfog App</a>' if app_is_released(app_id) else coming_soon_markup("btn-pill btn-forest")
 

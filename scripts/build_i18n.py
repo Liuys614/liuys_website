@@ -17,7 +17,7 @@ Strict SEO compliance:
   • Localized OpenGraph and meta descriptions
   • Responsive UI Language Switcher on all pages
   • Clean root-relative asset URLs (zero image duplication)
-  • Localized App Store attribution campaign tokens (?ct=site-...)
+  • Localized App Store attribution campaign tokens (?ct=lp_<locale>_hero, see scripts/site_campaign.py)
   • Standard XML sitemap with xhtml:link alternates
 """
 import os
@@ -691,7 +691,7 @@ def build_localized_app_page(app_slug: str, locale_code: str):
     canonical_url = get_localized_url(app_slug, locale_code)
     hreflangs = generate_hreflang_tags(app_slug)
     switcher = generate_language_switcher_html(app_slug, locale_code)
-    appstore_url = f"https://apps.apple.com/app/apple-store/id{app_data['track_id']}?pt=127596623&ct=site-{app_slug}-{locale_code}&mt=8"
+    appstore_url = f"https://apps.apple.com/app/apple-store/id{app_data['track_id']}?pt=127596623&ct=lp_{locale_code.replace('-', '')}_hero&mt=8"
 
     # Feature list bullets
     features_html = ""
@@ -725,7 +725,7 @@ def build_localized_app_page(app_slug: str, locale_code: str):
   <meta property="og:description" content="{t['desc']}" />
   <meta property="og:url" content="{canonical_url}" />
   <meta property="og:locale" content="{loc_info['og_locale']}" />
-  <meta name="apple-itunes-app" content="app-id={app_data['track_id']}, affiliate-data=pt=127596623&ct=site-{app_slug}-{locale_code}, app-argument={canonical_url}">
+  <meta name="apple-itunes-app" content="app-id={app_data['track_id']}, affiliate-data=pt=127596623&ct=sb_{locale_code.replace('-', '')}_lp, app-argument={canonical_url}">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />

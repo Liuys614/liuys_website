@@ -375,7 +375,7 @@ def build_recommendations(app_data: dict) -> dict:
                 "gsc_impressions": win_q["impressions"],
                 "gsc_position": win_q["position"],
                 "category": "Search Console · Guide",
-                "campaign_prefix": f"seo_{slug[:24].replace('-', '_')}"
+                "campaign_prefix": f"g_en_{slug[:20].replace('-', '_')}"
             },
             "rationale": f"Discovered distinct GSC query '{win_q['query']}' (Impr: {win_q['impressions']}, Pos: {win_q['position']}) with zero cannibalization."
         }
@@ -436,7 +436,7 @@ def build_recommendations(app_data: dict) -> dict:
             "mandatory_elements": [
                 "50-word quantitative TL;DR answer box at the top of body_html",
                 "At least 1 structured HTML comparison table, dosage/timing chart, or interactive calculator link",
-                "Contextual native iOS app pitch card with ASC campaign token (ct=seo_*)",
+                "Contextual native iOS app pitch card with ASC campaign token (ct=g_en_<short-slug>_card; builder normalizes it)",
                 "3-4 high-intent FAQs matching conversational long-tail queries"
             ],
             "geo_llm_guidelines": {
@@ -577,7 +577,7 @@ def run_prompt():
         "   (Warm Paper Palette, Tactile Haptics, Mindful Urge Surfing vs. Ugly/Gloomy Clinical Legacy Apps),",
         "   Zero Account Required, Zero Community Spam.",
         "4. CONTEXTUAL NATIVE APP PITCH CARD: Embed an in-article pitch card with native screenshot",
-        "   and ASC campaign token (ct=seo_*).",
+        "   and ASC campaign token (ct=g_en_<short-slug>_card; build_guide.py normalizes it).",
         "5. 3-4 CONVERSATIONAL FAQs: In-depth answers targeting the exact natural language questions",
         "   users ask ChatGPT or Google.",
         "6. SCHEMA COMPLIANCE: Valid Article, BreadcrumbList, FAQPage, and SoftwareApplication entities.",
@@ -619,30 +619,41 @@ def run_prompt():
 
 def run_i18n():
     print("\n🌐 Synchronizing Multi-Language Architecture (i18n)...")
+    failed = []
     # 1. build_i18n.py: Updates studio homepages for all 7 locales, updates English app pages with hreflang & switcher, generates enhanced multi-lingual sitemap.xml
     i18n_builder = os.path.join(ROOT_DIR, "scripts", "build_i18n.py")
     if os.path.exists(i18n_builder):
-        subprocess.run(
+        proc = subprocess.run(
             ["python3", i18n_builder],
             cwd=ROOT_DIR,
             capture_output=True, text=True
         )
-        print("  ✓ Multi-Lingual Sitemap & Alternate Hreflang Tags synced across all 138+ URLs.")
+        if proc.returncode != 0:
+            failed.append("build_i18n.py")
+            print("  ✗ build_i18n.py FAILED: " + " | ".join((proc.stderr or "").strip().splitlines()[-3:]))
+        else:
+            print("  ✓ Multi-Lingual Sitemap & Alternate Hreflang Tags synced across all 138+ URLs.")
 
     # 2. generate_full_localized_apps.py: Generates 56 deeply-localized app landing pages across all 7 locales (zh-tw, ja, ko, de, fr, es, it)
     deep_builder = os.path.join(ROOT_DIR, "scripts", "generate_full_localized_apps.py")
     if os.path.exists(deep_builder):
-        subprocess.run(
+        proc = subprocess.run(
             ["python3", deep_builder],
             cwd=ROOT_DIR,
             capture_output=True, text=True
         )
-        print("  ✓ 56 Deep Localized App Landing Pages compiled (zh-tw, ja, ko, de, fr, es, it).")
+        if proc.returncode != 0:
+            failed.append("generate_full_localized_apps.py")
+            print("  ✗ generate_full_localized_apps.py FAILED: " + " | ".join((proc.stderr or "").strip().splitlines()[-3:]))
+        else:
+            print("  ✓ 56 Deep Localized App Landing Pages compiled (zh-tw, ja, ko, de, fr, es, it).")
+    return failed
 
 
 def run_build(only_apps: list = None, skip_i18n: bool = False):
     target_apps = [a for a in APPS if not only_apps or a[0] in only_apps]
     print(f"Rebuilding guides & sitemaps for {len(target_apps)} app(s)...")
+    failures = []
     for app_dir, title, _ in target_apps:
         builder = os.path.join(ROOT_DIR, app_dir, "scripts", "build_guide.py")
         if os.path.exists(builder):
@@ -651,12 +662,22 @@ def run_build(only_apps: list = None, skip_i18n: bool = False):
                 cwd=os.path.join(ROOT_DIR, app_dir),
                 capture_output=True, text=True
             )
+            if proc.returncode != 0:
+                failures.append(app_dir)
+                err = (proc.stderr or proc.stdout or "").strip().splitlines()[-3:]
+                print(f"✗ {title}: build FAILED (exit {proc.returncode})")
+                for line in err:
+                    print(f"    {line}")
+                continue
             last_line = proc.stdout.strip().splitlines()[-1] if proc.stdout else "done"
             print(f"✓ {title}: {last_line}")
 
     if not skip_i18n and not only_apps:
-        run_i18n()
+        failures += run_i18n()
 
+    if failures:
+        print(f"\n✗ BUILD FAILED for: {', '.join(failures)}")
+        sys.exit(1)
     print("\nAll builds complete.")
 
 

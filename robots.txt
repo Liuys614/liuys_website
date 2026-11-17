@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
+# Internal build files: keep them out of search results.
+# (They are still publicly reachable; robots.txt only stops crawling.)
+Disallow: /scripts/
+Disallow: /*/scripts/
+Disallow: /*/guides/posts/
+Disallow: /*/guides/*.json$
+Disallow: /*.py$
+Disallow: /*.md$
+
 Sitemap: https://ysliustudio.com/sitemap.xml

@@ -25,6 +25,8 @@ from site_campaign import (  # noqa: E402
     app_is_released,
     coming_soon_markup,
     guide_ct,
+    banner_ct,
+    normalize_body_ct,
     guides_index_ct,
     make_asc_url,
     medical_disclaimer_html,
@@ -50,8 +52,8 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     canonical_url = f"{site_url}/guides/{slug}.html"
     page_ct = guide_ct(slug)
 
-    url_nav = make_asc_url(app_id, pt, page_ct)
-    url_footer = make_asc_url(app_id, pt, page_ct)
+    url_nav = make_asc_url(app_id, pt, guide_ct(slug, "nav"))
+    url_footer = make_asc_url(app_id, pt, guide_ct(slug, "foot"))
 
     faqs = post.get("faqs", [])
     faq_schema_entities = [
@@ -162,7 +164,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
         headings.append((slug_id, plain_text))
         return f'<h2 id="{slug_id}">{raw_text}</h2>'
 
-    rendered_body = re.sub(r"<h2>(.*?)</h2>", inject_h2, post["body_html"])
+    rendered_body = re.sub(r"<h2>(.*?)</h2>", inject_h2, normalize_body_ct(post["body_html"], slug))
 
     toc_html = ""
     if headings:
@@ -192,7 +194,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="origin-when-cross-origin">
-    <meta name="apple-itunes-app" content="app-id={app_id}, affiliate-data=pt={pt}&ct=web_smart_banner, app-argument={canonical_url}">
+    <meta name="apple-itunes-app" content="app-id={app_id}, affiliate-data=pt={pt}&ct={banner_ct('g', slug)}, app-argument={canonical_url}">
     <meta name="description" content="{html.escape(post['meta_description'])}">
     <meta name="theme-color" content="#F4F7FA">
     <link rel="canonical" href="{canonical_url}">
@@ -307,7 +309,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
     canonical_url = f"{site_url}/guides/index.html"
     app_slug = site_url.rstrip("/").rsplit("/", 1)[-1]
     index_ct = guides_index_ct(app_slug)
-    banner = smart_banner_tag(app_id) if app_is_released(app_id) else ""
+    banner = smart_banner_tag(app_id, banner_ct('gh')) if app_is_released(app_id) else ""
     url_nav = make_asc_url(app_id, pt, index_ct)
 
     cards_html = []
@@ -326,7 +328,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="origin-when-cross-origin">
-    <meta name="apple-itunes-app" content="app-id={app_id}, affiliate-data=pt={pt}&ct=web_smart_banner, app-argument={canonical_url}">
+    <meta name="apple-itunes-app" content="app-id={app_id}, affiliate-data=pt={pt}&ct={banner_ct('gh')}, app-argument={canonical_url}">
     <meta name="description" content="Evidence-based guides on nicotine withdrawal timelines, 3-minute urge surfing for vape cravings, dopamine recovery, and kicking disposables.">
     <meta name="theme-color" content="#F4F7FA">
     <link rel="canonical" href="{canonical_url}">

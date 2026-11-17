@@ -17,6 +17,12 @@ function getCurrentLocalePrefix() {
   return match ? `/${match[1]}` : "";
 }
 
+// ASC campaign token: home_en_card -> home_ja_card on localized homepages (see scripts/site_campaign.py)
+function localizeCampaignUrl(url) {
+  const loc = (getCurrentLocaleKey() || "en").replace(/[^a-z]/g, "");
+  return loc === "en" ? url : url.replace(/([?&]ct=)(home|lp|g|gh)_en_/, `$1$2_${loc}_`);
+}
+
 function localizeInternalUrl(url) {
   if (!url || url.startsWith("http://") || url.startsWith("https://") || url.startsWith("#") || url.startsWith("mailto:")) {
     return url;
@@ -170,7 +176,7 @@ function renderProjects() {
                 `;
               } else if (link.type === "appstore") {
                 return `
-                  <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="btn-appstore-link">
+                  <a href="${localizeCampaignUrl(link.url)}" target="_blank" rel="noopener noreferrer" class="btn-appstore-link">
                     ${ICONS.apple}
                     <span>${ui.downloadAppStore}</span>
                   </a>

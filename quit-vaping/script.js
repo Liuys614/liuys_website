@@ -6,7 +6,7 @@ const ASC_CONFIG = {
   appId: "6818660091",
   // Keep in sync with scripts/site_campaign.py PROVIDER_TOKEN.
   providerToken: "127596623",
-  defaultCampaign: "site-quit-vaping-landing"
+  defaultCampaign: "lp_en_hero"
 };
 
 document.querySelectorAll("[data-year]").forEach((node) => {
@@ -14,21 +14,24 @@ document.querySelectorAll("[data-year]").forEach((node) => {
 });
 
 (function enrichAppStoreCampaignLinks() {
+  // Keep each link's own ct (set by the page builder, e.g. g_en_<slug>_nav).
+  // Only app links are touched (developer-page links are left alone), and only
+  // when the visitor arrived with ?utm_source / ?ref / ?utm_campaign, which is
+  // appended as a short suffix so ASC still shows the page + position.
   const params = new URLSearchParams(window.location.search);
-  const utmSource = params.get("utm_source") || params.get("ref") || "";
-  const utmCampaign = params.get("utm_campaign") || params.get("ct") || "";
-
-  document.querySelectorAll('a[href*="apps.apple.com"]').forEach((link) => {
-    let baseCampaign = link.getAttribute("data-campaign") || ASC_CONFIG.defaultCampaign;
-    if (utmCampaign) {
-      baseCampaign = `${baseCampaign}_${utmCampaign}`;
-    } else if (utmSource) {
-      baseCampaign = `${baseCampaign}_${utmSource}`;
-    }
-    // Apple ASC campaign token max length is 40 chars, alphanumeric + _ -
-    const cleanCt = baseCampaign.replace(/[^a-zA-Z0-9_-]/g, "_").slice(0, 40);
-    const targetUrl = new URL(`https://apps.apple.com/app/apple-store/id${ASC_CONFIG.appId}?pt=${ASC_CONFIG.providerToken}&ct=${cleanCt}&mt=8`);
-    link.href = targetUrl.toString();
+  const src = (params.get("utm_campaign") || params.get("utm_source") || params.get("ref") || "")
+    .toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 10);
+  const lang = (document.documentElement.lang || "en").toLowerCase().replace(/[^a-z]/g, "") || "en";
+  document.querySelectorAll('a[href*="apps.apple.com/app/"]').forEach((link) => {
+    let url;
+    try { url = new URL(link.href); } catch (e) { return; }
+    let ct = url.searchParams.get("ct") || link.getAttribute("data-campaign") || ASC_CONFIG.defaultCampaign;
+    if (lang !== "en" && /^(lp|g|gh)_en_/.test(ct)) ct = ct.replace("_en_", `_${lang}_`);
+    if (src) ct = `${ct.slice(0, 39 - src.length)}_${src}`;
+    url.searchParams.set("pt", ASC_CONFIG.providerToken);
+    url.searchParams.set("ct", ct.replace(/[^a-zA-Z0-9_-]/g, "_").slice(0, 40));
+    url.searchParams.set("mt", "8");
+    link.href = url.toString();
   });
 })();
 

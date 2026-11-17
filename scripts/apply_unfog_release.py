@@ -4,7 +4,7 @@
 The single switch is UNFOG_RELEASED in scripts/site_campaign.py.
 False: download buttons become a non-link "Coming soon to the App Store"
 and the Smart App Banner is omitted.
-True: those buttons become App Store links again (ct=site-quit-weed-landing,
+True: those buttons become App Store links again (ct=lp_en_<pos>,
 pt=PROVIDER_TOKEN).
 
 /quit-weed-tracker/ is a symlink to /quit-weed/, so editing quit-weed covers both.
@@ -46,7 +46,14 @@ JS_BLOCK_RE = re.compile(
     re.DOTALL,
 )
 
-LANDING_CT = landing_ct("quit-weed")
+LANDING_CT = landing_ct("quit-weed")  # default lp_en_hero
+SLOT_CT = {
+    "nav": landing_ct(pos="nav"),
+    "hero": landing_ct(pos="hero"),
+    "footer": landing_ct(pos="foot"),
+    "footlink": landing_ct(pos="foot"),
+    "legal": "sup_en_legal",
+}
 
 # class, inner HTML used when the app is live again
 LIVE_CTA = {
@@ -76,8 +83,8 @@ def _class_of(tag: str) -> str:
     return match.group(1) if match else ""
 
 
-def _live_anchor(class_name: str, inner: str) -> str:
-    url = make_asc_url(UNFOG_APP_ID, PROVIDER_TOKEN, LANDING_CT)
+def _live_anchor(class_name: str, inner: str, ct: str = LANDING_CT) -> str:
+    url = make_asc_url(UNFOG_APP_ID, PROVIDER_TOKEN, ct)
     if class_name:
         return (
             f'<a href="{url}" class="{class_name}" target="_blank" rel="noopener">{inner}</a>'
@@ -91,8 +98,8 @@ def _render_slot(name: str, fallback_class: str = "") -> str:
         class_name = fallback_class
     if UNFOG_RELEASED:
         if name == "footlink":
-            return _live_anchor("", "App Store")
-        return _live_anchor(class_name, inner)
+            return _live_anchor("", "App Store", SLOT_CT[name])
+        return _live_anchor(class_name, inner, SLOT_CT[name])
     use_class = class_name or fallback_class
     return coming_soon_markup(use_class)
 

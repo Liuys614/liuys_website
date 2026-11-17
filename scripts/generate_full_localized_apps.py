@@ -277,6 +277,9 @@ def render_lang_switcher(current_locale, app_slug):
   </div>"""
 
 def normalize_assets_and_scripts(html, app, locale):
+    # ASC campaign tokens: lp_en_hero -> lp_ja_hero etc. (standard in scripts/site_campaign.py)
+    ct_lang = re.sub(r'[^a-z]', '', locale.lower()) or 'en'
+    html = re.sub(r'(ct=|data-campaign=")(lp|sb|home|gh|g)_en_', lambda m: f'{m.group(1)}{m.group(2)}_{ct_lang}_', html)
     # CSS and JS assets to root-relative
     html = re.sub(r'href=[\"\']styles\.css[\"\']', f'href="/{app}/styles.css"', html)
     html = re.sub(r'href=[\"\']style\.css[\"\']', f'href="/{app}/style.css"', html)

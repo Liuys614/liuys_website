@@ -24,6 +24,8 @@ from site_campaign import (  # noqa: E402
     app_is_released,
     coming_soon_markup,
     guide_ct,
+    banner_ct,
+    normalize_body_ct,
     guides_index_ct,
     make_asc_url,
     medical_disclaimer_html,
@@ -49,8 +51,8 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     canonical_url = f"{site_url}/guides/{slug}.html"
     page_ct = guide_ct(slug)
 
-    url_nav = make_asc_url(app_id, pt, page_ct)
-    url_footer = make_asc_url(app_id, pt, page_ct)
+    url_nav = make_asc_url(app_id, pt, guide_ct(slug, "nav"))
+    url_footer = make_asc_url(app_id, pt, guide_ct(slug, "foot"))
 
     faqs = post.get("faqs", [])
     faq_schema_entities = [
@@ -148,9 +150,13 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
   <link rel="icon" type="image/png" href="../assets/favicon-32.png" />
   <link rel="stylesheet" href="../styles.css" />
   <style>
-    .guide-shell {{ max-width: 820px; margin: 48px auto 72px; background: #fff; border-radius: 24px; padding: 44px; border: 1px solid var(--hairline-strong); box-shadow: var(--shadow-soft); }}
+    .guide-shell {{ max-width: 820px; margin: 48px auto 72px; background: var(--white, #fff); border-radius: 24px; padding: 44px; border: 1px solid var(--hairline-strong); box-shadow: var(--shadow-soft); }}
     .guide-shell h1 {{ font-size: clamp(1.9rem, 3.5vw, 2.5rem); color: var(--ink); line-height: 1.18; margin: 12px 0 14px; font-weight: 800; }}
     .guide-meta-bar {{ font-size: 0.86rem; color: var(--muted); font-weight: 600; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--hairline); }}
+    .guide-app-card {{ margin: 32px 0; padding: 22px 24px; border-radius: 18px; background: #2c3646; color: #fff; }}
+    .guide-app-card h3 {{ margin: 0 0 8px; font-size: 1.15rem; color: #fff; }}
+    .guide-app-card p {{ margin: 0 0 14px; line-height: 1.6; color: rgba(255,255,255,.85); }}
+    .guide-app-card a {{ display: inline-block; padding: 10px 18px; border-radius: 999px; background: #fff; color: #2c3646; font-weight: 700; text-decoration: none; }}
     .guide-content h2 {{ font-size: 1.38rem; color: var(--brand-dark); margin: 32px 0 12px; font-weight: 800; }}
     .guide-content p, .guide-content li {{ font-size: 1.02rem; line-height: 1.72; color: var(--ink-soft); margin-bottom: 14px; }}
     .guide-content ul, .guide-content ol {{ padding-left: 22px; margin-bottom: 18px; }}
@@ -162,7 +168,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     .guide-callout strong {{ display: block; margin-bottom: 4px; color: var(--brand-dark); }}
     .guide-medical-disclaimer p {{ margin: 0; }}
     .guide-disclaimer-reviewed {{ margin: 10px 0 0; font-size: 0.88rem; color: var(--muted); }}
-    .app-pitch-card {{ background: linear-gradient(135deg, var(--paper-deep) 0%, #fff 100%); border: 1.5px solid var(--hairline-strong); border-radius: 20px; padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 36px 0; }}
+    .app-pitch-card {{ background: linear-gradient(135deg, var(--paper-deep) 0%, var(--white, #fff) 100%); border: 1.5px solid var(--hairline-strong); border-radius: 20px; padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 36px 0; }}
     .app-pitch-card .eyebrow {{ font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--taken); letter-spacing: 0.05em; margin-bottom: 6px; }}
     .app-pitch-card h3 {{ font-size: 1.25rem; font-weight: 800; color: var(--ink); margin: 0 0 8px; }}
     .app-pitch-card p {{ font-size: 0.94rem; color: var(--ink-soft); margin-bottom: 16px; }}
@@ -194,7 +200,12 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
         Published {html.escape(post['published_date'])} · {html.escape(post.get('reading_time', '5 min read'))} · Evidence-Based Supplement &amp; Medication Series
       </div>
       <div class="guide-content">
-        {post['body_html']}
+        {normalize_body_ct(post['body_html'], slug)}
+      </div>
+      <div class="guide-app-card">
+        <h3>{html.escape(post.get('pitch_headline', 'Never miss a dose'))}</h3>
+        <p>{html.escape(post.get('pitch_body', 'Flexible medication and supplement reminders on iPhone, fully offline.'))}</p>
+        <a href="{html.escape(url_footer)}" target="_blank" rel="noopener">Download Pill Reminder on the App Store &rarr;</a>
       </div>
       {disclaimer_html}
       {faq_section_html}
@@ -214,7 +225,7 @@ def render_guides_index_html(posts: list, cfg: dict) -> str:
     canonical_url = f"{site_url}/guides/index.html"
     app_slug = site_url.rstrip("/").rsplit("/", 1)[-1]
     index_ct = guides_index_ct(app_slug)
-    banner = smart_banner_tag(app_id) if app_is_released(app_id) else ""
+    banner = smart_banner_tag(app_id, banner_ct('gh')) if app_is_released(app_id) else ""
     url_nav = make_asc_url(app_id, pt, index_ct)
 
     cards_html = []
