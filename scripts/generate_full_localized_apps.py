@@ -29,6 +29,9 @@ from translations_pack_aft_all import AFT_EXTRA_TRANSLATIONS
 from translations_pack_round3_polish import ROUND3_TRANSLATIONS
 from complete_final_translations import COMPLETE_FINAL_TRANSLATIONS
 from compile_master_translations import COMMON_STRINGS
+from translations_pack_unslop_ALCOHOL_FREE_TRACKER import UNSLOP_ALCOHOL_FREE_TRACKER
+from translations_pack_unslop_QUIT_WEED import UNSLOP_QUIT_WEED
+from translations_pack_unslop_QUIT_VAPING import UNSLOP_QUIT_VAPING
 
 BASE_DIR = '/Users/louisliu/Documents/repo/liuys_website'
 SITE_ORIGIN = 'https://ysliustudio.com'
@@ -46,7 +49,8 @@ APPS = [
 
 # Build Unified Master Dictionary
 MASTER_APP_CONTENT = {}
-for source in [DEEP_APP_CONTENT, TOTAL_TRANSLATIONS, OTHER_APPS_TRANSLATIONS, TOP_APPS_TRANSLATIONS, ROUND3_TRANSLATIONS, COMPLETE_FINAL_TRANSLATIONS]:
+for source in [DEEP_APP_CONTENT, TOTAL_TRANSLATIONS, OTHER_APPS_TRANSLATIONS, TOP_APPS_TRANSLATIONS, ROUND3_TRANSLATIONS, COMPLETE_FINAL_TRANSLATIONS,
+               UNSLOP_ALCOHOL_FREE_TRACKER, UNSLOP_QUIT_WEED, UNSLOP_QUIT_VAPING]:  # 2026-11 unslop rewrite, merged last
     for app_slug, locales in source.items():
         if app_slug not in MASTER_APP_CONTENT:
             MASTER_APP_CONTENT[app_slug] = {}
