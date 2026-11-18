@@ -145,7 +145,7 @@ a {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 1.25rem;
   letter-spacing: -0.02em;
 }
@@ -202,8 +202,8 @@ a {
   background: var(--color-black);
   color: #ffffff;
   font-size: 0.88rem;
-  font-weight: 700;
-  transition: all var(--transition-fast);
+  font-weight: 600;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
   white-space: nowrap;
 }
 
@@ -235,7 +235,7 @@ a {
 
 .hero-title {
   font-size: 3.6rem;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.035em;
   color: var(--color-black);
@@ -262,10 +262,10 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.95rem;
   border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
   white-space: nowrap;
 }
 
@@ -313,7 +313,7 @@ a {
 
 .socials-label {
   font-size: 0.92rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-dark);
 }
 
@@ -333,7 +333,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
 }
 
 .social-circle svg {
@@ -375,20 +375,13 @@ a {
 .rotating-stamp-svg {
   width: 100%;
   height: 100%;
-  animation: spin-stamp 16s linear infinite;
-}
-
-@keyframes spin-stamp {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 .stamp-text {
   font-family: var(--font-sans);
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 600;
   fill: var(--color-black);
-  letter-spacing: 2px;
 }
 
 .stamp-arrow-center {
@@ -486,7 +479,7 @@ a {
 }
 
 .marquee-inner {
-  padding: 1.35rem 0;
+  padding: 1.35rem max(2rem, calc((100% - 1240px) / 2 + 2rem));
   display: flex;
   overflow: hidden;
   user-select: none;
@@ -496,25 +489,27 @@ a {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  gap: 2rem;
-  animation: scroll-marquee 38s linear infinite;
+  gap: 1.75rem;
 }
 
-@keyframes scroll-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.marquee-track--static {
+  width: 100%;
+  white-space: normal;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
 }
 
 .marquee-item {
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-size: 1.05rem;
+  font-weight: 500;
 }
 
-.marquee-star {
+.marquee-star,
+.marquee-sep {
   color: var(--accent-mint);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 /* ==========================================================================
@@ -530,7 +525,7 @@ a {
 
 .timeline-headline {
   font-size: 2.5rem;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.03em;
   color: var(--color-black);
   margin-top: 0.5rem;
@@ -564,7 +559,7 @@ a {
   border: 1.5px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: 1.75rem 2rem 1.75rem 4rem;
-  transition: all var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 
 .timeline-card:hover {
@@ -584,7 +579,7 @@ a {
   background: #ffffff;
   border: 3.5px solid var(--color-black);
   box-shadow: 0 0 0 4px var(--accent-mint-light);
-  transition: all var(--transition-fast);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .timeline-card:hover .timeline-node-marker {
@@ -604,7 +599,7 @@ a {
 .timeline-period-badge {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-black);
   background: var(--bg-subtle);
   border: 1px solid var(--border-light);
@@ -614,11 +609,9 @@ a {
 
 .timeline-type-pill {
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.2rem 0.6rem;
   border-radius: 100px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
 .timeline-type-pill.type-work {
@@ -633,14 +626,14 @@ a {
 
 .timeline-role-title {
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--color-black);
   margin-bottom: 0.25rem;
 }
 
 .timeline-org-name {
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-gray-600);
   margin-bottom: 1rem;
 }
@@ -671,11 +664,11 @@ a {
 
 .timeline-link {
   color: var(--color-black);
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: var(--accent-mint);
-  transition: all var(--transition-fast);
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
 }
 
 .timeline-link:hover {
@@ -700,7 +693,7 @@ a {
 
 .projects-headline {
   font-size: 2.6rem;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: -0.035em;
   color: var(--color-black);
   margin-bottom: 0.5rem;
@@ -767,8 +760,7 @@ a {
 .category-tag {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-weight: 500;
   background: var(--bg-subtle);
   border: 1px solid var(--border-light);
   padding: 0.2rem 0.55rem;
@@ -778,7 +770,7 @@ a {
 
 .live-badge {
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 600;
   background: var(--accent-mint-light);
   color: var(--accent-mint-dark);
   padding: 0.2rem 0.55rem;
@@ -787,7 +779,7 @@ a {
 
 .project-title {
   font-size: 1.45rem;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--color-black);
   line-height: 1.2;
@@ -795,7 +787,7 @@ a {
 
 .project-tagline {
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-dark);
   margin-bottom: 0.75rem;
 }
@@ -845,12 +837,12 @@ a {
   color: #ffffff;
   padding: 0.75rem 1.25rem;
   border-radius: var(--radius-sm);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.88rem;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .btn-appstore-link:hover {
@@ -878,12 +870,12 @@ a {
   border: 1.5px solid var(--border-dark);
   padding: 0.72rem 1.15rem;
   border-radius: var(--radius-sm);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.88rem;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .btn-site-link:hover {
@@ -940,12 +932,12 @@ a {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   scroll-snap-align: start;
   cursor: pointer;
-  transition: all var(--transition-smooth);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
 }
 
 .screenshot-tile:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   border-color: rgba(0, 0, 0, 0.15);
 }
 
@@ -983,7 +975,7 @@ a {
   border: 1px solid var(--color-black);
   border-radius: 100px;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .inspect-pill svg {
@@ -1013,7 +1005,7 @@ a {
 
 .cta-big-heading {
   font-size: 3rem;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.035em;
   margin-bottom: 1.25rem;
@@ -1044,9 +1036,8 @@ a {
 .figma-email-text {
   font-family: var(--font-mono);
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
-  letter-spacing: -0.01em;
 }
 
 .cta-btns-group {
@@ -1060,13 +1051,13 @@ a {
   background: var(--accent-mint);
   color: var(--color-black);
   padding: 0.9rem 1.6rem;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .btn-mint-cta:hover {
   background: #10b981;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 220, 130, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .btn-outline-light {
@@ -1104,7 +1095,7 @@ a {
   align-items: center;
   gap: 0.35rem;
   color: var(--color-gray-400);
-  font-weight: 600;
+  font-weight: 500;
   transition: color var(--transition-fast);
 }
 
@@ -1171,7 +1162,7 @@ a {
 
 .lightbox-app-title {
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 600;
   color: #ffffff;
 }
 
@@ -1193,12 +1184,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast);
 }
 
 .lightbox-btn-close:hover {
   background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.08);
 }
 
 .lightbox-btn-close svg {
@@ -1225,12 +1215,11 @@ a {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast);
 }
 
 .lightbox-nav-btn:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.08);
 }
 
 .lightbox-nav-btn svg {
@@ -1252,7 +1241,7 @@ a {
   max-width: 100%;
   object-fit: contain;
   border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
   transition: opacity 0.2s ease;
 }
 
@@ -1284,15 +1273,15 @@ a {
   padding: 0.75rem 1.4rem;
   border-radius: 100px;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   opacity: 0;
   pointer-events: none;
   z-index: 1100;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .toast.show {
@@ -1356,9 +1345,7 @@ a {
 .dock-card-label {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-weight: 500;
   color: var(--color-gray-600);
   margin-bottom: 1.5rem;
   text-align: center;
@@ -1395,7 +1382,7 @@ a {
 
 .dock-icon-name {
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-black);
 }
 
@@ -1426,7 +1413,7 @@ a {
 .pillar-number {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--accent-mint-dark);
   background: var(--accent-mint-light);
   display: inline-block;
@@ -1437,7 +1424,7 @@ a {
 
 .pillar-title {
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--color-black);
   margin-bottom: 0.65rem;
 }
@@ -1483,16 +1470,14 @@ a {
 
 .founder-eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.76rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: var(--accent-mint-dark);
-  letter-spacing: 0.05em;
 }
 
 .founder-heading {
   font-size: 1.45rem;
-  font-weight: 900;
+  font-weight: 600;
   color: var(--color-black);
   margin: 0.15rem 0 0.35rem;
 }
@@ -1661,7 +1646,7 @@ a {
 
 .guide-hub-title {
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 600;
   margin: 0;
   color: var(--color-black, #000000);
 }
@@ -1688,7 +1673,7 @@ a {
   align-items: flex-start;
   gap: 0.5rem;
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-black, #000000);
   text-decoration: none;
   line-height: 1.4;
@@ -1702,7 +1687,7 @@ a {
 .guide-hub-footer-link {
   font-family: var(--font-mono, monospace);
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-black, #000000);
   text-decoration: none;
   display: inline-flex;
@@ -1714,6 +1699,13 @@ a {
 
 .guide-hub-footer-link:hover {
   text-decoration: underline;
+}
+
+.guides-source-note {
+  margin-top: 1.5rem;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--color-gray-600);
 }
 
 /* ==========================================================================
@@ -1738,7 +1730,7 @@ a {
   font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   line-height: 1;
 }
@@ -1748,7 +1740,7 @@ a {
 .lang-switcher.is-open .lang-btn {
   background: #ffffff;
   border-color: var(--accent-mint);
-  box-shadow: 0 3px 10px rgba(0, 220, 130, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transform: translateY(-1px);
 }
 
@@ -1760,7 +1752,7 @@ a {
 }
 
 .lang-current {
-  letter-spacing: -0.01em;
+  font-weight: 500;
 }
 
 .lang-chevron {
@@ -1788,7 +1780,7 @@ a {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4px) scale(0.98);
-  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -1811,7 +1803,7 @@ a {
   font-weight: 500;
   color: var(--color-gray-600);
   text-decoration: none;
-  transition: all 0.12s ease;
+  transition: background-color 0.12s ease, color 0.12s ease;
 }
 
 .lang-opt:hover {
@@ -1822,12 +1814,12 @@ a {
 .lang-opt.active {
   background: var(--accent-mint-light);
   color: var(--accent-mint-dark);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .lang-opt.active::after {
   content: "✓";
-  font-weight: 800;
+  font-weight: 600;
   color: var(--accent-mint-dark);
   font-size: 0.85rem;
 }
