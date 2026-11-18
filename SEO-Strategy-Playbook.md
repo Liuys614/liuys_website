@@ -136,6 +136,8 @@ python3 scripts/master_daily_pipeline.py --recommend
 | **2026-11-17** | `TECH_FIX` | **Pill Reminder** (`pill-reminder`) + **Levain** (`levain`) + **Quit Weed** (`quit-weed`) | `<title>` keyword-first, brand suffix only when ≤ 60 chars (6 Pill Reminder, 5 Levain, 2 Quit Weed pages) | Titles too long (backlog) | — |
 | **2026-11-17** | `TECH_FIX` | **Grocery Price** (`grocery-price`) + **Quit Vaping** (`quit-vaping`) + **Agricola** (`agricola-scorer`) + **Inkstone** (`inkstone`) | `<title>` keyword-first, ≤ 60 chars on all 17 guides + 2 hub pages (`get_seo_title()` + `seo_title`) | Titles too long (backlog, now complete) | — |
 | **2026-11-17** | `TECH_FIX` | All apps except quit-weed landing | Meta descriptions ≤ 155 chars with the answer + number first on 37 guides (magnesium guide left as-is: frozen until 2026-11-30) | Meta descriptions too long (backlog, guide slice) | — |
+| **2026-11-18** | `REFRESH_EXISTING` | **Agricola Score Sheet** (`agricola-scorer`) | [Agricola Scoring Rules: Complete Point Calculation Guide](https://ysliustudio.com/agricola-scorer/guides/agricola-scoring-rules-complete-strategy-guide.html) | page at GSC Pos 9.5, 28 impr/30d, 0 visible queries; thin page (quick answer, stable/room/family table, major improvement points, worked 40-point example, 4 FAQs) | `g_en_agricola_scoring_foot` |
+| **2026-11-18** | `TECH_FIX` | **Alcohol Free Tracker** + **Quit Vaping** + **Inkstone** (EN landing) | English landing meta descriptions ≤ 155 chars (were 169 / 207 / 162); localized pages keep their own `meta_desc` overrides | Meta descriptions too long (backlog, landing slice) | — |
 
 ### 階段一：第 7 天檢查（2026-11-03）
 * [ ] 檢查 GSC 涵蓋範圍（Coverage）：已提交的 36+ 網址是否有至少 30% 轉為 `Indexed`。
