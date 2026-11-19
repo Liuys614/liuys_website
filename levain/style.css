@@ -108,6 +108,90 @@ a:hover { color: var(--crust); }
 .cta:hover { color: var(--bg-top); transform: translateY(-1px); }
 .cta-note { display: block; margin-top: .9em; font-size: .88rem; color: var(--faint); }
 
+/* --- hero scene ------------------------------------------------------------ */
+
+.lv-scene {
+  position: relative;
+  margin: 36px auto 0;
+  width: calc(100% - 32px); /* .hero's padding shorthand removes the .wrap gutter */
+  max-width: 960px;
+  aspect-ratio: 2 / 1;
+  border-radius: 18px;
+  overflow: hidden;
+  isolation: isolate;
+  touch-action: manipulation;
+  background: #1d2440;
+  box-shadow: 0 0 0 1px rgba(40,34,26,.10), 0 18px 50px -18px rgba(40,34,26,.35);
+}
+
+.lv-scene .lv-poster,
+.lv-scene #scene,
+.lv-scene #scene svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.lv-scene #scene svg {
+  user-select: none;
+}
+
+.lv-scene #scene svg .pp {
+  fill: var(--paper, #fdfcf8);
+}
+
+.lv-scene.is-live .lv-poster {
+  display: none;
+}
+
+.lv-scene .lv-clock {
+  display: none;
+  position: absolute;
+  left: 2.4%;
+  top: 3.6%;
+  font: 500 clamp(9px, 1.25vw, 15px)/1.3 "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  color: var(--ink);
+  opacity: .85;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+}
+
+.lv-scene.is-live .lv-clock {
+  display: block;
+}
+
+.lv-scene .lv-clock span {
+  margin-left: 6px;
+  font-size: .9em;
+}
+
+.hero .lv-scene .lv-hint {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2.6%;
+  margin: 0;
+  text-align: center;
+  max-width: none;
+  font: italic clamp(9px, 1.15vw, 14px)/1.4 "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  color: var(--ink);
+  opacity: .7;
+  pointer-events: none;
+  transition: opacity 1.2s;
+}
+
+.hero .lv-scene.is-live .lv-hint {
+  display: block;
+}
+
+.hero .lv-scene .lv-hint.gone {
+  opacity: 0;
+}
+
 /* --- screenshot strip ------------------------------------------------------ */
 
 .shots {
@@ -265,6 +349,7 @@ footer p { margin: .35em 0; }
   .shot-card { width: 190px; }
   .shot-card img { width: 190px; height: 411px; border-radius: 20px; }
   .problem-grid { grid-template-columns: 1fr; }
+  .lv-scene { margin-top: 28px; border-radius: 12px; }
 }
 
 /* Interactive Sourdough Hydration Calculator */
