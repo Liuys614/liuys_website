@@ -138,6 +138,8 @@ python3 scripts/master_daily_pipeline.py --recommend
 | **2026-11-17** | `TECH_FIX` | All apps except quit-weed landing | Meta descriptions ≤ 155 chars with the answer + number first on 37 guides (magnesium guide left as-is: frozen until 2026-11-30) | Meta descriptions too long (backlog, guide slice) | — |
 | **2026-11-18** | `REFRESH_EXISTING` | **Agricola Score Sheet** (`agricola-scorer`) | [Agricola Scoring Rules: Complete Point Calculation Guide](https://ysliustudio.com/agricola-scorer/guides/agricola-scoring-rules-complete-strategy-guide.html) | page at GSC Pos 9.5, 28 impr/30d, 0 visible queries; thin page (quick answer, stable/room/family table, major improvement points, worked 40-point example, 4 FAQs) | `g_en_agricola_scoring_foot` |
 | **2026-11-18** | `TECH_FIX` | **Alcohol Free Tracker** + **Quit Vaping** + **Inkstone** (EN landing) | English landing meta descriptions ≤ 155 chars (were 169 / 207 / 162); localized pages keep their own `meta_desc` overrides | Meta descriptions too long (backlog, landing slice) | — |
+| **2026-11-19** | `REFRESH_EXISTING` | **Quit Vaping** (`quit-vaping`) | [Vaping Recovery Timeline Day by Day](https://ysliustudio.com/quit-vaping/guides/vaping-recovery-timeline-day-by-day.html) | `what happens when you quit vaping timeline` (GSC Pos 8.5), `how long does it take to quit vaping`; page 42 impr at pos 14.9: quick-answer callout, 30-day action table, new FAQ | `g_en_vaping_recovery_card` |
+| **2026-11-19** | `TECH_FIX` | **Supplement & Pill Reminder** (`pill-reminder`) | "Related guides" block on all 5 guides (same topic group first, plus hub link) | Internal links (backlog, pill-reminder slice) | — |
 
 ### 階段一：第 7 天檢查（2026-11-03）
 * [ ] 檢查 GSC 涵蓋範圍（Coverage）：已提交的 36+ 網址是否有至少 30% 轉為 `Indexed`。

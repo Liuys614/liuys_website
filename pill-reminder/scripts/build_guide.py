@@ -49,6 +49,28 @@ def load_config():
         return json.load(f)
 
 
+def related_guides_html(post: dict, all_posts: list, limit: int = 4) -> str:
+    """'Related guides' block: same topic group first (supplements vs. prescriptions), then the rest, plus the hub."""
+    def group(p):
+        cat = p.get("category", "").lower()
+        return "med" if cat.startswith(("prescription", "medication")) else "supp"
+    others = [p for p in all_posts if p["slug"] != post["slug"]]
+    if not others:
+        return ""
+    mine = group(post)
+    others.sort(key=lambda p: (group(p) != mine, p.get("published_date", "")))
+    items = "".join(
+        f'<li><a href="{p["slug"]}.html">{html.escape(p["title"])}</a></li>'
+        for p in others[:limit]
+    )
+    return f"""
+        <nav class="guide-related" aria-label="Related guides">
+          <h2>Related guides</h2>
+          <ul>{items}</ul>
+          <p><a href="index.html">All supplement and medication guides &rarr;</a></p>
+        </nav>"""
+
+
 def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     site_url = cfg["site_url"].rstrip("/")
     app_id = cfg["app_id"]
@@ -183,6 +205,12 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     .guide-faq-item {{ background: var(--paper); border-radius: 14px; padding: 16px 20px; margin-bottom: 12px; }}
     .guide-faq-item summary {{ font-weight: 600; color: var(--ink); cursor: pointer; }}
     .guide-faq-item p {{ margin: 10px 0 0; font-size: 0.95rem; color: var(--ink-soft); }}
+    .guide-related {{ margin-top: 38px; padding-top: 24px; border-top: 1px solid var(--hairline); }}
+    .guide-related h2 {{ font-size: 1.2rem; color: var(--ink); margin: 0 0 12px; font-weight: 600; }}
+    .guide-related ul {{ padding-left: 20px; margin: 0 0 12px; }}
+    .guide-related li {{ margin-bottom: 8px; line-height: 1.5; }}
+    .guide-related a {{ color: var(--taken); font-weight: 600; text-decoration: none; }}
+    .guide-related a:hover {{ text-decoration: underline; }}
     .eyebrow-pill {{ display: inline-block; background: var(--brand-soft); color: var(--brand); font-size: 0.76rem; font-weight: 600; padding: 4px 10px; border-radius: 99px; letter-spacing: 0.04em; }}
   </style>
   <script type="application/ld+json">
@@ -216,6 +244,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
       </div>
       {disclaimer_html}
       {faq_section_html}
+      {related_guides_html(post, all_posts)}
     </article>
   </main>
 {beacon}
