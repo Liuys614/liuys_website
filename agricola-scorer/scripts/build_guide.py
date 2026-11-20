@@ -43,6 +43,23 @@ def load_config():
         return json.load(f)
 
 
+def related_guides_html(post: dict, all_posts: list, limit: int = 4) -> str:
+    """'Related guides' block: the other Agricola guides (newest first), the hub and the scorer page."""
+    others = [p for p in all_posts if p["slug"] != post["slug"]][:limit]
+    if not others:
+        return ""
+    items = "".join(
+        f'<li><a href="{p["slug"]}.html">{html.escape(p["title"])}</a></li>'
+        for p in others
+    )
+    return f"""
+      <nav class="guide-related" aria-label="Related guides">
+        <h2>Related Agricola guides</h2>
+        <ul>{items}</ul>
+        <p><a href="index.html">All Agricola scoring guides &rarr;</a> · <a href="../index.html">Agricola Score Sheet app</a></p>
+      </nav>"""
+
+
 def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     site_url = cfg["site_url"].rstrip("/")
     app_id = cfg["app_id"]
@@ -158,6 +175,12 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     .app-card h3 {{ font-size: 1.22rem; font-weight: 600; color: #92400e; margin: 0 0 6px; }}
     .app-card p {{ font-size: 0.92rem; color: #423023; margin: 0 0 14px; }}
     .app-card a {{ display: inline-block; background: #8b5a2b; color: #fff; padding: 9px 18px; border-radius: 99px; text-decoration: none; font-weight: 600; font-size: 0.88rem; }}
+    .guide-related {{ margin-top: 36px; padding-top: 22px; border-top: 1px solid #f2e9de; }}
+    .guide-related h2 {{ font-size: 1.2rem; color: #2c1810; margin: 0 0 12px; font-weight: 600; }}
+    .guide-related ul {{ padding-left: 20px; margin: 0 0 12px; }}
+    .guide-related li {{ margin-bottom: 8px; line-height: 1.5; color: #423023; }}
+    .guide-related a {{ color: #8b5a2b; font-weight: 600; text-decoration: none; }}
+    .guide-related a:hover {{ text-decoration: underline; }}
     .eyebrow {{ display: inline-block; background: #fef3c7; color: #92400e; font-size: 0.74rem; font-weight: 600; padding: 4px 10px; border-radius: 99px; letter-spacing: 0.04em; }}
   </style>
   <script type="application/ld+json">
@@ -188,6 +211,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
         </div>
       </div>
       {faq_section_html}
+      {related_guides_html(post, all_posts)}
     </article>
   </main>
 {beacon}
