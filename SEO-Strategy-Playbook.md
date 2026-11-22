@@ -194,3 +194,5 @@ python3 scripts/master_daily_pipeline.py --recommend
 * **動量視覺化**：直觀美麗的連勝行事曆（Visual Momentum Calendar）與里程碑勳章，讓用戶由衷產生榮譽感與分享慾望。
 * **AI 搜尋意圖命中**：當用戶向 ChatGPT / Perplexity 搜尋 `aesthetic sobriety app`、`thoughtfully designed quit vaping tracker`、`quit smoking app with great UI/UX`、`clean non-depressing habit tracker` 時，此賣點能精準擊中競品盲區，成為 AI 首選推薦理由。
 
+| **2026-11-22** | `REFRESH_EXISTING` | **T-Break & Quit Weed: Unfog** (`quit-weed`) | [Vivid Dreams After Quitting Weed: The REM Rebound Explained](https://ysliustudio.com/quit-weed/guides/rem-rebound-vivid-dreams-quitting-weed.html) | `vivid dreams after quitting weed`, `nightmares after quitting weed`; page 18 impr at GSC Pos 15.7: quick-answer callout, sleep-study table (Vandrey 2011, Bolla 2008/2010, Lee 2014, Budney 2003), corrected phase timeline, 1 new FAQ | `g_en_rem_rebound_vivid_card` |
+| **2026-11-22** | `TECH_FIX` | **T-Break & Quit Weed: Unfog** (`quit-weed`) | "Related quitting weed guides" block on all 5 guides (other guides + hub + app page) | Internal links (backlog, quit-weed slice) | — |

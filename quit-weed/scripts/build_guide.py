@@ -49,6 +49,23 @@ def load_config():
         return json.load(f)
 
 
+def related_guides_html(post: dict, all_posts: list, limit: int = 4) -> str:
+    """'Related guides' block: the other Quit Weed guides, the hub and the app page."""
+    others = [p for p in all_posts if p["slug"] != post["slug"]][:limit]
+    if not others:
+        return ""
+    items = "".join(
+        f'<li><a href="{p["slug"]}.html">{html.escape(p["title"])}</a></li>'
+        for p in others
+    )
+    return f"""
+      <nav class="guide-related" aria-label="Related guides">
+        <h2>Related quitting weed guides</h2>
+        <ul>{items}</ul>
+        <p><a href="index.html">All T-Break &amp; quitting weed guides &rarr;</a> · <a href="../index.html">Unfog: Quit Weed app</a></p>
+      </nav>"""
+
+
 def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     site_url = cfg["site_url"].rstrip("/")
     app_id = cfg["app_id"]
@@ -190,6 +207,12 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     .guide-faq-item {{ background: #F6F4EE; border-radius: 16px; padding: 16px 20px; margin-bottom: 12px; }}
     .guide-faq-item summary {{ font-weight: 600; color: #152E26; cursor: pointer; }}
     .guide-faq-item p {{ margin: 10px 0 0; font-size: 0.95rem; color: #385249; }}
+    .guide-related {{ margin-top: 36px; padding: 22px 24px; border-radius: 18px; background: #F6F4EE; border: 1px solid rgba(30,63,53,0.1); }}
+    .guide-related h2 {{ font-size: 1.15rem; color: #1E3F35; margin: 0 0 10px; font-weight: 600; }}
+    .guide-related ul {{ padding-left: 20px; margin: 0 0 12px; }}
+    .guide-related li {{ font-size: 0.98rem; line-height: 1.6; color: #233B32; margin-bottom: 6px; }}
+    .guide-related a {{ color: #2F6B57; }}
+    .guide-related p {{ margin: 0; font-size: 0.92rem; color: #52665E; }}
   </style>
   <script type="application/ld+json">
 {json.dumps(schema_graph, indent=2)}
@@ -222,6 +245,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
       </div>
       {disclaimer_html}
       {faq_section_html}
+      {related_guides_html(post, all_posts)}
     </article>
 
     <section class="final-cta-section" style="padding-top: 0;">
