@@ -66,6 +66,24 @@ def related_guides_html(post: dict, all_posts: list, limit: int = 4) -> str:
       </nav>"""
 
 
+def release_safe_body(body_html: str, slug: str, app_id: str) -> str:
+    """Normalize App Store ct in body links; until the app is live, swap each body
+    App Store anchor for the non-link coming-soon state (no dead links)."""
+    body = normalize_body_ct(body_html, slug)
+    if app_is_released(app_id):
+        return body
+    def _swap(m):
+        cls = re.search(r'class="([^"]*)"', m.group(1))
+        return coming_soon_markup(cls.group(1) if cls else "")
+
+    return re.sub(
+        r'<a\b([^>]*href="https://apps\.apple\.com/[^"]*"[^>]*)>.*?</a>',
+        _swap,
+        body,
+        flags=re.S,
+    )
+
+
 def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     site_url = cfg["site_url"].rstrip("/")
     app_id = cfg["app_id"]
@@ -241,7 +259,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
         Published {html.escape(post['published_date'])} · {html.escape(post.get('reading_time', '5 min read'))} · THC &amp; CB1 Recovery Series
       </div>
       <div class="guide-content">
-        {normalize_body_ct(post['body_html'], slug)}
+        {release_safe_body(post['body_html'], slug, app_id)}
       </div>
       {disclaimer_html}
       {faq_section_html}
