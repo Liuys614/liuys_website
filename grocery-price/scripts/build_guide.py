@@ -43,6 +43,25 @@ def load_config():
         return json.load(f)
 
 
+def related_guides_html(post: dict, all_posts: list, limit: int = 4) -> str:
+    """'Related guides' block: other English guides, the two calculators, the hub and the app page."""
+    if post.get("lang", "en") != "en":
+        return ""
+    others = [p for p in all_posts if p["slug"] != post["slug"] and p.get("lang", "en") == "en"][:limit]
+    items = "".join(
+        f'<li><a href="{p["slug"]}.html">{html.escape(p["title"])}</a></li>'
+        for p in others
+    )
+    items += '<li><a href="../tools/unit-price-calculator/">Unit price calculator (per oz, lb, g, kg)</a></li>'
+    items += '<li><a href="../tools/shrinkflation-calculator/">Shrinkflation calculator</a></li>'
+    return f"""
+      <nav class="guide-related" aria-label="Related guides">
+        <h2>Related grocery price guides</h2>
+        <ul>{items}</ul>
+        <p><a href="index.html">All grocery price guides &rarr;</a> · <a href="../index.html">Grocery Price Scanner app</a></p>
+      </nav>"""
+
+
 def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     site_url = cfg["site_url"].rstrip("/")
     app_id = cfg["app_id"]
@@ -171,6 +190,12 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
     .app-card p {{ font-size: 0.92rem; color: #374151; margin: 0 0 14px; }}
     .app-card a {{ display: inline-block; background: #16a34a; color: #fff; padding: 9px 18px; border-radius: 99px; text-decoration: none; font-weight: 600; font-size: 0.88rem; }}
     .eyebrow {{ display: inline-block; background: #dcfce7; color: #166534; font-size: 0.74rem; font-weight: 600; padding: 4px 10px; border-radius: 99px; letter-spacing: 0.04em; }}
+    .guide-related {{ margin-top: 36px; padding: 22px 24px; border-radius: 16px; background: #f9fafb; border: 1px solid #e5e7eb; }}
+    .guide-related h2 {{ font-size: 1.15rem; color: #111827; margin: 0 0 10px; font-weight: 600; }}
+    .guide-related ul {{ padding-left: 20px; margin: 0 0 12px; }}
+    .guide-related li {{ font-size: 0.98rem; line-height: 1.6; color: #374151; margin-bottom: 6px; }}
+    .guide-related a {{ color: #166534; }}
+    .guide-related p {{ margin: 0; font-size: 0.92rem; color: #6b7280; }}
   </style>
   <script type="application/ld+json">
 {json.dumps(schema_graph, indent=2)}
@@ -203,6 +228,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
         </div>
       </div>
       {faq_section_html}
+      {related_guides_html(post, all_posts)}
     </article>
   </main>
 {beacon}
