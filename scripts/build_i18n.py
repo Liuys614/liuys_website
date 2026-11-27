@@ -1257,6 +1257,29 @@ def build_localized_app_page(app_slug: str, locale_code: str):
     print(f"✔ Generated app page: /{locale_code}/{app_slug}/index.html")
 
 
+def url_lastmod(url, today):
+    """Date the page's file last changed: today if it has uncommitted changes
+    (or is new), otherwise its last git commit date. Keeps <lastmod> accurate
+    instead of stamping every URL with today's date on each build."""
+    import subprocess
+    rel = url.replace("https://ysliustudio.com/", "", 1)
+    if rel == "" or rel.endswith("/"):
+        rel += "index.html"
+    path = os.path.join(ROOT_DIR, rel)
+    if not os.path.exists(path):
+        return today
+    try:
+        dirty = subprocess.run(["git", "status", "--porcelain", "--", rel], cwd=ROOT_DIR,
+                               capture_output=True, text=True, timeout=20).stdout.strip()
+        if dirty:
+            return today
+        last = subprocess.run(["git", "log", "-1", "--format=%cs", "--", rel], cwd=ROOT_DIR,
+                              capture_output=True, text=True, timeout=20).stdout.strip()
+        return last or today
+    except Exception:
+        return today
+
+
 def build_sitemap_xml():
     """Generates a complete, multi-language sitemap.xml with xhtml:link alternates."""
     today = datetime.now().strftime("%Y-%m-%d")
@@ -1305,7 +1328,7 @@ def build_sitemap_xml():
     for url, prio, slug in urls_to_include:
         xml_lines.append('  <url>')
         xml_lines.append(f'    <loc>{url}</loc>')
-        xml_lines.append(f'    <lastmod>{today}</lastmod>')
+        xml_lines.append(f'    <lastmod>{url_lastmod(url, today)}</lastmod>')
         xml_lines.append(f'    <priority>{prio}</priority>')
 
         # If slug is not None, inject xhtml:link alternates

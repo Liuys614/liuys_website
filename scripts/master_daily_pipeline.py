@@ -657,6 +657,21 @@ def run_i18n():
             print("  ✗ generate_full_localized_apps.py FAILED: " + " | ".join((proc.stderr or "").strip().splitlines()[-3:]))
         else:
             print("  ✓ 56 Deep Localized App Landing Pages compiled (zh-tw, ja, ko, de, fr, es, it).")
+
+    # 3. Rewrite sitemap.xml once every page is final, so each <lastmod> is the page's
+    #    real last-change date (build_i18n.py rewrites localized pages before step 2
+    #    restores them, which made them look changed during its own sitemap pass).
+    if not failed:
+        proc = subprocess.run(
+            ["python3", "-c", "import build_i18n; build_i18n.build_sitemap_xml()"],
+            cwd=os.path.join(ROOT_DIR, "scripts"),
+            capture_output=True, text=True
+        )
+        if proc.returncode != 0:
+            failed.append("sitemap lastmod pass")
+            print("  ✗ sitemap lastmod pass FAILED: " + " | ".join((proc.stderr or "").strip().splitlines()[-3:]))
+        else:
+            print("  ✓ sitemap.xml lastmod set from each page's last change.")
     return failed
 
 
