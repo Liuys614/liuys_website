@@ -85,7 +85,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
                 "datePublished": post["published_date"],
                 "dateModified": post.get("updated_date", post["published_date"]),
                 "mainEntityOfPage": canonical_url,
-                "image": f"{site_url}/assets/appstore/{post.get('pitch_screen', '04-milestones.webp')}",
+                "image": f"{site_url}/assets/appstore/{post.get('pitch_screen', '05-milestones.webp')}",
                 "author": {
                     "@type": "Organization",
                     "name": "Quit Vaping Editorial"
@@ -188,7 +188,7 @@ def render_guide_html(post: dict, cfg: dict, all_posts: list) -> str:
               </ul>
             </div>"""
 
-    pitch_screen = post.get("pitch_screen", "04-milestones.webp")
+    pitch_screen = post.get("pitch_screen", "05-milestones.webp")
 
     disclaimer_html = medical_disclaimer_html(
         "quit-vaping",
